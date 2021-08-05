@@ -35,28 +35,30 @@
     <!-- meta -->
 
 
-<title>Word2Vec | Furyton</title>
+<title>notes about statistical learning | Furyton</title>
 
 
-    <meta name="keywords" content="Machine Learning, NLP">
+    <meta name="keywords" content="note, Study, Basic, Machine Learning">
 
 
 
 
     <!-- OpenGraph -->
  
-    <meta name="description" content="beginning 其实用向量来表示一个单词是很常见的, 毕竟方便一个算法或模型去表示一个单词. 但表示的方法很重要, 最完美的Embedding就是能够包含单词的语义, 相似语义的单词的表示越接近, 反之表示的向量差距越大. 下面一步步的去完成我们的目标. distance 怎么来叙述两个单词的embedding是相近的呢? 容易想到对于两个向量, 我们有一个适用于 \(n\) 维空间上的">
+    <meta name="description" content="最近看了一点关于统计学习的知识，主要是关于knn和线性回归两种模型。两个模型算是入门级的模型了，理应是相当简单易懂的，但书中花了不小的篇幅深入地(for me)探讨了两个模型的异同，着实有趣。但有些琐碎，不得不抓紧记录下来，不然很快就忘记了[](￣▽￣)* 另外我发现我对概率统计的知识都变得很陌生了，emmm。正在恶补。 参考书是 The Elements of Statistical Lea">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Word2Vec">
-<meta property="og:url" content="http://furyton.github.io/2020/11/11/Word2Vec/index.html">
+<meta property="og:title" content="notes about statistical learning">
+<meta property="og:url" content="http://furyton.github.io/2021/08/05/notes-about-statistical-learning/index.html">
 <meta property="og:site_name" content="Furyton">
-<meta property="og:description" content="beginning 其实用向量来表示一个单词是很常见的, 毕竟方便一个算法或模型去表示一个单词. 但表示的方法很重要, 最完美的Embedding就是能够包含单词的语义, 相似语义的单词的表示越接近, 反之表示的向量差距越大. 下面一步步的去完成我们的目标. distance 怎么来叙述两个单词的embedding是相近的呢? 容易想到对于两个向量, 我们有一个适用于 \(n\) 维空间上的">
+<meta property="og:description" content="最近看了一点关于统计学习的知识，主要是关于knn和线性回归两种模型。两个模型算是入门级的模型了，理应是相当简单易懂的，但书中花了不小的篇幅深入地(for me)探讨了两个模型的异同，着实有趣。但有些琐碎，不得不抓紧记录下来，不然很快就忘记了[](￣▽￣)* 另外我发现我对概率统计的知识都变得很陌生了，emmm。正在恶补。 参考书是 The Elements of Statistical Lea">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-11-10T16:03:16.000Z">
-<meta property="article:modified_time" content="2020-11-10T17:57:16.656Z">
+<meta property="article:published_time" content="2021-08-05T14:52:59.000Z">
+<meta property="article:modified_time" content="2021-08-05T17:07:06.349Z">
 <meta property="article:author" content="Wu Shiguang">
+<meta property="article:tag" content="note">
+<meta property="article:tag" content="Study">
+<meta property="article:tag" content="Basic">
 <meta property="article:tag" content="Machine Learning">
-<meta property="article:tag" content="NLP">
 <meta name="twitter:card" content="summary_large_image">
 
 
@@ -168,16 +170,16 @@
 
 <div class="post-title">
     <h1 class="post-title__text">
-        Word2Vec
+        notes about statistical learning
     </h1>
     <div class="post-title__meta">
-        <a href="/archives/2020/11/" class="post-meta__date button">2020-11-11</a>
+        <a href="/archives/2021/08/" class="post-meta__date button">2021-08-05</a>
         
     <span class="separate-dot"></span><a href="/categories/Lab/" class="button">Lab</a>
 
     <span class="separate-dot"></span><a href="/categories/Machine-Learning/" class="button">Machine Learning</a>
 
-    <span class="separate-dot"></span><a href="/categories/Lab/Basic/" class="button">Basic</a>
+    <span class="separate-dot"></span><a href="/categories/Basic/" class="button">Basic</a>
 
  
         
@@ -196,102 +198,43 @@
 <article class="post content-card">
     <div class="post__header"></div>
     <div class="post__content">
-        <h3 id="beginning">beginning</h3>
-<p>其实用向量来表示一个单词是很常见的, 毕竟方便一个算法或模型去表示一个单词. 但表示的方法很重要, 最完美的Embedding就是能够包含单词的语义, 相似语义的单词的表示越接近, 反之表示的向量差距越大. 下面一步步的去完成我们的目标.</p>
-<h4 id="distance">distance</h4>
-<p>怎么来叙述两个单词的embedding是相近的呢? 容易想到对于两个向量, 我们有一个适用于 <span class="math inline">\(n\)</span> 维空间上的一个夹角公式. for <span class="math inline">\(\vec{a}\)</span>, <span class="math inline">\(\vec{b}\)</span> as two embedding vectors of different words. the cosine similarity is <span class="math display">\[
-Cosine Similarity(\vec{a}, \vec{b}) = \frac{\vec{a} \cdot \vec{b}}{|\vec{a}|\cdot|\vec{b}|}
-\]</span></p>
-<p>这个评判函数相对简单, 也非常有效. 对于不同的问题, 我们也可以选择不同的距离函数.</p>
-<h4 id="modeling">modeling</h4>
-<p>embedding都是为了更好的完成一个task, 那么下面先来看一个简单的任务, 在完成任务的同时, 来获得一个适合它的embedding.</p>
-<h5 id="predicting-next-word">predicting next word</h5>
-<p>根据语境预测下一个单词是什么. 这是一个在日常生活中非常常见的任务. 简单来做, 就是分为三步, - 输入一个单词, 先获得对应的embedding - 利用embedding去预测下一个单词的embedding - 根据embedding映射到对应的单词, 然后输出</p>
-<ul>
-<li>数据集从哪来呢
-<ul>
-<li>一般是Wikipedia的文章等等</li>
-<li>构造许多定长的input - output对, 做法是window sliding with a fixed length, <strong>前面的都是input, 最后一个单词是output</strong></li>
-</ul></li>
-</ul>
-<h5 id="problem">problem</h5>
-<p>这么做有两个问题.</p>
-<ul>
-<li><p>预测一个单词怎么能只看前几个单词呢</p></li>
-<li><p>最后有个 <span class="math inline">\(n \times d\)</span> , (其中 <span class="math inline">\(n\)</span> 表示Vacab的大小, <span class="math inline">\(d\)</span> 表示embedding的大小) , 这算起来太费时了</p></li>
-</ul>
-<h5 id="problem-solving">problem solving</h5>
-<ul>
-<li><p>取样时不仅取前面的, 把后面的也取了. 这叫skip gram.</p>
-<ul>
-<li>这就成了Clozing了</li>
-<li>换个方法, 把他改成预测谁是neighbor, 输出可能是neighbor的概率</li>
-</ul></li>
-<li><p>computational problem咋整. 再调整我们的任务</p>
-<ul>
-<li><p>我们改成更小规模的模型, 给他一个input, 和一堆output, 然后输出这些output分别是不是他的neighbor</p></li>
-<li><p>那有可能我们训出了一个人工智障, 他告诉我们这些全都是neighbor, 我们好像也没法反驳.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># are they neighbors? </span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">model</span>(<span class="hljs-params"><span class="hljs-built_in">input</span>, output</span>):</span><br>	<span class="hljs-keyword">return</span> <span class="hljs-number">1.0</span><br></code></pre></td></tr></table></figure></li>
-<li><p>给他来个negative sample, 告诉model他们<strong>不是</strong>neighbor, 这样model就成了个logistics regression模型, 规模小了很多</p></li>
-<li><p>但咱采样的时候怎么知道他们到底有没有可能是neighbor, 我们手上的数据集肯定是不完备的呀</p></li>
-<li><p>随机设为negative......</p></li>
-</ul></li>
-</ul>
-<p>问题基本解决了, 下面看具体流程</p>
-<h5 id="word2vec">Word2Vec</h5>
-<ul>
-<li><p>我们训两个embeddings, 叫做Embedding和Context, 分别为input和一组outputs做project. 获得两组embedding: <span class="math inline">\(\vec{input}\)</span> 和 <span class="math inline">\(\vec{output}\)</span>. 这个outputs肯定就是一些真正的neighbor(通过skip gram window sliding选出来的)加上一些随机的negative sample.</p></li>
-<li><p>input <span class="math inline">\(\to\)</span> Embedding <span class="math inline">\(\to\)</span> <span class="math inline">\(\vec{input}\)</span></p>
-<p>outputs <span class="math inline">\(\to\)</span> Context <span class="math inline">\(\to\)</span> a set of <span class="math inline">\(\vec{output}\)</span>s</p></li>
-<li><p>然后点乘, 来个softmax, 获得这么个概率, 根据误差不断训</p></li>
-<li><p>最后, 训得差不多了, 扔掉context, 这个Embedding就是炼出来的丹</p></li>
-</ul>
-<h4 id="last">last</h4>
-<ul>
-<li>语义相近的那些单词, 被认为是所在的Context是相似的. 越相似的词点乘上Context, 得到的结果肯定都很接近正确结果.</li>
-<li>这个window sliding 的length一般设成5, 越小的话得到的embedding划的越细, 就是说相近的embedding的单词所在的context几乎一样, 但要注意, 反义词很多时候也是这样, 把length设大点就能区分更多语境</li>
-</ul>
-<h3 id="end">End</h3>
-<h5 id="reference">reference</h5>
-<ul>
-<li><a target="_blank" rel="noopener" href="http://jalammar.github.io/illustrated-word2vec/">a blog</a></li>
-<li>还没看过原paper和代码, 估计等以后了</li>
-</ul>
+        <p>最近看了一点关于统计学习的知识，主要是关于knn和线性回归两种模型。两个模型算是入门级的模型了，理应是相当简单易懂的，但书中花了不小的篇幅深入地(for me)探讨了两个模型的异同，着实有趣。但有些琐碎，不得不抓紧记录下来，不然很快就忘记了[]<sub>(￣▽￣)</sub>*</p>
+<p>另外我发现我对概率统计的知识都变得很陌生了，emmm。正在恶补。</p>
+<p>参考书是 The Elements of Statistical Learning</p>
+<h1 id="step-1">step 1</h1>
+<p>首先是对两个模型一个简单的介绍。</p>
+<h2 id="linear-models">Linear Models</h2>
+<p>对于一个 p 维向量的输入，<span class="math inline">\(x^T=\left(x_1,\dots,x_p\right)\)</span>，我们<strong>假设</strong>对应的输出与它是完全的线性关系，或者说是仿射的，即 <span class="math inline">\(\hat{y}=\beta_0+x^T\beta\)</span>，<span class="math inline">\(\beta_0\)</span> 是我们熟知的 bias 。一般会用更紧致的表达 <span class="math inline">\(\hat{y}=x^T\beta\)</span>，也就是将前面的<span class="math inline">\(\beta_0\)</span> 包含进去。</p>
+<p>非常简单的模型，几何意义也非常丰富。</p>
+<p>去拟合它的方法很多，最常用也是最重要的一个方法就是最小二乘法(least squares), 也就是去最小化 RSS (residual sum of squares)。</p>
+<p>幸运的是，这个问题有一个唯一的解析解(如果 <span class="math inline">\(X^TX\)</span> 是非奇异的) <span class="math inline">\(\hat{\beta}=(X^TX)^{-1}X^Ty\)</span> ，这里 <span class="math inline">\(X\)</span> 是 <span class="math inline">\(N \times p\)</span> 的矩阵，注意行、列含义。</p>
+<p>That's it!</p>
+<h2 id="nearest-neighbor-methods">Nearest-Neighbor Methods</h2>
+<p>顾名思义，模型更加简单直接。不需要训练拟合，可以得到非常 "非线性" 的函数。</p>
+<p>和它非常有关的，k=1 时，Voronoi 图。</p>
+<h1 id="step-2">step 2</h1>
+<p>未完 🐟</p>
 
     </div>
      
-    <div class="post-footer__meta"><p>updated at 2020-11-11</p></div> 
-    <div class="post-meta__cats"><a href="/categories/Lab/" class="post-cats__link button">Lab</a><a href="/categories/Machine-Learning/" class="post-cats__link button">Machine Learning</a><a href="/categories/Lab/Basic/" class="post-cats__link button">Basic</a><a href="/tags/Machine-Learning/" class="post-tags__link button"># Machine Learning</a><a href="/tags/NLP/" class="post-tags__link button"># NLP</a></div> 
+    <div class="post-footer__meta"><p>updated at 2021-08-06</p></div> 
+    <div class="post-meta__cats"><a href="/categories/Lab/" class="post-cats__link button">Lab</a><a href="/categories/Machine-Learning/" class="post-cats__link button">Machine Learning</a><a href="/categories/Basic/" class="post-cats__link button">Basic</a><a href="/tags/note/" class="post-tags__link button"># note</a><a href="/tags/Study/" class="post-tags__link button"># Study</a><a href="/tags/Basic/" class="post-tags__link button"># Basic</a><a href="/tags/Machine-Learning/" class="post-tags__link button"># Machine Learning</a></div> 
 </article>
 
 
     <div class="nav">
         <div class="nav__prev">
             
-                <a href="/2020/12/02/FFT/" class="nav__link">
-                    <div>
-                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M589.088 790.624L310.464 512l278.624-278.624 45.248 45.248L400.96 512l233.376 233.376z" fill="#808080"></path></svg>
-                    </div>
-                    <div>
-                        <div class="nav__label">
-                            Previous Post
-                        </div>
-                        <div class="nav__title">
-                            FFT
-                        </div>
-                    </div>
-                </a>
-            
         </div>
         <div class="nav__next">
             
-                <a href="/2020/11/09/%E5%A4%9A%E8%BE%B9%E5%BD%A2%E7%9A%84%E6%89%AB%E6%8F%8F%E8%BD%AC%E6%8D%A2%E4%B8%8E%E5%8C%BA%E5%9F%9F%E5%A1%AB%E5%85%85%E7%AE%97%E6%B3%95/" class="nav__link">
+                <a href="/2021/07/18/%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0-PTM/" class="nav__link">
                     <div>
                         <div class="nav__label">
                             Next Post
                         </div>
                         <div class="nav__title">
-                            多边形的扫描转换与区域填充算法
+                            预训练模型学习(PTM)
                         </div>
                     </div>
                     <div>

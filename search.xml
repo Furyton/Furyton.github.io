@@ -4,6 +4,41 @@
   
     
     <entry>
+      <title>notes about statistical learning</title>
+      <link href="2021/08/05/notes-about-statistical-learning/"/>
+      <url>2021/08/05/notes-about-statistical-learning/</url>
+      
+        <content type="html"><![CDATA[<p>最近看了一点关于统计学习的知识，主要是关于knn和线性回归两种模型。两个模型算是入门级的模型了，理应是相当简单易懂的，但书中花了不小的篇幅深入地(for me)探讨了两个模型的异同，着实有趣。但有些琐碎，不得不抓紧记录下来，不然很快就忘记了[]<sub>(￣▽￣)</sub>*</p><p>另外我发现我对概率统计的知识都变得很陌生了，emmm。正在恶补。</p><p>参考书是 The Elements of Statistical Learning</p><h1 id="step-1">step 1</h1><p>首先是对两个模型一个简单的介绍。</p><h2 id="linear-models">Linear Models</h2><p>对于一个 p 维向量的输入，<span class="math inline">\(x^T=\left(x_1,\dots,x_p\right)\)</span>，我们<strong>假设</strong>对应的输出与它是完全的线性关系，或者说是仿射的，即 <span class="math inline">\(\hat{y}=\beta_0+x^T\beta\)</span>，<span class="math inline">\(\beta_0\)</span> 是我们熟知的 bias 。一般会用更紧致的表达 <span class="math inline">\(\hat{y}=x^T\beta\)</span>，也就是将前面的<span class="math inline">\(\beta_0\)</span> 包含进去。</p><p>非常简单的模型，几何意义也非常丰富。</p><p>去拟合它的方法很多，最常用也是最重要的一个方法就是最小二乘法(least squares), 也就是去最小化 RSS (residual sum of squares)。</p><p>幸运的是，这个问题有一个唯一的解析解(如果 <span class="math inline">\(X^TX\)</span> 是非奇异的) <span class="math inline">\(\hat{\beta}=(X^TX)^{-1}X^Ty\)</span> ，这里 <span class="math inline">\(X\)</span> 是 <span class="math inline">\(N \times p\)</span> 的矩阵，注意行、列含义。</p><p>That's it!</p><h2 id="nearest-neighbor-methods">Nearest-Neighbor Methods</h2><p>顾名思义，模型更加简单直接。不需要训练拟合，可以得到非常 "非线性" 的函数。</p><p>和它非常有关的，k=1 时，Voronoi 图。</p><h1 id="step-2">step 2</h1><p>未完 🐟</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Lab </category>
+          
+          <category> Machine Learning </category>
+          
+          <category> Basic </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> note </tag>
+            
+            <tag> Study </tag>
+            
+            <tag> Basic </tag>
+            
+            <tag> Machine Learning </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>预训练模型学习(PTM)</title>
       <link href="2021/07/18/%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0-PTM/"/>
       <url>2021/07/18/%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0-PTM/</url>
@@ -15,9 +50,9 @@
           
           <category> Lab </category>
           
-          <category> Basic </category>
-          
           <category> Machine Learning </category>
+          
+          <category> Basic </category>
           
       </categories>
       
@@ -243,9 +278,9 @@
       
         <tags>
             
-            <tag> Basic </tag>
-            
             <tag> Study </tag>
+            
+            <tag> Basic </tag>
             
         </tags>
       
@@ -274,9 +309,9 @@
       
         <tags>
             
-            <tag> Basic </tag>
-            
             <tag> Study </tag>
+            
+            <tag> Basic </tag>
             
             <tag> convex function </tag>
             
@@ -317,9 +352,9 @@
           
           <category> Lab </category>
           
-          <category> Basic </category>
-          
           <category> Machine Learning </category>
+          
+          <category> Basic </category>
           
       </categories>
       
@@ -375,9 +410,9 @@
           
           <category> Lab </category>
           
-          <category> Basic </category>
-          
           <category> Machine Learning </category>
+          
+          <category> Basic </category>
           
       </categories>
       
