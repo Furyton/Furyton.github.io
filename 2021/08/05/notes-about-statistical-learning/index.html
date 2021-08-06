@@ -45,12 +45,12 @@
 
     <!-- OpenGraph -->
  
-    <meta name="description" content="最近看了一点关于统计学习的知识，主要是关于knn和线性回归两种模型。两个模型算是入门级的模型了，理应是相当简单易懂的，但书中花了不小的篇幅深入地(for me)探讨了两个模型的异同，着实有趣。但有些琐碎，不得不抓紧记录下来，不然很快就忘记了[](￣▽￣)* 另外我发现我对概率统计的知识都变得很陌生了，emmm。正在恶补。 参考书是 The Elements of Statistical Lea">
+    <meta name="description" content="最近看了一点关于统计学习的知识，主要是关于knn和线性回归两种模型。两个模型算是入门级的模型了，理应是相当简单易懂的，但书中花了不小的篇幅深入地(for me)探讨了两个模型的异同，着实有趣。但有些琐碎，不得不抓紧记录下来，不然很快就忘记了[]~(￣▽￣)~* 另外我发现我对概率统计的知识都变得很陌生了，emmm。正在恶补。 参考书是 The Elements of Statistical Lea">
 <meta property="og:type" content="article">
 <meta property="og:title" content="notes about statistical learning">
 <meta property="og:url" content="http://furyton.github.io/2021/08/05/notes-about-statistical-learning/index.html">
 <meta property="og:site_name" content="Furyton">
-<meta property="og:description" content="最近看了一点关于统计学习的知识，主要是关于knn和线性回归两种模型。两个模型算是入门级的模型了，理应是相当简单易懂的，但书中花了不小的篇幅深入地(for me)探讨了两个模型的异同，着实有趣。但有些琐碎，不得不抓紧记录下来，不然很快就忘记了[](￣▽￣)* 另外我发现我对概率统计的知识都变得很陌生了，emmm。正在恶补。 参考书是 The Elements of Statistical Lea">
+<meta property="og:description" content="最近看了一点关于统计学习的知识，主要是关于knn和线性回归两种模型。两个模型算是入门级的模型了，理应是相当简单易懂的，但书中花了不小的篇幅深入地(for me)探讨了两个模型的异同，着实有趣。但有些琐碎，不得不抓紧记录下来，不然很快就忘记了[]~(￣▽￣)~* 另外我发现我对概率统计的知识都变得很陌生了，emmm。正在恶补。 参考书是 The Elements of Statistical Lea">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-08-05T14:52:59.000Z">
 <meta property="article:modified_time" content="2021-08-05T17:07:06.349Z">
@@ -198,22 +198,18 @@
 <article class="post content-card">
     <div class="post__header"></div>
     <div class="post__content">
-        <p>最近看了一点关于统计学习的知识，主要是关于knn和线性回归两种模型。两个模型算是入门级的模型了，理应是相当简单易懂的，但书中花了不小的篇幅深入地(for me)探讨了两个模型的异同，着实有趣。但有些琐碎，不得不抓紧记录下来，不然很快就忘记了[]<sub>(￣▽￣)</sub>*</p>
+        <p>最近看了一点关于统计学习的知识，主要是关于knn和线性回归两种模型。两个模型算是入门级的模型了，理应是相当简单易懂的，但书中花了不小的篇幅深入地(for me)探讨了两个模型的异同，着实有趣。但有些琐碎，不得不抓紧记录下来，不然很快就忘记了[]~(￣▽￣)~*</p>
 <p>另外我发现我对概率统计的知识都变得很陌生了，emmm。正在恶补。</p>
 <p>参考书是 The Elements of Statistical Learning</p>
-<h1 id="step-1">step 1</h1>
-<p>首先是对两个模型一个简单的介绍。</p>
-<h2 id="linear-models">Linear Models</h2>
-<p>对于一个 p 维向量的输入，<span class="math inline">\(x^T=\left(x_1,\dots,x_p\right)\)</span>，我们<strong>假设</strong>对应的输出与它是完全的线性关系，或者说是仿射的，即 <span class="math inline">\(\hat{y}=\beta_0+x^T\beta\)</span>，<span class="math inline">\(\beta_0\)</span> 是我们熟知的 bias 。一般会用更紧致的表达 <span class="math inline">\(\hat{y}=x^T\beta\)</span>，也就是将前面的<span class="math inline">\(\beta_0\)</span> 包含进去。</p>
+<h1 id="step-1"><a href="#step-1" class="headerlink" title="step 1"></a>step 1</h1><p>首先是对两个模型一个简单的介绍。</p>
+<h2 id="Linear-Models"><a href="#Linear-Models" class="headerlink" title="Linear Models"></a>Linear Models</h2><p>对于一个 p 维向量的输入，$x^T=\left(x_1,\dots,x_p\right)$，我们<strong>假设</strong>对应的输出与它是完全的线性关系，或者说是仿射的，即 $\hat{y}=\beta_0+x^T\beta$，$\beta_0$ 是我们熟知的 bias 。一般会用更紧致的表达 $\hat{y}=x^T\beta$，也就是将前面的$\beta_0$ 包含进去。</p>
 <p>非常简单的模型，几何意义也非常丰富。</p>
 <p>去拟合它的方法很多，最常用也是最重要的一个方法就是最小二乘法(least squares), 也就是去最小化 RSS (residual sum of squares)。</p>
-<p>幸运的是，这个问题有一个唯一的解析解(如果 <span class="math inline">\(X^TX\)</span> 是非奇异的) <span class="math inline">\(\hat{\beta}=(X^TX)^{-1}X^Ty\)</span> ，这里 <span class="math inline">\(X\)</span> 是 <span class="math inline">\(N \times p\)</span> 的矩阵，注意行、列含义。</p>
-<p>That's it!</p>
-<h2 id="nearest-neighbor-methods">Nearest-Neighbor Methods</h2>
-<p>顾名思义，模型更加简单直接。不需要训练拟合，可以得到非常 "非线性" 的函数。</p>
+<p>幸运的是，这个问题有一个唯一的解析解(如果 $X^TX$ 是非奇异的) $\hat{\beta}=(X^TX)^{-1}X^Ty$ ，这里 $X$ 是 $N \times p$ 的矩阵，注意行、列含义。</p>
+<p>That’s it!</p>
+<h2 id="Nearest-Neighbor-Methods"><a href="#Nearest-Neighbor-Methods" class="headerlink" title="Nearest-Neighbor Methods"></a>Nearest-Neighbor Methods</h2><p>顾名思义，模型更加简单直接。不需要训练拟合，可以得到非常 “非线性” 的函数。</p>
 <p>和它非常有关的，k=1 时，Voronoi 图。</p>
-<h1 id="step-2">step 2</h1>
-<p>未完 🐟</p>
+<h1 id="step-2"><a href="#step-2" class="headerlink" title="step 2"></a>step 2</h1><p>未完 🐟</p>
 
     </div>
      

@@ -45,12 +45,12 @@
 
     <!-- OpenGraph -->
  
-    <meta name="description" content="参考书 Boyd Convex Optimization 基本的概念和性质 什么是凸函数 \(f:\mathbf {R}^n \rightarrow \mathbf {R}, \quad \mathbf {dom} f\) 是个凸集，\(0 \leq \theta \leq 1\) \[ f(\theta x + (1-\theta)y)\leq \theta f(x) + (1-\the">
+    <meta name="description" content="参考书 Boyd Convex Optimization  基本的概念和性质什么是凸函数$f:\mathbf {R}^n \rightarrow \mathbf {R}, \quad \mathbf {dom} f$ 是个凸集，$0 \leq \theta \leq 1$  f(\theta x + (1-\theta)y)\leq \theta f(x) + (1-\theta)f(y)严格凸就">
 <meta property="og:type" content="article">
 <meta property="og:title" content="凸函数">
 <meta property="og:url" content="http://furyton.github.io/2021/01/27/%E5%87%B8%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="Furyton">
-<meta property="og:description" content="参考书 Boyd Convex Optimization 基本的概念和性质 什么是凸函数 \(f:\mathbf {R}^n \rightarrow \mathbf {R}, \quad \mathbf {dom} f\) 是个凸集，\(0 \leq \theta \leq 1\) \[ f(\theta x + (1-\theta)y)\leq \theta f(x) + (1-\the">
+<meta property="og:description" content="参考书 Boyd Convex Optimization  基本的概念和性质什么是凸函数$f:\mathbf {R}^n \rightarrow \mathbf {R}, \quad \mathbf {dom} f$ 是个凸集，$0 \leq \theta \leq 1$  f(\theta x + (1-\theta)y)\leq \theta f(x) + (1-\theta)f(y)严格凸就">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-27T13:25:10.000Z">
 <meta property="article:modified_time" content="2021-06-19T17:55:03.038Z">
@@ -197,29 +197,22 @@
 <article class="post content-card">
     <div class="post__header"></div>
     <div class="post__content">
-        <p>参考书 Boyd <em>Convex Optimization</em></p>
-<h2 id="基本的概念和性质">基本的概念和性质</h2>
-<h3 id="什么是凸函数">什么是凸函数</h3>
-<p><span class="math inline">\(f:\mathbf {R}^n \rightarrow \mathbf {R}, \quad \mathbf {dom} f\)</span> 是个凸集，<span class="math inline">\(0 \leq \theta \leq 1\)</span> <span class="math display">\[
-f(\theta x + (1-\theta)y)\leq \theta f(x) + (1-\theta)f(y)
-\]</span> 严格凸就是不会取到等号</p>
+        <p>参考书 Boyd <em>Convex Optimization</em> </p>
+<h2 id="基本的概念和性质"><a href="#基本的概念和性质" class="headerlink" title="基本的概念和性质"></a>基本的概念和性质</h2><h3 id="什么是凸函数"><a href="#什么是凸函数" class="headerlink" title="什么是凸函数"></a>什么是凸函数</h3><p>$f:\mathbf {R}^n \rightarrow \mathbf {R}, \quad \mathbf {dom} f$ 是个凸集，$0 \leq \theta \leq 1$</p>
+<script type="math/tex; mode=display">
+f(\theta x + (1-\theta)y)\leq \theta f(x) + (1-\theta)f(y)</script><p>严格凸就是不会取到等号</p>
 <p>凹函数就是凸函数加个负号</p>
 <p>仿射函数是比较特殊的，它既是凸函数又是凹函数，反过来也成立。相当于凹函数和凸函数的一个共有的临界的函数。</p>
-<h4 id="扩展值延伸">扩展值延伸</h4>
-<p>为了让凸函数在整个实数集上有定义，在定义域外令值为无穷，具体的为正无穷<span class="math inline">\(+\infty\)</span>(相反，若为凹函数，则定义为负无穷<span class="math inline">\(-\infty\)</span>) <span class="math display">\[
+<h4 id="扩展值延伸"><a href="#扩展值延伸" class="headerlink" title="扩展值延伸"></a>扩展值延伸</h4><p>为了让凸函数在整个实数集上有定义，在定义域外令值为无穷，具体的为正无穷$+\infty$(相反，若为凹函数，则定义为负无穷$-\infty$)</p>
+<script type="math/tex; mode=display">
 \tilde{f}(x)=\left\{\begin{matrix}
-f(x) &amp;x\in\mathbf{dom}f\\ 
-\infty &amp; x\notin \mathbf{dom}f
-\end{matrix}\right.
-\]</span></p>
-<h3 id="判定条件">判定条件</h3>
-<h4 id="一阶条件">一阶条件</h4>
-<p>假设 <span class="math inline">\(f\)</span> 可微，对 <span class="math inline">\(\forall x,y \in \mathbf{dom}f\)</span> <span class="math display">\[
-f(y) \geqslant  f(x) + \bigtriangledown f(x)^T(y-x)
-\]</span> 联系了局部信息和全局信息</p>
+f(x) &x\in\mathbf{dom}f\\ 
+\infty & x\notin \mathbf{dom}f
+\end{matrix}\right.</script><h3 id="判定条件"><a href="#判定条件" class="headerlink" title="判定条件"></a>判定条件</h3><h4 id="一阶条件"><a href="#一阶条件" class="headerlink" title="一阶条件"></a>一阶条件</h4><p>假设 $f$ 可微，对 $\forall x,y \in \mathbf{dom}f$</p>
+<script type="math/tex; mode=display">
+f(y) \geqslant  f(x) + \bigtriangledown f(x)^T(y-x)</script><p>联系了局部信息和全局信息</p>
 <p>严格凸及凹的情况略</p>
-<h4 id="二阶条件">二阶条件</h4>
-<p>假设二阶可微，其Hessian矩阵是半正定的</p>
+<h4 id="二阶条件"><a href="#二阶条件" class="headerlink" title="二阶条件"></a>二阶条件</h4><p>假设二阶可微，其Hessian矩阵是半正定的</p>
 <p>未完待续。。。。</p>
 
     </div>

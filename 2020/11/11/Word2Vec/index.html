@@ -45,12 +45,12 @@
 
     <!-- OpenGraph -->
  
-    <meta name="description" content="beginning 其实用向量来表示一个单词是很常见的, 毕竟方便一个算法或模型去表示一个单词. 但表示的方法很重要, 最完美的Embedding就是能够包含单词的语义, 相似语义的单词的表示越接近, 反之表示的向量差距越大. 下面一步步的去完成我们的目标. distance 怎么来叙述两个单词的embedding是相近的呢? 容易想到对于两个向量, 我们有一个适用于 \(n\) 维空间上的">
+    <meta name="description" content="beginning其实用向量来表示一个单词是很常见的, 毕竟方便一个算法或模型去表示一个单词. 但表示的方法很重要, 最完美的Embedding就是能够包含单词的语义, 相似语义的单词的表示越接近, 反之表示的向量差距越大. 下面一步步的去完成我们的目标. distance怎么来叙述两个单词的embedding是相近的呢? 容易想到对于两个向量, 我们有一个适用于 $n$ 维空间上的一个夹角公式.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Word2Vec">
 <meta property="og:url" content="http://furyton.github.io/2020/11/11/Word2Vec/index.html">
 <meta property="og:site_name" content="Furyton">
-<meta property="og:description" content="beginning 其实用向量来表示一个单词是很常见的, 毕竟方便一个算法或模型去表示一个单词. 但表示的方法很重要, 最完美的Embedding就是能够包含单词的语义, 相似语义的单词的表示越接近, 反之表示的向量差距越大. 下面一步步的去完成我们的目标. distance 怎么来叙述两个单词的embedding是相近的呢? 容易想到对于两个向量, 我们有一个适用于 \(n\) 维空间上的">
+<meta property="og:description" content="beginning其实用向量来表示一个单词是很常见的, 毕竟方便一个算法或模型去表示一个单词. 但表示的方法很重要, 最完美的Embedding就是能够包含单词的语义, 相似语义的单词的表示越接近, 反之表示的向量差距越大. 下面一步步的去完成我们的目标. distance怎么来叙述两个单词的embedding是相近的呢? 容易想到对于两个向量, 我们有一个适用于 $n$ 维空间上的一个夹角公式.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-10T16:03:16.000Z">
 <meta property="article:modified_time" content="2020-11-10T17:57:16.656Z">
@@ -175,9 +175,9 @@
         
     <span class="separate-dot"></span><a href="/categories/Lab/" class="button">Lab</a>
 
-    <span class="separate-dot"></span><a href="/categories/Machine-Learning/" class="button">Machine Learning</a>
-
     <span class="separate-dot"></span><a href="/categories/Lab/Basic/" class="button">Basic</a>
+
+    <span class="separate-dot"></span><a href="/categories/Machine-Learning/" class="button">Machine Learning</a>
 
  
         
@@ -196,64 +196,71 @@
 <article class="post content-card">
     <div class="post__header"></div>
     <div class="post__content">
-        <h3 id="beginning">beginning</h3>
-<p>其实用向量来表示一个单词是很常见的, 毕竟方便一个算法或模型去表示一个单词. 但表示的方法很重要, 最完美的Embedding就是能够包含单词的语义, 相似语义的单词的表示越接近, 反之表示的向量差距越大. 下面一步步的去完成我们的目标.</p>
-<h4 id="distance">distance</h4>
-<p>怎么来叙述两个单词的embedding是相近的呢? 容易想到对于两个向量, 我们有一个适用于 <span class="math inline">\(n\)</span> 维空间上的一个夹角公式. for <span class="math inline">\(\vec{a}\)</span>, <span class="math inline">\(\vec{b}\)</span> as two embedding vectors of different words. the cosine similarity is <span class="math display">\[
-Cosine Similarity(\vec{a}, \vec{b}) = \frac{\vec{a} \cdot \vec{b}}{|\vec{a}|\cdot|\vec{b}|}
-\]</span></p>
-<p>这个评判函数相对简单, 也非常有效. 对于不同的问题, 我们也可以选择不同的距离函数.</p>
-<h4 id="modeling">modeling</h4>
-<p>embedding都是为了更好的完成一个task, 那么下面先来看一个简单的任务, 在完成任务的同时, 来获得一个适合它的embedding.</p>
-<h5 id="predicting-next-word">predicting next word</h5>
-<p>根据语境预测下一个单词是什么. 这是一个在日常生活中非常常见的任务. 简单来做, 就是分为三步, - 输入一个单词, 先获得对应的embedding - 利用embedding去预测下一个单词的embedding - 根据embedding映射到对应的单词, 然后输出</p>
+        <h3 id="beginning"><a href="#beginning" class="headerlink" title="beginning"></a>beginning</h3><p>其实用向量来表示一个单词是很常见的, 毕竟方便一个算法或模型去表示一个单词. 但表示的方法很重要, 最完美的Embedding就是能够包含单词的语义, 相似语义的单词的表示越接近, 反之表示的向量差距越大. 下面一步步的去完成我们的目标.</p>
+<h4 id="distance"><a href="#distance" class="headerlink" title="distance"></a>distance</h4><p>怎么来叙述两个单词的embedding是相近的呢? 容易想到对于两个向量, 我们有一个适用于 $n$ 维空间上的一个夹角公式.<br> for $\vec{a}$, $\vec{b}$ as two embedding vectors of different words. the cosine similarity is</p>
+<script type="math/tex; mode=display">
+Cosine Similarity(\vec{a}, \vec{b}) = \frac{\vec{a} \cdot \vec{b}}{|\vec{a}|\cdot|\vec{b}|}</script><p>这个评判函数相对简单, 也非常有效. 对于不同的问题, 我们也可以选择不同的距离函数.</p>
+<h4 id="modeling"><a href="#modeling" class="headerlink" title="modeling"></a>modeling</h4><p>embedding都是为了更好的完成一个task, 那么下面先来看一个简单的任务, 在完成任务的同时, 来获得一个适合它的embedding. </p>
+<h5 id="predicting-next-word"><a href="#predicting-next-word" class="headerlink" title="predicting next word"></a>predicting next word</h5><p>根据语境预测下一个单词是什么. 这是一个在日常生活中非常常见的任务.<br>简单来做, 就是分为三步, </p>
 <ul>
-<li>数据集从哪来呢
+<li>输入一个单词, 先获得对应的embedding</li>
+<li>利用embedding去预测下一个单词的embedding</li>
+<li>根据embedding映射到对应的单词, 然后输出</li>
+</ul>
 <ul>
+<li>数据集从哪来呢<ul>
 <li>一般是Wikipedia的文章等等</li>
 <li>构造许多定长的input - output对, 做法是window sliding with a fixed length, <strong>前面的都是input, 最后一个单词是output</strong></li>
-</ul></li>
 </ul>
-<h5 id="problem">problem</h5>
-<p>这么做有两个问题.</p>
-<ul>
-<li><p>预测一个单词怎么能只看前几个单词呢</p></li>
-<li><p>最后有个 <span class="math inline">\(n \times d\)</span> , (其中 <span class="math inline">\(n\)</span> 表示Vacab的大小, <span class="math inline">\(d\)</span> 表示embedding的大小) , 这算起来太费时了</p></li>
+</li>
 </ul>
-<h5 id="problem-solving">problem solving</h5>
+<h5 id="problem"><a href="#problem" class="headerlink" title="problem"></a>problem</h5><p>这么做有两个问题. </p>
 <ul>
+<li><p>预测一个单词怎么能只看前几个单词呢</p>
+</li>
+<li><p>最后有个 $n \times d$ , (其中 $n$ 表示Vacab的大小, $d$ 表示embedding的大小) , 这算起来太费时了</p>
+</li>
+</ul>
+<h5 id="problem-solving"><a href="#problem-solving" class="headerlink" title="problem solving"></a>problem solving</h5><ul>
 <li><p>取样时不仅取前面的, 把后面的也取了. 这叫skip gram.</p>
 <ul>
 <li>这就成了Clozing了</li>
 <li>换个方法, 把他改成预测谁是neighbor, 输出可能是neighbor的概率</li>
-</ul></li>
+</ul>
+</li>
 <li><p>computational problem咋整. 再调整我们的任务</p>
 <ul>
-<li><p>我们改成更小规模的模型, 给他一个input, 和一堆output, 然后输出这些output分别是不是他的neighbor</p></li>
+<li><p>我们改成更小规模的模型, 给他一个input, 和一堆output, 然后输出这些output分别是不是他的neighbor</p>
+</li>
 <li><p>那有可能我们训出了一个人工智障, 他告诉我们这些全都是neighbor, 我们好像也没法反驳.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># are they neighbors? </span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">model</span>(<span class="hljs-params"><span class="hljs-built_in">input</span>, output</span>):</span><br>	<span class="hljs-keyword">return</span> <span class="hljs-number">1.0</span><br></code></pre></td></tr></table></figure></li>
-<li><p>给他来个negative sample, 告诉model他们<strong>不是</strong>neighbor, 这样model就成了个logistics regression模型, 规模小了很多</p></li>
-<li><p>但咱采样的时候怎么知道他们到底有没有可能是neighbor, 我们手上的数据集肯定是不完备的呀</p></li>
-<li><p>随机设为negative......</p></li>
-</ul></li>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># are they neighbors? </span><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">model</span>(<span class="hljs-params"><span class="hljs-built_in">input</span>, output</span>):</span><br>	<span class="hljs-keyword">return</span> <span class="hljs-number">1.0</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>给他来个negative sample, 告诉model他们<strong>不是</strong>neighbor, 这样model就成了个logistics regression模型, 规模小了很多</p>
+</li>
+<li><p>但咱采样的时候怎么知道他们到底有没有可能是neighbor, 我们手上的数据集肯定是不完备的呀</p>
+</li>
+<li><p>随机设为negative……</p>
+</li>
+</ul>
+</li>
 </ul>
 <p>问题基本解决了, 下面看具体流程</p>
-<h5 id="word2vec">Word2Vec</h5>
-<ul>
-<li><p>我们训两个embeddings, 叫做Embedding和Context, 分别为input和一组outputs做project. 获得两组embedding: <span class="math inline">\(\vec{input}\)</span> 和 <span class="math inline">\(\vec{output}\)</span>. 这个outputs肯定就是一些真正的neighbor(通过skip gram window sliding选出来的)加上一些随机的negative sample.</p></li>
-<li><p>input <span class="math inline">\(\to\)</span> Embedding <span class="math inline">\(\to\)</span> <span class="math inline">\(\vec{input}\)</span></p>
-<p>outputs <span class="math inline">\(\to\)</span> Context <span class="math inline">\(\to\)</span> a set of <span class="math inline">\(\vec{output}\)</span>s</p></li>
-<li><p>然后点乘, 来个softmax, 获得这么个概率, 根据误差不断训</p></li>
-<li><p>最后, 训得差不多了, 扔掉context, 这个Embedding就是炼出来的丹</p></li>
+<h5 id="Word2Vec"><a href="#Word2Vec" class="headerlink" title="Word2Vec"></a>Word2Vec</h5><ul>
+<li><p>我们训两个embeddings, 叫做Embedding和Context, 分别为input和一组outputs做project. 获得两组embedding: $\vec{input}$ 和 $\vec{output}$. 这个outputs肯定就是一些真正的neighbor(通过skip gram window sliding选出来的)加上一些随机的negative sample.</p>
+</li>
+<li><p>input $\to$ Embedding $\to$ $\vec{input}$</p>
+<p>outputs $\to$ Context $\to$  a set of $\vec{output}$s</p>
+</li>
+<li><p>然后点乘, 来个softmax, 获得这么个概率, 根据误差不断训</p>
+</li>
+<li><p>最后, 训得差不多了, 扔掉context, 这个Embedding就是炼出来的丹</p>
+</li>
 </ul>
-<h4 id="last">last</h4>
-<ul>
+<h4 id="last"><a href="#last" class="headerlink" title="last"></a>last</h4><ul>
 <li>语义相近的那些单词, 被认为是所在的Context是相似的. 越相似的词点乘上Context, 得到的结果肯定都很接近正确结果.</li>
 <li>这个window sliding 的length一般设成5, 越小的话得到的embedding划的越细, 就是说相近的embedding的单词所在的context几乎一样, 但要注意, 反义词很多时候也是这样, 把length设大点就能区分更多语境</li>
 </ul>
-<h3 id="end">End</h3>
-<h5 id="reference">reference</h5>
-<ul>
+<h3 id="End"><a href="#End" class="headerlink" title="End"></a>End</h3><h5 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h5><ul>
 <li><a target="_blank" rel="noopener" href="http://jalammar.github.io/illustrated-word2vec/">a blog</a></li>
 <li>还没看过原paper和代码, 估计等以后了</li>
 </ul>
@@ -261,7 +268,7 @@ Cosine Similarity(\vec{a}, \vec{b}) = \frac{\vec{a} \cdot \vec{b}}{|\vec{a}|\cdo
     </div>
      
     <div class="post-footer__meta"><p>updated at 2020-11-11</p></div> 
-    <div class="post-meta__cats"><a href="/categories/Lab/" class="post-cats__link button">Lab</a><a href="/categories/Machine-Learning/" class="post-cats__link button">Machine Learning</a><a href="/categories/Lab/Basic/" class="post-cats__link button">Basic</a><a href="/tags/Machine-Learning/" class="post-tags__link button"># Machine Learning</a><a href="/tags/NLP/" class="post-tags__link button"># NLP</a></div> 
+    <div class="post-meta__cats"><a href="/categories/Lab/" class="post-cats__link button">Lab</a><a href="/categories/Lab/Basic/" class="post-cats__link button">Basic</a><a href="/categories/Machine-Learning/" class="post-cats__link button">Machine Learning</a><a href="/tags/Machine-Learning/" class="post-tags__link button"># Machine Learning</a><a href="/tags/NLP/" class="post-tags__link button"># NLP</a></div> 
 </article>
 
 

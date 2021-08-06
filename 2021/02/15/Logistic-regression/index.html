@@ -45,12 +45,12 @@
 
     <!-- OpenGraph -->
  
-    <meta name="description" content="Logistic Regression 简介：一种简单的统计分类方法，因为使用了Logistic函数得名。称作回归(Regression)的原因是，这个模型实质是在做函数的拟合问题。 Logistic Function \[ f(x)&#x3D;\frac{1}{1+e^{-x}} \] 介于\(0\) ~ \(1\)之间 二分类的Logistic模型 \[ P(Y&#x3D;1|x)&#x3D;\frac{">
+    <meta name="description" content="Logistic Regression简介：一种简单的统计分类方法，因为使用了Logistic函数得名。称作回归(Regression)的原因是，这个模型实质是在做函数的拟合问题。 Logistic Function f(x)&#x3D;\frac{1}{1+e^{-x}}介于$0$ ~ $1$之间 二分类的Logistic模型 P(Y&#x3D;1|x)&#x3D;\frac{exp(w\cdot x+b)}{1+exp(w">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Logistic Regression and Maximum Entropy Model">
 <meta property="og:url" content="http://furyton.github.io/2021/02/15/Logistic-regression/index.html">
 <meta property="og:site_name" content="Furyton">
-<meta property="og:description" content="Logistic Regression 简介：一种简单的统计分类方法，因为使用了Logistic函数得名。称作回归(Regression)的原因是，这个模型实质是在做函数的拟合问题。 Logistic Function \[ f(x)&#x3D;\frac{1}{1+e^{-x}} \] 介于\(0\) ~ \(1\)之间 二分类的Logistic模型 \[ P(Y&#x3D;1|x)&#x3D;\frac{">
+<meta property="og:description" content="Logistic Regression简介：一种简单的统计分类方法，因为使用了Logistic函数得名。称作回归(Regression)的原因是，这个模型实质是在做函数的拟合问题。 Logistic Function f(x)&#x3D;\frac{1}{1+e^{-x}}介于$0$ ~ $1$之间 二分类的Logistic模型 P(Y&#x3D;1|x)&#x3D;\frac{exp(w\cdot x+b)}{1+exp(w">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-15T07:56:55.000Z">
 <meta property="article:modified_time" content="2021-02-16T10:53:33.302Z">
@@ -194,96 +194,64 @@
 <article class="post content-card">
     <div class="post__header"></div>
     <div class="post__content">
-        <h1 id="logistic-regression">Logistic Regression</h1>
-<p>简介：一种简单的统计分类方法，因为使用了Logistic函数得名。称作回归(Regression)的原因是，这个模型实质是在做函数的拟合问题。</p>
-<h2 id="logistic-function">Logistic Function</h2>
-<p><span class="math display">\[
-f(x)=\frac{1}{1+e^{-x}}
-\]</span></p>
-<p>介于<span class="math inline">\(0\)</span> ~ <span class="math inline">\(1\)</span>之间</p>
-<h2 id="二分类的logistic模型">二分类的Logistic模型</h2>
-<p><span class="math display">\[
-P(Y=1|x)=\frac{exp(w\cdot x+b)}{1+exp(w\cdot x+b)}
-\]</span> <span class="math display">\[
-P(Y=0|x)=\frac{1}{1+exp(w\cdot x+b)}
-\]</span> <span class="math inline">\(w，x \in \mathbf{R}^n\)</span> , <span class="math inline">\(b \in \mathbf{R}\)</span></p>
-<p>将 <span class="math inline">\(b\)</span> 并入到 <span class="math inline">\(w\)</span> 中，扩充 <span class="math inline">\(w\)</span> 和 <span class="math inline">\(x\)</span> ，从而得到更简洁的表达 <span class="math display">\[
-P(Y=1|x)=\frac{exp(w\cdot x)}{1+exp(w\cdot x)}
-\]</span> <span class="math display">\[
-P(Y=0|x)=\frac{1}{1+exp(w\cdot x)}
-\]</span></p>
-<h3 id="对模型的理解">对模型的理解</h3>
-<h4 id="几率odd">几率(odd)</h4>
-<p>记事件发生的概率为 <span class="math inline">\(p\)</span> ，那么事件发生的几率为 <span class="math inline">\(\frac{p}{1-p}\)</span></p>
-<p>对数几率(log odd / logit 函数) <span class="math display">\[
-logit(p)=log\frac{p}{1-p}
-\]</span> 对于Logistic回归来说 <span class="math display">\[
-log\frac{P(Y=1|x)}{1-P(Y=1|x)}=w\cdot x
-\]</span> 可以看出，这是在用线性模型来拟合logit函数，故称为“回归模型”</p>
-<h4 id="logistic函数">Logistic函数</h4>
-<p>另一个角度看，Logistic函数将原本取值在实数集上的变量投影到了<span class="math inline">\((0,1)\)</span> ，也就是一个概率所属的范围。</p>
-<h3 id="模型的求解">模型的求解</h3>
-<p>极大似然估计，采用数值分析的方法(梯度下降法，拟牛顿法等)求解参数向量 <span class="math inline">\(w\)</span></p>
-<h3 id="多分类的logistic回归模型">多分类的Logistic回归模型</h3>
-<p><span class="math inline">\(Y\)</span> 的取值范围是{1, 2, 3, ... , K} <span class="math display">\[
-P(Y=k|x)=\frac{exp(w_k \cdot x)}{1+\sum_{k=1}^{K-1}exp(w_k\cdot x)},\quad k=1,2,\dots, K-1 
-\]</span> <span class="math display">\[
-P(Y=K|x)=\frac{1}{1+\sum_{k=1}^{K-1}exp(w_k\cdot x)}
-\]</span></p>
-<h1 id="最大熵模型">最大熵模型</h1>
-<p>简介：最大熵模型是根据最大熵原理得到的，简单说，在所有可能的概率模型中，熵最大的模型是最好的，因为它保留了最大的不确定性，所有不确定的部分都是接近"等可能的"，减小了对不确定因素的偏见。</p>
-<h2 id="模型的定义">模型的定义</h2>
-<p>利用最大熵原理，获得一个简单的分类模型。这里所求的模型是条件概率模型。根据给定的训练集，可以获得联合分布<span class="math inline">\(P(X,Y)\)</span>的经验分布，以及边缘分布<span class="math inline">\(P(X)\)</span>的经验分布，分别记为<span class="math inline">\(\tilde{P}(X,Y)\)</span> 和 <span class="math inline">\(\tilde{P}(X)\)</span> 。</p>
-<h3 id="约束">约束</h3>
-<p>约束就是分类问题中确定的条件，也就是输入与输出之间一些已知的事实。</p>
-<p>约束用特征函数表示。 <span class="math display">\[
+        <h1 id="Logistic-Regression"><a href="#Logistic-Regression" class="headerlink" title="Logistic Regression"></a>Logistic Regression</h1><p>简介：一种简单的统计分类方法，因为使用了Logistic函数得名。称作回归(Regression)的原因是，这个模型实质是在做函数的拟合问题。</p>
+<h2 id="Logistic-Function"><a href="#Logistic-Function" class="headerlink" title="Logistic Function"></a>Logistic Function</h2><script type="math/tex; mode=display">
+f(x)=\frac{1}{1+e^{-x}}</script><p>介于$0$ ~ $1$之间</p>
+<h2 id="二分类的Logistic模型"><a href="#二分类的Logistic模型" class="headerlink" title="二分类的Logistic模型"></a>二分类的Logistic模型</h2><script type="math/tex; mode=display">
+P(Y=1|x)=\frac{exp(w\cdot x+b)}{1+exp(w\cdot x+b)}</script><script type="math/tex; mode=display">
+P(Y=0|x)=\frac{1}{1+exp(w\cdot x+b)}</script><p>$w，x \in \mathbf{R}^n$ , $b \in \mathbf{R}$</p>
+<p>将 $b$ 并入到 $w$ 中，扩充 $w$ 和 $x$ ，从而得到更简洁的表达</p>
+<script type="math/tex; mode=display">
+P(Y=1|x)=\frac{exp(w\cdot x)}{1+exp(w\cdot x)}</script><script type="math/tex; mode=display">
+P(Y=0|x)=\frac{1}{1+exp(w\cdot x)}</script><h3 id="对模型的理解"><a href="#对模型的理解" class="headerlink" title="对模型的理解"></a>对模型的理解</h3><h4 id="几率-odd"><a href="#几率-odd" class="headerlink" title="几率(odd)"></a>几率(odd)</h4><p>记事件发生的概率为 $p$ ，那么事件发生的几率为 $\frac{p}{1-p}$ </p>
+<p>对数几率(log odd / logit 函数)</p>
+<script type="math/tex; mode=display">
+logit(p)=log\frac{p}{1-p}</script><p>对于Logistic回归来说</p>
+<script type="math/tex; mode=display">
+log\frac{P(Y=1|x)}{1-P(Y=1|x)}=w\cdot x</script><p>可以看出，这是在用线性模型来拟合logit函数，故称为“回归模型”</p>
+<h4 id="Logistic函数"><a href="#Logistic函数" class="headerlink" title="Logistic函数"></a>Logistic函数</h4><p>另一个角度看，Logistic函数将原本取值在实数集上的变量投影到了$(0,1)$ ，也就是一个概率所属的范围。</p>
+<h3 id="模型的求解"><a href="#模型的求解" class="headerlink" title="模型的求解"></a>模型的求解</h3><p>极大似然估计，采用数值分析的方法(梯度下降法，拟牛顿法等)求解参数向量 $w$</p>
+<h3 id="多分类的Logistic回归模型"><a href="#多分类的Logistic回归模型" class="headerlink" title="多分类的Logistic回归模型"></a>多分类的Logistic回归模型</h3><p>$Y$ 的取值范围是{1, 2, 3, … , K}</p>
+<script type="math/tex; mode=display">
+P(Y=k|x)=\frac{exp(w_k \cdot x)}{1+\sum_{k=1}^{K-1}exp(w_k\cdot x)},\quad k=1,2,\dots, K-1</script><script type="math/tex; mode=display">
+P(Y=K|x)=\frac{1}{1+\sum_{k=1}^{K-1}exp(w_k\cdot x)}</script><h1 id="最大熵模型"><a href="#最大熵模型" class="headerlink" title="最大熵模型"></a>最大熵模型</h1><p>简介：最大熵模型是根据最大熵原理得到的，简单说，在所有可能的概率模型中，熵最大的模型是最好的，因为它保留了最大的不确定性，所有不确定的部分都是接近”等可能的”，减小了对不确定因素的偏见。</p>
+<h2 id="模型的定义"><a href="#模型的定义" class="headerlink" title="模型的定义"></a>模型的定义</h2><p>利用最大熵原理，获得一个简单的分类模型。这里所求的模型是条件概率模型。根据给定的训练集，可以获得联合分布$P(X,Y)$的经验分布，以及边缘分布$P(X)$的经验分布，分别记为$\tilde{P}(X,Y)$ 和 $\tilde{P}(X)$ 。</p>
+<h3 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h3><p>约束就是分类问题中确定的条件，也就是输入与输出之间一些已知的事实。</p>
+<p>约束用特征函数表示。</p>
+<script type="math/tex; mode=display">
 f(x,y)=\left\{\begin{matrix}
-1 ,&amp; x和y满足某一事实\\ 
-0 ,&amp; 否则
-\end{matrix}\right.
-\]</span> 如果模型能够学习到数据中的信息，那么就可以<strong>假设</strong>特征函数关于经验分布和模型分布的期望是相等的。</p>
-<p>关于经验分布的期望 <span class="math display">\[
-E_{\tilde{P}}(f)=\sum_{x,y}\tilde{P}(x,y)f(x,y)
-\]</span> 关于模型的条件分布的期望 <span class="math display">\[
-E_P(f)=\sum_{x,y}\tilde{P}(x)P(y|x)f(x,y)
-\]</span> 两者应当相等 ，即 <span class="math display">\[
-E_{\tilde{P}}(f)=E_P(f)
-\]</span></p>
-<p>另外，特征函数也可不只一个。</p>
-<h3 id="熵">熵</h3>
-<p>条件熵 <span class="math display">\[
-H(P)=-\sum_{x,y}\tilde{P}(x)P(y\,|\,x)\,logP(y\,|\,x)
-\]</span></p>
-<h3 id="模型学习">模型学习</h3>
-<p>约束最优化问题 <span class="math display">\[
-\max_{P}\quad H(P)=-\sum_{x,y}\tilde{P}(x)P(y\,|\,x)\,logP(y\,|\,x)
-\]</span></p>
-<p><span class="math display">\[
-s.t.\quad E_{\tilde{P}}(f_i)=E_P(f_i),\ i=1,2,...,n
-\]</span></p>
-<p><span class="math display">\[
-\sum_yP(y\,|\,x)=1
-\]</span></p>
-<p>根据拉格朗日乘子法， <span class="math display">\[
-L(P,w)=-H(P)+w_0\left ( 1-\sum_yP(y\,|\,x)\right)+\sum_{i=1}^{n}w_i(E_{\tilde{P}}(f_i)-E_P(f_i))
-\]</span> 问题转化为 <span class="math display">\[
-\min_{P}\max_{w}L(P,w)
-\]</span> 对偶问题 <span class="math display">\[
-\max_{w}\min_{P}L(P,w)
-\]</span> 因为<span class="math inline">\(L(P,w)\)</span> 是 P 的凸函数，故原始问题和对偶问题是等价的。(但其实两者等价的条件我还没学。。。我不懂，我不会)</p>
-<p>通过对偶问题里面的极小化，可以获得一个含参的分布 <span class="math display">\[
-P_w(y\,|\,x)=\frac{1}{Z_w(x)}exp\left ( \sum_{i=1}^{n}w_if_i(x,y) \right )
-\]</span></p>
-<p><span class="math display">\[
-Z_w(x)=\sum_yexp\left ( \sum_{i=1}^{n}w_if_i(x,y) \right )
-\]</span></p>
-<p>其中<span class="math inline">\(Z_w(x)\)</span> 是正规化因子，<span class="math inline">\(w_i\)</span>是参数、权值。</p>
+1 ,& x和y满足某一事实\\ 
+0 ,& 否则
+\end{matrix}\right.</script><p>如果模型能够学习到数据中的信息，那么就可以<strong>假设</strong>特征函数关于经验分布和模型分布的期望是相等的。</p>
+<p>关于经验分布的期望</p>
+<script type="math/tex; mode=display">
+E_{\tilde{P}}(f)=\sum_{x,y}\tilde{P}(x,y)f(x,y)</script><p>关于模型的条件分布的期望</p>
+<script type="math/tex; mode=display">
+E_P(f)=\sum_{x,y}\tilde{P}(x)P(y|x)f(x,y)</script><p>两者应当相等 ，即</p>
+<script type="math/tex; mode=display">
+E_{\tilde{P}}(f)=E_P(f)</script><p>另外，特征函数也可不只一个。</p>
+<h3 id="熵"><a href="#熵" class="headerlink" title="熵"></a>熵</h3><p>条件熵</p>
+<script type="math/tex; mode=display">
+H(P)=-\sum_{x,y}\tilde{P}(x)P(y\,|\,x)\,logP(y\,|\,x)</script><h3 id="模型学习"><a href="#模型学习" class="headerlink" title="模型学习"></a>模型学习</h3><p>约束最优化问题</p>
+<script type="math/tex; mode=display">
+\max_{P}\quad H(P)=-\sum_{x,y}\tilde{P}(x)P(y\,|\,x)\,logP(y\,|\,x)</script><script type="math/tex; mode=display">
+s.t.\quad E_{\tilde{P}}(f_i)=E_P(f_i),\ i=1,2,...,n</script><script type="math/tex; mode=display">
+\sum_yP(y\,|\,x)=1</script><p>根据拉格朗日乘子法，</p>
+<script type="math/tex; mode=display">
+L(P,w)=-H(P)+w_0\left ( 1-\sum_yP(y\,|\,x)\right)+\sum_{i=1}^{n}w_i(E_{\tilde{P}}(f_i)-E_P(f_i))</script><p>问题转化为</p>
+<script type="math/tex; mode=display">
+\min_{P}\max_{w}L(P,w)</script><p>对偶问题</p>
+<script type="math/tex; mode=display">
+\max_{w}\min_{P}L(P,w)</script><p>因为$L(P,w)$ 是 P 的凸函数，故原始问题和对偶问题是等价的。(但其实两者等价的条件我还没学。。。我不懂，我不会)</p>
+<p>通过对偶问题里面的极小化，可以获得一个含参的分布</p>
+<script type="math/tex; mode=display">
+P_w(y\,|\,x)=\frac{1}{Z_w(x)}exp\left ( \sum_{i=1}^{n}w_if_i(x,y) \right )</script><script type="math/tex; mode=display">
+Z_w(x)=\sum_yexp\left ( \sum_{i=1}^{n}w_if_i(x,y) \right )</script><p>其中$Z_w(x)$ 是正规化因子，$w_i$是参数、权值。</p>
 <p>下面在进一步去求外面的极大化就可以把参数求出来。</p>
 <p>PS：最后一步的极大化其实等价于直接利用得到的含参的分布去做极大似然估计。</p>
-<h3 id="模型求解">模型求解</h3>
-<ul>
-<li>有一个改进的迭代尺度法，计算每次参数 <span class="math inline">\(w\)</span> 的增量 <span class="math inline">\(\delta\)</span> , 关注<span class="math inline">\(L(w+\delta)-L(w)\)</span> , 经过放缩确定下界， 为了得到更大的该变量。放缩是因为，原式太复杂。</li>
-<li>拟牛顿法</li>
+<h3 id="模型求解"><a href="#模型求解" class="headerlink" title="模型求解"></a>模型求解</h3><ul>
+<li>有一个改进的迭代尺度法，计算每次参数 $w$ 的增量 $\delta$ , 关注$L(w+\delta)-L(w)$ , 经过放缩确定下界， 为了得到更大的该变量。放缩是因为，原式太复杂。</li>
+<li>拟牛顿法 </li>
 </ul>
 
     </div>

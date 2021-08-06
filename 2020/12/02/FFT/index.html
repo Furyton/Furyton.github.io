@@ -45,12 +45,12 @@
 
     <!-- OpenGraph -->
  
-    <meta name="description" content="note : 本文仅简要地介绍FFT以及它的简单应用, 并不会过多的进行数学推导 Background 首先我们回忆一下傅里叶级数. 实数上的情形 对于一个函数\(f(x)\), 我们现在关注它在\([-\pi,\pi]\) 这个区间上的表现. 它能够写成(在一定条件下) \[ f(x) &#x3D; \frac{a_0}{2} + \sum_{k&#x3D;1}^{\infty} a_kcos(kx)+">
+    <meta name="description" content="note : 本文仅简要地介绍FFT以及它的简单应用, 并不会过多的进行数学推导 Background首先我们回忆一下傅里叶级数. 实数上的情形对于一个函数$f(x)$, 我们现在关注它在$[-\pi,\pi]$ 这个区间上的表现.  它能够写成(在一定条件下)  f(x) &#x3D; \frac{a_0}{2} + \sum_{k&#x3D;1}^{\infty} a_kcos(kx)+b_ksin(kx)这里">
 <meta property="og:type" content="article">
 <meta property="og:title" content="FFT">
 <meta property="og:url" content="http://furyton.github.io/2020/12/02/FFT/index.html">
 <meta property="og:site_name" content="Furyton">
-<meta property="og:description" content="note : 本文仅简要地介绍FFT以及它的简单应用, 并不会过多的进行数学推导 Background 首先我们回忆一下傅里叶级数. 实数上的情形 对于一个函数\(f(x)\), 我们现在关注它在\([-\pi,\pi]\) 这个区间上的表现. 它能够写成(在一定条件下) \[ f(x) &#x3D; \frac{a_0}{2} + \sum_{k&#x3D;1}^{\infty} a_kcos(kx)+">
+<meta property="og:description" content="note : 本文仅简要地介绍FFT以及它的简单应用, 并不会过多的进行数学推导 Background首先我们回忆一下傅里叶级数. 实数上的情形对于一个函数$f(x)$, 我们现在关注它在$[-\pi,\pi]$ 这个区间上的表现.  它能够写成(在一定条件下)  f(x) &#x3D; \frac{a_0}{2} + \sum_{k&#x3D;1}^{\infty} a_kcos(kx)+b_ksin(kx)这里">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://furyton.github.io/upload_image/original.jpg">
 <meta property="og:image" content="http://furyton.github.io/upload_image/after_FFT.jpg">
@@ -194,179 +194,158 @@
     <div class="post__header"></div>
     <div class="post__content">
         <p>note : 本文仅简要地介绍FFT以及它的简单应用, 并不会过多的进行数学推导</p>
-<h2 id="background">Background</h2>
-<p>首先我们回忆一下傅里叶级数.</p>
-<h5 id="实数上的情形">实数上的情形</h5>
-<p>对于一个函数<span class="math inline">\(f(x)\)</span>, 我们现在关注它在<span class="math inline">\([-\pi,\pi]\)</span> 这个区间上的表现.</p>
-<p>它能够写成(在一定条件下) <span class="math display">\[
-f(x) = \frac{a_0}{2} + \sum_{k=1}^{\infty} a_kcos(kx)+b_ksin(kx)
-\]</span> 这里 <span class="math display">\[
+<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>首先我们回忆一下傅里叶级数.</p>
+<h5 id="实数上的情形"><a href="#实数上的情形" class="headerlink" title="实数上的情形"></a>实数上的情形</h5><p>对于一个函数$f(x)$, 我们现在关注它在$[-\pi,\pi]$ 这个区间上的表现. </p>
+<p>它能够写成(在一定条件下)</p>
+<script type="math/tex; mode=display">
+f(x) = \frac{a_0}{2} + \sum_{k=1}^{\infty} a_kcos(kx)+b_ksin(kx)</script><p>这里</p>
+<script type="math/tex; mode=display">
 \begin{align*}
 a_k = \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)cos(kx)dx \\\\
 b_k = \frac{1}{\pi}\int_{-\pi}^{\pi} f(x)sin(kx)dx
-\end{align*}
-\]</span> 虽然这里我们考虑的是在区间<span class="math inline">\([-\pi,\pi]\)</span> 上, 但现在 <span class="math inline">\(f\)</span> 现在在整个<span class="math inline">\(\textbf{R}\)</span> 具有了周期性, 周期是<span class="math inline">\(2\pi\)</span>.</p>
-<p>另一方面, <span class="math inline">\(f(x)\)</span> 要满足"平方可积", 详细来说, 所有平方可积的函数构成一个线性空间. 更进一步的有关希尔伯特空间等泛函分析的内容.</p>
-<p>那这个线性空间自然具有一个无限维的基. 在傅里叶级数中, 选择的基是 <span class="math display">\[
-\\{ 1, cos(x), sin(x), cos(2x), sin(2x), \dots \\}
-\]</span> 在确定内积 <span class="math display">\[
-\left \langle f,g\right \rangle = \int_{-\pi}^{\pi}f(x)\overline{g(x)}dx
-\]</span> 后,这组由 <span class="math inline">\(cos(kx),sin(kx)\dots\)</span> 构成的基成为了一组正交基. 当然你可以选择规范化, 去除以每个的范数.</p>
-<h5 id="复数上的情形">复数上的情形</h5>
-<p>把实数上的情形推广到复数上, 这里是说<span class="math inline">\(f(x)\)</span> 现在是复数函数, (x依然是实数).</p>
-<p>我们有了更一般一点的傅里叶级数 <span class="math display">\[
-f(x) = \sum_{k=-\infty}^{+\infty} c_k e^{ikx}
-\]</span> 这里 <span class="math display">\[
-c_k = \frac{\left \langle f(x), e^{ikx} \right\rangle}{\left \|e^{ikx} \right \|^2} = \frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)e^{-ikx}dx
-\]</span> (注: Euler公式 <span class="math inline">\(e^{ix}=cos(x) + i sin(x) ,\quad i=\sqrt{-1}\)</span>)</p>
-<p>仍然是用许多的<span class="math inline">\(cos(kx), sin(kx)\)</span>去表达<span class="math inline">\(f(x)\)</span>, 只不过变成了复数.</p>
-<p>前面一直讲的是<span class="math inline">\(f(x)\)</span>在<span class="math inline">\([-\pi,\pi]\)</span>上的一些事情, 实际上这并不是唯一的.</p>
-<p>现在换成区间<span class="math inline">\([-L,L]\)</span> 做个映射, <span class="math inline">\(x \to \pi x/L\)</span></p>
-<p>记 <span class="math display">\[
-\psi_k(x)=e^{i\pi kx/L}
-\]</span></p>
-<p>有 <span class="math display">\[
-c_k = \frac{\left \langle f(x), \psi_k(x) \right\rangle}{\left \|\psi_k(x) \right \|^2} = \frac{1}{2L}\int_{-L}^{L} f(x)\psi_k(x)dx
-\]</span></p>
-<p>所以 <span class="math display">\[
-f(x) = \sum_{k=-\infty}^{\infty}c_k\psi_k(x)=\frac{1}{2L}\sum_{k=-\infty}^{\infty}\left \langle f(x), \psi_k(x) \right\rangle \psi_k(x)
-\]</span></p>
-<p>这里观察这个级数, 它实际是在将<span class="math inline">\(f(x)\)</span> 分解成一系列<span class="math inline">\(\psi_k(x)\)</span> 的线性组合. 或者说一系列<span class="math inline">\(cos(2\pi kx/L), sin(2\pi kx/L)\)</span> 的结合. 这里面<span class="math inline">\(k\)</span> 蕴含着不同的正弦函数的频率.</p>
-<p>记 <span class="math display">\[
+\end{align*}</script><p>虽然这里我们考虑的是在区间$[-\pi,\pi]$ 上, 但现在 $f$ 现在在整个$\textbf{R}$ 具有了周期性, 周期是$2\pi$. </p>
+<p>另一方面, $f(x)$ 要满足”平方可积”, 详细来说, 所有平方可积的函数构成一个线性空间. 更进一步的有关希尔伯特空间等泛函分析的内容. </p>
+<p>那这个线性空间自然具有一个无限维的基. 在傅里叶级数中, 选择的基是</p>
+<script type="math/tex; mode=display">
+\\{ 1, cos(x), sin(x), cos(2x), sin(2x), \dots \\}</script><p>在确定内积</p>
+<script type="math/tex; mode=display">
+\left \langle f,g\right \rangle = \int_{-\pi}^{\pi}f(x)\overline{g(x)}dx</script><p>后,这组由 $cos(kx),sin(kx)\dots$ 构成的基成为了一组正交基. 当然你可以选择规范化, 去除以每个的范数. </p>
+<h5 id="复数上的情形"><a href="#复数上的情形" class="headerlink" title="复数上的情形"></a>复数上的情形</h5><p>把实数上的情形推广到复数上, 这里是说$f(x)$ 现在是复数函数, (x依然是实数). </p>
+<p>我们有了更一般一点的傅里叶级数</p>
+<script type="math/tex; mode=display">
+f(x) = \sum_{k=-\infty}^{+\infty} c_k e^{ikx}</script><p>这里</p>
+<script type="math/tex; mode=display">
+c_k = \frac{\left \langle f(x), e^{ikx} \right\rangle}{\left \|e^{ikx} \right \|^2} = \frac{1}{2\pi}\int_{-\pi}^{\pi} f(x)e^{-ikx}dx</script><p>(注: Euler公式 $e^{ix}=cos(x) + i sin(x) ,\quad i=\sqrt{-1}$)</p>
+<p>仍然是用许多的$cos(kx), sin(kx)$去表达$f(x)$, 只不过变成了复数. </p>
+<p>前面一直讲的是$f(x)$在$[-\pi,\pi]$上的一些事情, 实际上这并不是唯一的. </p>
+<p>现在换成区间$[-L,L]$ 做个映射, $x \to \pi x/L$</p>
+<p>记</p>
+<script type="math/tex; mode=display">
+\psi_k(x)=e^{i\pi kx/L}</script><p>有</p>
+<script type="math/tex; mode=display">
+c_k = \frac{\left \langle f(x), \psi_k(x) \right\rangle}{\left \|\psi_k(x) \right \|^2} = \frac{1}{2L}\int_{-L}^{L} f(x)\psi_k(x)dx</script><p>所以</p>
+<script type="math/tex; mode=display">
+f(x) = \sum_{k=-\infty}^{\infty}c_k\psi_k(x)=\frac{1}{2L}\sum_{k=-\infty}^{\infty}\left \langle f(x), \psi_k(x) \right\rangle \psi_k(x)</script><p>这里观察这个级数, 它实际是在将$f(x)$ 分解成一系列$\psi_k(x)$ 的线性组合. 或者说一系列$cos(2\pi kx/L), sin(2\pi kx/L)$ 的结合. 这里面$k$ 蕴含着不同的正弦函数的频率. </p>
+<p>记</p>
+<script type="math/tex; mode=display">
 \omega_k = \pi k/L \\\\
-\Delta \omega = \pi/L
-\]</span> 那么 <span class="math display">\[
+\Delta \omega = \pi/L</script><p>那么</p>
+<script type="math/tex; mode=display">
 \begin{align*}
-c_k = \frac{1}{2L} \int_{-L}^{L} f(x)&amp; e^{-ik{\Delta\omega}x}dx = \frac{1}{2L}\int_{-L}^{L} f(x)e^{-i\omega_kx}dx \\\\
-f(x)=&amp; \sum_{k=-\infty}^{+\infty}c_k e^{i\omega_k x}=\sum_{k=-\infty}^{+\infty}c_k e^{ik\Delta \omega x}
-\end{align*}
-\]</span></p>
-<p>每个<span class="math inline">\(c_k\)</span>都对应着一个<span class="math inline">\(\omega_k\)</span>, 表示这个频率的函数所占的比重.</p>
-<p>当<span class="math inline">\(L \to +\infty\)</span>, 也就是说<span class="math inline">\(f(x)\)</span> 在<span class="math inline">\(\textbf{R}\)</span> 上非周期. 我们就得到了傅里叶变换. <span class="math display">\[
+c_k = \frac{1}{2L} \int_{-L}^{L} f(x)& e^{-ik{\Delta\omega}x}dx = \frac{1}{2L}\int_{-L}^{L} f(x)e^{-i\omega_kx}dx \\\\
+f(x)=& \sum_{k=-\infty}^{+\infty}c_k e^{i\omega_k x}=\sum_{k=-\infty}^{+\infty}c_k e^{ik\Delta \omega x}
+\end{align*}</script><p>每个$c_k$都对应着一个$\omega_k$, 表示这个频率的函数所占的比重. </p>
+<p>当$L \to +\infty$, 也就是说$f(x)$ 在$\textbf{R}$ 上非周期. 我们就得到了傅里叶变换.</p>
+<script type="math/tex; mode=display">
 \begin{align*}
-\hat f(\omega) &amp; = \mathcal{F(f(x))}=\int_{-\infty}^{\infty} f(x)e^{-i\omega x}dx\\\\
-f(x) =&amp; \mathcal{F^{-1}(\hat f(\omega))} = \frac{1}{2\pi}\int_{-\infty}^{\infty} \hat f(\omega)e^{i\omega x}d\omega
-\end{align*}
-\]</span></p>
-<p>有趣的性质:</p>
-<p><span class="math display">\[
+\hat f(\omega) & = \mathcal{F(f(x))}=\int_{-\infty}^{\infty} f(x)e^{-i\omega x}dx\\\\
+f(x) =& \mathcal{F^{-1}(\hat f(\omega))} = \frac{1}{2\pi}\int_{-\infty}^{\infty} \hat f(\omega)e^{i\omega x}d\omega
+\end{align*}</script><p>有趣的性质:</p>
+<script type="math/tex; mode=display">
 \begin{align*}
-&amp; \mathcal{F(\frac{d}{dx}f(x)) = i\omega F(f(x))}\\\\\\\\
-&amp; \mathcal{F(g\times f) = F(g)F(f)}
-\end{align*}
-\]</span></p>
-<h2 id="dft">DFT</h2>
-<p>对于计算机, 我们既不能方便的处理无穷级数, 也不好处理积分. 连续的情况对计算机来说比较困难. 所以出现了离散的傅里叶变换. 他的大致含义还是一样的.</p>
-<p>对一个<span class="math inline">\(f(x)\)</span>进行采样, 在0, 1, 2, ... , n - 1处的值, 分别为<span class="math inline">\([f_0, f_1,f_2,...,f_{n-1}]\)</span> , 这个向量代替了原来的函数</p>
-<p>经过傅里叶变换后的函数变成了 <span class="math inline">\([\hat f_0, \hat f_1, \hat f_2...\hat f_{n-1}]\)</span></p>
-<p>对于 <span class="math inline">\(\omega\)</span> 的选取也有原先连续的情况变成离散. 将 <span class="math inline">\(2\pi\)</span> 平均分成了 n 份. 每一份长度是 <span class="math inline">\(\frac{2\pi}{n}\)</span> 作为一个基本的单元.</p>
-<p>之前的函数 <span class="math inline">\(\psi_k(x)\)</span> 成为了 <span class="math inline">\([(e^{2\pi ik/n})^j], j=0,1,2,...,n-1\)</span></p>
-<p>简单来说, DFT的形式就是 <span class="math display">\[
+& \mathcal{F(\frac{d}{dx}f(x)) = i\omega F(f(x))}\\\\\\\\
+& \mathcal{F(g\times f) = F(g)F(f)}
+\end{align*}</script><h2 id="DFT"><a href="#DFT" class="headerlink" title="DFT"></a>DFT</h2><p>对于计算机, 我们既不能方便的处理无穷级数, 也不好处理积分. 连续的情况对计算机来说比较困难. 所以出现了离散的傅里叶变换. 他的大致含义还是一样的.</p>
+<p>对一个$f(x)$进行采样, 在0, 1, 2, … , n - 1处的值, 分别为$[f<em>0, f_1,f_2,…,f</em>{n-1}]$ , 这个向量代替了原来的函数</p>
+<p>经过傅里叶变换后的函数变成了 $[\hat f<em>0, \hat f_1, \hat f_2…\hat f</em>{n-1}]$</p>
+<p>对于 $\omega$ 的选取也有原先连续的情况变成离散. 将 $2\pi$ 平均分成了 n 份. 每一份长度是 $\frac{2\pi}{n}$ 作为一个基本的单元. </p>
+<p>之前的函数 $\psi_k(x)$ 成为了 $[(e^{2\pi ik/n})^j], j=0,1,2,…,n-1$ </p>
+<p>简单来说, DFT的形式就是</p>
+<script type="math/tex; mode=display">
 \begin{align*}
 \hat f_k=\sum_{j=0}^{n-1}f_j e^{-2\pi ijk/n}\\\\
 f_k = \frac{1}{n}\sum_{j=0}^{n-1}\hat f_k e^{2\pi ijk/n}
-\end{align*}
-\]</span></p>
-<p>注意 <span class="math inline">\(e^{2\pi ik/n},\quad k=0,1,2...,n-1\)</span> 就是 <span class="math inline">\(x^{n}=1\)</span> 的解</p>
-<p><span class="math inline">\(\psi_k = \left[  \begin{matrix}  1 \\\\  e^{2\pi ik/n} \\\\  (e^{2\pi ik/n})^2 \\\\  \vdots \\\\  (e^{2\pi ik/n})^{n-1}  \end{matrix}  \right]\)</span> 可以看作是不同频率的函数, 那么<span class="math inline">\(\hat f_k\)</span> 便可以看作是对应的<span class="math inline">\(\psi_k\)</span> 所占的大小.</p>
+\end{align*}</script><p>注意 $e^{2\pi ik/n},\quad k=0,1,2…,n-1$ 就是 $x^{n}=1$ 的解</p>
+<p>$\psi_k = \left[<br> \begin{matrix}<br>   1 \\<br>   e^{2\pi ik/n} \\<br>   (e^{2\pi ik/n})^2 \\<br>   \vdots \\<br>   (e^{2\pi ik/n})^{n-1}<br>  \end{matrix}<br>  \right]$ 可以看作是不同频率的函数, 那么$\hat f_k$ 便可以看作是对应的$\psi_k$ 所占的大小.</p>
 <p>首先举个简单的例子去直观的理解这个变换.</p>
-<p>我们在函数<span class="math inline">\(f(x)=cos(2\pi \times 50 x)+cos(2\pi \times 75x)\)</span> 上进行采样, 同时我们加上一个随机的噪声,范围是<span class="math inline">\([-4,4]\)</span></p>
-<div data-align="center">
-<img src="\upload_image\original.jpg" alt="original" />
-</div>
+<p>我们在函数$f(x)=cos(2\pi \times 50 x)+cos(2\pi \times 75x)$ 上进行采样, 同时我们加上一个随机的噪声,范围是$[-4,4]$</p>
+<div align=center><img src="\upload_image\original.jpg" alt="original" /></div>
+
 <p>黑色的是原图像, 蓝色的部分是加入噪声后的图象. 当然这里的数据都是离散的, 只不过画图的时候被连在了一起.看上去像连续的.</p>
-<p>现在我们得到了采样后的一个<span class="math inline">\(f(x)\)</span>的向量, <span class="math inline">\([f_0,f_1,f_2,...,f_{n-1}]\)</span></p>
-<p>经过DFT后, 我们能得到一个<span class="math inline">\(\hat f\)</span> 向量, 由于是复数, 这里只展示向量中每个复数的模长的平方. 可以看作是一种能量.</p>
-<div data-align="center">
-<img src="\upload_image\after_FFT.jpg" alt="after FFT" />
-</div>
-<p>下面的图是经过DFT后的样子, 明显可以看到, 里面有两个非常高的点. 对应着原始的没有加入噪声的<span class="math inline">\(cos(2\pi \times 50 x)\)</span> 和 <span class="math inline">\(cos(2\pi \times 75x)\)</span> , 如果我们设置一个阈值, 小于100的置位0, 这样就能去除噪声.</p>
-<div data-align="center">
-<img src="\upload_image\after.jpg" alt="filtered" />
-</div>
-<p>中间的图就是对<span class="math inline">\(\hat f\)</span> 进行过滤之后再经过DFT的逆操作的得到的图象, 会发现它完全去除了噪声, 还原了最初的<span class="math inline">\(f(x)\)</span> .</p>
-<h3 id="计算dft">计算DFT</h3>
-<p>下面的问题是如何去计算DFT呢, <span class="math display">\[
+<p>现在我们得到了采样后的一个$f(x)$的向量, $[f<em>0,f_1,f_2,…,f</em>{n-1}]$ </p>
+<p>经过DFT后, 我们能得到一个$\hat f$ 向量, 由于是复数, 这里只展示向量中每个复数的模长的平方. 可以看作是一种能量. </p>
+<div align=center><img src="\upload_image\after_FFT.jpg" alt="after FFT" /></div>
+
+<p>下面的图是经过DFT后的样子, 明显可以看到, 里面有两个非常高的点. 对应着原始的没有加入噪声的$cos(2\pi \times 50 x)$ 和 $cos(2\pi \times 75x)$ , 如果我们设置一个阈值, 小于100的置位0, 这样就能去除噪声.</p>
+<div align=center><img src="\upload_image\after.jpg" alt="filtered" /></div>
+
+<p>中间的图就是对$\hat f$ 进行过滤之后再经过DFT的逆操作的得到的图象, 会发现它完全去除了噪声, 还原了最初的$f(x)$ .</p>
+<h3 id="计算DFT"><a href="#计算DFT" class="headerlink" title="计算DFT"></a>计算DFT</h3><p>下面的问题是如何去计算DFT呢,</p>
+<script type="math/tex; mode=display">
 \begin{align*}
 \hat f_k=\sum_{j=0}^{n-1}f_j e^{-2\pi ijk/n}\\\\
 f_k = \frac{1}{n}\sum_{j=0}^{n-1}\hat f_k e^{2\pi ijk/n}
-\end{align*}
-\]</span> 容易看到这实质上是一个矩阵乘法.</p>
-<p>记 <span class="math inline">\(\omega_n = e^{-2\pi i/n}\)</span> <span class="math display">\[
+\end{align*}</script><p>容易看到这实质上是一个矩阵乘法.</p>
+<p>记 $\omega_n = e^{-2\pi i/n}$</p>
+<script type="math/tex; mode=display">
 \hat f=\left [ \begin{matrix} 
 \hat f_0 \\\\ \hat f_1 \\\\ \hat f_2 \\\\ \vdots \\\\ \hat f_{n-1}
 \end{matrix} \right ]
 = 
 \left [ \begin{matrix} 
-1 &amp; 1 &amp; 1 &amp; 1 &amp; \dots &amp; 1 \\\\
-1 &amp; \omega_n &amp; \omega_n^{2} &amp; \omega_n^{3} &amp; \dots &amp; \omega_n^{n-1}\\\\
-1 &amp; \omega_n^{2} &amp; \omega_n^{4} &amp; \omega_n^{6} &amp; \dots &amp; \omega_n^{2(n-1)} \\\\
-  &amp;   &amp; \vdots &amp;  &amp; \dots &amp;\vdots \\\\
-1 &amp; \omega_n^{n-1} &amp; \omega_n^{2(n-1)} &amp; \omega_n^{3(n-1)} &amp; \dots &amp; \omega_n^{(n-1)(n-1)}
+1 & 1 & 1 & 1 & \dots & 1 \\\\
+1 & \omega_n & \omega_n^{2} & \omega_n^{3} & \dots & \omega_n^{n-1}\\\\
+1 & \omega_n^{2} & \omega_n^{4} & \omega_n^{6} & \dots & \omega_n^{2(n-1)} \\\\
+  &   & \vdots &  & \dots &\vdots \\\\
+1 & \omega_n^{n-1} & \omega_n^{2(n-1)} & \omega_n^{3(n-1)} & \dots & \omega_n^{(n-1)(n-1)}
 \end{matrix}\right]
 \left[ \begin{matrix}
 f_0 \\\\  f_1 \\\\  f_2 \\\\ \vdots \\\\  f_{n-1}
-\end{matrix}\right]
-\]</span> 记这个矩阵为<span class="math inline">\(\mathcal{F_n}\)</span> , 或者称为DFT矩阵.</p>
-<p>实质上<span class="math inline">\(\mathcal{F}\)</span> 乘上它的共轭转置 <span class="math inline">\(\mathcal{F^*}\)</span> 等于 <span class="math inline">\(nE_n\)</span>， 所以它的逆矩阵是很好求的，DFT的逆变换也很容易得出.</p>
-<p>如果直接去求这个矩阵，复杂度是比较高的<span class="math inline">\(O(n^2)\)</span></p>
-<p>但是如果考虑到 <span class="math inline">\(\omega_n\)</span> 的特殊的性质，便能得到非常高效的<span class="math inline">\(O(nlogn)\)</span> 的算法，也就是FFT</p>
-<h3 id="fft">FFT</h3>
-<p>FFT就是一种计算DFT的高效的算法，它最初是由高斯提出.</p>
-<p>简单来说，我们想要快速的计算矩阵<span class="math inline">\(\mathcal{F_n}\)</span> ，通过将他分解为更小的子问题，转而去求解<span class="math inline">\(\mathcal{F_{\frac{n}{2}}}\)</span>. 这里我们现在只考虑 n 是2的幂的情况. 如果n不是2的幂的话， 我们可以简单的扩充成2的幂， 并不会影响算法的效率.</p>
-<p>不同的矩阵<span class="math inline">\(\mathcal{F_n}\)</span> 内所使用的<span class="math inline">\(\omega_n\)</span> 是不同的， 但对于n 和 n/2 我们有 <span class="math inline">\(\omega_n^2=\omega_{n/2}\)</span> 可以轻松的进行转化。</p>
-<p>核心的想法就是对<span class="math inline">\([f_0, f_1,...,f_{n-1}]\)</span> 进行重新排序， 按照下标的奇偶进行分组.</p>
-<p>对于多项式 <span class="math display">\[
+\end{matrix}\right]</script><p>记这个矩阵为$\mathcal{F_n}$ , 或者称为DFT矩阵.</p>
+<p>实质上$\mathcal{F}$ 乘上它的共轭转置  $\mathcal{F^*}$ 等于 $nE_n$， 所以它的逆矩阵是很好求的，DFT的逆变换也很容易得出.</p>
+<p>如果直接去求这个矩阵，复杂度是比较高的$O(n^2)$ </p>
+<p>但是如果考虑到 $\omega_n$ 的特殊的性质，便能得到非常高效的$O(nlogn)$ 的算法，也就是FFT</p>
+<h3 id="FFT"><a href="#FFT" class="headerlink" title="FFT"></a>FFT</h3><p>FFT就是一种计算DFT的高效的算法，它最初是由高斯提出.</p>
+<p>简单来说，我们想要快速的计算矩阵$\mathcal{F<em>n}$ ，通过将他分解为更小的子问题，转而去求解$\mathcal{F</em>{\frac{n}{2}}}$. 这里我们现在只考虑 n 是2的幂的情况. 如果n不是2的幂的话， 我们可以简单的扩充成2的幂， 并不会影响算法的效率.</p>
+<p>不同的矩阵$\mathcal{F<em>n}$ 内所使用的$\omega_n$ 是不同的， 但对于n 和 n/2 我们有 $\omega_n^2=\omega</em>{n/2}$ 可以轻松的进行转化。</p>
+<p>核心的想法就是对$[f<em>0, f_1,…,f</em>{n-1}]$ 进行重新排序， 按照下标的奇偶进行分组.</p>
+<p> 对于多项式</p>
+<script type="math/tex; mode=display">
 \begin{align*}
-p(x) =&amp; a_0+a_1x+a_2x^2+\dots+a_{n-1}x^{n-1} \\\\
-     =&amp; (a_0 + a_2x^2 + a_4x^4 + \dots + a_{n-2}x^{n-2})\\\\
-      &amp;+ x(a_1 + a_3x^2+a_5x^4+\dots a_{n-1}x^{n-2})\\\\
-     =&amp; E(x) +xO(x)
-\end{align*}
-\]</span></p>
-<p>同理，对于这里的DFT， 我们就会的到 <span class="math display">\[
+p(x) =& a_0+a_1x+a_2x^2+\dots+a_{n-1}x^{n-1} \\\\
+     =& (a_0 + a_2x^2 + a_4x^4 + \dots + a_{n-2}x^{n-2})\\\\
+      &+ x(a_1 + a_3x^2+a_5x^4+\dots a_{n-1}x^{n-2})\\\\
+     =& E(x) +xO(x)
+\end{align*}</script><p>同理，对于这里的DFT， 我们就会的到</p>
+<script type="math/tex; mode=display">
 \begin{align*}
-\hat f_k =&amp; \sum_{j=0}^{n-1}f_j(\omega_n^k)^j\\\\
-         =&amp; \sum_{j=0}^{n/2-1}f_{2j}(\omega_n^k)^{2j} +\omega_n^k\sum_{j=0}^{n/2-1}f_{2j+1}(\omega_n^k)^{2j}\\\\
-         =&amp; \sum_{j=0}^{n/2-1}f_{2j}(\omega_{n/2}^k)^{j} +\omega_n^k\sum_{j=0}^{n/2-1}f_{2j+1}(\omega_{n/2}^k)^{j}\\\\
-         =&amp; E + \omega_n^k O
-\end{align*}
-\]</span></p>
-<p><span class="math inline">\(E\)</span> 和 <span class="math inline">\(O\)</span> 便是我们的两个相同的子问题.</p>
-<p>如果我们分别利用 <span class="math inline">\(f_{even}\)</span> 和 <span class="math inline">\(f_{odd}\)</span> 计算出了<span class="math inline">\(E\)</span> 和 <span class="math inline">\(O\)</span> 我们便能很快的根据上面的式子计算出所有的<span class="math inline">\(\hat f_k\)</span></p>
-<p>不仅如此，我们可以利用 <span class="math display">\[
-\omega_n^{k+n/2} = -\omega_n^{k}
-\]</span> 进一步的简化. <span class="math display">\[
+\hat f_k =& \sum_{j=0}^{n-1}f_j(\omega_n^k)^j\\\\
+         =& \sum_{j=0}^{n/2-1}f_{2j}(\omega_n^k)^{2j} +\omega_n^k\sum_{j=0}^{n/2-1}f_{2j+1}(\omega_n^k)^{2j}\\\\
+         =& \sum_{j=0}^{n/2-1}f_{2j}(\omega_{n/2}^k)^{j} +\omega_n^k\sum_{j=0}^{n/2-1}f_{2j+1}(\omega_{n/2}^k)^{j}\\\\
+         =& E + \omega_n^k O
+\end{align*}</script><p>$E$ 和 $O$ 便是我们的两个相同的子问题.</p>
+<p>如果我们分别利用 $f<em>{even}$ 和 $f</em>{odd}$ 计算出了$E$ 和 $O$ 我们便能很快的根据上面的式子计算出所有的$\hat f_k$ </p>
+<p>不仅如此，我们可以利用</p>
+<script type="math/tex; mode=display">
+\omega_n^{k+n/2} = -\omega_n^{k}</script><p>进一步的简化.</p>
+<script type="math/tex; mode=display">
 \begin{align*}
 \hat f_k=E+\omega_n^kO\\\\
 \hat f_{k+n/2}=E-\omega_n^kO
-\end{align*}
-\]</span> 这样只需要一半的循环，就能计算出全部的<span class="math inline">\(\hat f_k\)</span> <span class="math display">\[
+\end{align*}</script><p>这样只需要一半的循环，就能计算出全部的$\hat f_k$ </p>
+<script type="math/tex; mode=display">
 \begin{align*}
 \hat f=\left [ \begin{matrix} 
 \hat f_0 \\\\ \hat f_1 \\\\ \hat f_2 \\\\ \vdots \\\\ \hat f_{n-1}
 \end{matrix} \right ]
-=&amp;
+=&
 \mathcal{F_n}
 \left[ \begin{matrix}
 f_0 \\\\  f_1 \\\\  f_2 \\\\ \vdots \\\\  f_{n-1}
 \end{matrix}\right]\\\\
-=&amp;\left[ \begin{matrix}
-E_{n/2} &amp; D_{n/2} \\\\\\\\
-E_{n/2} &amp; -D_{n/2}
+=&\left[ \begin{matrix}
+E_{n/2} & D_{n/2} \\\\\\\\
+E_{n/2} & -D_{n/2}
 \end{matrix}\right]
 \left[ \begin{matrix}
-\mathcal{F_{n/2}} &amp; O \\\\\\\\
-O &amp; \mathcal{F_{n/2}}
+\mathcal{F_{n/2}} & O \\\\\\\\
+O & \mathcal{F_{n/2}}
 \end{matrix}\right]
 \left[ \begin{matrix}
 f_{even}\\\\\\\\f_{odd}
 \end{matrix}\right]
-\end{align*}
-\]</span></p>
-<p>如此算法的复杂度达到了<span class="math inline">\(O(nlogn)\)</span> ，如果利用并行计算，可以达到更快.</p>
-<h3 id="fft的应用">FFT的应用</h3>
-<ul>
+\end{align*}</script><p>如此算法的复杂度达到了$O(nlogn)$ ，如果利用并行计算，可以达到更快.</p>
+<h3 id="FFT的应用"><a href="#FFT的应用" class="headerlink" title="FFT的应用"></a>FFT的应用</h3><ul>
 <li>像前面做过的去除噪声便是一个很常见的应用</li>
 <li>图象压缩</li>
 <li>多项式乘法或者大整数乘法</li>

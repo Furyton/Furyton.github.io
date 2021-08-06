@@ -45,12 +45,12 @@
 
     <!-- OpenGraph -->
  
-    <meta name="description" content="微指令格式 32 bit 31: HALT 30..26 : S 25 : CN 23 : CP_PC 22 : CP_MAR 21 : CP_R 20 : CP_IR 19 : R_enable 18 : R_wen 17..15 : MUX_A 14..12 : MUX_B 11..10 : MUX_R_INA 9..8 : MUX_R_INB 7..6 : MUX_R_OUT 5 :">
+    <meta name="description" content="微指令格式32 bit 31: HALT    30..26 : S    25 : CN    23 : CP_PC    22 : CP_MAR    21 : CP_R    20 : CP_IR    19 : R_enable    18 : R_wen    17..15 : MUX_A    14..12 : MUX_B 11..10 : MUX_R_INA    9..8 : MU">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基于微程序设计的CPU实验">
 <meta property="og:url" content="http://furyton.github.io/2021/04/10/%E5%9F%BA%E4%BA%8E%E5%BE%AE%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%9A%84CPU%E5%AE%9E%E9%AA%8C/index.html">
 <meta property="og:site_name" content="Furyton">
-<meta property="og:description" content="微指令格式 32 bit 31: HALT 30..26 : S 25 : CN 23 : CP_PC 22 : CP_MAR 21 : CP_R 20 : CP_IR 19 : R_enable 18 : R_wen 17..15 : MUX_A 14..12 : MUX_B 11..10 : MUX_R_INA 9..8 : MUX_R_INB 7..6 : MUX_R_OUT 5 :">
+<meta property="og:description" content="微指令格式32 bit 31: HALT    30..26 : S    25 : CN    23 : CP_PC    22 : CP_MAR    21 : CP_R    20 : CP_IR    19 : R_enable    18 : R_wen    17..15 : MUX_A    14..12 : MUX_B 11..10 : MUX_R_INA    9..8 : MU">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://furyton.github.io/upload_image/core.png">
 <meta property="og:image" content="http://furyton.github.io/upload_image/CU.png">
@@ -199,13 +199,11 @@
 <article class="post content-card">
     <div class="post__header"></div>
     <div class="post__content">
-        <h1 id="微指令格式">微指令格式</h1>
-<p>32 bit</p>
-<p><strong>31</strong>: HALT 30..26 : S <strong>25</strong> : CN <strong>23</strong> : CP_PC <strong>22</strong> : CP_MAR <strong>21</strong> : CP_R <strong>20</strong> : CP_IR <strong>19</strong> : R_enable <strong>18</strong> : R_wen <strong>17..15</strong> : MUX_A <strong>14..12</strong> : MUX_B</p>
-<p><strong>11..10</strong> : MUX_R_INA <strong>9..8</strong> : MUX_R_INB <strong>7..6</strong> : MUX_R_OUT <strong>5</strong> : RD <strong>4</strong> : WE <strong>3</strong> : MUX_ADDR <strong>2..0</strong> : code</p>
+        <h1 id="微指令格式"><a href="#微指令格式" class="headerlink" title="微指令格式"></a>微指令格式</h1><p>32 bit</p>
+<p><strong>31</strong>: HALT    30..26 : S    <strong>25</strong> : CN    <strong>23</strong> : CP_PC    <strong>22</strong> : CP_MAR    <strong>21</strong> : CP_R    <strong>20</strong> : CP_IR    <strong>19</strong> : R_enable    <strong>18</strong> : R_wen    <strong>17..15</strong> : MUX_A    <strong>14..12</strong> : MUX_B</p>
+<p><strong>11..10</strong> : MUX_R_INA    <strong>9..8</strong> : MUX_R_INB    <strong>7..6</strong> : MUX_R_OUT    <strong>5</strong> : RD    <strong>4</strong> : WE    <strong>3</strong> : MUX_ADDR    <strong>2..0</strong> : code</p>
 <p><strong>31..24</strong> : Addr</p>
-<p>## explanation</p>
-<p>S, CN 为 ALU的操作码</p>
+<h2 id="explanation"><a href="#explanation" class="headerlink" title="explanation"></a>explanation</h2><p>S, CN 为 ALU的操作码</p>
 <p>R_enable : reg_file 使能信号</p>
 <p>R_wen ：reg_file 写信号</p>
 <p>MUX_A, MUX_B ：A，B选择器</p>
@@ -216,158 +214,64 @@
 <p>WE：RAM写使能</p>
 <p>MUX_ADDR：选择PC、MAR作为RAM地址线</p>
 <p>code：下地址寻址方式</p>
-<h1 id="isa">ISA</h1>
-<p>参考MIPS 16bit指令集格式</p>
+<h1 id="ISA"><a href="#ISA" class="headerlink" title="ISA"></a>ISA</h1><p>参考MIPS 16bit指令集格式</p>
 <p>指令均为单字长(16 bit)，通用寄存器有8个，均为16 bit</p>
 <p>操作码为5位</p>
 <p>按指令格式区分，有六类指令</p>
 <ul>
-<li><table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">OPT</th>
-<th style="text-align: center;">R1(source)</th>
-<th style="text-align: center;">R2(source)</th>
-<th style="text-align: center;">R3(destination)</th>
-<th style="text-align: center;"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">5 bits</td>
-<td style="text-align: center;">3 bits</td>
-<td style="text-align: center;">3 bits</td>
-<td style="text-align: center;">3 bits</td>
-<td style="text-align: center;">2 bits</td>
-</tr>
-</tbody>
-</table>
+<li><p>|  OPT   | R1(source) | R2(source) | R3(destination) |        |<br>| :——: | :————: | :————: | :——————-: | :——: |<br>| 5 bits |   3 bits   |   3 bits   |     3 bits      | 2 bits |</p>
 <ul>
 <li><strong>ADD</strong>， R1+R2 =&gt; R3</li>
-<li><strong>SUB</strong>， R1-R2 =&gt; R3</li>
-<li><strong>MULT</strong>, R1 * R2 =&gt; R3</li>
-<li><strong>DIV</strong>, R1 / R2 =&gt; R3</li>
-<li><strong>AND</strong>, R1 &amp; R2 =&gt; R3</li>
-<li><strong>OR</strong>, R1 | R2 =&gt; R3</li>
-<li><strong>XOR</strong>, R1 ^ R2 =&gt; R3</li>
-</ul></li>
-<li><table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">OPT</th>
-<th style="text-align: center;">R1(source)</th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;">R3(destination)</th>
-<th style="text-align: center;"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">5 bits</td>
-<td style="text-align: center;">3 bits</td>
-<td style="text-align: center;">3 bits</td>
-<td style="text-align: center;">3 bits</td>
-<td style="text-align: center;">2 bits</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>NOT</strong>, ~R1 =&gt; R3</li>
-<li><strong>SHL</strong>, R1&lt;&lt;1 =&gt; R3</li>
-<li><strong>SHR</strong> R1&gt;&gt;1 =&gt; R3</li>
-<li><strong>MOV</strong>, R1 =&gt; R3</li>
-<li><strong>LD</strong>, M[R1] =&gt; R3</li>
-<li><strong>ST</strong>, R1 =&gt; M[R3]</li>
-</ul></li>
-<li><table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">OPT</th>
-<th style="text-align: left;">R1(destination)</th>
-<th style="text-align: left;">Immediate number(source)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">5 bits</td>
-<td style="text-align: left;">3 bits</td>
-<td style="text-align: left;">8 bits</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>MVH</strong> immediate =&gt; High_Byte(R1)</li>
-<li><strong>MVL</strong> immediate =&gt; Low_Byte(R1)</li>
-</ul></li>
-<li><table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">OPT</th>
-<th style="text-align: center;">R1(source)</th>
-<th style="text-align: center;">R2(destination)</th>
-<th style="text-align: center;">Immediate number</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">5 bits</td>
-<td style="text-align: center;">3 bits</td>
-<td style="text-align: center;">3 bits</td>
-<td style="text-align: center;">5 bits</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>ADDI</strong> R1 + immediate =&gt; R2</li>
-<li><strong>SUBI</strong> R1 - immediate =&gt; R2</li>
-</ul></li>
-<li><table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">OPT</th>
-<th style="text-align: center;">R1</th>
-<th style="text-align: center;"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">5 bits</td>
-<td style="text-align: center;">3 bits</td>
-<td style="text-align: center;">8bits</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>UJMP</strong> PC jumps unconditionally to R1</li>
-<li><strong>CJMP</strong> PC jumps to R1 when C0 = 1</li>
-<li><strong>ZJMP</strong> PC jumps to R1 when FZ = 1</li>
-<li><strong>MOVSP</strong> R1 =&gt; SP</li>
-<li><strong>PUSH</strong> push R1 =&gt; stack[SP], SP ++</li>
-<li><strong>POP</strong> stack[SP] =&gt; R1, SP--</li>
-<li><strong>CALL</strong> run subroutine at R1</li>
-</ul></li>
-<li><table>
-<thead>
-<tr class="header">
-<th style="text-align: center;">OPT</th>
-<th style="text-align: center;"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">5 bits</td>
-<td style="text-align: center;">11 bits</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>RET</strong> return from subroutine</li>
-<li><strong>RST</strong> 0 =&gt; PC</li>
-<li><strong>HALT</strong> 1 =&gt; halt</li>
-</ul></li>
+<li><strong>SUB</strong>，  R1-R2 =&gt;  R3</li>
+<li><strong>MULT</strong>,  R1 * R2 =&gt; R3</li>
+<li><strong>DIV</strong>,      R1 / R2 =&gt; R3</li>
+<li><strong>AND</strong>,    R1 &amp; R2 =&gt; R3</li>
+<li><strong>OR</strong>,       R1 |  R2 =&gt; R3</li>
+<li><strong>XOR</strong>,     R1 ^  R2 =&gt; R3</li>
 </ul>
-<h2 id="与讲义中的设计不同的地方">与讲义中的设计不同的地方</h2>
+</li>
+<li><p>|  OPT   | R1(source) |        | R3(destination) |        |<br>| :——: | :————: | :——: | :——————-: | :——: |<br>| 5 bits |   3 bits   | 3 bits |     3 bits      | 2 bits |</p>
 <ul>
+<li><strong>NOT</strong>,    ~R1 =&gt; R3</li>
+<li><strong>SHL</strong>,     R1&lt;<1 => R3</li>
+<li><strong>SHR</strong>      R1&gt;&gt;1 =&gt; R3</li>
+<li><strong>MOV</strong>,    R1 =&gt; R3</li>
+<li><strong>LD</strong>,        M[R1] =&gt; R3</li>
+<li><strong>ST</strong>,         R1 =&gt; M[R3]</li>
+</ul>
+</li>
+<li><p>|  OPT   | R1(destination) | Immediate number(source) |<br>| :—— | :——————- | :——————————— |<br>| 5 bits |     3 bits      |          8 bits          |</p>
+<ul>
+<li><strong>MVH</strong>      immediate =&gt; High_Byte(R1)</li>
+<li><strong>MVL</strong>       immediate =&gt; Low_Byte(R1)</li>
+</ul>
+</li>
+<li><p>|  OPT   | R1(source) | R2(destination) | Immediate number |<br>| :——: | :————: | :——————-: | :———————: |<br>| 5 bits |   3 bits   |     3 bits      |      5 bits      |</p>
+<ul>
+<li><strong>ADDI</strong>      R1 + immediate =&gt; R2</li>
+<li><strong>SUBI</strong>       R1 - immediate =&gt; R2</li>
+</ul>
+</li>
+<li><p>|  OPT   |   R1   |       |<br>| :——: | :——: | :—-: |<br>| 5 bits | 3 bits | 8bits |</p>
+<ul>
+<li><strong>UJMP</strong>     PC jumps unconditionally to R1</li>
+<li><strong>CJMP</strong>      PC jumps to R1 when C0 = 1</li>
+<li><strong>ZJMP</strong>       PC jumps to R1 when FZ = 1</li>
+<li><strong>MOVSP</strong>   R1 =&gt; SP</li>
+<li><strong>PUSH</strong>       push R1 =&gt; stack[SP], SP ++</li>
+<li><strong>POP</strong>          stack[SP] =&gt; R1,  SP—</li>
+<li><strong>CALL</strong>         run subroutine at R1</li>
+</ul>
+</li>
+<li><p>|  OPT   |         |<br>| :——: | :——-: |<br>| 5 bits | 11 bits |</p>
+<ul>
+<li><strong>RET</strong>           return from subroutine</li>
+<li><strong>RST</strong>           0 =&gt; PC</li>
+<li><strong>HALT</strong>         1 =&gt; halt</li>
+</ul>
+</li>
+</ul>
+<h2 id="与讲义中的设计不同的地方"><a href="#与讲义中的设计不同的地方" class="headerlink" title="与讲义中的设计不同的地方"></a>与讲义中的设计不同的地方</h2><ul>
 <li>通用寄存器数量、指令字长等均有所增加。</li>
 <li>ALU拥有更多其他的功能，如无符号整数乘法、高（低）位byte的操作、存储A、B输入是否相等、结果是否溢出等等。</li>
 <li>指令的功能更加丰富，包括基本的逻辑和算术运算、有（无）条件跳转、栈的操作、简单的子程序调用等。</li>
@@ -377,31 +281,15 @@
 <li>指令均为单字长指令，且大部分为寄存器寻址，每条指令的微程序大大简化。</li>
 <li>缺点：由于指令集的精简，一些原本基本的操作可能需要1-3个指令才能实现。</li>
 </ul>
-<h2 id="cpu电路设计图">CPU电路设计图</h2>
-<h3 id="cpu核心">CPU核心</h3>
-<figure>
-<img src="\upload_image\core.png" alt="" /><figcaption>CPU core</figcaption>
-</figure>
-<h3 id="控制电路微程序控制">控制电路（微程序控制）</h3>
-<figure>
-<img src="\upload_image\CU.png" alt="" /><figcaption>CU</figcaption>
-</figure>
-<h3 id="cpu整体">CPU整体</h3>
-<figure>
-<img src="\upload_image\microcodeCPU.png" alt="" /><figcaption>CPU</figcaption>
-</figure>
-<h2 id="数据通路">数据通路</h2>
-<h3 id="通用寄存器选择方式">通用寄存器选择方式</h3>
-<h4 id="alu-的输入">ALU 的输入</h4>
-<p>由于指令中有三个固定的位置上会出现寄存器的编号，因此设置了两层选择器，第一个是用来选择是启用指令中的R1、R2还是R3，第二个是A，B选择器，两个选择器都能够选择输入寄存器中的数据，即reg_files 为双端口输出。</p>
-<h4 id="alu的输出">ALU的输出</h4>
-<p>输出只需选择启用指令中的R1、R2还是R3。</p>
-<h4 id="说明">说明</h4>
-<p>指令上的选择器保留了00，即寄存器000号。它被作为SP（Stack Pointer）</p>
-<h3 id="数据通路-1">数据通路</h3>
-<ul>
+<h2 id="CPU电路设计图"><a href="#CPU电路设计图" class="headerlink" title="CPU电路设计图"></a>CPU电路设计图</h2><h3 id="CPU核心"><a href="#CPU核心" class="headerlink" title="CPU核心"></a>CPU核心</h3><p><img src="\upload_image\core.png" alt="CPU core"></p>
+<h3 id="控制电路（微程序控制）"><a href="#控制电路（微程序控制）" class="headerlink" title="控制电路（微程序控制）"></a>控制电路（微程序控制）</h3><p><img src="\upload_image\CU.png" alt="CU"></p>
+<h3 id="CPU整体"><a href="#CPU整体" class="headerlink" title="CPU整体"></a>CPU整体</h3><p><img src="\upload_image\microcodeCPU.png" alt="CPU"></p>
+<h2 id="数据通路"><a href="#数据通路" class="headerlink" title="数据通路"></a>数据通路</h2><h3 id="通用寄存器选择方式"><a href="#通用寄存器选择方式" class="headerlink" title="通用寄存器选择方式"></a>通用寄存器选择方式</h3><h4 id="ALU-的输入"><a href="#ALU-的输入" class="headerlink" title="ALU 的输入"></a>ALU 的输入</h4><p>由于指令中有三个固定的位置上会出现寄存器的编号，因此设置了两层选择器，第一个是用来选择是启用指令中的R1、R2还是R3，第二个是A，B选择器，两个选择器都能够选择输入寄存器中的数据，即reg_files 为双端口输出。</p>
+<h4 id="ALU的输出"><a href="#ALU的输出" class="headerlink" title="ALU的输出"></a>ALU的输出</h4><p>输出只需选择启用指令中的R1、R2还是R3。</p>
+<h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><p>指令上的选择器保留了00，即寄存器000号。它被作为SP（Stack Pointer）</p>
+<h3 id="数据通路-1"><a href="#数据通路-1" class="headerlink" title="数据通路"></a>数据通路</h3><ul>
 <li>reg_file: 通用寄存器组，8*16 bit，双端口输出</li>
-<li>ALU ： 有S0...S4，CN六个控制端，用以选择运算类型</li>
+<li>ALU ： 有S0…S4，CN六个控制端，用以选择运算类型</li>
 <li>寄存器C0，FZ：分别用来保存ALU产生的进位信号和A、B相等信号</li>
 <li>RAM：读写操作分别收WE和RE信号控制</li>
 <li>MAR：RAM的地址寄存器</li>
@@ -409,29 +297,27 @@
 </ul>
 <p>数据通路采用CPU内部三总线方式</p>
 <ul>
-<li>寄存器之间的数据传输
-<ul>
-<li><span class="math inline">\(R1 \overset{A 选择器}{\rightarrow} ALU \overset{A 直传}{\rightarrow} R2\)</span></li>
-</ul></li>
-<li>RAM 和 CPU之间的数据传输
-<ul>
-<li><span class="math inline">\(PC/MAR \overset{Bus, RE=1}{\rightarrow} RAM \overset{A 选择器} ALU \overset{A 直传}{\rightarrow} IR\)</span></li>
-<li><span class="math inline">\(PC/MAR \overset{Address Bus, WE=1}{\rightarrow} RAM, ALU \overset{Data Bus}{\rightarrow} RAM\)</span></li>
-</ul></li>
-<li>算术运算
-<ul>
-<li><p><span class="math inline">\(R1(IR) \overset{A 选择器}{\rightarrow} ALU, R2(IR) \overset{B 选择器}{\rightarrow} ALU, ALU \overset{S, CN}{\rightarrow} R3(IR)\)</span></p></li>
-<li><p>$PC ALU PC $</p></li>
-</ul></li>
+<li>寄存器之间的数据传输<ul>
+<li>$R1 \overset{A 选择器}{\rightarrow} ALU \overset{A 直传}{\rightarrow} R2$</li>
 </ul>
-<h2 id="指令流程">指令流程</h2>
-<figure>
-<img src="\upload_image\指令执行流程.png" alt="" /><figcaption>Instruction flow</figcaption>
-</figure>
-<h2 id="测试指令">测试指令</h2>
-<p>暂无</p>
-<h2 id="代码">代码</h2>
-<p><a href="/files/HW/Computer%20Organization%20experiment/exp3/exp03.zip" title="code.zip contains the vhd codes and some .bdf files">click to download</a></p>
+</li>
+<li>RAM 和 CPU之间的数据传输<ul>
+<li>$PC/MAR \overset{Bus, RE=1}{\rightarrow} RAM \overset{A 选择器} ALU \overset{A 直传}{\rightarrow} IR$</li>
+<li>$PC/MAR \overset{Address Bus, WE=1}{\rightarrow} RAM, ALU \overset{Data Bus}{\rightarrow} RAM$</li>
+</ul>
+</li>
+<li><p>算术运算</p>
+<ul>
+<li><p>$R1(IR) \overset{A 选择器}{\rightarrow} ALU, R2(IR) \overset{B 选择器}{\rightarrow} ALU, ALU \overset{S, CN}{\rightarrow} R3(IR)$</p>
+</li>
+<li><p>$PC\overset{B 选择器}{\rightarrow} ALU \overset{B+1}{\rightarrow}PC $</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="指令流程"><a href="#指令流程" class="headerlink" title="指令流程"></a>指令流程</h2><p><img src="\upload_image\指令执行流程.png" alt="Instruction flow"></p>
+<h2 id="测试指令"><a href="#测试指令" class="headerlink" title="测试指令"></a>测试指令</h2><p>暂无</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="/files/HW/Computer Organization experiment/exp3/exp03.zip" title="code.zip contains the vhd codes and some .bdf files">click to download</a></p>
 
     </div>
      
