@@ -1,7 +1,0 @@
----
-title: "title"
-author: "Shiguang WU"
-date: today
-categories: []
-draft: false
----
