@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Shiguang Wu">
+<meta name="dcterms.date" content="2022-03-03">
+
+<title>notes - MoCo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">notes</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Furyton"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/shiguang_wu"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background">Background</a></li>
+  <li><a href="#retated-work" id="toc-retated-work" class="nav-link" data-scroll-target="#retated-work">Retated Work</a>
+  <ul class="collapse">
+  <li><a href="#loss-function" id="toc-loss-function" class="nav-link" data-scroll-target="#loss-function">loss function</a></li>
+  <li><a href="#contrastive-loss-mechanisms" id="toc-contrastive-loss-mechanisms" class="nav-link" data-scroll-target="#contrastive-loss-mechanisms">contrastive loss mechanisms</a></li>
+  </ul></li>
+  <li><a href="#novelty" id="toc-novelty" class="nav-link" data-scroll-target="#novelty">novelty</a></li>
+  </ul></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a>
+  <ul class="collapse">
+  <li><a href="#dict-look-up" id="toc-dict-look-up" class="nav-link" data-scroll-target="#dict-look-up">dict look-up</a></li>
+  <li><a href="#momentum-contrast" id="toc-momentum-contrast" class="nav-link" data-scroll-target="#momentum-contrast">Momentum Contrast</a>
+  <ul class="collapse">
+  <li><a href="#queue" id="toc-queue" class="nav-link" data-scroll-target="#queue">queue</a></li>
+  <li><a href="#momentum-update" id="toc-momentum-update" class="nav-link" data-scroll-target="#momentum-update">Momentum update</a></li>
+  <li><a href="#pretext-task" id="toc-pretext-task" class="nav-link" data-scroll-target="#pretext-task">Pretext Task</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#experiments" id="toc-experiments" class="nav-link" data-scroll-target="#experiments">Experiments</a>
+  <ul class="collapse">
+  <li><a href="#training" id="toc-training" class="nav-link" data-scroll-target="#training">training</a></li>
+  <li><a href="#findings" id="toc-findings" class="nav-link" data-scroll-target="#findings">findings</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">conclusion</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">MoCo</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">paper reading</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Shiguang Wu </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 3, 2022</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="motivation" class="level1">
+<h1>Motivation</h1>
+<p>动量对比学习(Momentum Contrast, MoCo)用于图象表征的无监督学习。主要的观点是将对比学习看作是一种字典查询，即给定一个图片的编码作为请求，在字典中找到与之对应的图片编码。并依此提出了在视觉领域中，使用这种方法需要面临的两个关键点：一是字典应尽可能的大；二是在训练过程中用于编码字典的编码器应尽可能地保持一致，也就是要保证所有的图片都大致映射到了同一个表征空间中。为解决第一个问题，作者提出了使用队列动态维护字典；针对第二个问题，使用动量更新的方法去修改编码器的参数。</p>
+</section>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
+<p>无监督学习的方法在自然语言处理(NLP)领域取得了很大的成功，这得益于在 NLP 中，模型面对的输入信号是离散的，同时易于分割成小的单元来建造字典或者对应的表征。而在视觉领域，输入的信号是连续的、高维度的、非结构化的，想要得到同样效果的稀疏的表征是很困难的。</p>
+<p>无监督学习在大型无标记数据集上的使用是非常值得关注的，使用无监督学习来与训练得到的表征也能用于下游任务的学习。但他的效果却并不如目前的监督式学习效果好。若能很好的解决这一表征学习的问题，则能大大缩小监督与无监督学习之间的差距。</p>
+</section>
+<section id="retated-work" class="level2">
+<h2 class="anchored" data-anchor-id="retated-work">Retated Work</h2>
+<p>为了解决以上提出的问题，很多研究提出了不同的基于对比学习的方法。</p>
+<section id="loss-function" class="level3">
+<h3 class="anchored" data-anchor-id="loss-function">loss function</h3>
+<p>最早期的方法中，我们的目标是寻找一种编码器负责降维以及特征的学习，以成对的数据作为输入，以他们的距离来表达相似度。为此，损失函数分为两部分，前者用来缩小相似数据的距离，后者用来扩大不相似数据的距离。</p>
+<p>之后转化成使用互信息建模，提出 InfoNCE 损失函数。采样正负样本进行训练。最终普遍使用的是非参数化的softmax函数。</p>
+<p><span class="math display">\[P(i|v)=\frac{\exp(v_i^Tv/\tau)}{\sum_{j=1}^{n}{\exp(v_j^Tv/\tau)}}\]</span></p>
+</section>
+<section id="contrastive-loss-mechanisms" class="level3">
+<h3 class="anchored" data-anchor-id="contrastive-loss-mechanisms">contrastive loss mechanisms</h3>
+<section id="end-to-end" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="end-to-end">end-to-end</h4>
+<p>端到端的方法中，当前的batch被作为字典进行训练，query和key分别采用不同的编码器，并分别进行梯度下降。由于算力的限制，更大的字典难以进行梯度的计算，同时他也受限于batch的大小。他的一致性保持得很好，因为一个batch字典的编码器总是同一个，但缺点是字典数量难以保证。</p>
+</section>
+<section id="memory-bank" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="memory-bank">memory bank</h4>
+<p>另一种机制是提前将所有样本的编码计算出来，每次query时，会在所有样本中再进行采样作为字典。同时，我们不再对key的编码器进行梯度下降，而是直接使用query的参数。注意，这里的更新是不及时的，每次只有当前被采样的样本编码被更新了。这样字典大小的问题解决了，但一致性的问题却变得棘手，因为每次采样的编码可能是由不同的编码器(参数不同)得到。</p>
+</section>
+</section>
+</section>
+<section id="novelty" class="level2">
+<h2 class="anchored" data-anchor-id="novelty">novelty</h2>
+<p>MoCo 提出使用队列来动态维护字典，成功做到了字典大小完全不依赖batch的大小。新的batch被加入到队列中，最旧的batch会被移除。这样，队列中的keys使用的编码器是连续、平滑的更新的。</p>
+<p>第二点是key编码器参数的更新上，并不是直接复制query的参数，而是动量更新，更加的平滑，保证了一致性。</p>
+</section>
+</section>
+<section id="methodology" class="level1">
+<h1>Methodology</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/arch.PNG" class="img-fluid figure-img" style="width:90.0%"></p>
+<p></p><figcaption class="figure-caption">from Jiang et al.(2017) MentorNet</figcaption><p></p>
+</figure>
+</div>
+<section id="dict-look-up" class="level2">
+<h2 class="anchored" data-anchor-id="dict-look-up">dict look-up</h2>
+<p>与上文提到的 memory-bank 方法类似，根据一个样本，通过随机变换得到新样本作为正例，之后取 K 个负例求出 InfoNCE loss 进行优化。不同的是负例的选择方式和编码器的更新方式。</p>
+</section>
+<section id="momentum-contrast" class="level2">
+<h2 class="anchored" data-anchor-id="momentum-contrast">Momentum Contrast</h2>
+<section id="queue" class="level3">
+<h3 class="anchored" data-anchor-id="queue">queue</h3>
+<p>每次取得一个新的batch数据进行随机增强作为请求 q，再做另一种随机增强作为每个单独请求的正例 k。将队列中的全部元素作为每个请求的负例，求得损失，利用梯度下降更新参数。随后将 k 加入到队列中，同时去掉旧的batch。 由于队列的规模会很大，队列中的编码加入队列后并不会再更新，但这并不会妨碍一致性的保证，因为它总会把最不一致的编码去除掉。</p>
+</section>
+<section id="momentum-update" class="level3">
+<h3 class="anchored" data-anchor-id="momentum-update">Momentum update</h3>
+<p>在更新参数时，只对query的编码器参数进行梯度下降，而对key编码器进行如下更新: <span class="math display">\[\theta_k \leftarrow m\theta_k+(1-m)\theta_q\]</span></p>
+<p>而在实验中，稍大的 m 得到的结果会更好，这也印证了一致性的重要。</p>
+</section>
+<section id="pretext-task" class="level3">
+<h3 class="anchored" data-anchor-id="pretext-task">Pretext Task</h3>
+<p>前置任务与 memory-bank 类似。这里作者采用了 ResNet 作为编码器，而作者通过实验发现 BN 对编码的学习起到了消极的作用，而这可能是由于 BN 融合了当前batch的信息，在一定程度上会使模型”走捷径”。</p>
+<p>对 BN 的问题，作者提出了 shuffling BN 的方法，也就是在 BN 前先将 sample 进行打乱，求得编码后再复原。</p>
+</section>
+</section>
+</section>
+<section id="experiments" class="level1">
+<h1>Experiments</h1>
+<section id="training" class="level2">
+<h2 class="anchored" data-anchor-id="training">training</h2>
+<p>数据集采用的是</p>
+<ul>
+<li><p>ImageNet: 包含约 1 百万张图片，1000 个类别。图片的类别分布均匀</p></li>
+<li><p>Instagram: 由 Instagram 中得到的约 10 亿张图片。具有长尾分布。</p></li>
+</ul>
+<p>这里作者是将特征层冻结，微调线性分类层来验证模型的效果。与众多无监督模型进行比对。</p>
+</section>
+<section id="findings" class="level2">
+<h2 class="anchored" data-anchor-id="findings">findings</h2>
+<ul>
+<li><p>在微调MoCo时，一些超参数与监督式学习模型相差很大，这表明他们的特征分布有较大的差异</p></li>
+<li><p>通过与 end-to-end 和 memory-bank 两种方法的对比可以发现，当字典规模较小时，end-to-end 模型和 MoCo 不相上下，memory-bank 则稍逊风骚；但增大字典规模后，end-to-end 模型则受限于算力，无法计算，其他两个模型都可以持续增加，但 MoCo 则明显胜出许多。说明 MoCo 很大的提升了无监督学习的效果。</p></li>
+<li><p>若完全复制query编码器参数，则无法收敛</p></li>
+<li><p>MoCo 可以很好的作为pre-trained模型进行下游任务的学习。</p></li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">conclusion</h2>
+<p>MoCo 提供了一种对比学习的框架，在能够使字典尽可能大的同时，还可以保证表征空间的一致性。这是一种非常简洁而有效的方法。</p>
+</section>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+<p>Kaiming He and Haoqi Fan and Yuxin Wu and Saining Xie and Ross Girshick. Momentum Contrast for Unsupervised Visual Representation Learning. <em>arXiv:1911.05722,2020</em></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
