@@ -1,0 +1,28 @@
+/* css styles */
+/* h1 {
+    margin: 0;
+    background-color: #A2E894;
+    border-left: solid 0.3em #7AB06F;
+    padding-left: 0.3em;
+} */
+
+h2 {
+    background-color: #dcbcff25;
+    border-left: solid 0.3em #9633ff39;
+    padding-left: 0.3em;
+}
+h3 {
+    background-color: #b0d0f022;
+    border-left: solid 0.3em rgba(0, 98, 255, 0.178);
+    padding-left: 0.3em;
+}
+h4 {
+    background-color: #d0d0d027;
+    border-left: solid 0.3em rgba(128, 128, 128, 0.174);
+    padding-left: 0.3em;
+}
+h5 {
+    background-color: #f0b0b030;
+    border-left: solid 0.3em #f060602f;
+    padding-left: 0.3em;
+}

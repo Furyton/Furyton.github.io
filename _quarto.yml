@@ -1,0 +1,20 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "notes"
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/Furyton
+      - icon: twitter
+        href: https://twitter.com/shiguang_wu
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+
+
+
