@@ -16,5 +16,6 @@ format:
     theme: cosmo
     css: styles.css
 
-
+execute:
+  freeze: auto
 
