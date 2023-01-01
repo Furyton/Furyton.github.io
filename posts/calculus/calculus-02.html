@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Furyton">
+<meta name="dcterms.date" content="2022-06-27">
+
+<title>notes - calculus review 02</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">notes</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Furyton"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/shiguang_wu"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-great-row-reduction" id="toc-the-great-row-reduction" class="nav-link active" data-scroll-target="#the-great-row-reduction">the great <em>row reduction</em></a>
+  <ul class="collapse">
+  <li><a href="#rank" id="toc-rank" class="nav-link" data-scroll-target="#rank">rank</a></li>
+  </ul></li>
+  <li><a href="#vector-space" id="toc-vector-space" class="nav-link" data-scroll-target="#vector-space">Vector Space</a>
+  <ul class="collapse">
+  <li><a href="#contrete-to-abstract-function-phi_v" id="toc-contrete-to-abstract-function-phi_v" class="nav-link" data-scroll-target="#contrete-to-abstract-function-phi_v">“contrete to abstract” function <span class="math inline">\(\Phi_{v}\)</span></a></li>
+  <li><a href="#change-of-bases-p_mathbfvto-mathbfv" id="toc-change-of-bases-p_mathbfvto-mathbfv" class="nav-link" data-scroll-target="#change-of-bases-p_mathbfvto-mathbfv">Change of bases <span class="math inline">\(P_{\{\mathbf{v}'\}\to \{\mathbf{v}\}}\)</span></a></li>
+  </ul></li>
+  <li><a href="#eigenvectors-and-eigenvalues" id="toc-eigenvectors-and-eigenvalues" class="nav-link" data-scroll-target="#eigenvectors-and-eigenvalues">Eigenvectors and Eigenvalues</a></li>
+  <li><a href="#newtons-method" id="toc-newtons-method" class="nav-link" data-scroll-target="#newtons-method">Newton’s Method</a>
+  <ul class="collapse">
+  <li><a href="#def" id="toc-def" class="nav-link" data-scroll-target="#def">def</a></li>
+  <li><a href="#kantorovichs-theorem" id="toc-kantorovichs-theorem" class="nav-link" data-scroll-target="#kantorovichs-theorem">Kantorovich’s theorem</a></li>
+  <li><a href="#proposition" id="toc-proposition" class="nav-link" data-scroll-target="#proposition">proposition</a></li>
+  <li><a href="#stronger-version" id="toc-stronger-version" class="nav-link" data-scroll-target="#stronger-version">stronger version</a></li>
+  </ul></li>
+  <li><a href="#inverse-function-theorem" id="toc-inverse-function-theorem" class="nav-link" data-scroll-target="#inverse-function-theorem">inverse function theorem</a></li>
+  <li><a href="#implicit-function-theorem" id="toc-implicit-function-theorem" class="nav-link" data-scroll-target="#implicit-function-theorem">implicit function theorem</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">calculus review 02</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">calculus</div>
+    <div class="quarto-category">review</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Furyton </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 27, 2022</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="the-great-row-reduction" class="level2">
+<h2 class="anchored" data-anchor-id="the-great-row-reduction">the great <em>row reduction</em></h2>
+<p>can be used for computing ranks, solving systems of linear equations, etc.</p>
+<p>Given <span class="math inline">\(\mathbf{A}_{m\times n}\mathbf{x}=\mathbf{b}\)</span></p>
+<p><span class="math inline">\([\mathbf{A}\mid\mathbf{b}]\)</span> row reduces to <span class="math inline">\([\tilde{\mathbf{A}}\mid\tilde{\mathbf{b}}]\)</span>, determine the case of the solutions.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+extend
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>square matrix can be approximated by invertible matrices (replace zeros in the diagonal entries of the row reduced matrix with <span class="math inline">\(1/n\)</span>).</p>
+</div>
+</div>
+<section id="rank" class="level3">
+<h3 class="anchored" data-anchor-id="rank">rank</h3>
+<p>the dim of the image</p>
+<p>row rank = column rank</p>
+</section>
+</section>
+<section id="vector-space" class="level2">
+<h2 class="anchored" data-anchor-id="vector-space">Vector Space</h2>
+<section id="contrete-to-abstract-function-phi_v" class="level3">
+<h3 class="anchored" data-anchor-id="contrete-to-abstract-function-phi_v">“contrete to abstract” function <span class="math inline">\(\Phi_{v}\)</span></h3>
+<p>A linear transformation from contrete <span class="math inline">\(\mathbb{R}^n\)</span> coordinate representation to abstract vector space <span class="math inline">\(V\)</span></p>
+<p><span class="math display">\[
+\Phi_{\{\mathbf{v}\}}(\mathbf{a})=\Phi_{\{\mathbf{v}\}}\left(\begin{matrix}a_1\\\vdots\\a_n\end{matrix}\right)=a_1\mathbf{v_1}+\cdots+a_n\mathbf{v_n},
+\]</span></p>
+<p>where <span class="math inline">\(\{\mathbf{v}\}\)</span> is the set of base vectors of <span class="math inline">\(V\)</span>.</p>
+</section>
+<section id="change-of-bases-p_mathbfvto-mathbfv" class="level3">
+<h3 class="anchored" data-anchor-id="change-of-bases-p_mathbfvto-mathbfv">Change of bases <span class="math inline">\(P_{\{\mathbf{v}'\}\to \{\mathbf{v}\}}\)</span></h3>
+<p><span class="math display">\[[P_{\{\mathbf{v}'\}\to\{\mathbf{v}\}}]\mathbf{a}=\mathbf{b},\]</span></p>
+<p>where <span class="math inline">\(\sum_ia_i\mathbf{v}_i'=\sum_ib_i\mathbf{v}_i\)</span></p>
+<p>In other words,</p>
+<p><span class="math display">\[P_{\{\mathbf{v}'\}\to \{\mathbf{v}\}}=\Phi_{\{\mathbf{v}'\}}^{-1}\Phi_{\{\mathbf{v}\}}\]</span></p>
+</section>
+</section>
+<section id="eigenvectors-and-eigenvalues" class="level2">
+<h2 class="anchored" data-anchor-id="eigenvectors-and-eigenvalues">Eigenvectors and Eigenvalues</h2>
+<p>eigenvectors with <strong>different</strong> eigenvalues are linearly independent.</p>
+<p>diagnolization</p>
+</section>
+<section id="newtons-method" class="level2">
+<h2 class="anchored" data-anchor-id="newtons-method">Newton’s Method</h2>
+<p>why talking about Newton’s Method?</p>
+<p>a convenient and practical way to introduce implicit function and inverse function</p>
+<section id="def" class="level3">
+<h3 class="anchored" data-anchor-id="def">def</h3>
+<p><strong>target</strong>: solve for a solution <span class="math inline">\(f(x)=0\)</span></p>
+<p>start at <span class="math inline">\(a_0\)</span></p>
+<p>iterate with <span class="math inline">\(a_i=a_{i-1}-[Df(a_{i-1})]^{-1}f(a_{i-1})\)</span></p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>notes: since <span class="math inline">\(f(x)\approx f(a)+[Df(a)](x-a)\)</span>, letting <span class="math inline">\(f(x)=0\)</span> will give us the next guess.</p>
+</div>
+</div>
+<p>There is actually a sufficient condition to ensure the convergence.</p>
+</section>
+<section id="kantorovichs-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="kantorovichs-theorem">Kantorovich’s theorem</h3>
+<p>let <span class="math inline">\(a_0\in\mathbb{R}^n\)</span>, <span class="math inline">\(U\)</span>: open neighborhood of <span class="math inline">\(a_0\)</span> in <span class="math inline">\(\mathbb{R}^n\)</span>, <span class="math inline">\(f:U\to\mathbb{R}^n\)</span></p>
+<p>def <span class="math inline">\(h_0=-[Df(a_0)]^{-1}f(a_0)\)</span>, <span class="math inline">\(a_1=a_0+h_0\)</span>, <span class="math inline">\(U_1=B_{|h_0|}(a_1)\)</span>, <span class="math inline">\(M\)</span> as the Lipschitz ratio of <span class="math inline">\(Df(x)\)</span> in <span class="math inline">\(U_1\)</span></p>
+<p><strong>theorem</strong>: if <span class="math inline">\(|f(a_0)||[Df(a_0)]^{-1}|^2M\le\frac{1}{2}\)</span>, then <span class="math inline">\(f(x)=0\)</span> has a <strong>unique</strong> solution in the closed ball <span class="math inline">\(\overline{U_1}\)</span> and Newton’s Method converges to it with initial guess <span class="math inline">\(a_0\)</span>.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>notes 1: in short, <span class="math inline">\(a_1\)</span> is the next guess</p>
+<p>notes 2: <strong>a valid value of Lipschitz ratio</strong></p>
+<p>If <span class="math inline">\(|D_kD_jf_i(x)|\le c_{i,j,k}\)</span></p>
+<p>then</p>
+<p><span class="math display">\[\left(\sum_{1\le i,j,k\le n}c_{i,j,k}^2\right)^{1/2}\]</span></p>
+<p>is valid</p>
+</div>
+</div>
+</section>
+<section id="proposition" class="level3">
+<h3 class="anchored" data-anchor-id="proposition">proposition</h3>
+<p>def <span class="math inline">\(U_0=\{x\mid |x-a_0|\lt 2|h_0|\}\)</span></p>
+<p>If <span class="math inline">\(Df\)</span> satisfy Lipschitz condition in <span class="math inline">\(U_0\)</span>, then <span class="math inline">\(f(x)=0\)</span> has a unique solution in <span class="math inline">\(\overline{U_0}\)</span> and Newton’s Method converges to it.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If the product is strictly less than <span class="math inline">\(1/2\)</span>, then Newton’s Method <em>superconverges</em>.</p>
+<p>If <span class="math inline">\(|h_n|\le\frac{1}{c}\)</span>, for <span class="math inline">\(c\)</span> some constant depend on <span class="math inline">\(f\)</span>, then</p>
+<p><span class="math display">\[|h_{n+m}|\le \frac{1}{c}\cdot\left(\frac{1}{2}\right)^{2m},\]</span></p>
+<p>where <span class="math inline">\(h_i=a_{i+1}-a_{i}\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="stronger-version" class="level3">
+<h3 class="anchored" data-anchor-id="stronger-version">stronger version</h3>
+<p>replace all lengths of matrices with <strong>norms</strong>.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>norm of a matrix <span class="math inline">\(A\)</span></p>
+<p><span class="math display">\[\lVert A\rVert=\sup_{|x|=1} |A\mathbf{x}|\]</span></p>
+<p>easy to check: <span class="math inline">\(\lVert A\rVert\le |A|\)</span></p>
+</div>
+</div>
+</section>
+</section>
+<section id="inverse-function-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="inverse-function-theorem">inverse function theorem</h2>
+<p><span class="math inline">\(f\)</span> is continously differentiable</p>
+<p><span class="math inline">\(Df\)</span> is invertible at <span class="math inline">\(x_0\)</span></p>
+<p>then <span class="math inline">\(f\)</span> is locally invertible, with differentiable inverse in some neighborhood of <span class="math inline">\(f(x_0)\)</span></p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>the vigorous version is too lengthy, I am not gonna put it here.</p>
+<p>As you might expect, the locality can actually be quantified by Kantorovich’s theorem.</p>
+</div>
+</div>
+</section>
+<section id="implicit-function-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="implicit-function-theorem">implicit function theorem</h2>
+<p><span class="math inline">\(U\)</span>: a open subset of <span class="math inline">\(\mathbb{R}^{n+m}\)</span></p>
+<p><span class="math inline">\(\mathbf{F}:U\to\mathbb{R}^n\)</span> a <span class="math inline">\(C^1\)</span> mapping s.t. <span class="math inline">\(\mathbf{F}(\mathbf{c})=0\)</span> and <span class="math inline">\([D\mathbf{F}(c)]\)</span> is onto</p>
+<p>then the system of linear equations <span class="math inline">\(D\mathbf{F}(\mathbf{x})=0\)</span> has n pivotal vars and m nonpivotal vars. there exists a neighborhood of <span class="math inline">\(\mathbf{c}\)</span> where <span class="math inline">\(\mathbf{F}(\mathbf{c})=0\)</span> implicitly defines the n passive vars as a function <span class="math inline">\(\mathbf{g}\)</span> of the m active vars.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>notes 1: <span class="math inline">\(\mathbf{F}\)</span> behaves similar to <span class="math inline">\(D\mathbf{F}\)</span> locally.</p>
+<p>in a normal system of linear equations <span class="math inline">\(\mathbf{Ax}=0\)</span>, where <span class="math inline">\(\mathbf{x}\in\mathbb{R}^{m+n}\)</span>, <span class="math inline">\(\textrm{rank }\mathbf{A}=n\)</span>, the dimension of the kernel space of <span class="math inline">\(\mathbf{A}\)</span> is m which corresponds to the m active vars (the base of the kernel).</p>
+<p>notes 2: again, the rigorous version is a little lengthy.</p>
+</div>
+</div>
+<p>not like the existence theorem, which only claims the existence of the inverse function or the implicit function, using Newton’s Method gives us a more practical way to find the function and a more quantified result.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
