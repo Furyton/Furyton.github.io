@@ -1,0 +1,47 @@
+---
+title: "some papers about multi-view-clustering"
+author: "Shiguang WU"
+date: 2022-09-08
+categories: [paper reading, clustering, note]
+draft: false
+---
+
+*very* brief summaries of some papers I read
+
+## *Binary Multi-View Clustering*
+
+large scale multi-view image clustering
+
+jointly learn collaborative discrete representation and binary cluster structures
+
+has an algorithm with proved convergence analysis
+
+## *Contrastive Clustering*
+
+unified instance- and cluster-level contrastive learning
+
+row vectors and column vectors as instance representation and cluster representation
+
+Q: how to construct negative instance, how to design the training target
+
+## *Deep Clustering: On the Link between Discriminative Models and K-Means*
+
+discover the equivilance between discriminative models using L2 regularized MI loss and soft regularized K-means loss, under some conditions
+
+## *Multiview Clustering: A Scalable and Parameter-Free Bipartite Graph Fusion Method *
+
+parameter-free, graph based multi-view clustering (graph fusion frameswork ?)
+
+## *Dual Contrastive Prediction for Incomplete Multi-view Representation Learning *
+
+in-complete MvRL
+
+unify consistency learning and missing data recovery: proved using information theory
+
+framework based on contrastive learning loss
+
+## *Robust Multi-view Clustering with Incomplete Information*
+
+unified framework to solve PVP and PSP
+
+contrastive loss to eliminate the false negative samples

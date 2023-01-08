@@ -1,0 +1,80 @@
+---
+title: "unsupervised model related"
+author: "Shiguang WU"
+date: 2022-09-08
+categories: [ESL, note]
+draft: false
+---
+
+quick notes while reading unsupervised model related part in ESL
+
+## KNN:
+
+- tangent distance
+
+- Invariant Metrics and Tangent Distance (Simard et al., 1993)
+
+## K-means: 
+
+1. find clusters,
+
+2. recompute the cluster centers
+
+### K-means for classification
+
+1. apply K-means for each class, using R prototypes per class (K in total)
+
+2. assign a label for each prototypes (K x R in total)
+
+3. classify new x to the nearest prototype
+
+## Learning Vector Quantization
+
+- cons of vanilla K-means classification:
+
+  - other samples of different class won't involve in the position of other class
+
+- for a random training sample, move the closest prototype a bit (towards or away)
+
+## Gaussian mixture
+
+- assign weight for each cluster (gaussian density)
+
+## discriminant adaptive nearest-neighbor (DANN)
+
+- $\varSigma=W^{-1/2}[B^*+\epsilon I]W^{-1/2}$
+
+- $\varSigma^{1/2} (x-x_0)=\textrm{circle}$
+
+- $W$ normalization, spheres the data
+
+- $B$ stretch, assign larger weights to the directions with larger covariance.
+
+## Market Basket Analysis
+
+- The Apriori Algorithm
+
+- discover association rules with high support values and confidence
+
+## Unsupervised as Supervised Learning
+
+- reference density function
+
+## Generalized Association Rules (NOT UNDERSTAND)
+
+## Clustering Analysis
+
+### Dissimilarity Based on Attributes (dissimilarity defined individually on each attributes)
+
+- Quantitative variables:
+  - $\ell(\textrm{abs}(x_i-x_j))$ $\rightarrow$ squared-error loss, identity (just $\textrm{abs}$)
+
+### correltation
+
+- Ordinal variables
+
+- Categorical variables
+
+### Object Dissimilarity (combining the p-individual attribute dissimilarities)
+
+- weighted average
