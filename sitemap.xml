@@ -2,130 +2,142 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/about.html</loc>
-    <lastmod>2023-01-01T16:20:51.457Z</lastmod>
+    <lastmod>2023-01-08T16:25:42.012Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/parallel-algorithm/pa-06.html</loc>
-    <lastmod>2023-01-01T16:20:52.129Z</lastmod>
+    <lastmod>2023-01-08T16:25:43.964Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/parallel-algorithm/pa-05.html</loc>
-    <lastmod>2023-01-01T16:20:52.457Z</lastmod>
+    <lastmod>2023-01-08T16:25:44.352Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/parallel-algorithm/solution.html</loc>
-    <lastmod>2023-01-01T16:20:52.845Z</lastmod>
+    <lastmod>2023-01-08T16:25:44.808Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/parallel-algorithm/PA-08.html</loc>
-    <lastmod>2023-01-01T16:20:53.205Z</lastmod>
+    <lastmod>2023-01-08T16:25:45.232Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/parallel-algorithm/pa-10.html</loc>
-    <lastmod>2023-01-01T16:20:53.533Z</lastmod>
+    <lastmod>2023-01-08T16:25:45.600Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/parallel-algorithm/PA-02.html</loc>
-    <lastmod>2023-01-01T16:20:53.897Z</lastmod>
+    <lastmod>2023-01-08T16:25:46.028Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/parallel-algorithm/PA-03.html</loc>
-    <lastmod>2023-01-01T16:20:54.429Z</lastmod>
+    <lastmod>2023-01-08T16:25:46.644Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/parallel-algorithm/pa-09.html</loc>
-    <lastmod>2023-01-01T16:20:54.781Z</lastmod>
+    <lastmod>2023-01-08T16:25:47.068Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/parallel-algorithm/pa-07.html</loc>
-    <lastmod>2023-01-01T16:20:55.077Z</lastmod>
+    <lastmod>2023-01-08T16:25:47.472Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/parallel-algorithm/pa-04.html</loc>
-    <lastmod>2023-01-01T16:20:55.457Z</lastmod>
+    <lastmod>2023-01-08T16:25:47.920Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/parallel-algorithm/PA-01.html</loc>
-    <lastmod>2023-01-01T16:20:55.753Z</lastmod>
+    <lastmod>2023-01-08T16:25:48.284Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/paper-reading/moco.html</loc>
-    <lastmod>2023-01-01T16:20:56.081Z</lastmod>
+    <lastmod>2023-01-08T16:25:48.640Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/Furyton/Furyton.github.io/posts/paper-reading/multi-view-clustering.html</loc>
+    <lastmod>2023-01-08T16:25:48.988Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/inequality.html</loc>
-    <lastmod>2023-01-01T16:20:56.365Z</lastmod>
+    <lastmod>2023-01-08T16:25:49.316Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/understanding-machine-learning/UML-01.html</loc>
-    <lastmod>2023-01-01T16:20:56.701Z</lastmod>
+    <lastmod>2023-01-08T16:25:49.740Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/understanding-machine-learning/UML-03.html</loc>
-    <lastmod>2023-01-01T16:20:57.009Z</lastmod>
+    <lastmod>2023-01-08T16:25:50.112Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/understanding-machine-learning/uml-06.html</loc>
-    <lastmod>2023-01-01T16:20:57.385Z</lastmod>
+    <lastmod>2023-01-08T16:25:50.580Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/understanding-machine-learning/UML-05.html</loc>
-    <lastmod>2023-01-01T16:20:57.757Z</lastmod>
+    <lastmod>2023-01-08T16:25:51.064Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/understanding-machine-learning/UML-02.html</loc>
-    <lastmod>2023-01-01T16:20:58.109Z</lastmod>
+    <lastmod>2023-01-08T16:25:51.468Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/understanding-machine-learning/UML-04.html</loc>
-    <lastmod>2023-01-01T16:20:58.449Z</lastmod>
+    <lastmod>2023-01-08T16:25:51.860Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/probability/probability-review-01.html</loc>
-    <lastmod>2023-01-01T16:20:58.733Z</lastmod>
+    <lastmod>2023-01-08T16:25:52.192Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/test/example.html</loc>
-    <lastmod>2023-01-01T16:20:59.045Z</lastmod>
+    <lastmod>2023-01-08T16:25:52.528Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/test/index.html</loc>
-    <lastmod>2023-01-01T16:20:59.557Z</lastmod>
+    <lastmod>2023-01-08T16:25:53.172Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/programming/pytorch-notes.html</loc>
-    <lastmod>2023-01-01T16:20:59.865Z</lastmod>
+    <lastmod>2023-01-08T16:25:53.556Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/programming/vim_tech.html</loc>
-    <lastmod>2023-01-01T16:21:00.161Z</lastmod>
+    <lastmod>2023-01-08T16:25:53.912Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/notes-about-technical-writing.html</loc>
-    <lastmod>2023-01-01T16:21:00.513Z</lastmod>
+    <lastmod>2023-01-08T16:25:54.340Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/Furyton/Furyton.github.io/posts/english/vocab-example.html</loc>
+    <lastmod>2023-01-08T16:25:54.968Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/esl/ESL-01.html</loc>
-    <lastmod>2023-01-01T16:21:00.833Z</lastmod>
+    <lastmod>2023-01-08T16:25:55.380Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/Furyton/Furyton.github.io/posts/esl/ESL-02.html</loc>
+    <lastmod>2023-01-08T16:25:55.756Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/calculus/calculus-02.html</loc>
-    <lastmod>2023-01-01T16:21:01.217Z</lastmod>
+    <lastmod>2023-01-08T16:25:56.196Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/calculus/calculus-01.html</loc>
-    <lastmod>2023-01-01T16:21:01.561Z</lastmod>
+    <lastmod>2023-01-08T16:25:56.652Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/posts/calculus/calculus-03.html</loc>
-    <lastmod>2023-01-01T16:21:01.913Z</lastmod>
+    <lastmod>2023-01-08T16:25:57.072Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/template.html</loc>
-    <lastmod>2023-01-01T16:21:02.181Z</lastmod>
+    <lastmod>2023-01-08T16:25:57.412Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/Furyton/Furyton.github.io/index.html</loc>
-    <lastmod>2023-01-01T16:21:02.653Z</lastmod>
+    <lastmod>2023-01-08T16:25:58.040Z</lastmod>
   </url>
 </urlset>

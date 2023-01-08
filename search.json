@@ -315,6 +315,55 @@
     "text": "conclusion\nMoCo 提供了一种对比学习的框架，在能够使字典尽可能大的同时，还可以保证表征空间的一致性。这是一种非常简洁而有效的方法。"
   },
   {
+    "objectID": "posts/paper-reading/multi-view-clustering.html",
+    "href": "posts/paper-reading/multi-view-clustering.html",
+    "title": "some papers about multi-view-clustering",
+    "section": "",
+    "text": "very brief summaries of some papers I read"
+  },
+  {
+    "objectID": "posts/paper-reading/multi-view-clustering.html#binary-multi-view-clustering",
+    "href": "posts/paper-reading/multi-view-clustering.html#binary-multi-view-clustering",
+    "title": "some papers about multi-view-clustering",
+    "section": "Binary Multi-View Clustering",
+    "text": "Binary Multi-View Clustering\nlarge scale multi-view image clustering\njointly learn collaborative discrete representation and binary cluster structures\nhas an algorithm with proved convergence analysis"
+  },
+  {
+    "objectID": "posts/paper-reading/multi-view-clustering.html#contrastive-clustering",
+    "href": "posts/paper-reading/multi-view-clustering.html#contrastive-clustering",
+    "title": "some papers about multi-view-clustering",
+    "section": "Contrastive Clustering",
+    "text": "Contrastive Clustering\nunified instance- and cluster-level contrastive learning\nrow vectors and column vectors as instance representation and cluster representation\nQ: how to construct negative instance, how to design the training target"
+  },
+  {
+    "objectID": "posts/paper-reading/multi-view-clustering.html#deep-clustering-on-the-link-between-discriminative-models-and-k-means",
+    "href": "posts/paper-reading/multi-view-clustering.html#deep-clustering-on-the-link-between-discriminative-models-and-k-means",
+    "title": "some papers about multi-view-clustering",
+    "section": "Deep Clustering: On the Link between Discriminative Models and K-Means",
+    "text": "Deep Clustering: On the Link between Discriminative Models and K-Means\ndiscover the equivilance between discriminative models using L2 regularized MI loss and soft regularized K-means loss, under some conditions"
+  },
+  {
+    "objectID": "posts/paper-reading/multi-view-clustering.html#multiview-clustering-a-scalable-and-parameter-free-bipartite-graph-fusion-method",
+    "href": "posts/paper-reading/multi-view-clustering.html#multiview-clustering-a-scalable-and-parameter-free-bipartite-graph-fusion-method",
+    "title": "some papers about multi-view-clustering",
+    "section": "Multiview Clustering: A Scalable and Parameter-Free Bipartite Graph Fusion Method ",
+    "text": "Multiview Clustering: A Scalable and Parameter-Free Bipartite Graph Fusion Method \nparameter-free, graph based multi-view clustering (graph fusion frameswork ?)"
+  },
+  {
+    "objectID": "posts/paper-reading/multi-view-clustering.html#dual-contrastive-prediction-for-incomplete-multi-view-representation-learning",
+    "href": "posts/paper-reading/multi-view-clustering.html#dual-contrastive-prediction-for-incomplete-multi-view-representation-learning",
+    "title": "some papers about multi-view-clustering",
+    "section": "Dual Contrastive Prediction for Incomplete Multi-view Representation Learning ",
+    "text": "Dual Contrastive Prediction for Incomplete Multi-view Representation Learning \nin-complete MvRL\nunify consistency learning and missing data recovery: proved using information theory\nframework based on contrastive learning loss"
+  },
+  {
+    "objectID": "posts/paper-reading/multi-view-clustering.html#robust-multi-view-clustering-with-incomplete-information",
+    "href": "posts/paper-reading/multi-view-clustering.html#robust-multi-view-clustering-with-incomplete-information",
+    "title": "some papers about multi-view-clustering",
+    "section": "Robust Multi-view Clustering with Incomplete Information",
+    "text": "Robust Multi-view Clustering with Incomplete Information\nunified framework to solve PVP and PSP\ncontrastive loss to eliminate the false negative samples"
+  },
+  {
     "objectID": "posts/inequality.html",
     "href": "posts/inequality.html",
     "title": "Inequality",
@@ -588,6 +637,265 @@
     "text": "font size"
   },
   {
+    "objectID": "posts/english/vocab-example.html",
+    "href": "posts/english/vocab-example.html",
+    "title": "vocabs with simple examples",
+    "section": "",
+    "text": "some words with explanations (in Eng.) and simple examples\nall the contents are from Combridge Dictionary, I just did some picking up"
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#relate",
+    "href": "posts/english/vocab-example.html#relate",
+    "title": "vocabs with simple examples",
+    "section": "relate",
+    "text": "relate\nto be able to understand a situation or someone’s feelings because you have experienced something similar yourself:\n\nI often wake very early - I’m sure most readers over 50 can relate\n\nto tell a story or describe a series of events:\n\nShe related the events of the previous week to the police."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#persist",
+    "href": "posts/english/vocab-example.html#persist",
+    "title": "vocabs with simple examples",
+    "section": "persist",
+    "text": "persist\nIf an unpleasant feeling or situation persists, it continues to exist:\n\nIf the pain persists, consult a doctor.\nThe cold weather is set to persist throughout the week.\n\nto try to do or continue doing something in a determined but often unreasonable way:\n\nIf he persists in asking awkward questions, then send him to the boss"
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#holistically",
+    "href": "posts/english/vocab-example.html#holistically",
+    "title": "vocabs with simple examples",
+    "section": "holistically",
+    "text": "holistically\nin a way that deals with or treats the whole of something or someone and not just a part:\n\nThe problem needs to be addressed holistically.\nNutrition is being viewed more holistically as a health issue."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#entice",
+    "href": "posts/english/vocab-example.html#entice",
+    "title": "vocabs with simple examples",
+    "section": "entice",
+    "text": "entice\nto persuade someone to do something by offering them something pleasant:\n\nThe adverts entice the customer into buying things they don’t really want.\nPeople are being enticed away from the profession by higher salaries elsewhere.\nA smell of coffee in the doorway enticed people to enter the shop."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#embrace",
+    "href": "posts/english/vocab-example.html#embrace",
+    "title": "vocabs with simple examples",
+    "section": "embrace",
+    "text": "embrace\nto accept something enthusiastically:\n\nThis was an opportunity that he would embrace.\n\nto hold someone tightly with both arms to express love, liking, or sympathy, or when greeting or leaving someone:\n\nShe saw them embrace on the station platform.\n\nto include something, often as one of a number of things:\n\nLinguistics embraces a diverse range of subjects such as phonetics and stylistics."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#bolster",
+    "href": "posts/english/vocab-example.html#bolster",
+    "title": "vocabs with simple examples",
+    "section": "bolster",
+    "text": "bolster\nto support or improve something or make it stronger:\n\nMore money is needed to bolster the industry."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#surveillance",
+    "href": "posts/english/vocab-example.html#surveillance",
+    "title": "vocabs with simple examples",
+    "section": "surveillance",
+    "text": "surveillance\nthe careful watching of a person or place, especially by the police or army, because of a crime that has happened or is expected:\n\nThe police have kept the nightclub under surveillance because of suspected illegal drug activity."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#antibiotic",
+    "href": "posts/english/vocab-example.html#antibiotic",
+    "title": "vocabs with simple examples",
+    "section": "antibiotic",
+    "text": "antibiotic\na medicine that can destroy harmful bacteria or limit their growth\n\nI’m taking antibiotics for a throat infection."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#radiate",
+    "href": "posts/english/vocab-example.html#radiate",
+    "title": "vocabs with simple examples",
+    "section": "radiate",
+    "text": "radiate\nto produce heat and light\n\nThe planet Jupiter radiates twice as much heat from inside as it receives from the Sun.\n\nto show an emotion or quality, or (of an emotion or quality) to be shown or felt:\n\nHe was radiating joy and happiness."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#voyage",
+    "href": "posts/english/vocab-example.html#voyage",
+    "title": "vocabs with simple examples",
+    "section": "voyage",
+    "text": "voyage\na long journey, especially by ship\n\nHe was a young sailor on his first sea voyage.\n\nto travel\n\nIn their little boat they planned to voyage to distant lands."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#invert",
+    "href": "posts/english/vocab-example.html#invert",
+    "title": "vocabs with simple examples",
+    "section": "invert",
+    "text": "invert\nto turn sth. upside down or change the order of two things\n\nIn some languages, the word order in questions is inverted"
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#constitution",
+    "href": "posts/english/vocab-example.html#constitution",
+    "title": "vocabs with simple examples",
+    "section": "constitution",
+    "text": "constitution\nthe set of political principles\nthe general state of someone’s health:\n\nHe has a very strong constitution.\n\nhow something is made up of different parts:\n\nthe constitution of a chemical compound"
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#stuffy",
+    "href": "posts/english/vocab-example.html#stuffy",
+    "title": "vocabs with simple examples",
+    "section": "stuffy",
+    "text": "stuffy\nA stuffy room or building is unpleasant because it has no fresh air:\n\nIt’s really hot and stuffy in here - let’s open the window.\n\nold-fashioned, formal, and boring:\n\nShe is trying to promote a less stuffy image of librarians.\n\nstuffy nose"
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#propagate",
+    "href": "posts/english/vocab-example.html#propagate",
+    "title": "vocabs with simple examples",
+    "section": "propagate",
+    "text": "propagate\nproduce a new plant using a parent plant (or animal)\nto spread opinions, lies, or beliefs among a lot of people:\n\nThe government have tried to propagate the belief that this is a just war.\n\nto send out or spread light or sound waves, movement, etc., or to be sent out or spread:\n\nHow are sound waves propagated?"
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#penalize",
+    "href": "posts/english/vocab-example.html#penalize",
+    "title": "vocabs with simple examples",
+    "section": "penalize",
+    "text": "penalize\nto cause someone a disadvantage:\n\nThe present tax system penalizes poor people.\n\nto punish someone, esp. for breaking the law or a rule:\n\nThe new law penalizes the taxpayers who can least afford to pay."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#graze",
+    "href": "posts/english/vocab-example.html#graze",
+    "title": "vocabs with simple examples",
+    "section": "graze",
+    "text": "graze\nto break the surface of the skin by rubbing against something rough:\n\nHe fell down and grazed his knee.\n\nIf an object grazes something, it touches its surface lightly when it passes it:\n\nThe aircraft’s landing gear grazed the treetops as it landed.\n\neat grass\ninjury"
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#sustain",
+    "href": "posts/english/vocab-example.html#sustain",
+    "title": "vocabs with simple examples",
+    "section": "sustain",
+    "text": "sustain\nto cause or allow something to continue for a period of time:\n\nThe economy looks set to sustain its growth into next year.\n\nto keep alive\n\nThe soil in this part of the world is not rich enough to sustain a large population.\n\nto suffer or experience, especially damage or loss:\n\nShe sustained multiple injuries in the accident.\n\nto support emotionally:\n\nShe was sustained by the strength of her religious faith."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#steer",
+    "href": "posts/english/vocab-example.html#steer",
+    "title": "vocabs with simple examples",
+    "section": "steer",
+    "text": "steer\nto control the direction of a vehicle\n\nThis car is very easy to steer.\n\nIf a vehicle steers, it follows a particular route or direction:\n\nThe ship passed Land’s End, in Cornwall, then steered towards southern Ireland.\n\nto take or make sb./sth. go in the direction you want them\n\nShe steered her guests into the dining room."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#comprise",
+    "href": "posts/english/vocab-example.html#comprise",
+    "title": "vocabs with simple examples",
+    "section": "comprise",
+    "text": "comprise\nto have things or people as parts or members; to consist of:\n\nThe course comprises a class book, a practice book, and a CD.\n\nto be the parts or members of something; to make up something:\n\nItalian students comprise 60 percent of the class.\nThe class is comprised mainly of Italian and French students."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#prosper",
+    "href": "posts/english/vocab-example.html#prosper",
+    "title": "vocabs with simple examples",
+    "section": "prosper",
+    "text": "prosper\nto be or become successful, especially financially:\n\nLots of microchip manufacturing companies prospered at that time."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#compromise",
+    "href": "posts/english/vocab-example.html#compromise",
+    "title": "vocabs with simple examples",
+    "section": "compromise",
+    "text": "compromise\nan agreement in an argument in which the people involved reduce their demands or change their opinion in order to agree:\n\nIt is hoped that a compromise will be reached in today’s talks.\nIn a compromise between management and unions, a four percent pay rise was agreed in return for an increase in productivity.\n\nto allow your principles to be less strong or your standards or morals to be lower:\n\nDon’t compromise your beliefs/principles for the sake of being accepted.\nIf we back down on this issue, our reputation will be compromised.\n\nto risk having a harmful effect on something:\n\nWe would never compromise the safety of our passengers."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#manufacture",
+    "href": "posts/english/vocab-example.html#manufacture",
+    "title": "vocabs with simple examples",
+    "section": "manufacture",
+    "text": "manufacture\nto produce goods in large numbers, usually in a factory using machines:\n\nHe works for a company that manufactures car parts.\nThe report notes a rapid decline in manufactured goods.\n\nto invent something, such as an excuse or story, in order to deceive someone:\n\nShe insisted that every scandalous detail of the story had been manufactured.\n\nthe process of producing goods:\n\nOil is used in the manufacture of a number of fabrics."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#revelation",
+    "href": "posts/english/vocab-example.html#revelation",
+    "title": "vocabs with simple examples",
+    "section": "revelation",
+    "text": "revelation\nthe act of making something known that was secret, or a fact that is made known:\n\na moment of revelation\nHis wife divorced him after the revelation that he was having an affair."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#impart",
+    "href": "posts/english/vocab-example.html#impart",
+    "title": "vocabs with simple examples",
+    "section": "impart",
+    "text": "impart\nto communicate information to someone:\n\nto impart the bad news\nI was rather quiet as I didn’t feel I had much wisdom to impart on the subject.\n\nto give something a particular feeling, quality, or taste:\n\nPreservatives can impart colour and flavour to a product."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#concession",
+    "href": "posts/english/vocab-example.html#concession",
+    "title": "vocabs with simple examples",
+    "section": "concession",
+    "text": "concession\nsomething that is allowed or given up, often in order to end a disagreement, or the act of allowing or giving this:\n\nBoth sides involved in the conflict made some concessions in yesterday’s talks.\nHe stated firmly that no concessions will be made to the terrorists.\n\nthe act of admitting defeat:\n\nThe former president’s concession came even before all the votes had been counted.\na concession speech\n\na reduction in the usual price of something, made available to students, old people, etc.:\n\nYou can get travel concessions if you are under 26."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#trigger",
+    "href": "posts/english/vocab-example.html#trigger",
+    "title": "vocabs with simple examples",
+    "section": "trigger",
+    "text": "trigger\na part of a gun that causes the gun to fire when pressed:\n\nIt’s not clear who actually pulled the trigger.\n\nan event or situation, etc. that causes something to start:\n\nThere are fears that the incident may be a trigger for more violence in the capital.\n\nsomething that causes someone to feel upset and frightened because they are made to remember something bad that has happened in the past:\n\nA trigger is something that sets off a flashback, transporting the person back to the traumatic event.\n\nto cause something to start:\n\nSome people find that certain foods trigger their headaches.\nUltraviolet-B radiation triggers the skin to produce vitamin D.\nThe racial killings at the weekend have triggered off a wave of protests.\n\nto cause a strong emotional reaction of fear, shock, anger, or worry in someone, especially because they are made to remember something bad that has happened in the past:\n\nSeeing him come towards me just triggered me and I screamed.\nHe could be triggered by a loud noise."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#conform",
+    "href": "posts/english/vocab-example.html#conform",
+    "title": "vocabs with simple examples",
+    "section": "conform",
+    "text": "conform\nto behave according to the usual standards of behaviour that are expected by a group or society:\n\nAt our school, you were required to conform, and there was no place for originality."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#deduce",
+    "href": "posts/english/vocab-example.html#deduce",
+    "title": "vocabs with simple examples",
+    "section": "deduce",
+    "text": "deduce\nto reach an answer or a decision by thinking carefully about the known facts:\n\nWe cannot deduce very much from these figures.\nThe police have deduced that he must have left his apartment yesterday evening."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#antiseptic",
+    "href": "posts/english/vocab-example.html#antiseptic",
+    "title": "vocabs with simple examples",
+    "section": "antiseptic",
+    "text": "antiseptic\na chemical used for preventing infection in an injury, especially by killing bacteria:\n\nAntiseptic is used to sterilize the skin before giving an injection.\nMany of the ingredients for antiseptics come from the rainforests.\n\ncompletely free from infection:\n\nIn the 1870s and 1880s, doctors began to follow the principles of antiseptic surgery.\n\ntoo clean and showing no imagination and character:\n\nThere’s an antiseptic feeling to the new town centre, with its covered shopping mall."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#patronage",
+    "href": "posts/english/vocab-example.html#patronage",
+    "title": "vocabs with simple examples",
+    "section": "patronage",
+    "text": "patronage\nthe support given to an organization by someone:\n\nThe charity enjoys the patronage of many prominent local business people.\n\nthe power of a person to give someone an important job or position:\n\nPatronage is a potent force if used politically."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#whip",
+    "href": "posts/english/vocab-example.html#whip",
+    "title": "vocabs with simple examples",
+    "section": "whip",
+    "text": "whip\nto bring or take something quickly:\n\nShe whipped a handkerchief out of her pocket and wiped his face.\nHe whipped the covers off the bed.\nI was going to pay but before I knew it he’d whipped out his credit card.\nThey whipped my plate away before I’d even finished.\n\nto (cause something to) move quickly and forcefully:\n\nThe wind whipped across the half-frozen lake.\nA fierce, freezing wind whipped torrential rain into their faces.\n\nto beat food, especially cream, with a special piece of equipment in order to make it thick and firm:\n\nCould you whip the cream for me?\nTry whipping a little brandy or other liqueur into the cream.\nTop with whipped cream and a sprinkle of sugar.\n\nto hit a person or animal with a whip:\n\nI don’t like the way the drivers whip their horses.\n\nto defeat a person or a team in a competition, especially in a sport:\n\nThey beat us last time, but we whipped them in a rematch.\nHe whipped him in their fight two years ago."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#perquisite",
+    "href": "posts/english/vocab-example.html#perquisite",
+    "title": "vocabs with simple examples",
+    "section": "perquisite",
+    "text": "perquisite\nan advantage or something extra, such as money or goods, that you are given because of your job:\n\nThe perquisites of this job include health insurance and a performance bonus."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#elaborate",
+    "href": "posts/english/vocab-example.html#elaborate",
+    "title": "vocabs with simple examples",
+    "section": "elaborate",
+    "text": "elaborate\ncontaining a lot of careful detail or many detailed parts:\n\nYou want a plain blouse to go with that skirt - nothing too elaborate.\nThey’re making the most elaborate preparations for the wedding.\nHe came out with such an elaborate excuse that I didn’t quite believe him.\n\nto add more information to or explain something that you have said:\n\nThe congresswoman said she was resigning, but refused to elaborate on her reasons for doing so."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#merchandise",
+    "href": "posts/english/vocab-example.html#merchandise",
+    "title": "vocabs with simple examples",
+    "section": "merchandise",
+    "text": "merchandise\ngoods that are bought and sold:\n\nShoppers complained about poor quality merchandise and high prices.\nJapan exported $117 billion in merchandise to the US in 1999.\n\nto encourage the sale of goods by advertising them or by making certain that they are noticed:\n\nShe had to merchandise the new product line."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#dividend",
+    "href": "posts/english/vocab-example.html#dividend",
+    "title": "vocabs with simple examples",
+    "section": "dividend",
+    "text": "dividend\n(a part of) the profit of a company that is paid to the people who own shares in it:\n\nDividends will be sent to shareholders.\nIn addition to their salary, employees receive a profit-related dividend."
+  },
+  {
+    "objectID": "posts/english/vocab-example.html#scatter",
+    "href": "posts/english/vocab-example.html#scatter",
+    "title": "vocabs with simple examples",
+    "section": "scatter",
+    "text": "scatter\nto (cause to) move far apart in different directions:\n\nThe protesters scattered at the sound of gunshots.\nThe soldiers came in and scattered the crowd.\n\nto cover a surface with things that are far apart and in no particular arrangement:\n\nScatter the powder around the plants.\nI scattered grass seed all over the lawn.\nI scattered the whole lawn with grass seed."
+  },
+  {
     "objectID": "posts/esl/ESL-01.html",
     "href": "posts/esl/ESL-01.html",
     "title": "The elements of statistical learning 01",
@@ -600,6 +908,76 @@
     "title": "The elements of statistical learning 01",
     "section": "specific boosting example",
     "text": "specific boosting example\n\nboosting tree\nregion \\(R_j,\\, j=1,\\dots,J\\)\n\\(x\\in R_j\\mathbb{R}ightarrow f(x)=y_j\\)"
+  },
+  {
+    "objectID": "posts/esl/ESL-02.html",
+    "href": "posts/esl/ESL-02.html",
+    "title": "unsupervised model related",
+    "section": "",
+    "text": "quick notes while reading unsupervised model related part in ESL"
+  },
+  {
+    "objectID": "posts/esl/ESL-02.html#knn",
+    "href": "posts/esl/ESL-02.html#knn",
+    "title": "unsupervised model related",
+    "section": "KNN:",
+    "text": "KNN:\n\ntangent distance\nInvariant Metrics and Tangent Distance (Simard et al., 1993)"
+  },
+  {
+    "objectID": "posts/esl/ESL-02.html#k-means",
+    "href": "posts/esl/ESL-02.html#k-means",
+    "title": "unsupervised model related",
+    "section": "K-means:",
+    "text": "K-means:\n\nfind clusters,\nrecompute the cluster centers\n\n\nK-means for classification\n\napply K-means for each class, using R prototypes per class (K in total)\nassign a label for each prototypes (K x R in total)\nclassify new x to the nearest prototype"
+  },
+  {
+    "objectID": "posts/esl/ESL-02.html#learning-vector-quantization",
+    "href": "posts/esl/ESL-02.html#learning-vector-quantization",
+    "title": "unsupervised model related",
+    "section": "Learning Vector Quantization",
+    "text": "Learning Vector Quantization\n\ncons of vanilla K-means classification:\n\nother samples of different class won’t involve in the position of other class\n\nfor a random training sample, move the closest prototype a bit (towards or away)"
+  },
+  {
+    "objectID": "posts/esl/ESL-02.html#gaussian-mixture",
+    "href": "posts/esl/ESL-02.html#gaussian-mixture",
+    "title": "unsupervised model related",
+    "section": "Gaussian mixture",
+    "text": "Gaussian mixture\n\nassign weight for each cluster (gaussian density)"
+  },
+  {
+    "objectID": "posts/esl/ESL-02.html#discriminant-adaptive-nearest-neighbor-dann",
+    "href": "posts/esl/ESL-02.html#discriminant-adaptive-nearest-neighbor-dann",
+    "title": "unsupervised model related",
+    "section": "discriminant adaptive nearest-neighbor (DANN)",
+    "text": "discriminant adaptive nearest-neighbor (DANN)\n\n\\(\\varSigma=W^{-1/2}[B^*+\\epsilon I]W^{-1/2}\\)\n\\(\\varSigma^{1/2} (x-x_0)=\\textrm{circle}\\)\n\\(W\\) normalization, spheres the data\n\\(B\\) stretch, assign larger weights to the directions with larger covariance."
+  },
+  {
+    "objectID": "posts/esl/ESL-02.html#market-basket-analysis",
+    "href": "posts/esl/ESL-02.html#market-basket-analysis",
+    "title": "unsupervised model related",
+    "section": "Market Basket Analysis",
+    "text": "Market Basket Analysis\n\nThe Apriori Algorithm\ndiscover association rules with high support values and confidence"
+  },
+  {
+    "objectID": "posts/esl/ESL-02.html#unsupervised-as-supervised-learning",
+    "href": "posts/esl/ESL-02.html#unsupervised-as-supervised-learning",
+    "title": "unsupervised model related",
+    "section": "Unsupervised as Supervised Learning",
+    "text": "Unsupervised as Supervised Learning\n\nreference density function"
+  },
+  {
+    "objectID": "posts/esl/ESL-02.html#generalized-association-rules-not-understand",
+    "href": "posts/esl/ESL-02.html#generalized-association-rules-not-understand",
+    "title": "unsupervised model related",
+    "section": "Generalized Association Rules (NOT UNDERSTAND)",
+    "text": "Generalized Association Rules (NOT UNDERSTAND)"
+  },
+  {
+    "objectID": "posts/esl/ESL-02.html#clustering-analysis",
+    "href": "posts/esl/ESL-02.html#clustering-analysis",
+    "title": "unsupervised model related",
+    "section": "Clustering Analysis",
+    "text": "Clustering Analysis\n\nDissimilarity Based on Attributes (dissimilarity defined individually on each attributes)\n\nQuantitative variables:\n\n\\(\\ell(\\textrm{abs}(x_i-x_j))\\) \\(\\rightarrow\\) squared-error loss, identity (just \\(\\textrm{abs}\\))\n\n\n\n\ncorreltation\n\nOrdinal variables\nCategorical variables\n\n\n\nObject Dissimilarity (combining the p-individual attribute dissimilarities)\n\nweighted average"
   },
   {
     "objectID": "posts/calculus/calculus-02.html",
@@ -676,6 +1054,6 @@
     "href": "index.html",
     "title": "notes",
     "section": "",
-    "text": "Date\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\nJan 1, 2023\n\n\nQuarto Basics\n\n\nhello world,test\n\n\n\n\nSep 11, 2022\n\n\ncalculus review 03\n\n\ncalculus,review\n\n\n\n\nAug 12, 2022\n\n\nPyTorch Notes\n\n\nPyTorch,programming\n\n\n\n\nAug 9, 2022\n\n\nNotes about Technical Writing\n\n\nwriting,note\n\n\n\n\nJul 5, 2022\n\n\nprobability review 01\n\n\nprobability\n\n\n\n\nJun 27, 2022\n\n\ncalculus review 02\n\n\ncalculus,review\n\n\n\n\nJun 8, 2022\n\n\nparallel algorithm course 10\n\n\nparallel algorithm,note\n\n\n\n\nJun 1, 2022\n\n\nparallel algorithm course 09\n\n\nparallel algorithm,note\n\n\n\n\nMay 11, 2022\n\n\nparallel algorithm course 08\n\n\nparallel algorithm,note\n\n\n\n\nApr 27, 2022\n\n\nparallel algorithm course 07\n\n\nparallel algorithm,note\n\n\n\n\nApr 23, 2022\n\n\nmidterm exam\n\n\nparallel algorithm,note,exam\n\n\n\n\nApr 20, 2022\n\n\nparallel algorithm course 06\n\n\nparallel algorithm,note\n\n\n\n\nApr 6, 2022\n\n\nparallel algorithm course 05\n\n\nparallel algorithm,note\n\n\n\n\nApr 2, 2022\n\n\nInequality\n\n\ninequality\n\n\n\n\nMar 30, 2022\n\n\nparallel algorithm course 04\n\n\nparallel algorithm,note\n\n\n\n\nMar 30, 2022\n\n\nUnderstanding Machine Learning 06\n\n\nunderstanding machine learning,note\n\n\n\n\nMar 28, 2022\n\n\ncalculus review 01\n\n\ncalculus,review\n\n\n\n\nMar 23, 2022\n\n\nparallel algorithm course 03\n\n\nparallel algorithm,note\n\n\n\n\nMar 21, 2022\n\n\nUnderstanding Machine Learning 05\n\n\nunderstanding machine learning,note\n\n\n\n\nMar 16, 2022\n\n\nparallel algorithm course 02\n\n\nparallel algorithm,note\n\n\n\n\nMar 16, 2022\n\n\nUnderstanding Machine Learning 04\n\n\nunderstanding machine learning,note\n\n\n\n\nMar 11, 2022\n\n\nUnderstanding Machine Learning 03\n\n\nunderstanding machine learning,note\n\n\n\n\nMar 9, 2022\n\n\nparallel algorithm course 01\n\n\nparallel algorithm,note\n\n\n\n\nMar 8, 2022\n\n\nUnderstanding Machine Learning 02\n\n\nunderstanding machine learning,note\n\n\n\n\nMar 8, 2022\n\n\nvim techs\n\n\nvim,programming\n\n\n\n\nMar 7, 2022\n\n\nThe elements of statistical learning 01\n\n\nESL,note\n\n\n\n\nMar 3, 2022\n\n\nMoCo\n\n\npaper reading\n\n\n\n\nMar 3, 2022\n\n\nUnderstanding Machine Learning 01\n\n\nunderstanding machine learning,note\n\n\n\n\nMar 1, 2022\n\n\nmy first post\n\n\ntest\n\n\n\n\n\n\nNo matching items"
+    "text": "Date\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\nJan 5, 2023\n\n\nQuarto Basics\n\n\nhello world,test\n\n\n\n\nSep 11, 2022\n\n\ncalculus review 03\n\n\ncalculus,review\n\n\n\n\nSep 8, 2022\n\n\nsome papers about multi-view-clustering\n\n\npaper reading,clustering,note\n\n\n\n\nSep 8, 2022\n\n\nunsupervised model related\n\n\nESL,note\n\n\n\n\nAug 18, 2022\n\n\nvocabs with simple examples\n\n\nEnglish,vocab,note\n\n\n\n\nAug 12, 2022\n\n\nPyTorch Notes\n\n\nPyTorch,programming\n\n\n\n\nAug 9, 2022\n\n\nNotes about Technical Writing\n\n\nwriting,note\n\n\n\n\nJul 5, 2022\n\n\nprobability review 01\n\n\nprobability\n\n\n\n\nJun 27, 2022\n\n\ncalculus review 02\n\n\ncalculus,review\n\n\n\n\nJun 8, 2022\n\n\nparallel algorithm course 10\n\n\nparallel algorithm,note\n\n\n\n\nJun 1, 2022\n\n\nparallel algorithm course 09\n\n\nparallel algorithm,note\n\n\n\n\nMay 11, 2022\n\n\nparallel algorithm course 08\n\n\nparallel algorithm,note\n\n\n\n\nApr 27, 2022\n\n\nparallel algorithm course 07\n\n\nparallel algorithm,note\n\n\n\n\nApr 23, 2022\n\n\nmidterm exam\n\n\nparallel algorithm,note,exam\n\n\n\n\nApr 20, 2022\n\n\nparallel algorithm course 06\n\n\nparallel algorithm,note\n\n\n\n\nApr 6, 2022\n\n\nparallel algorithm course 05\n\n\nparallel algorithm,note\n\n\n\n\nApr 2, 2022\n\n\nInequality\n\n\ninequality\n\n\n\n\nMar 30, 2022\n\n\nparallel algorithm course 04\n\n\nparallel algorithm,note\n\n\n\n\nMar 30, 2022\n\n\nUnderstanding Machine Learning 06\n\n\nunderstanding machine learning,note\n\n\n\n\nMar 28, 2022\n\n\ncalculus review 01\n\n\ncalculus,review\n\n\n\n\nMar 23, 2022\n\n\nparallel algorithm course 03\n\n\nparallel algorithm,note\n\n\n\n\nMar 21, 2022\n\n\nUnderstanding Machine Learning 05\n\n\nunderstanding machine learning,note\n\n\n\n\nMar 16, 2022\n\n\nparallel algorithm course 02\n\n\nparallel algorithm,note\n\n\n\n\nMar 16, 2022\n\n\nUnderstanding Machine Learning 04\n\n\nunderstanding machine learning,note\n\n\n\n\nMar 11, 2022\n\n\nUnderstanding Machine Learning 03\n\n\nunderstanding machine learning,note\n\n\n\n\nMar 9, 2022\n\n\nparallel algorithm course 01\n\n\nparallel algorithm,note\n\n\n\n\nMar 8, 2022\n\n\nUnderstanding Machine Learning 02\n\n\nunderstanding machine learning,note\n\n\n\n\nMar 8, 2022\n\n\nvim techs\n\n\nvim,programming\n\n\n\n\nMar 7, 2022\n\n\nThe elements of statistical learning 01\n\n\nESL,note\n\n\n\n\nMar 3, 2022\n\n\nMoCo\n\n\npaper reading\n\n\n\n\nMar 3, 2022\n\n\nUnderstanding Machine Learning 01\n\n\nunderstanding machine learning,note\n\n\n\n\nMar 1, 2022\n\n\nmy first post\n\n\ntest\n\n\n\n\n\n\nNo matching items"
   }
 ]

@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Furyton">
-<meta name="dcterms.date" content="2022-04-27">
+<meta name="author" content="Shiguang WU">
+<meta name="dcterms.date" content="2022-09-08">
 
-<title>notes - parallel algorithm course 07</title>
+<title>notes - some papers about multi-view-clustering</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -61,7 +61,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -111,13 +110,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#gpu" id="toc-gpu" class="nav-link active" data-scroll-target="#gpu">GPU</a></li>
-  <li><a href="#key-ideas" id="toc-key-ideas" class="nav-link" data-scroll-target="#key-ideas">key ideas</a></li>
-  <li><a href="#how-to-do-split" id="toc-how-to-do-split" class="nav-link" data-scroll-target="#how-to-do-split">how to do split</a>
-  <ul class="collapse">
-  <li><a href="#key-tile" id="toc-key-tile" class="nav-link" data-scroll-target="#key-tile">key: tile</a></li>
-  </ul></li>
-  <li><a href="#post-order-reversal" id="toc-post-order-reversal" class="nav-link" data-scroll-target="#post-order-reversal">post-order reversal</a></li>
+  <li><a href="#binary-multi-view-clustering" id="toc-binary-multi-view-clustering" class="nav-link active" data-scroll-target="#binary-multi-view-clustering"><em>Binary Multi-View Clustering</em></a></li>
+  <li><a href="#contrastive-clustering" id="toc-contrastive-clustering" class="nav-link" data-scroll-target="#contrastive-clustering"><em>Contrastive Clustering</em></a></li>
+  <li><a href="#deep-clustering-on-the-link-between-discriminative-models-and-k-means" id="toc-deep-clustering-on-the-link-between-discriminative-models-and-k-means" class="nav-link" data-scroll-target="#deep-clustering-on-the-link-between-discriminative-models-and-k-means"><em>Deep Clustering: On the Link between Discriminative Models and K-Means</em></a></li>
+  <li><a href="#multiview-clustering-a-scalable-and-parameter-free-bipartite-graph-fusion-method" id="toc-multiview-clustering-a-scalable-and-parameter-free-bipartite-graph-fusion-method" class="nav-link" data-scroll-target="#multiview-clustering-a-scalable-and-parameter-free-bipartite-graph-fusion-method"><em>Multiview Clustering: A Scalable and Parameter-Free Bipartite Graph Fusion Method </em></a></li>
+  <li><a href="#dual-contrastive-prediction-for-incomplete-multi-view-representation-learning" id="toc-dual-contrastive-prediction-for-incomplete-multi-view-representation-learning" class="nav-link" data-scroll-target="#dual-contrastive-prediction-for-incomplete-multi-view-representation-learning"><em>Dual Contrastive Prediction for Incomplete Multi-view Representation Learning </em></a></li>
+  <li><a href="#robust-multi-view-clustering-with-incomplete-information" id="toc-robust-multi-view-clustering-with-incomplete-information" class="nav-link" data-scroll-target="#robust-multi-view-clustering-with-incomplete-information"><em>Robust Multi-view Clustering with Incomplete Information</em></a></li>
   </ul>
 </nav>
     </div>
@@ -126,9 +124,10 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">parallel algorithm course 07</h1>
+<h1 class="title">some papers about multi-view-clustering</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">parallel algorithm</div>
+    <div class="quarto-category">paper reading</div>
+    <div class="quarto-category">clustering</div>
     <div class="quarto-category">note</div>
   </div>
   </div>
@@ -140,14 +139,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Furyton </p>
+             <p>Shiguang WU </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 27, 2022</p>
+      <p class="date">September 8, 2022</p>
     </div>
   </div>
   
@@ -157,47 +156,37 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>tensor core</p>
-<p>math limited, memory limited</p>
-<hr>
-<section id="gpu" class="level2">
-<h2 class="anchored" data-anchor-id="gpu">GPU</h2>
-<p>L1 caches are independent, L2 caches are shared</p>
-<p>expected: <span class="math inline">\(T_\text{math}\ge T_\text{mem}\)</span></p>
-<p><span class="math display">\[
-\frac{\#\text{opt}}{\text{math bandwidth}}\ge \frac{\#\text{bytes}}{\text{mem bandwidth}}
-\]</span></p>
-<p>Arithmetic intensity <span class="math inline">\(\frac{\#\text{opt}}{\#\text{bytes}}\)</span></p>
-<p>math limited when arithmetic intensity <span class="math inline">\(\ge\frac{\text{math band}}{\text{mem band}}\)</span></p>
+<p><em>very</em> brief summaries of some papers I read</p>
+<section id="binary-multi-view-clustering" class="level2">
+<h2 class="anchored" data-anchor-id="binary-multi-view-clustering"><em>Binary Multi-View Clustering</em></h2>
+<p>large scale multi-view image clustering</p>
+<p>jointly learn collaborative discrete representation and binary cluster structures</p>
+<p>has an algorithm with proved convergence analysis</p>
 </section>
-<section id="key-ideas" class="level2">
-<h2 class="anchored" data-anchor-id="key-ideas">key ideas</h2>
-<p>split, independent ++</p>
-<p>user cache</p>
-<p>Tensor Cores: accelerate dot-product, matrix multiplies, size should better be a mulitple of 128 bits</p>
+<section id="contrastive-clustering" class="level2">
+<h2 class="anchored" data-anchor-id="contrastive-clustering"><em>Contrastive Clustering</em></h2>
+<p>unified instance- and cluster-level contrastive learning</p>
+<p>row vectors and column vectors as instance representation and cluster representation</p>
+<p>Q: how to construct negative instance, how to design the training target</p>
 </section>
-<section id="how-to-do-split" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-do-split">how to do split</h2>
-<section id="key-tile" class="level3">
-<h3 class="anchored" data-anchor-id="key-tile">key: tile</h3>
-<p>multiplication, read a tile at a time to L1 cache</p>
-<p>quantization: size should matches the hardware</p>
-<p>running time is <strong>stagewise</strong> increasing as size increases</p>
-<p>small batch <span class="math inline">\(\to\)</span> low usage of GPU</p>
+<section id="deep-clustering-on-the-link-between-discriminative-models-and-k-means" class="level2">
+<h2 class="anchored" data-anchor-id="deep-clustering-on-the-link-between-discriminative-models-and-k-means"><em>Deep Clustering: On the Link between Discriminative Models and K-Means</em></h2>
+<p>discover the equivilance between discriminative models using L2 regularized MI loss and soft regularized K-means loss, under some conditions</p>
 </section>
+<section id="multiview-clustering-a-scalable-and-parameter-free-bipartite-graph-fusion-method" class="level2">
+<h2 class="anchored" data-anchor-id="multiview-clustering-a-scalable-and-parameter-free-bipartite-graph-fusion-method"><em>Multiview Clustering: A Scalable and Parameter-Free Bipartite Graph Fusion Method </em></h2>
+<p>parameter-free, graph based multi-view clustering (graph fusion frameswork ?)</p>
 </section>
-<section id="post-order-reversal" class="level2">
-<h2 class="anchored" data-anchor-id="post-order-reversal">post-order reversal</h2>
-<p>DFS, post-order</p>
-<p>how to parallelize</p>
-<p>hint: list-ranking</p>
-<ol type="1">
-<li><p>tree <span class="math inline">\(\to\)</span> list, Eular Tour, add points</p></li>
-<li><p>initialization, upward point -1, downward point +1</p></li>
-<li><p>list scan</p></li>
-<li><p>list <span class="math inline">\(\to\)</span> tree</p></li>
-</ol>
-<p>adjacency list</p>
+<section id="dual-contrastive-prediction-for-incomplete-multi-view-representation-learning" class="level2">
+<h2 class="anchored" data-anchor-id="dual-contrastive-prediction-for-incomplete-multi-view-representation-learning"><em>Dual Contrastive Prediction for Incomplete Multi-view Representation Learning </em></h2>
+<p>in-complete MvRL</p>
+<p>unify consistency learning and missing data recovery: proved using information theory</p>
+<p>framework based on contrastive learning loss</p>
+</section>
+<section id="robust-multi-view-clustering-with-incomplete-information" class="level2">
+<h2 class="anchored" data-anchor-id="robust-multi-view-clustering-with-incomplete-information"><em>Robust Multi-view Clustering with Incomplete Information</em></h2>
+<p>unified framework to solve PVP and PSP</p>
+<p>contrastive loss to eliminate the false negative samples</p>
 
 
 </section>

@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Furyton">
-<meta name="dcterms.date" content="2022-04-27">
+<meta name="author" content="Shiguang WU">
+<meta name="dcterms.date" content="2022-09-08">
 
-<title>notes - parallel algorithm course 07</title>
+<title>notes - unsupervised model related</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -111,13 +111,23 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#gpu" id="toc-gpu" class="nav-link active" data-scroll-target="#gpu">GPU</a></li>
-  <li><a href="#key-ideas" id="toc-key-ideas" class="nav-link" data-scroll-target="#key-ideas">key ideas</a></li>
-  <li><a href="#how-to-do-split" id="toc-how-to-do-split" class="nav-link" data-scroll-target="#how-to-do-split">how to do split</a>
+  <li><a href="#knn" id="toc-knn" class="nav-link active" data-scroll-target="#knn">KNN:</a></li>
+  <li><a href="#k-means" id="toc-k-means" class="nav-link" data-scroll-target="#k-means">K-means:</a>
   <ul class="collapse">
-  <li><a href="#key-tile" id="toc-key-tile" class="nav-link" data-scroll-target="#key-tile">key: tile</a></li>
+  <li><a href="#k-means-for-classification" id="toc-k-means-for-classification" class="nav-link" data-scroll-target="#k-means-for-classification">K-means for classification</a></li>
   </ul></li>
-  <li><a href="#post-order-reversal" id="toc-post-order-reversal" class="nav-link" data-scroll-target="#post-order-reversal">post-order reversal</a></li>
+  <li><a href="#learning-vector-quantization" id="toc-learning-vector-quantization" class="nav-link" data-scroll-target="#learning-vector-quantization">Learning Vector Quantization</a></li>
+  <li><a href="#gaussian-mixture" id="toc-gaussian-mixture" class="nav-link" data-scroll-target="#gaussian-mixture">Gaussian mixture</a></li>
+  <li><a href="#discriminant-adaptive-nearest-neighbor-dann" id="toc-discriminant-adaptive-nearest-neighbor-dann" class="nav-link" data-scroll-target="#discriminant-adaptive-nearest-neighbor-dann">discriminant adaptive nearest-neighbor (DANN)</a></li>
+  <li><a href="#market-basket-analysis" id="toc-market-basket-analysis" class="nav-link" data-scroll-target="#market-basket-analysis">Market Basket Analysis</a></li>
+  <li><a href="#unsupervised-as-supervised-learning" id="toc-unsupervised-as-supervised-learning" class="nav-link" data-scroll-target="#unsupervised-as-supervised-learning">Unsupervised as Supervised Learning</a></li>
+  <li><a href="#generalized-association-rules-not-understand" id="toc-generalized-association-rules-not-understand" class="nav-link" data-scroll-target="#generalized-association-rules-not-understand">Generalized Association Rules (NOT UNDERSTAND)</a></li>
+  <li><a href="#clustering-analysis" id="toc-clustering-analysis" class="nav-link" data-scroll-target="#clustering-analysis">Clustering Analysis</a>
+  <ul class="collapse">
+  <li><a href="#dissimilarity-based-on-attributes-dissimilarity-defined-individually-on-each-attributes" id="toc-dissimilarity-based-on-attributes-dissimilarity-defined-individually-on-each-attributes" class="nav-link" data-scroll-target="#dissimilarity-based-on-attributes-dissimilarity-defined-individually-on-each-attributes">Dissimilarity Based on Attributes (dissimilarity defined individually on each attributes)</a></li>
+  <li><a href="#correltation" id="toc-correltation" class="nav-link" data-scroll-target="#correltation">correltation</a></li>
+  <li><a href="#object-dissimilarity-combining-the-p-individual-attribute-dissimilarities" id="toc-object-dissimilarity-combining-the-p-individual-attribute-dissimilarities" class="nav-link" data-scroll-target="#object-dissimilarity-combining-the-p-individual-attribute-dissimilarities">Object Dissimilarity (combining the p-individual attribute dissimilarities)</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -126,9 +136,9 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">parallel algorithm course 07</h1>
+<h1 class="title">unsupervised model related</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">parallel algorithm</div>
+    <div class="quarto-category">ESL</div>
     <div class="quarto-category">note</div>
   </div>
   </div>
@@ -140,14 +150,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Furyton </p>
+             <p>Shiguang WU </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 27, 2022</p>
+      <p class="date">September 8, 2022</p>
     </div>
   </div>
   
@@ -157,49 +167,96 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>tensor core</p>
-<p>math limited, memory limited</p>
-<hr>
-<section id="gpu" class="level2">
-<h2 class="anchored" data-anchor-id="gpu">GPU</h2>
-<p>L1 caches are independent, L2 caches are shared</p>
-<p>expected: <span class="math inline">\(T_\text{math}\ge T_\text{mem}\)</span></p>
-<p><span class="math display">\[
-\frac{\#\text{opt}}{\text{math bandwidth}}\ge \frac{\#\text{bytes}}{\text{mem bandwidth}}
-\]</span></p>
-<p>Arithmetic intensity <span class="math inline">\(\frac{\#\text{opt}}{\#\text{bytes}}\)</span></p>
-<p>math limited when arithmetic intensity <span class="math inline">\(\ge\frac{\text{math band}}{\text{mem band}}\)</span></p>
+<p>quick notes while reading unsupervised model related part in ESL</p>
+<section id="knn" class="level2">
+<h2 class="anchored" data-anchor-id="knn">KNN:</h2>
+<ul>
+<li><p>tangent distance</p></li>
+<li><p>Invariant Metrics and Tangent Distance (Simard et al., 1993)</p></li>
+</ul>
 </section>
-<section id="key-ideas" class="level2">
-<h2 class="anchored" data-anchor-id="key-ideas">key ideas</h2>
-<p>split, independent ++</p>
-<p>user cache</p>
-<p>Tensor Cores: accelerate dot-product, matrix multiplies, size should better be a mulitple of 128 bits</p>
-</section>
-<section id="how-to-do-split" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-do-split">how to do split</h2>
-<section id="key-tile" class="level3">
-<h3 class="anchored" data-anchor-id="key-tile">key: tile</h3>
-<p>multiplication, read a tile at a time to L1 cache</p>
-<p>quantization: size should matches the hardware</p>
-<p>running time is <strong>stagewise</strong> increasing as size increases</p>
-<p>small batch <span class="math inline">\(\to\)</span> low usage of GPU</p>
-</section>
-</section>
-<section id="post-order-reversal" class="level2">
-<h2 class="anchored" data-anchor-id="post-order-reversal">post-order reversal</h2>
-<p>DFS, post-order</p>
-<p>how to parallelize</p>
-<p>hint: list-ranking</p>
+<section id="k-means" class="level2">
+<h2 class="anchored" data-anchor-id="k-means">K-means:</h2>
 <ol type="1">
-<li><p>tree <span class="math inline">\(\to\)</span> list, Eular Tour, add points</p></li>
-<li><p>initialization, upward point -1, downward point +1</p></li>
-<li><p>list scan</p></li>
-<li><p>list <span class="math inline">\(\to\)</span> tree</p></li>
+<li><p>find clusters,</p></li>
+<li><p>recompute the cluster centers</p></li>
 </ol>
-<p>adjacency list</p>
+<section id="k-means-for-classification" class="level3">
+<h3 class="anchored" data-anchor-id="k-means-for-classification">K-means for classification</h3>
+<ol type="1">
+<li><p>apply K-means for each class, using R prototypes per class (K in total)</p></li>
+<li><p>assign a label for each prototypes (K x R in total)</p></li>
+<li><p>classify new x to the nearest prototype</p></li>
+</ol>
+</section>
+</section>
+<section id="learning-vector-quantization" class="level2">
+<h2 class="anchored" data-anchor-id="learning-vector-quantization">Learning Vector Quantization</h2>
+<ul>
+<li><p>cons of vanilla K-means classification:</p>
+<ul>
+<li>other samples of different class won’t involve in the position of other class</li>
+</ul></li>
+<li><p>for a random training sample, move the closest prototype a bit (towards or away)</p></li>
+</ul>
+</section>
+<section id="gaussian-mixture" class="level2">
+<h2 class="anchored" data-anchor-id="gaussian-mixture">Gaussian mixture</h2>
+<ul>
+<li>assign weight for each cluster (gaussian density)</li>
+</ul>
+</section>
+<section id="discriminant-adaptive-nearest-neighbor-dann" class="level2">
+<h2 class="anchored" data-anchor-id="discriminant-adaptive-nearest-neighbor-dann">discriminant adaptive nearest-neighbor (DANN)</h2>
+<ul>
+<li><p><span class="math inline">\(\varSigma=W^{-1/2}[B^*+\epsilon I]W^{-1/2}\)</span></p></li>
+<li><p><span class="math inline">\(\varSigma^{1/2} (x-x_0)=\textrm{circle}\)</span></p></li>
+<li><p><span class="math inline">\(W\)</span> normalization, spheres the data</p></li>
+<li><p><span class="math inline">\(B\)</span> stretch, assign larger weights to the directions with larger covariance.</p></li>
+</ul>
+</section>
+<section id="market-basket-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="market-basket-analysis">Market Basket Analysis</h2>
+<ul>
+<li><p>The Apriori Algorithm</p></li>
+<li><p>discover association rules with high support values and confidence</p></li>
+</ul>
+</section>
+<section id="unsupervised-as-supervised-learning" class="level2">
+<h2 class="anchored" data-anchor-id="unsupervised-as-supervised-learning">Unsupervised as Supervised Learning</h2>
+<ul>
+<li>reference density function</li>
+</ul>
+</section>
+<section id="generalized-association-rules-not-understand" class="level2">
+<h2 class="anchored" data-anchor-id="generalized-association-rules-not-understand">Generalized Association Rules (NOT UNDERSTAND)</h2>
+</section>
+<section id="clustering-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="clustering-analysis">Clustering Analysis</h2>
+<section id="dissimilarity-based-on-attributes-dissimilarity-defined-individually-on-each-attributes" class="level3">
+<h3 class="anchored" data-anchor-id="dissimilarity-based-on-attributes-dissimilarity-defined-individually-on-each-attributes">Dissimilarity Based on Attributes (dissimilarity defined individually on each attributes)</h3>
+<ul>
+<li>Quantitative variables:
+<ul>
+<li><span class="math inline">\(\ell(\textrm{abs}(x_i-x_j))\)</span> <span class="math inline">\(\rightarrow\)</span> squared-error loss, identity (just <span class="math inline">\(\textrm{abs}\)</span>)</li>
+</ul></li>
+</ul>
+</section>
+<section id="correltation" class="level3">
+<h3 class="anchored" data-anchor-id="correltation">correltation</h3>
+<ul>
+<li><p>Ordinal variables</p></li>
+<li><p>Categorical variables</p></li>
+</ul>
+</section>
+<section id="object-dissimilarity-combining-the-p-individual-attribute-dissimilarities" class="level3">
+<h3 class="anchored" data-anchor-id="object-dissimilarity-combining-the-p-individual-attribute-dissimilarities">Object Dissimilarity (combining the p-individual attribute dissimilarities)</h3>
+<ul>
+<li>weighted average</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
