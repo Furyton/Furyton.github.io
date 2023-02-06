@@ -1,0 +1,162 @@
+---
+title: "Total Commander Tips"
+author: "Shiguang WU"
+date: 2023-02-06
+categories: [note, tool, total commander]
+draft: true
+---
+
+![xbeta blog about TC](https://xbeta.info/studytc/tc001.htm){width=100% height="4in"}
+
+A [famous introductory blog](https://xbeta.info/studytc/tc001.htm) to [Total Commander](https://www.ghisler.com/).
+
+Total Commander is a powerful customizable file manager tool.
+It has enormous features that are totally beyond one's imagination.
+
+Here is a quick note while learning the operation of TC from the blog[^1].
+
+[^1]: [xbeta blog](https://xbeta.info/studytc/tc001.htm)
+
+## Config files
+
+`.ini` config file is recommended to be put under the installation directory.
+
+For better management.
+
+Also set `UseIniInProgramDir=7`, ignore register file.
+
+[xbeta's config](/www/xbeta_wincmd.ini) file for learning.
+
+## location and selection
+
+### directory hotlist
+
+`Ctrl+d x`
+
+- hotlist = most used directorys
+
+- extremely fast to navigate
+
+::: {.callout-tip}
+- use subdirectory in hotlist
+
+- tidy up the hotlist periodically, e.g., make a `Ctrl+d n` (now) sublist for most frequent dirs recently.
+:::
+
+### change disk
+
+`Alt+F1` for left panel, `Alt+F2` for right panel
+
+### common way of changing dir
+
+- `Enter` or `Backspace`
+
+- `Ctrl+\` to root dir
+
+### quick search
+
+my config:
+
+`Configuration` -> `Quick Search`
+
+- tick `Letters only`
+
+- uncheck `Beginning (...)`
+
+- check `Ending (...)`
+
+### History
+
+`Alt+↓`
+
+### Sorting
+
+Sort with multiple keys.
+
+E.g.,
+
+- First click `Ext`
+
+- Then, click `Date`, `Name` while pressing `Ctrl`
+
+### Filtering
+
+Show only the desired files
+
+`Show` -> `Custom...`
+
+### Coloring
+
+`Configuration` -> `Color` -> `Define colors by file type...`
+
+- 2days as red
+
+- exe as purple
+
+- 7days as blue
+
+### Selecting
+
+Recommend to use the default NC mode (right single click to select)
+
+- `Configuration` -> `Operation`
+
+Long right press for right menu.
+
+### multiple selection
+
+- `Alt+'+'` (`'+'` in the numeric keypad of keyboard): also select files with the same extension (you have already been selecting a file)
+
+- `*` (also in the numeric keypad): reverse selection
+
+- `+` and `-`: also select or unselect some files (pops up a window for you to choose)
+
+- `Insert` for a single selection, function like right single click and then `↓`.
+
+- `/` (also in the numeric keypad): unselect all files.
+
+### Branch View
+
+`Ctrl+b`: show all files in current and sub- directories.
+
+## Pack / Unpack
+
+Pack:
+
+- `Alt+F5` / `Ctrl+Alt+F5`
+
+- To save the archive in the current dir, set `CA+F5=cm_PackFiles` in `[Shortcuts]` session of `wincmd.ini` file. `Ctrl+Alt+F5`
+
+Unpack:
+
+- `Alt+F9`, then clear the input field (empty means current folder)
+
+- check `Unpack each archive ...` to save in a subfolder
+
+::: {.callout-tip}
+to make it a default manner (save in a subfolder instead of current folder), set `UnZIPSeperateSubdirs=-2` in `[Packer]` section of `wincmd.ini`.
+:::
+
+Browsing packed file:
+
+- browse like a normal folder
+
+- `Ctrl + →` or `Ctrl + ←` or `Ctrl + PageDown`: open in right/left/current panel
+
+## rename
+
+`Shift+F6` is the default (change filename), press again to include extension
+
+use `F2` is recommended.
+
+add `F2=cm_RenameOnly` in `[Shortcuts]` section
+
+## Addons
+
+- [xbeta plugin collections](https://xbeta.info/tc/plugins.htm)
+
+- [official addon collections](https://www.ghisler.com/addons.htm)
+
+## Searching
+
+...
