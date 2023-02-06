@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="furyton">
-<meta name="dcterms.date" content="2022-03-01">
+<meta name="author" content="Shiguang WU">
+<meta name="dcterms.date" content="2023-02-06">
 
-<title>notes - my first post</title>
+<title>notes - Total Commander Tips</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -61,7 +61,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -111,8 +110,25 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#sec-two" id="toc-sec-two" class="nav-link active" data-scroll-target="#sec-two">equations and callouts</a></li>
-  <li><a href="#cite-at-the-margin" id="toc-cite-at-the-margin" class="nav-link" data-scroll-target="#cite-at-the-margin">cite at the margin</a></li>
+  <li><a href="#config-files" id="toc-config-files" class="nav-link active" data-scroll-target="#config-files">Config files</a></li>
+  <li><a href="#location-and-selection" id="toc-location-and-selection" class="nav-link" data-scroll-target="#location-and-selection">location and selection</a>
+  <ul class="collapse">
+  <li><a href="#directory-hotlist" id="toc-directory-hotlist" class="nav-link" data-scroll-target="#directory-hotlist">directory hotlist</a></li>
+  <li><a href="#change-disk" id="toc-change-disk" class="nav-link" data-scroll-target="#change-disk">change disk</a></li>
+  <li><a href="#common-way-of-changing-dir" id="toc-common-way-of-changing-dir" class="nav-link" data-scroll-target="#common-way-of-changing-dir">common way of changing dir</a></li>
+  <li><a href="#quick-search" id="toc-quick-search" class="nav-link" data-scroll-target="#quick-search">quick search</a></li>
+  <li><a href="#history" id="toc-history" class="nav-link" data-scroll-target="#history">History</a></li>
+  <li><a href="#sorting" id="toc-sorting" class="nav-link" data-scroll-target="#sorting">Sorting</a></li>
+  <li><a href="#filtering" id="toc-filtering" class="nav-link" data-scroll-target="#filtering">Filtering</a></li>
+  <li><a href="#coloring" id="toc-coloring" class="nav-link" data-scroll-target="#coloring">Coloring</a></li>
+  <li><a href="#selecting" id="toc-selecting" class="nav-link" data-scroll-target="#selecting">Selecting</a></li>
+  <li><a href="#multiple-selection" id="toc-multiple-selection" class="nav-link" data-scroll-target="#multiple-selection">multiple selection</a></li>
+  <li><a href="#branch-view" id="toc-branch-view" class="nav-link" data-scroll-target="#branch-view">Branch View</a></li>
+  </ul></li>
+  <li><a href="#pack-unpack" id="toc-pack-unpack" class="nav-link" data-scroll-target="#pack-unpack">Pack / Unpack</a></li>
+  <li><a href="#rename" id="toc-rename" class="nav-link" data-scroll-target="#rename">rename</a></li>
+  <li><a href="#addons" id="toc-addons" class="nav-link" data-scroll-target="#addons">Addons</a></li>
+  <li><a href="#searching" id="toc-searching" class="nav-link" data-scroll-target="#searching">Searching</a></li>
   </ul>
 </nav>
     </div>
@@ -121,9 +137,11 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">my first post</h1>
+<h1 class="title">Total Commander Tips</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">test</div>
+    <div class="quarto-category">note</div>
+    <div class="quarto-category">tool</div>
+    <div class="quarto-category">total commander</div>
   </div>
   </div>
 
@@ -134,14 +152,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>furyton </p>
+             <p>Shiguang WU </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 1, 2022</p>
+      <p class="date">February 6, 2023</p>
     </div>
   </div>
   
@@ -151,29 +169,31 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="page-columns page-full"><p>This is a test for the <span class="math inline">\(\LaTeX\)</span> rendering.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;this is a note</p></li></div></div>
-<p>It successes with a little effort !!!</p>
-<p>see <a href="#sec-two">Section&nbsp;1</a>. and <a href="#eq-einstein">Equation&nbsp;1</a>.</p>
-<section id="sec-two" class="level2">
-<h2 class="anchored" data-anchor-id="sec-two">equations and callouts</h2>
-<p>nothing</p>
-<p>Einstein’s theory of special relatively that expresses the equivalence of mass and energy:</p>
-<p><span id="eq-einstein"><span class="math display">\[
-E = mc^{2}
-\tag{1}\]</span></span></p>
-<div class="callout-note callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><embed src="https://xbeta.info/studytc/tc001.htm" style="width:100.0%;height:4in"></p>
+<p></p><figcaption class="figure-caption">xbeta blog about TC</figcaption><p></p>
+</figure>
 </div>
-<div class="callout-caption-container flex-fill">
-my note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Note that there are five types of callouts, including: <code>note</code>, <code>tip</code>, <code>warning</code>, <code>caution</code>, and <code>important</code>.</p>
-</div>
-</div>
+<p>A <a href="https://xbeta.info/studytc/tc001.htm">famous introductory blog</a> to <a href="https://www.ghisler.com/">Total Commander</a>.</p>
+<p>Total Commander is a powerful customizable file manager tool. It has enormous features that are totally beyond one’s imagination.</p>
+<div class="page-columns page-full"><p>Here is a quick note while learning the operation of TC from the blog<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;<a href="https://xbeta.info/studytc/tc001.htm">xbeta blog</a></p></li></div></div>
+<section id="config-files" class="level2">
+<h2 class="anchored" data-anchor-id="config-files">Config files</h2>
+<p><code>.ini</code> config file is recommended to be put under the installation directory.</p>
+<p>For better management.</p>
+<p>Also set <code>UseIniInProgramDir=7</code>, ignore register file.</p>
+<p><a href="../../www/xbeta_wincmd.ini">xbeta’s config</a> file for learning.</p>
+</section>
+<section id="location-and-selection" class="level2">
+<h2 class="anchored" data-anchor-id="location-and-selection">location and selection</h2>
+<section id="directory-hotlist" class="level3">
+<h3 class="anchored" data-anchor-id="directory-hotlist">directory hotlist</h3>
+<p><code>Ctrl+d x</code></p>
+<ul>
+<li><p>hotlist = most used directorys</p></li>
+<li><p>extremely fast to navigate</p></li>
+</ul>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -184,52 +204,131 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Note that there are five types of callouts, including: <code>note</code>, <code>tip</code>, <code>warning</code>, <code>caution</code>, and <code>important</code>.</p>
-</div>
-</div>
-<div class="callout-warning callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Note that there are five types of callouts, including: <code>note</code>, <code>tip</code>, <code>warning</code>, <code>caution</code>, and <code>important</code>.</p>
-</div>
-</div>
-<div class="callout-caution callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Danger
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Note that there are five types of callouts, including: <code>note</code>, <code>tip</code>, <code>warning</code>, <code>caution</code>, and <code>important</code>.</p>
-</div>
-</div>
-<div class="callout-important callout callout-style-default callout-captioned">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-caption-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Note that there are five types of callouts, including: <code>note</code>, <code>tip</code>, <code>warning</code>, <code>caution</code>, and <code>important</code>.</p>
+<ul>
+<li><p>use subdirectory in hotlist</p></li>
+<li><p>tidy up the hotlist periodically, e.g., make a <code>Ctrl+d n</code> (now) sublist for most frequent dirs recently.</p></li>
+</ul>
 </div>
 </div>
 </section>
-<section id="cite-at-the-margin" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="cite-at-the-margin">cite at the margin</h2>
-<div class="page-columns page-full"><p>Colorbars indicate the quantitative extent of image data. Placing in a figure is non-trivial because room needs to be made for them. The simplest case is just attaching a colorbar to each axes:<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;See the <a href="https://matplotlib.org/stable/gallery/subplots_axes_and_figures/colorbar_placement.html">Matplotlib Gallery</a> to explore colorbars further</p></li></div></div>
+<section id="change-disk" class="level3">
+<h3 class="anchored" data-anchor-id="change-disk">change disk</h3>
+<p><code>Alt+F1</code> for left panel, <code>Alt+F2</code> for right panel</p>
+</section>
+<section id="common-way-of-changing-dir" class="level3">
+<h3 class="anchored" data-anchor-id="common-way-of-changing-dir">common way of changing dir</h3>
+<ul>
+<li><p><code>Enter</code> or <code>Backspace</code></p></li>
+<li><p><code>Ctrl+\</code> to root dir</p></li>
+</ul>
+</section>
+<section id="quick-search" class="level3">
+<h3 class="anchored" data-anchor-id="quick-search">quick search</h3>
+<p>my config:</p>
+<p><code>Configuration</code> -&gt; <code>Quick Search</code></p>
+<ul>
+<li><p>tick <code>Letters only</code></p></li>
+<li><p>uncheck <code>Beginning (...)</code></p></li>
+<li><p>check <code>Ending (...)</code></p></li>
+</ul>
+</section>
+<section id="history" class="level3">
+<h3 class="anchored" data-anchor-id="history">History</h3>
+<p><code>Alt+↓</code></p>
+</section>
+<section id="sorting" class="level3">
+<h3 class="anchored" data-anchor-id="sorting">Sorting</h3>
+<p>Sort with multiple keys.</p>
+<p>E.g.,</p>
+<ul>
+<li><p>First click <code>Ext</code></p></li>
+<li><p>Then, click <code>Date</code>, <code>Name</code> while pressing <code>Ctrl</code></p></li>
+</ul>
+</section>
+<section id="filtering" class="level3">
+<h3 class="anchored" data-anchor-id="filtering">Filtering</h3>
+<p>Show only the desired files</p>
+<p><code>Show</code> -&gt; <code>Custom...</code></p>
+</section>
+<section id="coloring" class="level3">
+<h3 class="anchored" data-anchor-id="coloring">Coloring</h3>
+<p><code>Configuration</code> -&gt; <code>Color</code> -&gt; <code>Define colors by file type...</code></p>
+<ul>
+<li><p>2days as red</p></li>
+<li><p>exe as purple</p></li>
+<li><p>7days as blue</p></li>
+</ul>
+</section>
+<section id="selecting" class="level3">
+<h3 class="anchored" data-anchor-id="selecting">Selecting</h3>
+<p>Recommend to use the default NC mode (right single click to select)</p>
+<ul>
+<li><code>Configuration</code> -&gt; <code>Operation</code></li>
+</ul>
+<p>Long right press for right menu.</p>
+</section>
+<section id="multiple-selection" class="level3">
+<h3 class="anchored" data-anchor-id="multiple-selection">multiple selection</h3>
+<ul>
+<li><p><code>Alt+'+'</code> (<code>'+'</code> in the numeric keypad of keyboard): also select files with the same extension (you have already been selecting a file)</p></li>
+<li><p><code>*</code> (also in the numeric keypad): reverse selection</p></li>
+<li><p><code>+</code> and <code>-</code>: also select or unselect some files (pops up a window for you to choose)</p></li>
+<li><p><code>Insert</code> for a single selection, function like right single click and then <code>↓</code>.</p></li>
+<li><p><code>/</code> (also in the numeric keypad): unselect all files.</p></li>
+</ul>
+</section>
+<section id="branch-view" class="level3">
+<h3 class="anchored" data-anchor-id="branch-view">Branch View</h3>
+<p><code>Ctrl+b</code>: show all files in current and sub- directories.</p>
+</section>
+</section>
+<section id="pack-unpack" class="level2">
+<h2 class="anchored" data-anchor-id="pack-unpack">Pack / Unpack</h2>
+<p>Pack:</p>
+<ul>
+<li><p><code>Alt+F5</code> / <code>Ctrl+Alt+F5</code></p></li>
+<li><p>To save the archive in the current dir, set <code>CA+F5=cm_PackFiles</code> in <code>[Shortcuts]</code> session of <code>wincmd.ini</code> file. <code>Ctrl+Alt+F5</code></p></li>
+</ul>
+<p>Unpack:</p>
+<ul>
+<li><p><code>Alt+F9</code>, then clear the input field (empty means current folder)</p></li>
+<li><p>check <code>Unpack each archive ...</code> to save in a subfolder</p></li>
+</ul>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>to make it a default manner (save in a subfolder instead of current folder), set <code>UnZIPSeperateSubdirs=-2</code> in <code>[Packer]</code> section of <code>wincmd.ini</code>.</p>
+</div>
+</div>
+<p>Browsing packed file:</p>
+<ul>
+<li><p>browse like a normal folder</p></li>
+<li><p><code>Ctrl + →</code> or <code>Ctrl + ←</code> or <code>Ctrl + PageDown</code>: open in right/left/current panel</p></li>
+</ul>
+</section>
+<section id="rename" class="level2">
+<h2 class="anchored" data-anchor-id="rename">rename</h2>
+<p><code>Shift+F6</code> is the default (change filename), press again to include extension</p>
+<p>use <code>F2</code> is recommended.</p>
+<p>add <code>F2=cm_RenameOnly</code> in <code>[Shortcuts]</code> section</p>
+</section>
+<section id="addons" class="level2">
+<h2 class="anchored" data-anchor-id="addons">Addons</h2>
+<ul>
+<li><p><a href="https://xbeta.info/tc/plugins.htm">xbeta plugin collections</a></p></li>
+<li><p><a href="https://www.ghisler.com/addons.htm">official addon collections</a></p></li>
+</ul>
+</section>
+<section id="searching" class="level2">
+<h2 class="anchored" data-anchor-id="searching">Searching</h2>
+<p>…</p>
 
 
 </section>
