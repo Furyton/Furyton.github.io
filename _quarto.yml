@@ -11,6 +11,7 @@ website:
         href: https://github.com/Furyton
       - icon: twitter
         href: https://twitter.com/shiguang_wu
+  google-analytics: "G-2J6LH2FX5K"
 format:
   html:
     theme: cosmo
