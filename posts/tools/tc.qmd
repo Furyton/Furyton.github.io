@@ -3,7 +3,7 @@ title: "Total Commander Tips"
 author: "Shiguang WU"
 date: 2023-02-06
 categories: [note, tool, total commander]
-draft: true
+draft: false
 ---
 
 ![xbeta blog about TC](https://xbeta.info/studytc/tc001.htm){width=100% height="4in"}
@@ -113,7 +113,7 @@ Long right press for right menu.
 
 - `Insert` for a single selection, function like right single click and then `↓`.
 
-- `/` (also in the numeric keypad): unselect all files.
+<!-- - `/` (also in the numeric keypad): unselect all files. -->
 
 ### Branch View
 
@@ -157,6 +157,8 @@ add `F2=cm_RenameOnly` in `[Shortcuts]` section
 
 - [official addon collections](https://www.ghisler.com/addons.htm)
 
-## Searching
+---
 
-...
+my [config file](/www/my_wincmd.ini), mod a little from xbeta
+
+for more details and usage, please refer to the xbeta blog or `F1` help manual.
