@@ -14,3 +14,7 @@ reference-location: margin
 format:
   html:
     code-fold: true
+
+comments: 
+  utterances: 
+    repo:  AlbertRapp/blogComments

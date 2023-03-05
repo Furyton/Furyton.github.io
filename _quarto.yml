@@ -6,7 +6,7 @@ website:
   title: "notes"
   navbar:
     right:
-      - about.qmd
+      - blog.qmd
       - icon: github
         href: https://github.com/Furyton
       - icon: twitter
