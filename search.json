@@ -1,8 +1,8 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "notes",
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
     "section": "",
     "text": "Date\n\n\nTitle\n\n\nCategories\n\n\n\n\n\n\nFeb 8, 2023\n\n\nMSR AI Seminar: Why Does Deep Learning Perform Deep Learning?\n\n\nnote,research,webinar\n\n\n\n\nFeb 6, 2023\n\n\nTotal Commander Tips\n\n\nnote,tool,total commander\n\n\n\n\nSep 11, 2022\n\n\ncalculus review 03\n\n\ncalculus,review\n\n\n\n\nSep 8, 2022\n\n\nsome papers about multi-view-clustering\n\n\npaper reading,clustering,note\n\n\n\n\nSep 8, 2022\n\n\nunsupervised model related\n\n\nESL,note\n\n\n\n\nAug 18, 2022\n\n\nvocabs with simple examples\n\n\nEnglish,vocab,note\n\n\n\n\nAug 12, 2022\n\n\nPyTorch Notes\n\n\nPyTorch,programming\n\n\n\n\nAug 9, 2022\n\n\nNotes about Technical Writing\n\n\nwriting,note\n\n\n\n\nJul 5, 2022\n\n\nprobability review 01\n\n\nprobability\n\n\n\n\nJun 27, 2022\n\n\ncalculus review 02\n\n\ncalculus,review\n\n\n\n\nJun 8, 2022\n\n\nparallel algorithm course 10\n\n\nparallel algorithm,note\n\n\n\n\nJun 1, 2022\n\n\nparallel algorithm course 09\n\n\nparallel algorithm,note\n\n\n\n\nMay 11, 2022\n\n\nparallel algorithm course 08\n\n\nparallel algorithm,note\n\n\n\n\nApr 27, 2022\n\n\nparallel algorithm course 07\n\n\nparallel algorithm,note\n\n\n\n\nApr 23, 2022\n\n\nmidterm exam\n\n\nparallel algorithm,note,exam\n\n\n\n\nApr 20, 2022\n\n\nparallel algorithm course 06\n\n\nparallel algorithm,note\n\n\n\n\nApr 6, 2022\n\n\nparallel algorithm course 05\n\n\nparallel algorithm,note\n\n\n\n\nApr 2, 2022\n\n\nInequality\n\n\ninequality\n\n\n\n\nMar 30, 2022\n\n\nUnderstanding Machine Learning 06\n\n\nunderstanding machine learning,note\n\n\n\n\nMar 30, 2022\n\n\nparallel algorithm course 04\n\n\nparallel algorithm,note\n\n\n\n\nMar 28, 2022\n\n\ncalculus review 01\n\n\ncalculus,review\n\n\n\n\nMar 23, 2022\n\n\nparallel algorithm course 03\n\n\nparallel algorithm,note\n\n\n\n\nMar 21, 2022\n\n\nUnderstanding Machine Learning 05\n\n\nunderstanding machine learning,note\n\n\n\n\nMar 16, 2022\n\n\nUnderstanding Machine Learning 04\n\n\nunderstanding machine learning,note\n\n\n\n\nMar 16, 2022\n\n\nparallel algorithm course 02\n\n\nparallel algorithm,note\n\n\n\n\nMar 11, 2022\n\n\nUnderstanding Machine Learning 03\n\n\nunderstanding machine learning,note\n\n\n\n\nMar 9, 2022\n\n\nparallel algorithm course 01\n\n\nparallel algorithm,note\n\n\n\n\nMar 8, 2022\n\n\nUnderstanding Machine Learning 02\n\n\nunderstanding machine learning,note\n\n\n\n\nMar 8, 2022\n\n\nvim techs\n\n\nvim,programming\n\n\n\n\nMar 7, 2022\n\n\nThe elements of statistical learning 01\n\n\nESL,note\n\n\n\n\nMar 3, 2022\n\n\nUnderstanding Machine Learning 01\n\n\nunderstanding machine learning,note\n\n\n\n\nMar 3, 2022\n\n\nMoCo\n\n\npaper reading\n\n\n\n\nMar 1, 2022\n\n\nmy first post\n\n\ntest\n\n\n\n\n\n\nNo matching items"
   },
@@ -63,53 +63,263 @@
     "text": "feature visualization:\n\n\n\nBy Google AI, 2017\n\n\n\nfind the picture that activates a specific neuron the most by Gradient Descent\nweakness: relies on strong regularization to make it more like a image, otherwise a meaningless noise picture\n\n\n\n\n\n\nrelated\n\n\n\nadversarial perturbation"
   },
   {
-    "objectID": "posts/inequality.html",
-    "href": "posts/inequality.html",
-    "title": "Inequality",
+    "objectID": "posts/understanding-machine-learning/uml-06.html",
+    "href": "posts/understanding-machine-learning/uml-06.html",
+    "title": "Understanding Machine Learning 06",
     "section": "",
-    "text": "I found a great book on concentration inequalities\nConcentration inequalities: A nonasysmtotic theory of independence by Boucheron\nhope I can read this book thoroughly one day :/"
+    "text": "we will summarize different kinds of defs of learnability first"
   },
   {
-    "objectID": "posts/tools/tc.html",
-    "href": "posts/tools/tc.html",
-    "title": "Total Commander Tips",
+    "objectID": "posts/understanding-machine-learning/uml-06.html#learnability",
+    "href": "posts/understanding-machine-learning/uml-06.html#learnability",
+    "title": "Understanding Machine Learning 06",
+    "section": "learnability",
+    "text": "learnability\n\nPAC learnability\nH is PAC learnable if the realizability assumption holds and\n\\(\\forall \\epsilon,\\delta\\gt 0\\), there exists a learner A and \\(m_H(\\epsilon,\\delta)\\) s.t. if \\(m\\ge m_H\\)\nfor any D, with probability greater than \\(1-\\delta\\) over the choice of \\(S\\sim D^m\\)\n\\[\nL_D(A(S))\\le \\epsilon\n\\]\n\n\nagnostic PAC learnability\nH is agnostic PAC learnable if\n\\(\\forall \\epsilon,\\delta\\gt 0\\), there exists a learner A and \\(m_H(\\epsilon,\\delta)\\) s.t. if \\(m\\ge m_H\\)\nfor any D, with probability greater than \\(1-\\delta\\) over the choice of \\(S\\sim D^m\\)\n\\[\nL_D(A(S))\\le \\min_{h\\in H}\\{L_D(h)\\}+\\epsilon\n\\]\n\n\nuniform convergence property\nH enjoys the uniform convergence property if\n\\(\\forall \\epsilon,\\delta \\gt 0\\), there exists \\(m_H^{UC}(\\epsilon, \\delta)\\) s.t. if \\(m\\ge m_H^{UC}\\)\nfor any D, with probability greater than \\(1-\\delta\\) over the choice of \\(S\\sim D^m\\), \\(\\forall h\\in H\\)\n\\[\n|L_S(h) - L_D(h)|\\le\\epsilon\n\\]\nthese defination of learnibility are equal according to the fundamental theory\n\nhere we have another def which has different power with the above"
+  },
+  {
+    "objectID": "posts/understanding-machine-learning/uml-06.html#nonuniform-learnability",
+    "href": "posts/understanding-machine-learning/uml-06.html#nonuniform-learnability",
+    "title": "Understanding Machine Learning 06",
+    "section": "nonuniform learnability",
+    "text": "nonuniform learnability\nwe allow \\(m_H\\) to be non-uniform over h\nH is nonuniform learnable if\n\\(\\forall \\epsilon,\\delta\\gt 0\\) there exists a learner A and \\(m_H^{NU}(\\epsilon,\\delta,h)\\), s.t. for all \\(h\\in H\\), if \\(m\\ge m_H^{NU}(\\epsilon,\\delta,h)\\)\nfor any D, with probability greater than \\(1-\\delta\\) over the choice of \\(S\\sim D^m\\)\n\\[\nL_D(A(S))\\le L_D(h)+\\epsilon\n\\]\nnote when m is decided, and it is that makes non-uniform learnability weaker than PAC\n\nproperty\nH is nonuniform learnable iff H can be expressed as a union of countable \\(H_i\\) with uniform convergence property\nwe can easily construct H that is nonuniform learnable but not PAC learnable which means PAC learnability is stronger\n\n\ngeneric learner\nERM is a fittable learer for PAC learnability\nSRM (structural risk minimization) is a fittable learner for NU learnability\nSRM requires us to provide more prior knowledge on the priority (weights) of \\(H_i\\)’s.\ndef \\(\\epsilon_n(m,\\delta)=\\min\\{\\epsilon\\in (0,1):m_{H_n}^{UC}(\\epsilon,\\delta)\\le m\\}\\) which means the minimum est error we can get with m samples\nso given m samples\n\\[\n\\forall h\\in H_n,|L_D(h)-L_S(h)|\\le \\epsilon_n(m,\\delta)\n\\]\n\n\n\n\n\n\nNote\n\n\n\nnote m here can be varied (I’m not so sure about this) or large enough (s.t. \\(\\forall n,\\epsilon_n(m,\\delta)\\le \\epsilon\\)) during training\n\n\nwhen we put this on a larger range (\\(H_n\\rightarrow H\\)) directly, we can’t garantee we satisfy the \\(\\delta\\) constraint, since each one has relatively low confidence \\(1-\\delta\\). So we have to split the confidence to each \\(H_i\\), that is providing weights \\(\\sum_{n\\in\\mathbb{N}}w(n)\\le 1\\) on each \\(\\delta\\) (use union bound inequality to merge it back)\nto put it formally\ngiven \\(H=\\cup_{n\\in\\mathbb{N}}H_n\\) and \\(\\sum_{n\\in\\mathbb{N}}w(n)\\le 1\\), where \\(H_i\\) satisfy UC property, then\nwith probatility of at least \\(1-\\delta\\) over the choice \\(S\\sim D^m\\)\nfor any \\(n\\in\\mathbb{N}\\) and \\(h\\in H_n\\)\n\\[\n|L_D(h)-L_S(h)|\\le \\epsilon_n(m,w(n)\\cdot \\delta)\n\\]\nwhich implies for \\(\\forall h\\in H\\)\n\\[\nL_D(h)\\le L_S(h)+\\min_{n:h\\in H_n}\\epsilon_n(m,w(n)\\cdot\\delta)\n\\]\nif we make it simpler (but looser), let \\(n(h)=min\\{n:h\\in H_n\\}\\)\n\\[\nL_D(h)\\le L_S(h)+\\epsilon_n(m,w(n(h))\\cdot\\delta)\n\\]\nSO, SRM is to minimizing the RHS\nwe can proof that \\(L_D(A(S))\\le L_D(h)+\\epsilon\\) with p at least \\(1-\\delta\\) over the choice of S (if \\(m\\ge m_{H_{n(h)}}^{UC}(\\epsilon/2,w(n(h))\\cdot \\delta)\\))\n\nin fact, any converged sumations should be ok for w, like \\(w(n)=\\frac{6}{n^2\\pi^2}\\)\nintuitively, \\(H_n\\) with larger \\(w(n)\\) will need less samples since it is required for less confidence, we actually focus on some hypothesis classes instead of treat all \\(H_n\\) evenly.\nsecond, if \\(h_1\\) and \\(h_2\\) has the same empirical risk, we will prefer the one with higher weight if using SRM\nseems familiar? sounds like the principle Occam’s razor\n\n\ndescription length\nwe now consider a countable \\(H\\). it can be expressed as a union of singleton class \\(H_i=\\{h_i\\}\\) and for each \\(H_i\\), \\(m_{H_i}^{UC}(\\epsilon,\\delta)= \\left\\lceil\\frac{log(2/\\delta)}{2\\epsilon^2}\\right\\rceil\\)\nthen \\(e_n(m,w(n(h))\\cdot \\delta)= \\sqrt{\\frac{-logw(n(h)) +log(2/\\delta)}{2m}}\\)\ndef description language \\(\\{0,1\\}^\\star\\)\nwe assign each \\(H_i\\) with a description \\(d(h)\\) and denote \\(|h|=|d(h)|\\)\n\n\n\n\n\n\nNote\n\n\n\nif S is a prefix-free set of strings, then\n\\[\n\\sum_{\\sigma\\in S}\\frac{1}{2^{|\\sigma|}}\\le 1\n\\]\n\n\nso \\(w(h)=\\frac{1}{2^{|h|}}\\) is a legal weight function\nand the hypothesis with smaller description length is preferable if they have the same risk\nthat’s the principle of Occam’s razor"
+  },
+  {
+    "objectID": "posts/understanding-machine-learning/uml-06.html#consistency",
+    "href": "posts/understanding-machine-learning/uml-06.html#consistency",
+    "title": "Understanding Machine Learning 06",
+    "section": "consistency",
+    "text": "consistency\n\n\n\n\n\n\nNote\n\n\n\nif we let \\(m_H\\) further be dependent on the distribution, we have the def of consistency\n\n\na learner A is consistency with respect to H and P where P is the set of possible distribution D’s, if\n\\(\\forall \\epsilon,\\delta\\gt 0\\) there exists a learner A and \\(m_H^{NU}(\\epsilon,\\delta,h,D)\\), s.t. for all \\(h\\in H\\) and \\(D\\in P\\), if \\(m\\ge m_H^{NU}(\\epsilon,\\delta,h,D)\\)\nwith probability greater than \\(1-\\delta\\) over the choice of \\(S\\sim D^m\\)\n\\[\nL_D(A(S))\\le L_D(h)+\\epsilon\n\\]\n\n\n\n\n\n\nNote\n\n\n\nif P is the set of all distributions, then A is universally consistent with respect to H\n\n\nthis def of learnability is even weaker than NU\nthe algorithm Memorize is universally consistent which will be overfit in the context of PAC learnability!!! (for every countable domain and finite label set w.r.t. zero-one loss)\ndef Memorize(x)\n    return y if (x,y) in S else 0 # any default value \n\nwhy different ability?\nnote when we determine the \\(m\\)"
+  },
+  {
+    "objectID": "posts/understanding-machine-learning/uml-06.html#exercise",
+    "href": "posts/understanding-machine-learning/uml-06.html#exercise",
+    "title": "Understanding Machine Learning 06",
+    "section": "exercise",
+    "text": "exercise\n\n7.5. H that contains all functions is not nonuniform learnable\n\nconclusion: \\(H=\\cup_{n\\in\\mathbb{N}}H_n\\), if H shatters an infinite set, the some \\(H_n\\) has infinite VC dim"
+  },
+  {
+    "objectID": "posts/understanding-machine-learning/UML-01.html",
+    "href": "posts/understanding-machine-learning/UML-01.html",
+    "title": "Understanding Machine Learning 01",
     "section": "",
-    "text": "xbeta blog about TC\nA famous introductory blog to Total Commander.\nTotal Commander is a powerful customizable file manager tool. It has enormous features that are totally beyond one’s imagination."
+    "text": "domain set. a set of instances \\(\\mathcal{X}\\)\nlabel set. \\(\\mathcal{Y}\\)\ntraining data. finite sequence \\(\\mathcal{S}\\) in \\(\\mathcal{X}\\times \\mathcal{Y}\\)\nlearner. output a rule, \\(h:\\mathcal{X}\\rightarrow\\mathcal{Y}\\). learning algorithm \\(\\mathcal{A(S)}\\)\ndata-generation model. ideally, we assume (for sim) there exists a \"correct\" labeling funciton, \\(f\\). and \\(\\mathcal{S}\\) is generated under an unknown distrib \\(\\mathcal{D}\\), then labeling it using \\(f\\).\nmeasurement. actually generalization error (risk or true error of \\(f\\))\n\n\\[\nL_{\\mathcal{D},f}(h):=\\mathbb{P}_{x\\sim D}[h(x)\\neq f(x)]:=\\mathcal{D}(\\{x:h(x)\\neq f(x)\\})\n\\]\nwhere \\(\\mathcal{D}\\) desc the prob of the event of observation.\n\\(\\mathcal{D}(A):=\\mathbb{P}_{x\\sim D}[\\pi(x)]\\), where \\(\\pi\\) is the char func of whether it was observed. \\(A={x\\in \\mathcal{X}:\\pi(x)=1}\\)"
   },
   {
-    "objectID": "posts/tools/tc.html#config-files",
-    "href": "posts/tools/tc.html#config-files",
-    "title": "Total Commander Tips",
-    "section": "Config files",
-    "text": "Config files\n.ini config file is recommended to be put under the installation directory.\nFor better management.\nAlso set UseIniInProgramDir=7, ignore register file.\nxbeta’s config file for learning."
+    "objectID": "posts/understanding-machine-learning/UML-01.html#erm-empirical-risk-minimization",
+    "href": "posts/understanding-machine-learning/UML-01.html#erm-empirical-risk-minimization",
+    "title": "Understanding Machine Learning 01",
+    "section": "ERM (empirical risk minimization)",
+    "text": "ERM (empirical risk minimization)\nuse training loss to approx generalization loss.\n\noverfitting\nwe may obtain a bunch of funcs just by ERM. so we need an inductive bias to set a preference on a certain funcs.\nwe choose the hypothesis space H before seeing the data. restric our search space of the ERM, otherwise we got a trivial useless solution.\nbefore seeing the data \\(\\rightarrow\\) should be based on some prior knowledge."
   },
   {
-    "objectID": "posts/tools/tc.html#location-and-selection",
-    "href": "posts/tools/tc.html#location-and-selection",
-    "title": "Total Commander Tips",
-    "section": "location and selection",
-    "text": "location and selection\n\ndirectory hotlist\nCtrl+d x\n\nhotlist = most used directorys\nextremely fast to navigate\n\n\n\n\n\n\n\nTip\n\n\n\n\nuse subdirectory in hotlist\ntidy up the hotlist periodically, e.g., make a Ctrl+d n (now) sublist for most frequent dirs recently.\n\n\n\n\n\nchange disk\nAlt+F1 for left panel, Alt+F2 for right panel\n\n\ncommon way of changing dir\n\nEnter or Backspace\nCtrl+\\ to root dir\n\n\n\nquick search\nmy config:\nConfiguration -> Quick Search\n\ntick Letters only\nuncheck Beginning (...)\ncheck Ending (...)\n\n\n\nHistory\nAlt+↓\n\n\nSorting\nSort with multiple keys.\nE.g.,\n\nFirst click Ext\nThen, click Date, Name while pressing Ctrl\n\n\n\nFiltering\nShow only the desired files\nShow -> Custom...\n\n\nColoring\nConfiguration -> Color -> Define colors by file type...\n\n2days as red\nexe as purple\n7days as blue\n\n\n\nSelecting\nRecommend to use the default NC mode (right single click to select)\n\nConfiguration -> Operation\n\nLong right press for right menu.\n\n\nmultiple selection\n\nAlt+'+' ('+' in the numeric keypad of keyboard): also select files with the same extension (you have already been selecting a file)\n* (also in the numeric keypad): reverse selection\n+ and -: also select or unselect some files (pops up a window for you to choose)\nInsert for a single selection, function like right single click and then ↓.\n\n\n\n\nBranch View\nCtrl+b: show all files in current and sub- directories."
+    "objectID": "posts/understanding-machine-learning/UML-01.html#h",
+    "href": "posts/understanding-machine-learning/UML-01.html#h",
+    "title": "Understanding Machine Learning 01",
+    "section": "H",
+    "text": "H\nexamples of H\n\nfinite H space\n\\(\\mathcal{H}\\) will not overfit provided a sufficiently large training set.\nnote: the class of axix-aligned rectangles could be finite if we consider it on a computer. (discrete repr of real numbers)\n\\(h_S\\in argmin_{h\\in H}L_s(h)\\)\nsince S are randomly chosen, so \\(h_S,L_{D,f}\\) are actually random vars.\n\n\na few assumptions\na few assumptions on the PAC learnability\n\ndef the realizability assumption\nthere exists \\(h^\\star\\in\\mathcal{H}\\) s.t. \\(L_{D,f}(h^\\star)=0\\)\nfurther, we have\n\\(\\rightarrow L_S(h^\\star)=0 \\text{ with prob 1 over the S }\\rightarrow L_S(h_S)=0\\)\nwe are interested in \\(L_{D,f}(h_S)\\)\n\n\nconfidence param\nwe address a prob \\(\\delta\\) of getting a very nonrepresentative training set (e.g all lie in class A). and \\((1-\\delta)\\) is the confidence of our prediction.\n\n\naccuracy param\n\\(\\epsilon\\)\nwe call \\(L_{D,f}(h_S)\\ge \\epsilon\\) as a failure of the learner, otherwise approx correct predictor.\nSo we're interested in the upper bound of prob to sample S that leads to the learner’s failure.\nupper bound of\n\\[\nD^m\\{S|_x:L_{D,f}(h_S)\\gt \\epsilon\\}\n\\]\nlet \\(H_B\\) be the set of bad hypotheses\n\\[\n\\{h\\in H: L_{D,f}\\gt \\epsilon\\}\n\\]\nlet M be the set of the misleading training set\n\\[\n\\{S|_x:\\exists h\\in H_B, L_S(h)=0\\}\n\\]\nwhere \\(S|_x\\) is the instances of tr set\ndue to real.. assumption, only M will cause failure.\nso only a subset of S from M will cause \\(h_S\\) to fail.\n\\[\n\\begin{align}\n&D^m\\{S|_x:L_{D,f}(h_S)\\gt \\epsilon\\} \\\\\n\\le& \\sum_{h\\in H_B}D^m\\{S|_x:L_S(h)=0\\}\\\\\n=&\\sum_{h\\in H_B}\\prod D\\{x_i:h(x_i)=f(x_i)\\}\n\\end{align}\n\\]\nhere, the countability of \\(\\mathcal{H}\\) is used, and I think if we can control the order of \\(|\\mathcal{H}|\\) and with more careful scaling (with more assumption or knowledge about the h's, like \\(D^m\\{S|_x:L_S(h)=0\\}\\) can be approx related to h) then we could have the inf conclusion, though maybe not that interesting, and there are other ways on it.\nand\n\\[\nD\\{x_i:h(x_i)=f(x_i)\\}=1-L_{D,f}(h)\\le 1-\\epsilon\n\\]\nso using a series of loose relaxation, we have\n\\[\nD^m\\{S|_x:L_{D,f}(h_S)\\}\\le |H_B|e^{-\\epsilon m}\\le |H|e^{-\\epsilon m}\n\\]\nfinite is used here\nLHS is \\(\\delta\\)\nNote sometimes m should be really large to ensure with at least \\(1-\\delta\\) confidence over the choice of S, every ERM hypothesis, \\(h_S\\) is approx correct."
   },
   {
-    "objectID": "posts/tools/tc.html#pack-unpack",
-    "href": "posts/tools/tc.html#pack-unpack",
-    "title": "Total Commander Tips",
-    "section": "Pack / Unpack",
-    "text": "Pack / Unpack\nPack:\n\nAlt+F5 / Ctrl+Alt+F5\nTo save the archive in the current dir, set CA+F5=cm_PackFiles in [Shortcuts] session of wincmd.ini file. Ctrl+Alt+F5\n\nUnpack:\n\nAlt+F9, then clear the input field (empty means current folder)\ncheck Unpack each archive ... to save in a subfolder\n\n\n\n\n\n\n\nTip\n\n\n\nto make it a default manner (save in a subfolder instead of current folder), set UnZIPSeperateSubdirs=-2 in [Packer] section of wincmd.ini.\n\n\nBrowsing packed file:\n\nbrowse like a normal folder\nCtrl + → or Ctrl + ← or Ctrl + PageDown: open in right/left/current panel"
+    "objectID": "posts/understanding-machine-learning/UML-01.html#small-corollary",
+    "href": "posts/understanding-machine-learning/UML-01.html#small-corollary",
+    "title": "Understanding Machine Learning 01",
+    "section": "small corollary",
+    "text": "small corollary\nwhen hypothesis space is finite, then we can immediately have an upper bound for \\(m_{\\mathcal{H}}\\)\n\\[\nm_{\\mathcal{H}}(\\epsilon,\\delta)\\le \\left \\lceil \\frac{log\\left(|\\mathcal{H}|/\\delta\\right)}{\\epsilon} \\right \\rceil\n\\]"
   },
   {
-    "objectID": "posts/tools/tc.html#rename",
-    "href": "posts/tools/tc.html#rename",
-    "title": "Total Commander Tips",
-    "section": "rename",
-    "text": "rename\nShift+F6 is the default (change filename), press again to include extension\nuse F2 is recommended.\nadd F2=cm_RenameOnly in [Shortcuts] section"
+    "objectID": "posts/understanding-machine-learning/UML-04.html",
+    "href": "posts/understanding-machine-learning/UML-04.html",
+    "title": "Understanding Machine Learning 04",
+    "section": "",
+    "text": "What is a universal learner? It means it doesn’t need any prior knowledge. To be more specific, \\(\\mathcal{H}\\) that contains all possible functions is PAC-learnable. ? that is certainly not true since this is about the NFL theorem.\nTypically, prior knowledge could be assumptions of knowing \\(\\mathcal{D}\\) comes from some family of distribution or assuming \\(\\exists h\\in\\mathcal{H}\\) that \\(L_D(h)\\) is small enough.\n\n\nwe consider binary classification problem and 0-1 loss over \\(\\mathcal{X}\\)\n\\(m\\) be the tr set size smaller than \\(\\frac{|\\mathcal{X}|}{2}\\), A be any learner\nthere is a D that\n\nthere exists \\(f\\), with zero error on \\(\\mathcal{D}\\)\nwith a probability of at least 1/7 over the choice of \\(S\\sim \\mathcal{D}^m\\) we have the error of \\(A(S)\\ge 1/8\\)\n\nLet’s prove this famous theorem!!!\n\nlet C be a subset of \\(\\mathcal{X}\\) with size 2m as the finite ‘domain’ we will consider\nthe intuition is that since the learner can only see at most half of the domain set, we can then make the other part of distribution anything we want to defeat A\nwe need to find the D and f\nthere could be like \\(2^{2m}\\) possible f’s; we can prove that\n\\[\n\\max_{D,f}\\mathbb{E}_{S\\sim D^m}[L_{D,f}(A(S))]\\ge 1/4\n\\]\nwhich means there exists some bad f that will make A fail\nnote D and f should be matched, so we construct \\(D_i\\) as follows for each \\(f_i\\), \\(i=1\\dots T\\) where \\(T=2^{2m}\\)\n\\[\nD_i(x,y) = \\begin{cases}\n            1/|C| &\\text{if } f_i(x)=y \\\\\n            0 &\\text{otherwise}\n           \\end{cases}\n\\]\nsince \\(C\\) is finite, we can enumerate all S\ndenote as \\(S_i\\), \\(i=1\\dots M\\) where \\(M=(2m)^m\\), note instances in S can be duplicated\n\\[\n\\begin{aligned}\n   &\\max_i\\mathbb{E}_{S\\sim D_i}[L_{D_i}(A(S))]\\\\\n   &=\\frac{1}{M}\\max_i\\sum_j^ML_{D_i}(A(S_j^i))\\\\\n   &\\ge\\frac{1}{MT}\\sum_i^T\\sum_j^ML_{D_i}(A(S_j^i))\\\\\n   &=\\frac{1}{TM}\\sum_j^M\\sum_i^TL_{D_i}(A(S_j^i))\\\\\n   &\\ge\\frac{1}{T}\\min_j\\sum_{i}^{T}L_{D_i}(A(S_j^i))\n\\end{aligned}\n\\]\nhere the \\(i\\) in \\(S_j^i\\) means the label is assigned by \\(D_i\\), hence \\(f_i\\)\nWe now convert the problem of finding the \\(f\\) into \\(S_j^i\\) that has a significant error averaged on all functions. Intuitively, since we consider all functions, they must have some disagreement on the samples\nfor \\(S_j^i\\), we let \\(P=\\{x_i\\in C|x_i\\notin S_j^i\\}\\) and \\(p=|P|\\), where \\(p\\ge m\\)\n\\[\n\\begin{aligned}\n    &L_{D_i}(A(S_j^i))\\\\\n    =&\\frac{1}{2m}\\sum_k^{2m}\\mathbf{1}[f_i(x_k)\\neq A(S_j^i)(x_k)]\\\\\n    \\ge&\\frac{1}{2p}\\sum_{x\\in P}\\mathbf{1}[f_i(x)\\neq A(S_j^i)(x)]\\\\\n\\end{aligned}\n\\]\nthen\n\\[\n\\begin{aligned}\n    &\\frac{1}{T}\\sum_{i}^{T}L_{D_i}(A(S_j^i))\\\\\n    \\ge&\\frac{1}{T}\\sum_i^T\\frac{1}{2p}\\sum_{x\\in P}\\mathbf{1}[f_i(x)\\neq A(S_j^i)(x)]\\\\\n    =&\\frac{1}{2}*\\frac{1}{p}\\sum_{x\\in P}\\frac{1}{T}\\sum_{i}^{T}\\mathbf{1}[f_i(x)\\neq A(S_j^i)(x)]\\\\\n\\end{aligned}\n\\]\nthere are details here, note we have removed out the instances that are in \\(S_j\\) (no \\(i\\) here), that is because \\(\\mathbf{1}[f_i(x)\\neq A(S_j^i)(x)]\\) will always be zero if \\(x\\in S_j\\) and we can certainly not consider them\nsecond, since we take \\(f\\) from func space that contains all possible funcs, so they can be separated into pairs that can cancellate each other\nthere must always exist a pair of f’s (\\(f_a\\) and \\(f_b\\)) that only differ on one instance \\(x\\) which is not in \\(S_j\\) (\\(x\\in P\\))\ns.t.\n\\(\\mathbf{1}[f_a(x)\\neq A(S_j^a)(x)]+\\mathbf{1}[f_b(x)\\neq A(S_j^b)(x)]=1\\)\nthen the ave above actually is \\(\\frac{1}{4}\\)\nnow we have proved that\n\\[\n\\max_{D,f}\\mathbb{E}_{S\\sim D^m}[L_{D,f}(A(S))]\\ge 1/4\n\\]\nuse some prob inequality can give us the conclusion that \\(\\exists D\\) \\[\n\\mathbb{P}_{S\\sim D^m}[L_D(A(S))\\ge1/8]\\ge1/7\n\\]\n\nusing the def, \\(H\\) that contains every possible h is not PAC learnable"
   },
   {
-    "objectID": "posts/tools/tc.html#addons",
-    "href": "posts/tools/tc.html#addons",
-    "title": "Total Commander Tips",
-    "section": "Addons",
-    "text": "Addons\n\nxbeta plugin collections\nofficial addon collections\n\n\nmy config file, mod a little from xbeta\nfor more details and usage, please refer to the xbeta blog or F1 help manual."
+    "objectID": "posts/understanding-machine-learning/UML-04.html#bias-complexity-trade-off",
+    "href": "posts/understanding-machine-learning/UML-04.html#bias-complexity-trade-off",
+    "title": "Understanding Machine Learning 04",
+    "section": "bias-complexity trade-off",
+    "text": "bias-complexity trade-off\nUsually, we see a bias-variance trade-off. I think there may be some connection, but I haven’t seen it\nthe idea is we divide the true risk as below\n\\[\n\\mathcal{L}_D(h)=\\epsilon_{app}+\\epsilon_{est}\n\\]\nwhere \\(\\epsilon_{app}=\\min_{h'\\in H}L_D(h')\\) and \\(\\epsilon_{est}=\\mathcal{L}_D(h)-\\epsilon_{app}\\)\n\n\\(\\epsilon_{app}\\), approximation error, it measures how well your hypothesis space is\n\\(\\epsilon_{est}\\), estimation error, it measures how well your learner can estimate the best h (\\(\\in H\\)) using ERM\n\napprox error has nothing to do with how you train with the dataset. if your hypothesis space is well enough (or large enough), it will be small\nest error is on the opposite. It really depends on the learner, sample size so on. It’s similar to the \\(\\epsilon\\) in the definition of agnostic PAC learnability. If your h space is too large (too complicated), then it will need more samples to decrease the est error.\nso, large \\(|H|\\) will reduce approx error, but it may be hard to have a small est error (overfitting), with a high probability a tr set will cause a bad generalization ability\non the contrary, small \\(|H|\\) indeed will give us a small est error but will cause a large approximate error (underfitting)"
+  },
+  {
+    "objectID": "posts/understanding-machine-learning/UML-05.html",
+    "href": "posts/understanding-machine-learning/UML-05.html",
+    "title": "Understanding Machine Learning 05",
+    "section": "",
+    "text": "here we go to one of the famous theories, the VC dimension\nbefore going a little deeper, we will have a look at the motivation\n\n\nfirst, finite is not a sufficient and necessary condition of PAC learnability. exercise 3.3 is a simple example. Moreover, in the last post (No-Free-Lunch theorem), we have seen H that contains all possible functions is not PAC learnable. When we rethink the proof, we may notice that the construction of set \\(C\\) is the key point. Since we are considering all possible functions, the error of different f’s can cancel, resulting in a large error.\nborrow the idea, if we can find a subset \\(C\\) of domain \\(\\mathcal{X}\\), and if H contains all the functions when taking \\(C\\) as the domain, then it will cause a considerable risk using the same proof\nfurther, if such kind of \\(C\\) is infinitely large, then \\(H\\) is not learnable\nthe thoughts above give us the basic idea of how the VC dimension comes\n\n\n\n\nDef. restriction of H to C\nhere, \\(\\mathcal{C}=\\{c_1,c_2,\\dots,c_m\\}\\subseteq\\mathcal{X}\\)\nand \\(\\mathcal{H}_C=\\{h(c_1),\\dots,h(c_m)\\}\\)\n\nDef. Shattering\nH shatters C \\(\\iff\\) \\(|H_C|=2^{|C|}\\)\n\nDef. VC-dimension\nthe VC-dimension of H \\(\\coloneq\\max_C\\{|H_C|:\\text{H shatters C}\\}\\)\n\na simple method to show VCdim=d we need to show that\n\n\\(\\exists C\\) of size d that is shattered by H\nevery C of size d+1 is not shattered by H\n\n\nsince \\(2^{|VCdim(H)|}\\le |H|\\), we have a loose upper bound of VC dim which is \\(log_2(|H|)\\)"
+  },
+  {
+    "objectID": "posts/understanding-machine-learning/UML-05.html#fundamental-theorem-of-pac-learning",
+    "href": "posts/understanding-machine-learning/UML-05.html#fundamental-theorem-of-pac-learning",
+    "title": "Understanding Machine Learning 05",
+    "section": "fundamental theorem of PAC learning",
+    "text": "fundamental theorem of PAC learning\nthe followings are eq\n\nuniform convergence\nPAC learnable on every ERM learner\nagnostic PAC learnable on every ERM learner\nfinite VC dimension\n\n\nfrom 4. to 1. is non-trivial. here we will go deeper into that\nwe need to find \\(m_H^U\\) s.t. for any S that \\(|S|\\ge m_H^U\\) is \\(\\frac{\\epsilon}{2}\\)-representative (i.e. \\(L_D(h)-L_S(h)|\\le \\frac{\\epsilon}{2}\\))\nintuitively, if \\(m\\) is larger than \\(d\\), where \\(d\\) is the VC dimension, \\(H_C\\) will only take small part of \\(2^C\\) (in fact that is polynomial large w.r.t. \\(|C|\\)), the estimation error could be bounded by \\(o(m)\\)\n\nSauer’s Lemma\n\nDef. Growth Function\n\\[\\tau_H(m)=\\max_{C\\subset \\mathcal{X}:|C|=m}|H_C|.\\]\n\naccording to Sauer’s lemma, \\(\\tau_H(m)\\le \\sum_{i=0}^d\\tbinom{n}{i}\\), if \\(m\\gt d+1\\), we have a looser but neat form \\(\\tau_H(m)\\ge (em/d)^d\\)\n\nproof\nbasic idea\nwe prove a stronger claim, \\(\\forall C=\\{c_1,\\dots,c_m\\}\\)\nwe have \\(\\forall H,\\ |H_C|\\le |\\{B\\subseteq C: \\text{H shatters B}\\}|\\)\ninduction on m\nwhen m=1, both sides are equal\nwhen m=k+1, suppose the claim holds for \\(m\\le k\\).\nto use the claim, we need to split \\(C\\) as \\(\\{c_1\\}\\) and ${c_1,, c_m} which is denoted as \\(C'\\)\nwe need to find such \\(H'\\) that can naturally convert from \\(C'\\) to \\(C\\) but still holds the shattering property\nnote:\n\\[\nH_C=H_{C'}\\oplus H'_{C'}\n\\]\nwhere \\(H'_{C'}=\\{\\exists f(c_1)=1\\land g(c_1)=0\\land f_{C'}=g_{C'}, \\text{ where }f,g\\in H\\}\\), \\(\\oplus\\) means direct sum (\\(H_{C'}\\cap H'_{C'}=\\emptyset\\))\n\nif \\(f_{C'}\\) and \\(g_{C'}\\) are exactly the same, they represent the same function in \\(H_{C'}\\), and hence only count once in \\(H_{C'}\\) which should be treated separatedly in \\(H_C\\).\n\nso we have that\n\\[\n\\begin{aligned}\n    |H_C|&=|H_{C'}|+|H'_{C'}|\\\\\n    &\\le |\\{B\\subseteq C':\\text{H shatters B}\\}|+|\\{B\\subseteq C':\\text{H' shatters B}\\}|\n\\end{aligned}\n\\]\nnote that \\(H'\\) shatters B \\(\\iff\\) H shatters \\(\\{c_1\\}+B\\)\nso RHS \\(\\le |\\{B\\subseteq C:\\text{H shatters B}\\}|\\) \\(\\blacksquare\\)\n\n\n\nuniform convergence\nwe will give the upper bound without proof :(\nfor every \\(\\delta\\), with prob \\(1-\\delta\\) over the choice of \\(S\\sim D^m\\)\n\\[\n|L_D(h)-L_S(h)|\\le \\frac{4+\\sqrt{log(\\tau_H(2m))}}{\\delta \\sqrt{2m}}\n\\]\nRHS \\(\\in o(m)\\)\n\nI’ll add the proof when I master this math skill :("
+  },
+  {
+    "objectID": "posts/understanding-machine-learning/UML-05.html#exercise",
+    "href": "posts/understanding-machine-learning/UML-05.html#exercise",
+    "title": "Understanding Machine Learning 05",
+    "section": "exercise",
+    "text": "exercise\n\n6.1. monotonicity of VC dim\n6.2. finite X, \\(k\\lt |\\mathcal{X}|\\), compute the VC dim\n\n\\(H_{=k}^\\mathcal{X}=\\{h\\in \\{0,1\\}^\\mathcal{X}:|x:h(x)=1|=k\\}\\). VC dim=\\(\\min\\{k,|\\mathcal{X}|-k\\}\\), otherwise you can’t assign all one (zero) to these instances\n\\(H_{\\text{at most k}}^\\mathcal{X}=\\{|x:h(x)=1|\\le k \\text{ or }|x:h(x)=0|\\le k\\}\\). VC dim=k.\n\n6.3. parity function \\(h_I\\) (h computes the parity of bits at \\(I\\) ). finte H, \\(d\\le n\\), and easy to construct such \\(C\\) that \\(|C|=n\\)\n6.4. skip\n6.5. The VC dim of axis-aligned rectangles in d-dim is 2d. Since we need 2d points to construct a rectangle that assigns all points as one if there are 2d+1 points, one of them must stay inside the box (or lie on the border with no points in the box). With that point assigned as zero, others assigned as one, no function will satisfy\n6.6. VC-dimension of Boolean conjuntions \\(H_{con}^d\\): \\(f(x)=x_{i_1}\\land \\dots \\land x_{i_k}\\)\n\nprove \\(|H_{con}^d|\\le 3^d + 1\\). each \\(x_i\\) has three states, not chosen, origin \\(x_i\\), inverse \\(\\bar{x}_i\\), so should be \\(= 3^d\\) ??\nprove \\(VCdim(H)\\le d log 3\\). \\(VDdim\\le log(|H|)=dlog3\\)\nshow that \\(H_{con}\\) shatters \\(\\{e_i:i\\le d\\}\\), seems easy\nshow that \\(VCdim(H)\\le d\\). if \\(d+1\\), consider hypothesis \\(h_i(c_j) = \\begin{cases}  0 &\\text{if } i=j \\\\  1 &\\text{otherwise}  \\end{cases}\\) .that means each \\(c_i\\) has at least one bit that is different from others, which is a contradiction\n\\(H_{mcond}^d\\) which do not contain negations, empty conjunction is considered as all positive, the vc dim of \\(H_{mcond}^d\\) with all negative h =d. first \\(VCdim(H_{mcond})\\le d\\). consider \\(x_i\\) is all one but zero at index i, \\(i\\le d\\)\n\n6.7. skip\n6.8. show vcdim of \\(H=\\{x\\mapsto \\lceil sin(\\theta x) \\rceil: \\theta \\in \\mathbb{R}\\}\\) is infinity.\n\nhint: if \\(0.x_1x_2x_3\\dots\\) is the binary expansion of \\(x\\in (0,1)\\), then for any natual number m, \\(\\lceil sin(2^m\\pi x) \\rceil =(1-x_m)\\), provided that \\(\\exist k\\ge m\\) s.t. \\(x_k=1\\).\nwith the hint, that is easy. Just construct a huge matrix with each row representing a binary expansion of \\(x_i\\) and the columns running through all possible combinations.\n\n6.9. skip\n6.10. skip\n6.11. VC of union. \\(H_1,\\dots,H_r\\).\n6.12. Dudley classes.\n\n\\(VCdim(POS(\\mathcal{F}+g))=VCdim(POS(\\mathcal{F}))\\). “\\(\\mathbb{R}ightarrow\\)”, \\((f_1+g)-(f_2+g)\\).\n\\(VCdim(POS(\\mathcal{F}))=\\dim(\\mathcal{F})\\). half space, full rank, bla bla bla\nexamples of Dudley classes\n\n\nbtw, Dudley class seems to be a fascinating and important topic"
+  },
+  {
+    "objectID": "posts/understanding-machine-learning/UML-02.html",
+    "href": "posts/understanding-machine-learning/UML-02.html",
+    "title": "Understanding Machine Learning 02",
+    "section": "",
+    "text": "def PAC learnability\nhypothesis H is PAC learnable if realizability assumption holds, and exists \\(m_H(\\epsilon,\\delta)\\rightarrow\\mathbb{N}\\)\nwhere with #i.i.d. sample \\(\\ge m_H\\), we always have a probability approx correct h just using ERM."
+  },
+  {
+    "objectID": "posts/understanding-machine-learning/UML-02.html#removing-realizability-assumption",
+    "href": "posts/understanding-machine-learning/UML-02.html#removing-realizability-assumption",
+    "title": "Understanding Machine Learning 02",
+    "section": "removing realizability assumption",
+    "text": "removing realizability assumption\nthe realizability assumption is too strong and unrealistic where we assume the existence of a perfect hypothesis from \\(\\mathcal{H}\\) that can reveal ground truth \\(f\\) with \\(Pr=1\\)\nso, change \\(f(x)\\) into a joint distrib \\(D(x,y)\\) as most researchers would do\ndef generalized risk as \\(L_D(h)\\coloneqq \\mathcal{P}_{(x,y)\\sim D}[h(x)\\neq y]\\coloneqq D(\\{(x,y):h(x)\\neq y\\})\\), just changed \\(D\\) into a joint distrib\nempirical risk is the same\nstill, when take \\(D\\) to be a uniform distrib on \\(S\\) they are eq\nideally, func “\\(f_D(x)=1\\text{ if }Pr[y=1|x]\\ge 0.5\\text{ and 0 otherwise}\\)” is the optimal sol to the gen risk min problem when \\(\\mathcal{Y}=\\{0,1\\}\\), w.r.t 0-1 loss. Bayes optimal sol.\n\nnote: my stupid short proof about the above\nwe need to proof\n\\[\n[f(x)\\neq 0]Pr(y=0|x)+[f(x)\\neq 1]Pr(y=1|x)\\\\\n\\le [g(x)\\neq 0]Pr(y=0|x)\\dots\n\\]\njust consider cond on \\(Pr(y=0|x)\\gt 0.5\\), and it becomes\n\\[\nLHS=Pr(y=1|x)\\\\\n=\\{[g(x)\\neq 0]+[g(x)\\neq 1]\\}Pr(y=1|x)\\\\\n\\le RHS\n\\]\nvery ugly and not clever proof :/ \\(\\blacksquare\\)\n\nhere, we still have the opt function \\(f\\), which minimizes the gen risk but does not minimize it to zero"
+  },
+  {
+    "objectID": "posts/understanding-machine-learning/UML-02.html#def-agnostic不可知论的-pac-learnability",
+    "href": "posts/understanding-machine-learning/UML-02.html#def-agnostic不可知论的-pac-learnability",
+    "title": "Understanding Machine Learning 02",
+    "section": "def Agnostic(不可知论的) PAC learnability",
+    "text": "def Agnostic(不可知论的) PAC learnability\nbefore: \\(L_{D,f}(h)\\le \\epsilon\\), now: \\(L_{D}(h)\\le min_{g\\in\\mathcal{H}}L_{D}(g)+\\epsilon\\)\nso \\(f\\) above will not be used, but the joint distrib \\(D\\) instead\nand we see that if the realizability assumption holds, it’s the same as the original PAC learnability\nagnostic just means we can’t obtain an h with arbitrary small gen risk\nrelative best instead of abs best"
+  },
+  {
+    "objectID": "posts/understanding-machine-learning/UML-02.html#other-loss-functions",
+    "href": "posts/understanding-machine-learning/UML-02.html#other-loss-functions",
+    "title": "Understanding Machine Learning 02",
+    "section": "other loss functions",
+    "text": "other loss functions\nwe can actually use other measures in place of the 0-1 loss, especially in regression problems\nnaturally, we can extend the loss function into a more formal definition, \\(l:\\mathcal{H}\\times\\mathcal{Z}\\rightarrow \\mathbb{R}_+\\), where \\(\\mathcal{Z}\\) is the set of instances, in prediction tasks, it could be \\(\\mathcal{X}\\times\\mathcal{Y}\\)\n\nAgnostic PAC learnability for General Loss Functions\n\\(L_D(h)\\le\\min_{h'\\in\\mathcal{H}}L_D(h')+\\epsilon\\)\nwhere \\(L_D(h)=\\mathcal{E}_{z\\sim D}[l(h,z)]\\)\nnote: \\(l(h,\\dot)\\) is a rand var, it should be measurable.."
+  },
+  {
+    "objectID": "posts/understanding-machine-learning/UML-02.html#some-exercises",
+    "href": "posts/understanding-machine-learning/UML-02.html#some-exercises",
+    "title": "Understanding Machine Learning 02",
+    "section": "some exercises",
+    "text": "some exercises\n\n3.1. about monotonicity of \\(m_\\mathcal{H}\\) on \\(\\epsilon\\) and \\(\\delta\\) respectively: seems trivial\n3.2. about \\(\\mathcal{H}_{singleton}\\): first, you need to come up with a simple learning alg. if no pos samples appear, just choose \\(h^-\\). this is enough to prove the PAC learnability, as m is large enough, the cost will be small enough\n3.3. about \\(\\mathcal{H}\\) consist of disks. similar to the rect situation from this chap, but simpler, ’cause it’s convenient to construct how the bad samples look like\n3.4. about \\(\\mathcal{H}\\) consist of boolean conjunctions. similar to 3.2. it’s easy to determine f if \\(S\\) contains a positive sample. Otherwise, we just return an all-negative hypothesis\n3.5. about samples from i. but not i.d. from the derivation of the finite hypo corollary, the key is to deal with \\(\\prod_i \\mathcal{P}_{x\\in D_i}(x_i|h(x_i)=f(x_i))\\), where the GA mean ineq could be used to make it as \\((1-\\epsilon)^m\\)\n3.6. ??, since you added the realizability assumption, it’s naive to have the PAC learnability, maybe?\n3.7. about ideally opt sol of binary classification (w.r.t 0-1 loss). see this\n3.8.1. same question as above, but use abs loss, and consider probabilistic hypothesis (outputs a distribution instead of the deterministic answer), method from here seems enough?\n3.8.2. prove the existence of a learning algo that is better than any others provided \\(D\\). ??? an algo from God that can directly output \\(f\\) from the previous question -_-\n3.8.3. for every learning algo A from \\(D\\), there always exists a B and \\(D'\\) that A is not better than B on \\(D\\). shit, this is also naive from 3.8.2\n3.9. about a variant of PAC learnability, which uses a two-oracle model that allows learner access to \\(D^+\\) and \\(D^-\\) on its preference. the learner can actually change the popularity of the observances, e.g. a learner can take samples from both pos and neg with equal probability (I don’t understand here so much, does )\n\n\nproof PAC in the standard model \\(\\implies\\) PAC in the two-oracle model. we need to construct a learner from the one in the standard model. suppose the learner puts equal weights on pos and neg samples. It learns a population with equal pos and neg using a standard model. denote the new distribution as \\(D'\\), so\n\n\n\\[\\begin{aligned}\nL_{D'}(h)&=P_{D'}[h\\neq f,f=0]+P_{D'}[h\\neq f, f=1]\\\\\n&=P_{D'}[f=0]P_D[h\\neq f|f=0]+P_{D'}[f=1]P_D[h\\neq f|f=1]\\\\\n&=\\frac{1}{2} L_{D^+}(h)+\\frac{1}{2}L_{D^-}(h)\n\\end{aligned}\n\\]\n\n\nproof PAC in the two-oracle model \\(\\implies\\) PAC in the standard model if \\(h^+,h^-\\in\\mathcal{H}\\). if we have enough samples (\\(m_H\\)), it will contain \\(m^+\\) pos, and \\(m^-\\) neg with high prob, and even it fails to have enough pos (or neg), we can just return \\(h^-\\) ((\\(h^+\\)) and won’t cost much risk."
+  },
+  {
+    "objectID": "posts/understanding-machine-learning/UML-03.html",
+    "href": "posts/understanding-machine-learning/UML-03.html",
+    "title": "Understanding Machine Learning 03",
+    "section": "",
+    "text": "Before, the way of choosing \\(m_H\\) and the effect of \\(\\delta\\) was related to the learner. However, we can borrow the concept of uniform convergence from analysis to make it independent of what learner you use.\nhere, we can treat \\(L_S(h)\\) as \\(\\sum_i^nf_i(x)\\) since they are both intermediate vals during the convergence, and \\(L_D(h)\\) to be the final end\n\n\n\\(S\\) is \\(\\epsilon\\)-representation sample (w.r.t domain, \\(H\\), \\(l\\) and \\(D\\)) if\n\\[\n\\forall h\\in\\mathcal{H},\\, |L_S(h)-L_D(h)|\\le \\epsilon\n\\]\nlemma\nif S is \\(\\frac{\\epsilon}{2}\\)-representative, then \\(\\forall h_S\\in\\argmin_{h\\in\\mathcal{H}}L_S(h)\\)\n\\[\nL_D(h_S)\\le \\min_{h\\in\\mathcal{H}}L_D(h)+\\epsilon\n\\]\nthrough this lemma, we can immediately have\n\\(S\\) is \\(\\frac{\\epsilon}{2}\\)-representative with prob \\(1-\\delta\\) \\(\\implies\\) Agnostic PAC learnability\n\n\n\nH has the uniform convergence \\(\\coloneqq\\) exists a func \\(m_H^{UC}(\\epsilon, \\delta)\\), for every \\(D\\), if \\(|S|\\gt m_H^{UC}\\) then with \\(1-\\delta\\) prob, it is \\(\\epsilon\\)-representative\nIt seems stronger than the original agnostic PAC, just like the rel between uniform conv and normal conv in analysis. normal conv only cares the situation in a certain area (here the decider generated by the learner), while uni conv holds on the whole area (all \\(h\\in\\mathcal{H}\\))\n\n\n\\(m_H\\le m_H^{UC}\\) if \\(H\\) has the uni conv property"
+  },
+  {
+    "objectID": "posts/understanding-machine-learning/UML-03.html#situation-of-the-finite-h-class",
+    "href": "posts/understanding-machine-learning/UML-03.html#situation-of-the-finite-h-class",
+    "title": "Understanding Machine Learning 03",
+    "section": "situation of the finite H class",
+    "text": "situation of the finite H class\nneed to find \\(m\\), so that\n\\[\nD^m(\\{S:\\forall h\\in \\mathcal{H},|L_S(h)-L_D(h)|\\le\\epsilon\\})\\ge 1-\\delta\n\\]\nand we may convert it into a more familiar form (convenient for using inequalities)\n\\[\nD^m(\\{S:\\exists h\\in \\mathcal{H},|L_S(h)-L_D(h)|\\gt\\epsilon\\})\\lt \\delta\n\\]\nusing union bound and Hodeffing inequalities (note that \\(L_D(h)=\\mathbb{E}_{S\\sim D^m}(L_S(h))\\)), we have\n\\[\nLHS\\le\\sum_{h\\in\\mathcal{H}}2exp(-2m\\epsilon^2)\n\\]\nas a corollary, we have the upper bound for finite hypothesis class which is agnostic PAC learnable\n\\[\nm_H^{UC}(\\epsilon,\\delta)\\le\\left\\lceil\\frac{log(2|\\mathcal{H}|/\\delta)}{2\\epsilon^2}\\right\\rceil\n\\]\n\n\n\n\n\n\nsummary\n\n\n\nif uni conv holds, then in most cases, the empirical risks of h in H will faithfully represent their true risks\n\n\n\nexercises\n\n4.1\n\n\n\\(\\forall \\epsilon,\\delta\\gt 0,\\exists m(\\epsilon,\\delta)\\,s.t.\\) \\[\n\\forall m\\ge m(\\epsilon,\\delta),\\,\\mathcal{P}_{S\\sim D^m}[L_D(A(S))\\gt\\epsilon]\\lt\\delta\\]\n\\(\\lim_{m\\to \\infty}\\mathbb{E}_{S\\sim D^m}[L_D(A(S))]=0\\)\n\n1 \\(\\iff\\) 2"
+  },
+  {
+    "objectID": "posts/paper-reading/moco.html",
+    "href": "posts/paper-reading/moco.html",
+    "title": "MoCo",
+    "section": "",
+    "text": "动量对比学习(Momentum Contrast, MoCo)用于图象表征的无监督学习。主要的观点是将对比学习看作是一种字典查询，即给定一个图片的编码作为请求，在字典中找到与之对应的图片编码。并依此提出了在视觉领域中，使用这种方法需要面临的两个关键点：一是字典应尽可能的大；二是在训练过程中用于编码字典的编码器应尽可能地保持一致，也就是要保证所有的图片都大致映射到了同一个表征空间中。为解决第一个问题，作者提出了使用队列动态维护字典；针对第二个问题，使用动量更新的方法去修改编码器的参数。"
+  },
+  {
+    "objectID": "posts/paper-reading/moco.html#background",
+    "href": "posts/paper-reading/moco.html#background",
+    "title": "MoCo",
+    "section": "Background",
+    "text": "Background\n无监督学习的方法在自然语言处理(NLP)领域取得了很大的成功，这得益于在 NLP 中，模型面对的输入信号是离散的，同时易于分割成小的单元来建造字典或者对应的表征。而在视觉领域，输入的信号是连续的、高维度的、非结构化的，想要得到同样效果的稀疏的表征是很困难的。\n无监督学习在大型无标记数据集上的使用是非常值得关注的，使用无监督学习来与训练得到的表征也能用于下游任务的学习。但他的效果却并不如目前的监督式学习效果好。若能很好的解决这一表征学习的问题，则能大大缩小监督与无监督学习之间的差距。"
+  },
+  {
+    "objectID": "posts/paper-reading/moco.html#retated-work",
+    "href": "posts/paper-reading/moco.html#retated-work",
+    "title": "MoCo",
+    "section": "Retated Work",
+    "text": "Retated Work\n为了解决以上提出的问题，很多研究提出了不同的基于对比学习的方法。\n\nloss function\n最早期的方法中，我们的目标是寻找一种编码器负责降维以及特征的学习，以成对的数据作为输入，以他们的距离来表达相似度。为此，损失函数分为两部分，前者用来缩小相似数据的距离，后者用来扩大不相似数据的距离。\n之后转化成使用互信息建模，提出 InfoNCE 损失函数。采样正负样本进行训练。最终普遍使用的是非参数化的softmax函数。\n\\[P(i|v)=\\frac{\\exp(v_i^Tv/\\tau)}{\\sum_{j=1}^{n}{\\exp(v_j^Tv/\\tau)}}\\]\n\n\ncontrastive loss mechanisms\n\nend-to-end\n端到端的方法中，当前的batch被作为字典进行训练，query和key分别采用不同的编码器，并分别进行梯度下降。由于算力的限制，更大的字典难以进行梯度的计算，同时他也受限于batch的大小。他的一致性保持得很好，因为一个batch字典的编码器总是同一个，但缺点是字典数量难以保证。\n\n\nmemory bank\n另一种机制是提前将所有样本的编码计算出来，每次query时，会在所有样本中再进行采样作为字典。同时，我们不再对key的编码器进行梯度下降，而是直接使用query的参数。注意，这里的更新是不及时的，每次只有当前被采样的样本编码被更新了。这样字典大小的问题解决了，但一致性的问题却变得棘手，因为每次采样的编码可能是由不同的编码器(参数不同)得到。"
+  },
+  {
+    "objectID": "posts/paper-reading/moco.html#novelty",
+    "href": "posts/paper-reading/moco.html#novelty",
+    "title": "MoCo",
+    "section": "novelty",
+    "text": "novelty\nMoCo 提出使用队列来动态维护字典，成功做到了字典大小完全不依赖batch的大小。新的batch被加入到队列中，最旧的batch会被移除。这样，队列中的keys使用的编码器是连续、平滑的更新的。\n第二点是key编码器参数的更新上，并不是直接复制query的参数，而是动量更新，更加的平滑，保证了一致性。"
+  },
+  {
+    "objectID": "posts/paper-reading/moco.html#dict-look-up",
+    "href": "posts/paper-reading/moco.html#dict-look-up",
+    "title": "MoCo",
+    "section": "dict look-up",
+    "text": "dict look-up\n与上文提到的 memory-bank 方法类似，根据一个样本，通过随机变换得到新样本作为正例，之后取 K 个负例求出 InfoNCE loss 进行优化。不同的是负例的选择方式和编码器的更新方式。"
+  },
+  {
+    "objectID": "posts/paper-reading/moco.html#momentum-contrast",
+    "href": "posts/paper-reading/moco.html#momentum-contrast",
+    "title": "MoCo",
+    "section": "Momentum Contrast",
+    "text": "Momentum Contrast\n\nqueue\n每次取得一个新的batch数据进行随机增强作为请求 q，再做另一种随机增强作为每个单独请求的正例 k。将队列中的全部元素作为每个请求的负例，求得损失，利用梯度下降更新参数。随后将 k 加入到队列中，同时去掉旧的batch。 由于队列的规模会很大，队列中的编码加入队列后并不会再更新，但这并不会妨碍一致性的保证，因为它总会把最不一致的编码去除掉。\n\n\nMomentum update\n在更新参数时，只对query的编码器参数进行梯度下降，而对key编码器进行如下更新: \\[\\theta_k \\leftarrow m\\theta_k+(1-m)\\theta_q\\]\n而在实验中，稍大的 m 得到的结果会更好，这也印证了一致性的重要。\n\n\nPretext Task\n前置任务与 memory-bank 类似。这里作者采用了 ResNet 作为编码器，而作者通过实验发现 BN 对编码的学习起到了消极的作用，而这可能是由于 BN 融合了当前batch的信息，在一定程度上会使模型”走捷径”。\n对 BN 的问题，作者提出了 shuffling BN 的方法，也就是在 BN 前先将 sample 进行打乱，求得编码后再复原。"
+  },
+  {
+    "objectID": "posts/paper-reading/moco.html#training",
+    "href": "posts/paper-reading/moco.html#training",
+    "title": "MoCo",
+    "section": "training",
+    "text": "training\n数据集采用的是\n\nImageNet: 包含约 1 百万张图片，1000 个类别。图片的类别分布均匀\nInstagram: 由 Instagram 中得到的约 10 亿张图片。具有长尾分布。\n\n这里作者是将特征层冻结，微调线性分类层来验证模型的效果。与众多无监督模型进行比对。"
+  },
+  {
+    "objectID": "posts/paper-reading/moco.html#findings",
+    "href": "posts/paper-reading/moco.html#findings",
+    "title": "MoCo",
+    "section": "findings",
+    "text": "findings\n\n在微调MoCo时，一些超参数与监督式学习模型相差很大，这表明他们的特征分布有较大的差异\n通过与 end-to-end 和 memory-bank 两种方法的对比可以发现，当字典规模较小时，end-to-end 模型和 MoCo 不相上下，memory-bank 则稍逊风骚；但增大字典规模后，end-to-end 模型则受限于算力，无法计算，其他两个模型都可以持续增加，但 MoCo 则明显胜出许多。说明 MoCo 很大的提升了无监督学习的效果。\n若完全复制query编码器参数，则无法收敛\nMoCo 可以很好的作为pre-trained模型进行下游任务的学习。"
+  },
+  {
+    "objectID": "posts/paper-reading/moco.html#conclusion",
+    "href": "posts/paper-reading/moco.html#conclusion",
+    "title": "MoCo",
+    "section": "conclusion",
+    "text": "conclusion\nMoCo 提供了一种对比学习的框架，在能够使字典尽可能大的同时，还可以保证表征空间的一致性。这是一种非常简洁而有效的方法。"
+  },
+  {
+    "objectID": "posts/paper-reading/multi-view-clustering.html",
+    "href": "posts/paper-reading/multi-view-clustering.html",
+    "title": "some papers about multi-view-clustering",
+    "section": "",
+    "text": "very brief summaries of some papers I read"
+  },
+  {
+    "objectID": "posts/paper-reading/multi-view-clustering.html#binary-multi-view-clustering",
+    "href": "posts/paper-reading/multi-view-clustering.html#binary-multi-view-clustering",
+    "title": "some papers about multi-view-clustering",
+    "section": "Binary Multi-View Clustering",
+    "text": "Binary Multi-View Clustering\nlarge scale multi-view image clustering\njointly learn collaborative discrete representation and binary cluster structures\nhas an algorithm with proved convergence analysis"
+  },
+  {
+    "objectID": "posts/paper-reading/multi-view-clustering.html#contrastive-clustering",
+    "href": "posts/paper-reading/multi-view-clustering.html#contrastive-clustering",
+    "title": "some papers about multi-view-clustering",
+    "section": "Contrastive Clustering",
+    "text": "Contrastive Clustering\nunified instance- and cluster-level contrastive learning\nrow vectors and column vectors as instance representation and cluster representation\nQ: how to construct negative instance, how to design the training target"
+  },
+  {
+    "objectID": "posts/paper-reading/multi-view-clustering.html#deep-clustering-on-the-link-between-discriminative-models-and-k-means",
+    "href": "posts/paper-reading/multi-view-clustering.html#deep-clustering-on-the-link-between-discriminative-models-and-k-means",
+    "title": "some papers about multi-view-clustering",
+    "section": "Deep Clustering: On the Link between Discriminative Models and K-Means",
+    "text": "Deep Clustering: On the Link between Discriminative Models and K-Means\ndiscover the equivilance between discriminative models using L2 regularized MI loss and soft regularized K-means loss, under some conditions"
+  },
+  {
+    "objectID": "posts/paper-reading/multi-view-clustering.html#multiview-clustering-a-scalable-and-parameter-free-bipartite-graph-fusion-method",
+    "href": "posts/paper-reading/multi-view-clustering.html#multiview-clustering-a-scalable-and-parameter-free-bipartite-graph-fusion-method",
+    "title": "some papers about multi-view-clustering",
+    "section": "Multiview Clustering: A Scalable and Parameter-Free Bipartite Graph Fusion Method ",
+    "text": "Multiview Clustering: A Scalable and Parameter-Free Bipartite Graph Fusion Method \nparameter-free, graph based multi-view clustering (graph fusion frameswork ?)"
+  },
+  {
+    "objectID": "posts/paper-reading/multi-view-clustering.html#dual-contrastive-prediction-for-incomplete-multi-view-representation-learning",
+    "href": "posts/paper-reading/multi-view-clustering.html#dual-contrastive-prediction-for-incomplete-multi-view-representation-learning",
+    "title": "some papers about multi-view-clustering",
+    "section": "Dual Contrastive Prediction for Incomplete Multi-view Representation Learning ",
+    "text": "Dual Contrastive Prediction for Incomplete Multi-view Representation Learning \nin-complete MvRL\nunify consistency learning and missing data recovery: proved using information theory\nframework based on contrastive learning loss"
+  },
+  {
+    "objectID": "posts/paper-reading/multi-view-clustering.html#robust-multi-view-clustering-with-incomplete-information",
+    "href": "posts/paper-reading/multi-view-clustering.html#robust-multi-view-clustering-with-incomplete-information",
+    "title": "some papers about multi-view-clustering",
+    "section": "Robust Multi-view Clustering with Incomplete Information",
+    "text": "Robust Multi-view Clustering with Incomplete Information\nunified framework to solve PVP and PSP\ncontrastive loss to eliminate the false negative samples"
   },
   {
     "objectID": "posts/english/vocab-example.html",
@@ -371,354 +581,46 @@
     "text": "scatter\nto (cause to) move far apart in different directions:\n\nThe protesters scattered at the sound of gunshots.\nThe soldiers came in and scattered the crowd.\n\nto cover a surface with things that are far apart and in no particular arrangement:\n\nScatter the powder around the plants.\nI scattered grass seed all over the lawn.\nI scattered the whole lawn with grass seed."
   },
   {
-    "objectID": "posts/understanding-machine-learning/UML-05.html",
-    "href": "posts/understanding-machine-learning/UML-05.html",
-    "title": "Understanding Machine Learning 05",
+    "objectID": "posts/tools/tc.html",
+    "href": "posts/tools/tc.html",
+    "title": "Total Commander Tips",
     "section": "",
-    "text": "here we go to one of the famous theories, the VC dimension\nbefore going a little deeper, we will have a look at the motivation\n\n\nfirst, finite is not a sufficient and necessary condition of PAC learnability. exercise 3.3 is a simple example. Moreover, in the last post (No-Free-Lunch theorem), we have seen H that contains all possible functions is not PAC learnable. When we rethink the proof, we may notice that the construction of set \\(C\\) is the key point. Since we are considering all possible functions, the error of different f’s can cancel, resulting in a large error.\nborrow the idea, if we can find a subset \\(C\\) of domain \\(\\mathcal{X}\\), and if H contains all the functions when taking \\(C\\) as the domain, then it will cause a considerable risk using the same proof\nfurther, if such kind of \\(C\\) is infinitely large, then \\(H\\) is not learnable\nthe thoughts above give us the basic idea of how the VC dimension comes\n\n\n\n\nDef. restriction of H to C\nhere, \\(\\mathcal{C}=\\{c_1,c_2,\\dots,c_m\\}\\subseteq\\mathcal{X}\\)\nand \\(\\mathcal{H}_C=\\{h(c_1),\\dots,h(c_m)\\}\\)\n\nDef. Shattering\nH shatters C \\(\\iff\\) \\(|H_C|=2^{|C|}\\)\n\nDef. VC-dimension\nthe VC-dimension of H \\(\\coloneq\\max_C\\{|H_C|:\\text{H shatters C}\\}\\)\n\na simple method to show VCdim=d we need to show that\n\n\\(\\exists C\\) of size d that is shattered by H\nevery C of size d+1 is not shattered by H\n\n\nsince \\(2^{|VCdim(H)|}\\le |H|\\), we have a loose upper bound of VC dim which is \\(log_2(|H|)\\)"
+    "text": "xbeta blog about TC\nA famous introductory blog to Total Commander.\nTotal Commander is a powerful customizable file manager tool. It has enormous features that are totally beyond one’s imagination."
   },
   {
-    "objectID": "posts/understanding-machine-learning/UML-05.html#fundamental-theorem-of-pac-learning",
-    "href": "posts/understanding-machine-learning/UML-05.html#fundamental-theorem-of-pac-learning",
-    "title": "Understanding Machine Learning 05",
-    "section": "fundamental theorem of PAC learning",
-    "text": "fundamental theorem of PAC learning\nthe followings are eq\n\nuniform convergence\nPAC learnable on every ERM learner\nagnostic PAC learnable on every ERM learner\nfinite VC dimension\n\n\nfrom 4. to 1. is non-trivial. here we will go deeper into that\nwe need to find \\(m_H^U\\) s.t. for any S that \\(|S|\\ge m_H^U\\) is \\(\\frac{\\epsilon}{2}\\)-representative (i.e. \\(L_D(h)-L_S(h)|\\le \\frac{\\epsilon}{2}\\))\nintuitively, if \\(m\\) is larger than \\(d\\), where \\(d\\) is the VC dimension, \\(H_C\\) will only take small part of \\(2^C\\) (in fact that is polynomial large w.r.t. \\(|C|\\)), the estimation error could be bounded by \\(o(m)\\)\n\nSauer’s Lemma\n\nDef. Growth Function\n\\[\\tau_H(m)=\\max_{C\\subset \\mathcal{X}:|C|=m}|H_C|.\\]\n\naccording to Sauer’s lemma, \\(\\tau_H(m)\\le \\sum_{i=0}^d\\tbinom{n}{i}\\), if \\(m\\gt d+1\\), we have a looser but neat form \\(\\tau_H(m)\\ge (em/d)^d\\)\n\nproof\nbasic idea\nwe prove a stronger claim, \\(\\forall C=\\{c_1,\\dots,c_m\\}\\)\nwe have \\(\\forall H,\\ |H_C|\\le |\\{B\\subseteq C: \\text{H shatters B}\\}|\\)\ninduction on m\nwhen m=1, both sides are equal\nwhen m=k+1, suppose the claim holds for \\(m\\le k\\).\nto use the claim, we need to split \\(C\\) as \\(\\{c_1\\}\\) and ${c_1,, c_m} which is denoted as \\(C'\\)\nwe need to find such \\(H'\\) that can naturally convert from \\(C'\\) to \\(C\\) but still holds the shattering property\nnote:\n\\[\nH_C=H_{C'}\\oplus H'_{C'}\n\\]\nwhere \\(H'_{C'}=\\{\\exists f(c_1)=1\\land g(c_1)=0\\land f_{C'}=g_{C'}, \\text{ where }f,g\\in H\\}\\), \\(\\oplus\\) means direct sum (\\(H_{C'}\\cap H'_{C'}=\\emptyset\\))\n\nif \\(f_{C'}\\) and \\(g_{C'}\\) are exactly the same, they represent the same function in \\(H_{C'}\\), and hence only count once in \\(H_{C'}\\) which should be treated separatedly in \\(H_C\\).\n\nso we have that\n\\[\n\\begin{aligned}\n    |H_C|&=|H_{C'}|+|H'_{C'}|\\\\\n    &\\le |\\{B\\subseteq C':\\text{H shatters B}\\}|+|\\{B\\subseteq C':\\text{H' shatters B}\\}|\n\\end{aligned}\n\\]\nnote that \\(H'\\) shatters B \\(\\iff\\) H shatters \\(\\{c_1\\}+B\\)\nso RHS \\(\\le |\\{B\\subseteq C:\\text{H shatters B}\\}|\\) \\(\\blacksquare\\)\n\n\n\nuniform convergence\nwe will give the upper bound without proof :(\nfor every \\(\\delta\\), with prob \\(1-\\delta\\) over the choice of \\(S\\sim D^m\\)\n\\[\n|L_D(h)-L_S(h)|\\le \\frac{4+\\sqrt{log(\\tau_H(2m))}}{\\delta \\sqrt{2m}}\n\\]\nRHS \\(\\in o(m)\\)\n\nI’ll add the proof when I master this math skill :("
+    "objectID": "posts/tools/tc.html#config-files",
+    "href": "posts/tools/tc.html#config-files",
+    "title": "Total Commander Tips",
+    "section": "Config files",
+    "text": "Config files\n.ini config file is recommended to be put under the installation directory.\nFor better management.\nAlso set UseIniInProgramDir=7, ignore register file.\nxbeta’s config file for learning."
   },
   {
-    "objectID": "posts/understanding-machine-learning/UML-05.html#exercise",
-    "href": "posts/understanding-machine-learning/UML-05.html#exercise",
-    "title": "Understanding Machine Learning 05",
-    "section": "exercise",
-    "text": "exercise\n\n6.1. monotonicity of VC dim\n6.2. finite X, \\(k\\lt |\\mathcal{X}|\\), compute the VC dim\n\n\\(H_{=k}^\\mathcal{X}=\\{h\\in \\{0,1\\}^\\mathcal{X}:|x:h(x)=1|=k\\}\\). VC dim=\\(\\min\\{k,|\\mathcal{X}|-k\\}\\), otherwise you can’t assign all one (zero) to these instances\n\\(H_{\\text{at most k}}^\\mathcal{X}=\\{|x:h(x)=1|\\le k \\text{ or }|x:h(x)=0|\\le k\\}\\). VC dim=k.\n\n6.3. parity function \\(h_I\\) (h computes the parity of bits at \\(I\\) ). finte H, \\(d\\le n\\), and easy to construct such \\(C\\) that \\(|C|=n\\)\n6.4. skip\n6.5. The VC dim of axis-aligned rectangles in d-dim is 2d. Since we need 2d points to construct a rectangle that assigns all points as one if there are 2d+1 points, one of them must stay inside the box (or lie on the border with no points in the box). With that point assigned as zero, others assigned as one, no function will satisfy\n6.6. VC-dimension of Boolean conjuntions \\(H_{con}^d\\): \\(f(x)=x_{i_1}\\land \\dots \\land x_{i_k}\\)\n\nprove \\(|H_{con}^d|\\le 3^d + 1\\). each \\(x_i\\) has three states, not chosen, origin \\(x_i\\), inverse \\(\\bar{x}_i\\), so should be \\(= 3^d\\) ??\nprove \\(VCdim(H)\\le d log 3\\). \\(VDdim\\le log(|H|)=dlog3\\)\nshow that \\(H_{con}\\) shatters \\(\\{e_i:i\\le d\\}\\), seems easy\nshow that \\(VCdim(H)\\le d\\). if \\(d+1\\), consider hypothesis \\(h_i(c_j) = \\begin{cases}  0 &\\text{if } i=j \\\\  1 &\\text{otherwise}  \\end{cases}\\) .that means each \\(c_i\\) has at least one bit that is different from others, which is a contradiction\n\\(H_{mcond}^d\\) which do not contain negations, empty conjunction is considered as all positive, the vc dim of \\(H_{mcond}^d\\) with all negative h =d. first \\(VCdim(H_{mcond})\\le d\\). consider \\(x_i\\) is all one but zero at index i, \\(i\\le d\\)\n\n6.7. skip\n6.8. show vcdim of \\(H=\\{x\\mapsto \\lceil sin(\\theta x) \\rceil: \\theta \\in \\mathbb{R}\\}\\) is infinity.\n\nhint: if \\(0.x_1x_2x_3\\dots\\) is the binary expansion of \\(x\\in (0,1)\\), then for any natual number m, \\(\\lceil sin(2^m\\pi x) \\rceil =(1-x_m)\\), provided that \\(\\exist k\\ge m\\) s.t. \\(x_k=1\\).\nwith the hint, that is easy. Just construct a huge matrix with each row representing a binary expansion of \\(x_i\\) and the columns running through all possible combinations.\n\n6.9. skip\n6.10. skip\n6.11. VC of union. \\(H_1,\\dots,H_r\\).\n6.12. Dudley classes.\n\n\\(VCdim(POS(\\mathcal{F}+g))=VCdim(POS(\\mathcal{F}))\\). “\\(\\mathbb{R}ightarrow\\)”, \\((f_1+g)-(f_2+g)\\).\n\\(VCdim(POS(\\mathcal{F}))=\\dim(\\mathcal{F})\\). half space, full rank, bla bla bla\nexamples of Dudley classes\n\n\nbtw, Dudley class seems to be a fascinating and important topic"
+    "objectID": "posts/tools/tc.html#location-and-selection",
+    "href": "posts/tools/tc.html#location-and-selection",
+    "title": "Total Commander Tips",
+    "section": "location and selection",
+    "text": "location and selection\n\ndirectory hotlist\nCtrl+d x\n\nhotlist = most used directorys\nextremely fast to navigate\n\n\n\n\n\n\n\nTip\n\n\n\n\nuse subdirectory in hotlist\ntidy up the hotlist periodically, e.g., make a Ctrl+d n (now) sublist for most frequent dirs recently.\n\n\n\n\n\nchange disk\nAlt+F1 for left panel, Alt+F2 for right panel\n\n\ncommon way of changing dir\n\nEnter or Backspace\nCtrl+\\ to root dir\n\n\n\nquick search\nmy config:\nConfiguration -> Quick Search\n\ntick Letters only\nuncheck Beginning (...)\ncheck Ending (...)\n\n\n\nHistory\nAlt+↓\n\n\nSorting\nSort with multiple keys.\nE.g.,\n\nFirst click Ext\nThen, click Date, Name while pressing Ctrl\n\n\n\nFiltering\nShow only the desired files\nShow -> Custom...\n\n\nColoring\nConfiguration -> Color -> Define colors by file type...\n\n2days as red\nexe as purple\n7days as blue\n\n\n\nSelecting\nRecommend to use the default NC mode (right single click to select)\n\nConfiguration -> Operation\n\nLong right press for right menu.\n\n\nmultiple selection\n\nAlt+'+' ('+' in the numeric keypad of keyboard): also select files with the same extension (you have already been selecting a file)\n* (also in the numeric keypad): reverse selection\n+ and -: also select or unselect some files (pops up a window for you to choose)\nInsert for a single selection, function like right single click and then ↓.\n\n\n\n\nBranch View\nCtrl+b: show all files in current and sub- directories."
   },
   {
-    "objectID": "posts/understanding-machine-learning/UML-03.html",
-    "href": "posts/understanding-machine-learning/UML-03.html",
-    "title": "Understanding Machine Learning 03",
-    "section": "",
-    "text": "Before, the way of choosing \\(m_H\\) and the effect of \\(\\delta\\) was related to the learner. However, we can borrow the concept of uniform convergence from analysis to make it independent of what learner you use.\nhere, we can treat \\(L_S(h)\\) as \\(\\sum_i^nf_i(x)\\) since they are both intermediate vals during the convergence, and \\(L_D(h)\\) to be the final end\n\n\n\\(S\\) is \\(\\epsilon\\)-representation sample (w.r.t domain, \\(H\\), \\(l\\) and \\(D\\)) if\n\\[\n\\forall h\\in\\mathcal{H},\\, |L_S(h)-L_D(h)|\\le \\epsilon\n\\]\nlemma\nif S is \\(\\frac{\\epsilon}{2}\\)-representative, then \\(\\forall h_S\\in\\argmin_{h\\in\\mathcal{H}}L_S(h)\\)\n\\[\nL_D(h_S)\\le \\min_{h\\in\\mathcal{H}}L_D(h)+\\epsilon\n\\]\nthrough this lemma, we can immediately have\n\\(S\\) is \\(\\frac{\\epsilon}{2}\\)-representative with prob \\(1-\\delta\\) \\(\\implies\\) Agnostic PAC learnability\n\n\n\nH has the uniform convergence \\(\\coloneqq\\) exists a func \\(m_H^{UC}(\\epsilon, \\delta)\\), for every \\(D\\), if \\(|S|\\gt m_H^{UC}\\) then with \\(1-\\delta\\) prob, it is \\(\\epsilon\\)-representative\nIt seems stronger than the original agnostic PAC, just like the rel between uniform conv and normal conv in analysis. normal conv only cares the situation in a certain area (here the decider generated by the learner), while uni conv holds on the whole area (all \\(h\\in\\mathcal{H}\\))\n\n\n\\(m_H\\le m_H^{UC}\\) if \\(H\\) has the uni conv property"
+    "objectID": "posts/tools/tc.html#pack-unpack",
+    "href": "posts/tools/tc.html#pack-unpack",
+    "title": "Total Commander Tips",
+    "section": "Pack / Unpack",
+    "text": "Pack / Unpack\nPack:\n\nAlt+F5 / Ctrl+Alt+F5\nTo save the archive in the current dir, set CA+F5=cm_PackFiles in [Shortcuts] session of wincmd.ini file. Ctrl+Alt+F5\n\nUnpack:\n\nAlt+F9, then clear the input field (empty means current folder)\ncheck Unpack each archive ... to save in a subfolder\n\n\n\n\n\n\n\nTip\n\n\n\nto make it a default manner (save in a subfolder instead of current folder), set UnZIPSeperateSubdirs=-2 in [Packer] section of wincmd.ini.\n\n\nBrowsing packed file:\n\nbrowse like a normal folder\nCtrl + → or Ctrl + ← or Ctrl + PageDown: open in right/left/current panel"
   },
   {
-    "objectID": "posts/understanding-machine-learning/UML-03.html#situation-of-the-finite-h-class",
-    "href": "posts/understanding-machine-learning/UML-03.html#situation-of-the-finite-h-class",
-    "title": "Understanding Machine Learning 03",
-    "section": "situation of the finite H class",
-    "text": "situation of the finite H class\nneed to find \\(m\\), so that\n\\[\nD^m(\\{S:\\forall h\\in \\mathcal{H},|L_S(h)-L_D(h)|\\le\\epsilon\\})\\ge 1-\\delta\n\\]\nand we may convert it into a more familiar form (convenient for using inequalities)\n\\[\nD^m(\\{S:\\exists h\\in \\mathcal{H},|L_S(h)-L_D(h)|\\gt\\epsilon\\})\\lt \\delta\n\\]\nusing union bound and Hodeffing inequalities (note that \\(L_D(h)=\\mathbb{E}_{S\\sim D^m}(L_S(h))\\)), we have\n\\[\nLHS\\le\\sum_{h\\in\\mathcal{H}}2exp(-2m\\epsilon^2)\n\\]\nas a corollary, we have the upper bound for finite hypothesis class which is agnostic PAC learnable\n\\[\nm_H^{UC}(\\epsilon,\\delta)\\le\\left\\lceil\\frac{log(2|\\mathcal{H}|/\\delta)}{2\\epsilon^2}\\right\\rceil\n\\]\n\n\n\n\n\n\nsummary\n\n\n\nif uni conv holds, then in most cases, the empirical risks of h in H will faithfully represent their true risks\n\n\n\nexercises\n\n4.1\n\n\n\\(\\forall \\epsilon,\\delta\\gt 0,\\exists m(\\epsilon,\\delta)\\,s.t.\\) \\[\n\\forall m\\ge m(\\epsilon,\\delta),\\,\\mathcal{P}_{S\\sim D^m}[L_D(A(S))\\gt\\epsilon]\\lt\\delta\\]\n\\(\\lim_{m\\to \\infty}\\mathbb{E}_{S\\sim D^m}[L_D(A(S))]=0\\)\n\n1 \\(\\iff\\) 2"
+    "objectID": "posts/tools/tc.html#rename",
+    "href": "posts/tools/tc.html#rename",
+    "title": "Total Commander Tips",
+    "section": "rename",
+    "text": "rename\nShift+F6 is the default (change filename), press again to include extension\nuse F2 is recommended.\nadd F2=cm_RenameOnly in [Shortcuts] section"
   },
   {
-    "objectID": "posts/understanding-machine-learning/uml-06.html",
-    "href": "posts/understanding-machine-learning/uml-06.html",
-    "title": "Understanding Machine Learning 06",
-    "section": "",
-    "text": "we will summarize different kinds of defs of learnability first"
-  },
-  {
-    "objectID": "posts/understanding-machine-learning/uml-06.html#learnability",
-    "href": "posts/understanding-machine-learning/uml-06.html#learnability",
-    "title": "Understanding Machine Learning 06",
-    "section": "learnability",
-    "text": "learnability\n\nPAC learnability\nH is PAC learnable if the realizability assumption holds and\n\\(\\forall \\epsilon,\\delta\\gt 0\\), there exists a learner A and \\(m_H(\\epsilon,\\delta)\\) s.t. if \\(m\\ge m_H\\)\nfor any D, with probability greater than \\(1-\\delta\\) over the choice of \\(S\\sim D^m\\)\n\\[\nL_D(A(S))\\le \\epsilon\n\\]\n\n\nagnostic PAC learnability\nH is agnostic PAC learnable if\n\\(\\forall \\epsilon,\\delta\\gt 0\\), there exists a learner A and \\(m_H(\\epsilon,\\delta)\\) s.t. if \\(m\\ge m_H\\)\nfor any D, with probability greater than \\(1-\\delta\\) over the choice of \\(S\\sim D^m\\)\n\\[\nL_D(A(S))\\le \\min_{h\\in H}\\{L_D(h)\\}+\\epsilon\n\\]\n\n\nuniform convergence property\nH enjoys the uniform convergence property if\n\\(\\forall \\epsilon,\\delta \\gt 0\\), there exists \\(m_H^{UC}(\\epsilon, \\delta)\\) s.t. if \\(m\\ge m_H^{UC}\\)\nfor any D, with probability greater than \\(1-\\delta\\) over the choice of \\(S\\sim D^m\\), \\(\\forall h\\in H\\)\n\\[\n|L_S(h) - L_D(h)|\\le\\epsilon\n\\]\nthese defination of learnibility are equal according to the fundamental theory\n\nhere we have another def which has different power with the above"
-  },
-  {
-    "objectID": "posts/understanding-machine-learning/uml-06.html#nonuniform-learnability",
-    "href": "posts/understanding-machine-learning/uml-06.html#nonuniform-learnability",
-    "title": "Understanding Machine Learning 06",
-    "section": "nonuniform learnability",
-    "text": "nonuniform learnability\nwe allow \\(m_H\\) to be non-uniform over h\nH is nonuniform learnable if\n\\(\\forall \\epsilon,\\delta\\gt 0\\) there exists a learner A and \\(m_H^{NU}(\\epsilon,\\delta,h)\\), s.t. for all \\(h\\in H\\), if \\(m\\ge m_H^{NU}(\\epsilon,\\delta,h)\\)\nfor any D, with probability greater than \\(1-\\delta\\) over the choice of \\(S\\sim D^m\\)\n\\[\nL_D(A(S))\\le L_D(h)+\\epsilon\n\\]\nnote when m is decided, and it is that makes non-uniform learnability weaker than PAC\n\nproperty\nH is nonuniform learnable iff H can be expressed as a union of countable \\(H_i\\) with uniform convergence property\nwe can easily construct H that is nonuniform learnable but not PAC learnable which means PAC learnability is stronger\n\n\ngeneric learner\nERM is a fittable learer for PAC learnability\nSRM (structural risk minimization) is a fittable learner for NU learnability\nSRM requires us to provide more prior knowledge on the priority (weights) of \\(H_i\\)’s.\ndef \\(\\epsilon_n(m,\\delta)=\\min\\{\\epsilon\\in (0,1):m_{H_n}^{UC}(\\epsilon,\\delta)\\le m\\}\\) which means the minimum est error we can get with m samples\nso given m samples\n\\[\n\\forall h\\in H_n,|L_D(h)-L_S(h)|\\le \\epsilon_n(m,\\delta)\n\\]\n\n\n\n\n\n\nNote\n\n\n\nnote m here can be varied (I’m not so sure about this) or large enough (s.t. \\(\\forall n,\\epsilon_n(m,\\delta)\\le \\epsilon\\)) during training\n\n\nwhen we put this on a larger range (\\(H_n\\rightarrow H\\)) directly, we can’t garantee we satisfy the \\(\\delta\\) constraint, since each one has relatively low confidence \\(1-\\delta\\). So we have to split the confidence to each \\(H_i\\), that is providing weights \\(\\sum_{n\\in\\mathbb{N}}w(n)\\le 1\\) on each \\(\\delta\\) (use union bound inequality to merge it back)\nto put it formally\ngiven \\(H=\\cup_{n\\in\\mathbb{N}}H_n\\) and \\(\\sum_{n\\in\\mathbb{N}}w(n)\\le 1\\), where \\(H_i\\) satisfy UC property, then\nwith probatility of at least \\(1-\\delta\\) over the choice \\(S\\sim D^m\\)\nfor any \\(n\\in\\mathbb{N}\\) and \\(h\\in H_n\\)\n\\[\n|L_D(h)-L_S(h)|\\le \\epsilon_n(m,w(n)\\cdot \\delta)\n\\]\nwhich implies for \\(\\forall h\\in H\\)\n\\[\nL_D(h)\\le L_S(h)+\\min_{n:h\\in H_n}\\epsilon_n(m,w(n)\\cdot\\delta)\n\\]\nif we make it simpler (but looser), let \\(n(h)=min\\{n:h\\in H_n\\}\\)\n\\[\nL_D(h)\\le L_S(h)+\\epsilon_n(m,w(n(h))\\cdot\\delta)\n\\]\nSO, SRM is to minimizing the RHS\nwe can proof that \\(L_D(A(S))\\le L_D(h)+\\epsilon\\) with p at least \\(1-\\delta\\) over the choice of S (if \\(m\\ge m_{H_{n(h)}}^{UC}(\\epsilon/2,w(n(h))\\cdot \\delta)\\))\n\nin fact, any converged sumations should be ok for w, like \\(w(n)=\\frac{6}{n^2\\pi^2}\\)\nintuitively, \\(H_n\\) with larger \\(w(n)\\) will need less samples since it is required for less confidence, we actually focus on some hypothesis classes instead of treat all \\(H_n\\) evenly.\nsecond, if \\(h_1\\) and \\(h_2\\) has the same empirical risk, we will prefer the one with higher weight if using SRM\nseems familiar? sounds like the principle Occam’s razor\n\n\ndescription length\nwe now consider a countable \\(H\\). it can be expressed as a union of singleton class \\(H_i=\\{h_i\\}\\) and for each \\(H_i\\), \\(m_{H_i}^{UC}(\\epsilon,\\delta)= \\left\\lceil\\frac{log(2/\\delta)}{2\\epsilon^2}\\right\\rceil\\)\nthen \\(e_n(m,w(n(h))\\cdot \\delta)= \\sqrt{\\frac{-logw(n(h)) +log(2/\\delta)}{2m}}\\)\ndef description language \\(\\{0,1\\}^\\star\\)\nwe assign each \\(H_i\\) with a description \\(d(h)\\) and denote \\(|h|=|d(h)|\\)\n\n\n\n\n\n\nNote\n\n\n\nif S is a prefix-free set of strings, then\n\\[\n\\sum_{\\sigma\\in S}\\frac{1}{2^{|\\sigma|}}\\le 1\n\\]\n\n\nso \\(w(h)=\\frac{1}{2^{|h|}}\\) is a legal weight function\nand the hypothesis with smaller description length is preferable if they have the same risk\nthat’s the principle of Occam’s razor"
-  },
-  {
-    "objectID": "posts/understanding-machine-learning/uml-06.html#consistency",
-    "href": "posts/understanding-machine-learning/uml-06.html#consistency",
-    "title": "Understanding Machine Learning 06",
-    "section": "consistency",
-    "text": "consistency\n\n\n\n\n\n\nNote\n\n\n\nif we let \\(m_H\\) further be dependent on the distribution, we have the def of consistency\n\n\na learner A is consistency with respect to H and P where P is the set of possible distribution D’s, if\n\\(\\forall \\epsilon,\\delta\\gt 0\\) there exists a learner A and \\(m_H^{NU}(\\epsilon,\\delta,h,D)\\), s.t. for all \\(h\\in H\\) and \\(D\\in P\\), if \\(m\\ge m_H^{NU}(\\epsilon,\\delta,h,D)\\)\nwith probability greater than \\(1-\\delta\\) over the choice of \\(S\\sim D^m\\)\n\\[\nL_D(A(S))\\le L_D(h)+\\epsilon\n\\]\n\n\n\n\n\n\nNote\n\n\n\nif P is the set of all distributions, then A is universally consistent with respect to H\n\n\nthis def of learnability is even weaker than NU\nthe algorithm Memorize is universally consistent which will be overfit in the context of PAC learnability!!! (for every countable domain and finite label set w.r.t. zero-one loss)\ndef Memorize(x)\n    return y if (x,y) in S else 0 # any default value \n\nwhy different ability?\nnote when we determine the \\(m\\)"
-  },
-  {
-    "objectID": "posts/understanding-machine-learning/uml-06.html#exercise",
-    "href": "posts/understanding-machine-learning/uml-06.html#exercise",
-    "title": "Understanding Machine Learning 06",
-    "section": "exercise",
-    "text": "exercise\n\n7.5. H that contains all functions is not nonuniform learnable\n\nconclusion: \\(H=\\cup_{n\\in\\mathbb{N}}H_n\\), if H shatters an infinite set, the some \\(H_n\\) has infinite VC dim"
-  },
-  {
-    "objectID": "posts/understanding-machine-learning/UML-02.html",
-    "href": "posts/understanding-machine-learning/UML-02.html",
-    "title": "Understanding Machine Learning 02",
-    "section": "",
-    "text": "def PAC learnability\nhypothesis H is PAC learnable if realizability assumption holds, and exists \\(m_H(\\epsilon,\\delta)\\rightarrow\\mathbb{N}\\)\nwhere with #i.i.d. sample \\(\\ge m_H\\), we always have a probability approx correct h just using ERM."
-  },
-  {
-    "objectID": "posts/understanding-machine-learning/UML-02.html#removing-realizability-assumption",
-    "href": "posts/understanding-machine-learning/UML-02.html#removing-realizability-assumption",
-    "title": "Understanding Machine Learning 02",
-    "section": "removing realizability assumption",
-    "text": "removing realizability assumption\nthe realizability assumption is too strong and unrealistic where we assume the existence of a perfect hypothesis from \\(\\mathcal{H}\\) that can reveal ground truth \\(f\\) with \\(Pr=1\\)\nso, change \\(f(x)\\) into a joint distrib \\(D(x,y)\\) as most researchers would do\ndef generalized risk as \\(L_D(h)\\coloneqq \\mathcal{P}_{(x,y)\\sim D}[h(x)\\neq y]\\coloneqq D(\\{(x,y):h(x)\\neq y\\})\\), just changed \\(D\\) into a joint distrib\nempirical risk is the same\nstill, when take \\(D\\) to be a uniform distrib on \\(S\\) they are eq\nideally, func “\\(f_D(x)=1\\text{ if }Pr[y=1|x]\\ge 0.5\\text{ and 0 otherwise}\\)” is the optimal sol to the gen risk min problem when \\(\\mathcal{Y}=\\{0,1\\}\\), w.r.t 0-1 loss. Bayes optimal sol.\n\nnote: my stupid short proof about the above\nwe need to proof\n\\[\n[f(x)\\neq 0]Pr(y=0|x)+[f(x)\\neq 1]Pr(y=1|x)\\\\\n\\le [g(x)\\neq 0]Pr(y=0|x)\\dots\n\\]\njust consider cond on \\(Pr(y=0|x)\\gt 0.5\\), and it becomes\n\\[\nLHS=Pr(y=1|x)\\\\\n=\\{[g(x)\\neq 0]+[g(x)\\neq 1]\\}Pr(y=1|x)\\\\\n\\le RHS\n\\]\nvery ugly and not clever proof :/ \\(\\blacksquare\\)\n\nhere, we still have the opt function \\(f\\), which minimizes the gen risk but does not minimize it to zero"
-  },
-  {
-    "objectID": "posts/understanding-machine-learning/UML-02.html#def-agnostic不可知论的-pac-learnability",
-    "href": "posts/understanding-machine-learning/UML-02.html#def-agnostic不可知论的-pac-learnability",
-    "title": "Understanding Machine Learning 02",
-    "section": "def Agnostic(不可知论的) PAC learnability",
-    "text": "def Agnostic(不可知论的) PAC learnability\nbefore: \\(L_{D,f}(h)\\le \\epsilon\\), now: \\(L_{D}(h)\\le min_{g\\in\\mathcal{H}}L_{D}(g)+\\epsilon\\)\nso \\(f\\) above will not be used, but the joint distrib \\(D\\) instead\nand we see that if the realizability assumption holds, it’s the same as the original PAC learnability\nagnostic just means we can’t obtain an h with arbitrary small gen risk\nrelative best instead of abs best"
-  },
-  {
-    "objectID": "posts/understanding-machine-learning/UML-02.html#other-loss-functions",
-    "href": "posts/understanding-machine-learning/UML-02.html#other-loss-functions",
-    "title": "Understanding Machine Learning 02",
-    "section": "other loss functions",
-    "text": "other loss functions\nwe can actually use other measures in place of the 0-1 loss, especially in regression problems\nnaturally, we can extend the loss function into a more formal definition, \\(l:\\mathcal{H}\\times\\mathcal{Z}\\rightarrow \\mathbb{R}_+\\), where \\(\\mathcal{Z}\\) is the set of instances, in prediction tasks, it could be \\(\\mathcal{X}\\times\\mathcal{Y}\\)\n\nAgnostic PAC learnability for General Loss Functions\n\\(L_D(h)\\le\\min_{h'\\in\\mathcal{H}}L_D(h')+\\epsilon\\)\nwhere \\(L_D(h)=\\mathcal{E}_{z\\sim D}[l(h,z)]\\)\nnote: \\(l(h,\\dot)\\) is a rand var, it should be measurable.."
-  },
-  {
-    "objectID": "posts/understanding-machine-learning/UML-02.html#some-exercises",
-    "href": "posts/understanding-machine-learning/UML-02.html#some-exercises",
-    "title": "Understanding Machine Learning 02",
-    "section": "some exercises",
-    "text": "some exercises\n\n3.1. about monotonicity of \\(m_\\mathcal{H}\\) on \\(\\epsilon\\) and \\(\\delta\\) respectively: seems trivial\n3.2. about \\(\\mathcal{H}_{singleton}\\): first, you need to come up with a simple learning alg. if no pos samples appear, just choose \\(h^-\\). this is enough to prove the PAC learnability, as m is large enough, the cost will be small enough\n3.3. about \\(\\mathcal{H}\\) consist of disks. similar to the rect situation from this chap, but simpler, ’cause it’s convenient to construct how the bad samples look like\n3.4. about \\(\\mathcal{H}\\) consist of boolean conjunctions. similar to 3.2. it’s easy to determine f if \\(S\\) contains a positive sample. Otherwise, we just return an all-negative hypothesis\n3.5. about samples from i. but not i.d. from the derivation of the finite hypo corollary, the key is to deal with \\(\\prod_i \\mathcal{P}_{x\\in D_i}(x_i|h(x_i)=f(x_i))\\), where the GA mean ineq could be used to make it as \\((1-\\epsilon)^m\\)\n3.6. ??, since you added the realizability assumption, it’s naive to have the PAC learnability, maybe?\n3.7. about ideally opt sol of binary classification (w.r.t 0-1 loss). see this\n3.8.1. same question as above, but use abs loss, and consider probabilistic hypothesis (outputs a distribution instead of the deterministic answer), method from here seems enough?\n3.8.2. prove the existence of a learning algo that is better than any others provided \\(D\\). ??? an algo from God that can directly output \\(f\\) from the previous question -_-\n3.8.3. for every learning algo A from \\(D\\), there always exists a B and \\(D'\\) that A is not better than B on \\(D\\). shit, this is also naive from 3.8.2\n3.9. about a variant of PAC learnability, which uses a two-oracle model that allows learner access to \\(D^+\\) and \\(D^-\\) on its preference. the learner can actually change the popularity of the observances, e.g. a learner can take samples from both pos and neg with equal probability (I don’t understand here so much, does )\n\n\nproof PAC in the standard model \\(\\implies\\) PAC in the two-oracle model. we need to construct a learner from the one in the standard model. suppose the learner puts equal weights on pos and neg samples. It learns a population with equal pos and neg using a standard model. denote the new distribution as \\(D'\\), so\n\n\n\\[\\begin{aligned}\nL_{D'}(h)&=P_{D'}[h\\neq f,f=0]+P_{D'}[h\\neq f, f=1]\\\\\n&=P_{D'}[f=0]P_D[h\\neq f|f=0]+P_{D'}[f=1]P_D[h\\neq f|f=1]\\\\\n&=\\frac{1}{2} L_{D^+}(h)+\\frac{1}{2}L_{D^-}(h)\n\\end{aligned}\n\\]\n\n\nproof PAC in the two-oracle model \\(\\implies\\) PAC in the standard model if \\(h^+,h^-\\in\\mathcal{H}\\). if we have enough samples (\\(m_H\\)), it will contain \\(m^+\\) pos, and \\(m^-\\) neg with high prob, and even it fails to have enough pos (or neg), we can just return \\(h^-\\) ((\\(h^+\\)) and won’t cost much risk."
-  },
-  {
-    "objectID": "posts/understanding-machine-learning/UML-04.html",
-    "href": "posts/understanding-machine-learning/UML-04.html",
-    "title": "Understanding Machine Learning 04",
-    "section": "",
-    "text": "What is a universal learner? It means it doesn’t need any prior knowledge. To be more specific, \\(\\mathcal{H}\\) that contains all possible functions is PAC-learnable. ? that is certainly not true since this is about the NFL theorem.\nTypically, prior knowledge could be assumptions of knowing \\(\\mathcal{D}\\) comes from some family of distribution or assuming \\(\\exists h\\in\\mathcal{H}\\) that \\(L_D(h)\\) is small enough.\n\n\nwe consider binary classification problem and 0-1 loss over \\(\\mathcal{X}\\)\n\\(m\\) be the tr set size smaller than \\(\\frac{|\\mathcal{X}|}{2}\\), A be any learner\nthere is a D that\n\nthere exists \\(f\\), with zero error on \\(\\mathcal{D}\\)\nwith a probability of at least 1/7 over the choice of \\(S\\sim \\mathcal{D}^m\\) we have the error of \\(A(S)\\ge 1/8\\)\n\nLet’s prove this famous theorem!!!\n\nlet C be a subset of \\(\\mathcal{X}\\) with size 2m as the finite ‘domain’ we will consider\nthe intuition is that since the learner can only see at most half of the domain set, we can then make the other part of distribution anything we want to defeat A\nwe need to find the D and f\nthere could be like \\(2^{2m}\\) possible f’s; we can prove that\n\\[\n\\max_{D,f}\\mathbb{E}_{S\\sim D^m}[L_{D,f}(A(S))]\\ge 1/4\n\\]\nwhich means there exists some bad f that will make A fail\nnote D and f should be matched, so we construct \\(D_i\\) as follows for each \\(f_i\\), \\(i=1\\dots T\\) where \\(T=2^{2m}\\)\n\\[\nD_i(x,y) = \\begin{cases}\n            1/|C| &\\text{if } f_i(x)=y \\\\\n            0 &\\text{otherwise}\n           \\end{cases}\n\\]\nsince \\(C\\) is finite, we can enumerate all S\ndenote as \\(S_i\\), \\(i=1\\dots M\\) where \\(M=(2m)^m\\), note instances in S can be duplicated\n\\[\n\\begin{aligned}\n   &\\max_i\\mathbb{E}_{S\\sim D_i}[L_{D_i}(A(S))]\\\\\n   &=\\frac{1}{M}\\max_i\\sum_j^ML_{D_i}(A(S_j^i))\\\\\n   &\\ge\\frac{1}{MT}\\sum_i^T\\sum_j^ML_{D_i}(A(S_j^i))\\\\\n   &=\\frac{1}{TM}\\sum_j^M\\sum_i^TL_{D_i}(A(S_j^i))\\\\\n   &\\ge\\frac{1}{T}\\min_j\\sum_{i}^{T}L_{D_i}(A(S_j^i))\n\\end{aligned}\n\\]\nhere the \\(i\\) in \\(S_j^i\\) means the label is assigned by \\(D_i\\), hence \\(f_i\\)\nWe now convert the problem of finding the \\(f\\) into \\(S_j^i\\) that has a significant error averaged on all functions. Intuitively, since we consider all functions, they must have some disagreement on the samples\nfor \\(S_j^i\\), we let \\(P=\\{x_i\\in C|x_i\\notin S_j^i\\}\\) and \\(p=|P|\\), where \\(p\\ge m\\)\n\\[\n\\begin{aligned}\n    &L_{D_i}(A(S_j^i))\\\\\n    =&\\frac{1}{2m}\\sum_k^{2m}\\mathbf{1}[f_i(x_k)\\neq A(S_j^i)(x_k)]\\\\\n    \\ge&\\frac{1}{2p}\\sum_{x\\in P}\\mathbf{1}[f_i(x)\\neq A(S_j^i)(x)]\\\\\n\\end{aligned}\n\\]\nthen\n\\[\n\\begin{aligned}\n    &\\frac{1}{T}\\sum_{i}^{T}L_{D_i}(A(S_j^i))\\\\\n    \\ge&\\frac{1}{T}\\sum_i^T\\frac{1}{2p}\\sum_{x\\in P}\\mathbf{1}[f_i(x)\\neq A(S_j^i)(x)]\\\\\n    =&\\frac{1}{2}*\\frac{1}{p}\\sum_{x\\in P}\\frac{1}{T}\\sum_{i}^{T}\\mathbf{1}[f_i(x)\\neq A(S_j^i)(x)]\\\\\n\\end{aligned}\n\\]\nthere are details here, note we have removed out the instances that are in \\(S_j\\) (no \\(i\\) here), that is because \\(\\mathbf{1}[f_i(x)\\neq A(S_j^i)(x)]\\) will always be zero if \\(x\\in S_j\\) and we can certainly not consider them\nsecond, since we take \\(f\\) from func space that contains all possible funcs, so they can be separated into pairs that can cancellate each other\nthere must always exist a pair of f’s (\\(f_a\\) and \\(f_b\\)) that only differ on one instance \\(x\\) which is not in \\(S_j\\) (\\(x\\in P\\))\ns.t.\n\\(\\mathbf{1}[f_a(x)\\neq A(S_j^a)(x)]+\\mathbf{1}[f_b(x)\\neq A(S_j^b)(x)]=1\\)\nthen the ave above actually is \\(\\frac{1}{4}\\)\nnow we have proved that\n\\[\n\\max_{D,f}\\mathbb{E}_{S\\sim D^m}[L_{D,f}(A(S))]\\ge 1/4\n\\]\nuse some prob inequality can give us the conclusion that \\(\\exists D\\) \\[\n\\mathbb{P}_{S\\sim D^m}[L_D(A(S))\\ge1/8]\\ge1/7\n\\]\n\nusing the def, \\(H\\) that contains every possible h is not PAC learnable"
-  },
-  {
-    "objectID": "posts/understanding-machine-learning/UML-04.html#bias-complexity-trade-off",
-    "href": "posts/understanding-machine-learning/UML-04.html#bias-complexity-trade-off",
-    "title": "Understanding Machine Learning 04",
-    "section": "bias-complexity trade-off",
-    "text": "bias-complexity trade-off\nUsually, we see a bias-variance trade-off. I think there may be some connection, but I haven’t seen it\nthe idea is we divide the true risk as below\n\\[\n\\mathcal{L}_D(h)=\\epsilon_{app}+\\epsilon_{est}\n\\]\nwhere \\(\\epsilon_{app}=\\min_{h'\\in H}L_D(h')\\) and \\(\\epsilon_{est}=\\mathcal{L}_D(h)-\\epsilon_{app}\\)\n\n\\(\\epsilon_{app}\\), approximation error, it measures how well your hypothesis space is\n\\(\\epsilon_{est}\\), estimation error, it measures how well your learner can estimate the best h (\\(\\in H\\)) using ERM\n\napprox error has nothing to do with how you train with the dataset. if your hypothesis space is well enough (or large enough), it will be small\nest error is on the opposite. It really depends on the learner, sample size so on. It’s similar to the \\(\\epsilon\\) in the definition of agnostic PAC learnability. If your h space is too large (too complicated), then it will need more samples to decrease the est error.\nso, large \\(|H|\\) will reduce approx error, but it may be hard to have a small est error (overfitting), with a high probability a tr set will cause a bad generalization ability\non the contrary, small \\(|H|\\) indeed will give us a small est error but will cause a large approximate error (underfitting)"
-  },
-  {
-    "objectID": "posts/understanding-machine-learning/UML-01.html",
-    "href": "posts/understanding-machine-learning/UML-01.html",
-    "title": "Understanding Machine Learning 01",
-    "section": "",
-    "text": "domain set. a set of instances \\(\\mathcal{X}\\)\nlabel set. \\(\\mathcal{Y}\\)\ntraining data. finite sequence \\(\\mathcal{S}\\) in \\(\\mathcal{X}\\times \\mathcal{Y}\\)\nlearner. output a rule, \\(h:\\mathcal{X}\\rightarrow\\mathcal{Y}\\). learning algorithm \\(\\mathcal{A(S)}\\)\ndata-generation model. ideally, we assume (for sim) there exists a \"correct\" labeling funciton, \\(f\\). and \\(\\mathcal{S}\\) is generated under an unknown distrib \\(\\mathcal{D}\\), then labeling it using \\(f\\).\nmeasurement. actually generalization error (risk or true error of \\(f\\))\n\n\\[\nL_{\\mathcal{D},f}(h):=\\mathbb{P}_{x\\sim D}[h(x)\\neq f(x)]:=\\mathcal{D}(\\{x:h(x)\\neq f(x)\\})\n\\]\nwhere \\(\\mathcal{D}\\) desc the prob of the event of observation.\n\\(\\mathcal{D}(A):=\\mathbb{P}_{x\\sim D}[\\pi(x)]\\), where \\(\\pi\\) is the char func of whether it was observed. \\(A={x\\in \\mathcal{X}:\\pi(x)=1}\\)"
-  },
-  {
-    "objectID": "posts/understanding-machine-learning/UML-01.html#erm-empirical-risk-minimization",
-    "href": "posts/understanding-machine-learning/UML-01.html#erm-empirical-risk-minimization",
-    "title": "Understanding Machine Learning 01",
-    "section": "ERM (empirical risk minimization)",
-    "text": "ERM (empirical risk minimization)\nuse training loss to approx generalization loss.\n\noverfitting\nwe may obtain a bunch of funcs just by ERM. so we need an inductive bias to set a preference on a certain funcs.\nwe choose the hypothesis space H before seeing the data. restric our search space of the ERM, otherwise we got a trivial useless solution.\nbefore seeing the data \\(\\rightarrow\\) should be based on some prior knowledge."
-  },
-  {
-    "objectID": "posts/understanding-machine-learning/UML-01.html#h",
-    "href": "posts/understanding-machine-learning/UML-01.html#h",
-    "title": "Understanding Machine Learning 01",
-    "section": "H",
-    "text": "H\nexamples of H\n\nfinite H space\n\\(\\mathcal{H}\\) will not overfit provided a sufficiently large training set.\nnote: the class of axix-aligned rectangles could be finite if we consider it on a computer. (discrete repr of real numbers)\n\\(h_S\\in argmin_{h\\in H}L_s(h)\\)\nsince S are randomly chosen, so \\(h_S,L_{D,f}\\) are actually random vars.\n\n\na few assumptions\na few assumptions on the PAC learnability\n\ndef the realizability assumption\nthere exists \\(h^\\star\\in\\mathcal{H}\\) s.t. \\(L_{D,f}(h^\\star)=0\\)\nfurther, we have\n\\(\\rightarrow L_S(h^\\star)=0 \\text{ with prob 1 over the S }\\rightarrow L_S(h_S)=0\\)\nwe are interested in \\(L_{D,f}(h_S)\\)\n\n\nconfidence param\nwe address a prob \\(\\delta\\) of getting a very nonrepresentative training set (e.g all lie in class A). and \\((1-\\delta)\\) is the confidence of our prediction.\n\n\naccuracy param\n\\(\\epsilon\\)\nwe call \\(L_{D,f}(h_S)\\ge \\epsilon\\) as a failure of the learner, otherwise approx correct predictor.\nSo we're interested in the upper bound of prob to sample S that leads to the learner’s failure.\nupper bound of\n\\[\nD^m\\{S|_x:L_{D,f}(h_S)\\gt \\epsilon\\}\n\\]\nlet \\(H_B\\) be the set of bad hypotheses\n\\[\n\\{h\\in H: L_{D,f}\\gt \\epsilon\\}\n\\]\nlet M be the set of the misleading training set\n\\[\n\\{S|_x:\\exists h\\in H_B, L_S(h)=0\\}\n\\]\nwhere \\(S|_x\\) is the instances of tr set\ndue to real.. assumption, only M will cause failure.\nso only a subset of S from M will cause \\(h_S\\) to fail.\n\\[\n\\begin{align}\n&D^m\\{S|_x:L_{D,f}(h_S)\\gt \\epsilon\\} \\\\\n\\le& \\sum_{h\\in H_B}D^m\\{S|_x:L_S(h)=0\\}\\\\\n=&\\sum_{h\\in H_B}\\prod D\\{x_i:h(x_i)=f(x_i)\\}\n\\end{align}\n\\]\nhere, the countability of \\(\\mathcal{H}\\) is used, and I think if we can control the order of \\(|\\mathcal{H}|\\) and with more careful scaling (with more assumption or knowledge about the h's, like \\(D^m\\{S|_x:L_S(h)=0\\}\\) can be approx related to h) then we could have the inf conclusion, though maybe not that interesting, and there are other ways on it.\nand\n\\[\nD\\{x_i:h(x_i)=f(x_i)\\}=1-L_{D,f}(h)\\le 1-\\epsilon\n\\]\nso using a series of loose relaxation, we have\n\\[\nD^m\\{S|_x:L_{D,f}(h_S)\\}\\le |H_B|e^{-\\epsilon m}\\le |H|e^{-\\epsilon m}\n\\]\nfinite is used here\nLHS is \\(\\delta\\)\nNote sometimes m should be really large to ensure with at least \\(1-\\delta\\) confidence over the choice of S, every ERM hypothesis, \\(h_S\\) is approx correct."
-  },
-  {
-    "objectID": "posts/understanding-machine-learning/UML-01.html#small-corollary",
-    "href": "posts/understanding-machine-learning/UML-01.html#small-corollary",
-    "title": "Understanding Machine Learning 01",
-    "section": "small corollary",
-    "text": "small corollary\nwhen hypothesis space is finite, then we can immediately have an upper bound for \\(m_{\\mathcal{H}}\\)\n\\[\nm_{\\mathcal{H}}(\\epsilon,\\delta)\\le \\left \\lceil \\frac{log\\left(|\\mathcal{H}|/\\delta\\right)}{\\epsilon} \\right \\rceil\n\\]"
-  },
-  {
-    "objectID": "posts/notes-about-technical-writing.html",
-    "href": "posts/notes-about-technical-writing.html",
-    "title": "Notes about Technical Writing",
-    "section": "",
-    "text": "extra spaces between words and extra blank lines between passages will be ignored.\n\nspaces in the front will be ignored.\nnewline is regarded as an extra space, adding % at the end will remove it.\nnote: space before macros will not be ignored, e.g., \\TeX ing. But spaces at the rear will be ignored. Adding brankets {} will resolve it, e.g., {\\TeX} ing or \\Tex{} ing.\n\n\\qquad: as wide as about two M s\ndouble hyphen: -- denotes number range, en dash; triple hyphen: --- denotes punctuation dash, em dash. en and em denotes the width\nfloat environment: e.g., figure, table. accept an optional arg (h: here; t: top; H: here and not float, extended from package float)\n\\eqref is specified for math equations from package amsmath\navoid setting font or controlling indents, etc., within the document environment. try to replace them with meaningful commands or environments.\n\n\\newenvironment{myenv}\n\\newcommand\n\nellipsis: \\ldots or \\dots. instead of \\cdots or ...(three dots).\n\nH\\dots. (OK)\nH \\ldots H (not good), H $\\ldots$ H (recommended, math env)\n\nescape chars in the main body.\n\n\\_ for _; \\textbackslash for \\\n\nnon-breakable space.\n\nQuestion~1\nDonald~E. Knuth within names\nMr.~Knuth\nfunction~$f(x)$\n1,~2, and~3\n\nperiod after capital is regarded as a abbreviation. use \\ or \\@ to resolve it. E.g., Roman number XII\\@. Yes.\nBibTeX\n\n\\citep (index) and \\citet (author) are recommended. remember to use package natbib and use plainnat bibliography style\n\nforce line break\n\n\\\\ accepts an optional argument for vertical space. e.g., \\\\[2cm]. Often used for in equation environment\n\nspecial chars used in main body\n\n§: \\S\n: \\dag\n: \\ddag\n¶: \\P\n©: \\copyright\n£: \\pounds\n\\(\\bullet\\): \\textbullet (\\bullet in math env)\ngo check the book The Comprehensive LATEX Symbol List, 2009 by Scott Pakin for more"
-  },
-  {
-    "objectID": "posts/notes-about-technical-writing.html#font-family",
-    "href": "posts/notes-about-technical-writing.html#font-family",
-    "title": "Notes about Technical Writing",
-    "section": "font family",
-    "text": "font family\n\nroman family: \\textrm{font family} font family\nsans-serif family: \\textsf{font family} font family\ntypewritter family: \\texttt{font family} font family\n\ndeclaration, {\\rmfamily font family} font family"
-  },
-  {
-    "objectID": "posts/notes-about-technical-writing.html#font-shape",
-    "href": "posts/notes-about-technical-writing.html#font-shape",
-    "title": "Notes about Technical Writing",
-    "section": "font shape",
-    "text": "font shape\n\nupright shape: \\textup{Font Shape} Font Shape\nitalic shape: \\textit{Font Shape} Font Shape\nslanted shape: \\textsl{Font Shape} Font Shape\nsmall captical shape: \\textsc{Font Shape} Font Shape\n\ndeclaration: {\\itshape Font Shape} Font Shape"
-  },
-  {
-    "objectID": "posts/notes-about-technical-writing.html#font-series",
-    "href": "posts/notes-about-technical-writing.html#font-series",
-    "title": "Notes about Technical Writing",
-    "section": "font series",
-    "text": "font series\n\nmedium series: \\textmd{font series} font series (default in main body)\nbold series: \\textbf{font series} font series\n\ndeclaration: {\\mdseries font series} font series"
-  },
-  {
-    "objectID": "posts/notes-about-technical-writing.html#font-typeface",
-    "href": "posts/notes-about-technical-writing.html#font-typeface",
-    "title": "Notes about Technical Writing",
-    "section": "font typeface",
-    "text": "font typeface\n\nThe default font family of \\(\\LaTeX\\) is Computer Modern\nSerif Times Roman (i.e., Times New Roman) is recommended for papers, magazines and books. Use package txfonts\nConcrete is recommended for presentation. package combination ccfonts, eulervm is great. (also arec ,cmbright)\n\nwe can specify three font family individually\n\\usepackage{fontspec}\n\\setmainfont{Times New Roman}\n\\setsansfont{Verdana}\n\\setmonofont{Courier New}"
-  },
-  {
-    "objectID": "posts/notes-about-technical-writing.html#emphasis",
-    "href": "posts/notes-about-technical-writing.html#emphasis",
-    "title": "Notes about Technical Writing",
-    "section": "emphasis",
-    "text": "emphasis\nmake upright or make italic upright\n\nthis is \\emph{emphasis}: this is emphasis\n\\textit{this is \\emph{emphasis}} this is emphasis**\n\nunderline\n\\underline{Emphasized} text and \\underline{another}: Emphasized text and another\nuse package \\usepackage[normalem]{ulem}\n\\uline{Emphasized} text and \\uline{another}: Emphasized text and another"
-  },
-  {
-    "objectID": "posts/notes-about-technical-writing.html#font-size",
-    "href": "posts/notes-about-technical-writing.html#font-size",
-    "title": "Notes about Technical Writing",
-    "section": "font size",
-    "text": "font size"
-  },
-  {
-    "objectID": "posts/paper-reading/multi-view-clustering.html",
-    "href": "posts/paper-reading/multi-view-clustering.html",
-    "title": "some papers about multi-view-clustering",
-    "section": "",
-    "text": "very brief summaries of some papers I read"
-  },
-  {
-    "objectID": "posts/paper-reading/multi-view-clustering.html#binary-multi-view-clustering",
-    "href": "posts/paper-reading/multi-view-clustering.html#binary-multi-view-clustering",
-    "title": "some papers about multi-view-clustering",
-    "section": "Binary Multi-View Clustering",
-    "text": "Binary Multi-View Clustering\nlarge scale multi-view image clustering\njointly learn collaborative discrete representation and binary cluster structures\nhas an algorithm with proved convergence analysis"
-  },
-  {
-    "objectID": "posts/paper-reading/multi-view-clustering.html#contrastive-clustering",
-    "href": "posts/paper-reading/multi-view-clustering.html#contrastive-clustering",
-    "title": "some papers about multi-view-clustering",
-    "section": "Contrastive Clustering",
-    "text": "Contrastive Clustering\nunified instance- and cluster-level contrastive learning\nrow vectors and column vectors as instance representation and cluster representation\nQ: how to construct negative instance, how to design the training target"
-  },
-  {
-    "objectID": "posts/paper-reading/multi-view-clustering.html#deep-clustering-on-the-link-between-discriminative-models-and-k-means",
-    "href": "posts/paper-reading/multi-view-clustering.html#deep-clustering-on-the-link-between-discriminative-models-and-k-means",
-    "title": "some papers about multi-view-clustering",
-    "section": "Deep Clustering: On the Link between Discriminative Models and K-Means",
-    "text": "Deep Clustering: On the Link between Discriminative Models and K-Means\ndiscover the equivilance between discriminative models using L2 regularized MI loss and soft regularized K-means loss, under some conditions"
-  },
-  {
-    "objectID": "posts/paper-reading/multi-view-clustering.html#multiview-clustering-a-scalable-and-parameter-free-bipartite-graph-fusion-method",
-    "href": "posts/paper-reading/multi-view-clustering.html#multiview-clustering-a-scalable-and-parameter-free-bipartite-graph-fusion-method",
-    "title": "some papers about multi-view-clustering",
-    "section": "Multiview Clustering: A Scalable and Parameter-Free Bipartite Graph Fusion Method ",
-    "text": "Multiview Clustering: A Scalable and Parameter-Free Bipartite Graph Fusion Method \nparameter-free, graph based multi-view clustering (graph fusion frameswork ?)"
-  },
-  {
-    "objectID": "posts/paper-reading/multi-view-clustering.html#dual-contrastive-prediction-for-incomplete-multi-view-representation-learning",
-    "href": "posts/paper-reading/multi-view-clustering.html#dual-contrastive-prediction-for-incomplete-multi-view-representation-learning",
-    "title": "some papers about multi-view-clustering",
-    "section": "Dual Contrastive Prediction for Incomplete Multi-view Representation Learning ",
-    "text": "Dual Contrastive Prediction for Incomplete Multi-view Representation Learning \nin-complete MvRL\nunify consistency learning and missing data recovery: proved using information theory\nframework based on contrastive learning loss"
-  },
-  {
-    "objectID": "posts/paper-reading/multi-view-clustering.html#robust-multi-view-clustering-with-incomplete-information",
-    "href": "posts/paper-reading/multi-view-clustering.html#robust-multi-view-clustering-with-incomplete-information",
-    "title": "some papers about multi-view-clustering",
-    "section": "Robust Multi-view Clustering with Incomplete Information",
-    "text": "Robust Multi-view Clustering with Incomplete Information\nunified framework to solve PVP and PSP\ncontrastive loss to eliminate the false negative samples"
-  },
-  {
-    "objectID": "posts/paper-reading/moco.html",
-    "href": "posts/paper-reading/moco.html",
-    "title": "MoCo",
-    "section": "",
-    "text": "动量对比学习(Momentum Contrast, MoCo)用于图象表征的无监督学习。主要的观点是将对比学习看作是一种字典查询，即给定一个图片的编码作为请求，在字典中找到与之对应的图片编码。并依此提出了在视觉领域中，使用这种方法需要面临的两个关键点：一是字典应尽可能的大；二是在训练过程中用于编码字典的编码器应尽可能地保持一致，也就是要保证所有的图片都大致映射到了同一个表征空间中。为解决第一个问题，作者提出了使用队列动态维护字典；针对第二个问题，使用动量更新的方法去修改编码器的参数。"
-  },
-  {
-    "objectID": "posts/paper-reading/moco.html#background",
-    "href": "posts/paper-reading/moco.html#background",
-    "title": "MoCo",
-    "section": "Background",
-    "text": "Background\n无监督学习的方法在自然语言处理(NLP)领域取得了很大的成功，这得益于在 NLP 中，模型面对的输入信号是离散的，同时易于分割成小的单元来建造字典或者对应的表征。而在视觉领域，输入的信号是连续的、高维度的、非结构化的，想要得到同样效果的稀疏的表征是很困难的。\n无监督学习在大型无标记数据集上的使用是非常值得关注的，使用无监督学习来与训练得到的表征也能用于下游任务的学习。但他的效果却并不如目前的监督式学习效果好。若能很好的解决这一表征学习的问题，则能大大缩小监督与无监督学习之间的差距。"
-  },
-  {
-    "objectID": "posts/paper-reading/moco.html#retated-work",
-    "href": "posts/paper-reading/moco.html#retated-work",
-    "title": "MoCo",
-    "section": "Retated Work",
-    "text": "Retated Work\n为了解决以上提出的问题，很多研究提出了不同的基于对比学习的方法。\n\nloss function\n最早期的方法中，我们的目标是寻找一种编码器负责降维以及特征的学习，以成对的数据作为输入，以他们的距离来表达相似度。为此，损失函数分为两部分，前者用来缩小相似数据的距离，后者用来扩大不相似数据的距离。\n之后转化成使用互信息建模，提出 InfoNCE 损失函数。采样正负样本进行训练。最终普遍使用的是非参数化的softmax函数。\n\\[P(i|v)=\\frac{\\exp(v_i^Tv/\\tau)}{\\sum_{j=1}^{n}{\\exp(v_j^Tv/\\tau)}}\\]\n\n\ncontrastive loss mechanisms\n\nend-to-end\n端到端的方法中，当前的batch被作为字典进行训练，query和key分别采用不同的编码器，并分别进行梯度下降。由于算力的限制，更大的字典难以进行梯度的计算，同时他也受限于batch的大小。他的一致性保持得很好，因为一个batch字典的编码器总是同一个，但缺点是字典数量难以保证。\n\n\nmemory bank\n另一种机制是提前将所有样本的编码计算出来，每次query时，会在所有样本中再进行采样作为字典。同时，我们不再对key的编码器进行梯度下降，而是直接使用query的参数。注意，这里的更新是不及时的，每次只有当前被采样的样本编码被更新了。这样字典大小的问题解决了，但一致性的问题却变得棘手，因为每次采样的编码可能是由不同的编码器(参数不同)得到。"
-  },
-  {
-    "objectID": "posts/paper-reading/moco.html#novelty",
-    "href": "posts/paper-reading/moco.html#novelty",
-    "title": "MoCo",
-    "section": "novelty",
-    "text": "novelty\nMoCo 提出使用队列来动态维护字典，成功做到了字典大小完全不依赖batch的大小。新的batch被加入到队列中，最旧的batch会被移除。这样，队列中的keys使用的编码器是连续、平滑的更新的。\n第二点是key编码器参数的更新上，并不是直接复制query的参数，而是动量更新，更加的平滑，保证了一致性。"
-  },
-  {
-    "objectID": "posts/paper-reading/moco.html#dict-look-up",
-    "href": "posts/paper-reading/moco.html#dict-look-up",
-    "title": "MoCo",
-    "section": "dict look-up",
-    "text": "dict look-up\n与上文提到的 memory-bank 方法类似，根据一个样本，通过随机变换得到新样本作为正例，之后取 K 个负例求出 InfoNCE loss 进行优化。不同的是负例的选择方式和编码器的更新方式。"
-  },
-  {
-    "objectID": "posts/paper-reading/moco.html#momentum-contrast",
-    "href": "posts/paper-reading/moco.html#momentum-contrast",
-    "title": "MoCo",
-    "section": "Momentum Contrast",
-    "text": "Momentum Contrast\n\nqueue\n每次取得一个新的batch数据进行随机增强作为请求 q，再做另一种随机增强作为每个单独请求的正例 k。将队列中的全部元素作为每个请求的负例，求得损失，利用梯度下降更新参数。随后将 k 加入到队列中，同时去掉旧的batch。 由于队列的规模会很大，队列中的编码加入队列后并不会再更新，但这并不会妨碍一致性的保证，因为它总会把最不一致的编码去除掉。\n\n\nMomentum update\n在更新参数时，只对query的编码器参数进行梯度下降，而对key编码器进行如下更新: \\[\\theta_k \\leftarrow m\\theta_k+(1-m)\\theta_q\\]\n而在实验中，稍大的 m 得到的结果会更好，这也印证了一致性的重要。\n\n\nPretext Task\n前置任务与 memory-bank 类似。这里作者采用了 ResNet 作为编码器，而作者通过实验发现 BN 对编码的学习起到了消极的作用，而这可能是由于 BN 融合了当前batch的信息，在一定程度上会使模型”走捷径”。\n对 BN 的问题，作者提出了 shuffling BN 的方法，也就是在 BN 前先将 sample 进行打乱，求得编码后再复原。"
-  },
-  {
-    "objectID": "posts/paper-reading/moco.html#training",
-    "href": "posts/paper-reading/moco.html#training",
-    "title": "MoCo",
-    "section": "training",
-    "text": "training\n数据集采用的是\n\nImageNet: 包含约 1 百万张图片，1000 个类别。图片的类别分布均匀\nInstagram: 由 Instagram 中得到的约 10 亿张图片。具有长尾分布。\n\n这里作者是将特征层冻结，微调线性分类层来验证模型的效果。与众多无监督模型进行比对。"
-  },
-  {
-    "objectID": "posts/paper-reading/moco.html#findings",
-    "href": "posts/paper-reading/moco.html#findings",
-    "title": "MoCo",
-    "section": "findings",
-    "text": "findings\n\n在微调MoCo时，一些超参数与监督式学习模型相差很大，这表明他们的特征分布有较大的差异\n通过与 end-to-end 和 memory-bank 两种方法的对比可以发现，当字典规模较小时，end-to-end 模型和 MoCo 不相上下，memory-bank 则稍逊风骚；但增大字典规模后，end-to-end 模型则受限于算力，无法计算，其他两个模型都可以持续增加，但 MoCo 则明显胜出许多。说明 MoCo 很大的提升了无监督学习的效果。\n若完全复制query编码器参数，则无法收敛\nMoCo 可以很好的作为pre-trained模型进行下游任务的学习。"
-  },
-  {
-    "objectID": "posts/paper-reading/moco.html#conclusion",
-    "href": "posts/paper-reading/moco.html#conclusion",
-    "title": "MoCo",
-    "section": "conclusion",
-    "text": "conclusion\nMoCo 提供了一种对比学习的框架，在能够使字典尽可能大的同时，还可以保证表征空间的一致性。这是一种非常简洁而有效的方法。"
-  },
-  {
-    "objectID": "posts/programming/vim_tech.html",
-    "href": "posts/programming/vim_tech.html",
-    "title": "vim techs",
-    "section": "",
-    "text": "add key mapping yourself\nsave below as xxx.vim in /path/to/nerdtree/nerdtree_plugin/xxx.vim\nyy for abs path of current node, yr for rel path\n```{vimscript}\ncall NERDTreeAddKeyMap({\n        \\ 'key': 'yy',\n        \\ 'callback': 'NERDTreeYankFullPath',\n        \\ 'quickhelpText': 'put full path of current node into the default register' })\n\nfunction! NERDTreeYankFullPath()\n    let n = g:NERDTreeFileNode.GetSelected()\n    if n != {}\n        call setreg('\"', n.path.str())\n    endif\n    call nerdtree#echo(\"Node full path yanked!\")\nendfunction\n\ncall NERDTreeAddKeyMap({\n        \\ 'key': 'yr',\n        \\ 'callback': 'NERDTreeYankRelativePath',\n        \\ 'quickhelpText': 'put relative path of current node into the default register' })\n\n\nfunction! NERDTreeYankRelativePath()\n    let n = g:NERDTreeFileNode.GetSelected()\n    if n != {}\n        call setreg('\"', fnamemodify(n.path.str(), ':.'))\n    endif\n    call nerdtree#echo(\"Node relative path yanked!\")\nendfunction\n```"
-  },
-  {
-    "objectID": "posts/programming/vim_tech.html#add-sth.-surround",
-    "href": "posts/programming/vim_tech.html#add-sth.-surround",
-    "title": "vim techs",
-    "section": "add sth. surround",
-    "text": "add sth. surround\nys takes a motion or text object, and then the char you want to put surround with\nlike ysiw\" surr current word with \""
-  },
-  {
-    "objectID": "posts/programming/pytorch-notes.html",
-    "href": "posts/programming/pytorch-notes.html",
-    "title": "PyTorch Notes",
-    "section": "",
-    "text": "x.numel() number of elements in x\nbroadcast mechanism\nY = Y + X would allocate a new space for the result of Y + X. Y then is the reference to this new memory. Y += X or Y[:] = Y + X is better. (id(Y) will be unchanged.)\nfloat() or int() converts a scalar tensor to a standard number, similar to x.item()\nA * B element-wise product.\nA_sum = A.sum(axis=1, keepdims=True) will keep the number of axis. A / A_sum will enable broadcast mechanism.\nA.cumsum(axis=0) accumulated sum.\nlinear algebra (matrix, vector) multiplication\n\ndot product: torch.dot(x, y) only accept 1-D tensor.\nmatrix-vector multiplication: torch.mv(A, x) matrix and vector. x is 1-D vector. All in column vectors.\nmatrix-matrix multiplication: torch.mm(A, B).\n\ntorch.distributions\n\nmultinomial.Multinomial(n, probs).sample(N, )"
-  },
-  {
-    "objectID": "posts/programming/pytorch-notes.html#gadget-functions-pandas",
-    "href": "posts/programming/pytorch-notes.html#gadget-functions-pandas",
-    "title": "PyTorch Notes",
-    "section": "gadget functions (pandas)",
-    "text": "gadget functions (pandas)\n\ndata.fillna(data.mean())\npd.get_dummies(data, dummy_na=True) Convert categorical variable into dummy/indicator variables. Works for str."
-  },
-  {
-    "objectID": "posts/programming/pytorch-notes.html#gadget-functions-d2l",
-    "href": "posts/programming/pytorch-notes.html#gadget-functions-d2l",
-    "title": "PyTorch Notes",
-    "section": "gadget functions (d2l)",
-    "text": "gadget functions (d2l)\n\nd2l.plot example\n\nx = np.arange(0, 3, 0.1) d2l.plot(x, [x ** 2, 2 * x - 1], 'x', 'f(x)', legend=['f(x)', 'Tangent'])"
-  },
-  {
-    "objectID": "posts/programming/pytorch-notes.html#plot",
-    "href": "posts/programming/pytorch-notes.html#plot",
-    "title": "PyTorch Notes",
-    "section": "plot",
-    "text": "plot\n\nexample\n\nplt.plot(y, label=(\"label\"))\nplt.axhline(y=0, color='black', linestyle='dashed')\nplt.gca().set_xlabel('x label')\nplt.gca().set_ylabel('y label')\nplt.legend()"
+    "objectID": "posts/tools/tc.html#addons",
+    "href": "posts/tools/tc.html#addons",
+    "title": "Total Commander Tips",
+    "section": "Addons",
+    "text": "Addons\n\nxbeta plugin collections\nofficial addon collections\n\n\nmy config file, mod a little from xbeta\nfor more details and usage, please refer to the xbeta blog or F1 help manual."
   },
   {
     "objectID": "posts/esl/ESL-02.html",
@@ -805,6 +707,55 @@
     "text": "specific boosting example\n\nboosting tree\nregion \\(R_j,\\, j=1,\\dots,J\\)\n\\(x\\in R_j\\mathbb{R}ightarrow f(x)=y_j\\)"
   },
   {
+    "objectID": "posts/notes-about-technical-writing.html",
+    "href": "posts/notes-about-technical-writing.html",
+    "title": "Notes about Technical Writing",
+    "section": "",
+    "text": "extra spaces between words and extra blank lines between passages will be ignored.\n\nspaces in the front will be ignored.\nnewline is regarded as an extra space, adding % at the end will remove it.\nnote: space before macros will not be ignored, e.g., \\TeX ing. But spaces at the rear will be ignored. Adding brankets {} will resolve it, e.g., {\\TeX} ing or \\Tex{} ing.\n\n\\qquad: as wide as about two M s\ndouble hyphen: -- denotes number range, en dash; triple hyphen: --- denotes punctuation dash, em dash. en and em denotes the width\nfloat environment: e.g., figure, table. accept an optional arg (h: here; t: top; H: here and not float, extended from package float)\n\\eqref is specified for math equations from package amsmath\navoid setting font or controlling indents, etc., within the document environment. try to replace them with meaningful commands or environments.\n\n\\newenvironment{myenv}\n\\newcommand\n\nellipsis: \\ldots or \\dots. instead of \\cdots or ...(three dots).\n\nH\\dots. (OK)\nH \\ldots H (not good), H $\\ldots$ H (recommended, math env)\n\nescape chars in the main body.\n\n\\_ for _; \\textbackslash for \\\n\nnon-breakable space.\n\nQuestion~1\nDonald~E. Knuth within names\nMr.~Knuth\nfunction~$f(x)$\n1,~2, and~3\n\nperiod after capital is regarded as a abbreviation. use \\ or \\@ to resolve it. E.g., Roman number XII\\@. Yes.\nBibTeX\n\n\\citep (index) and \\citet (author) are recommended. remember to use package natbib and use plainnat bibliography style\n\nforce line break\n\n\\\\ accepts an optional argument for vertical space. e.g., \\\\[2cm]. Often used for in equation environment\n\nspecial chars used in main body\n\n§: \\S\n: \\dag\n: \\ddag\n¶: \\P\n©: \\copyright\n£: \\pounds\n\\(\\bullet\\): \\textbullet (\\bullet in math env)\ngo check the book The Comprehensive LATEX Symbol List, 2009 by Scott Pakin for more"
+  },
+  {
+    "objectID": "posts/notes-about-technical-writing.html#font-family",
+    "href": "posts/notes-about-technical-writing.html#font-family",
+    "title": "Notes about Technical Writing",
+    "section": "font family",
+    "text": "font family\n\nroman family: \\textrm{font family} font family\nsans-serif family: \\textsf{font family} font family\ntypewritter family: \\texttt{font family} font family\n\ndeclaration, {\\rmfamily font family} font family"
+  },
+  {
+    "objectID": "posts/notes-about-technical-writing.html#font-shape",
+    "href": "posts/notes-about-technical-writing.html#font-shape",
+    "title": "Notes about Technical Writing",
+    "section": "font shape",
+    "text": "font shape\n\nupright shape: \\textup{Font Shape} Font Shape\nitalic shape: \\textit{Font Shape} Font Shape\nslanted shape: \\textsl{Font Shape} Font Shape\nsmall captical shape: \\textsc{Font Shape} Font Shape\n\ndeclaration: {\\itshape Font Shape} Font Shape"
+  },
+  {
+    "objectID": "posts/notes-about-technical-writing.html#font-series",
+    "href": "posts/notes-about-technical-writing.html#font-series",
+    "title": "Notes about Technical Writing",
+    "section": "font series",
+    "text": "font series\n\nmedium series: \\textmd{font series} font series (default in main body)\nbold series: \\textbf{font series} font series\n\ndeclaration: {\\mdseries font series} font series"
+  },
+  {
+    "objectID": "posts/notes-about-technical-writing.html#font-typeface",
+    "href": "posts/notes-about-technical-writing.html#font-typeface",
+    "title": "Notes about Technical Writing",
+    "section": "font typeface",
+    "text": "font typeface\n\nThe default font family of \\(\\LaTeX\\) is Computer Modern\nSerif Times Roman (i.e., Times New Roman) is recommended for papers, magazines and books. Use package txfonts\nConcrete is recommended for presentation. package combination ccfonts, eulervm is great. (also arec ,cmbright)\n\nwe can specify three font family individually\n\\usepackage{fontspec}\n\\setmainfont{Times New Roman}\n\\setsansfont{Verdana}\n\\setmonofont{Courier New}"
+  },
+  {
+    "objectID": "posts/notes-about-technical-writing.html#emphasis",
+    "href": "posts/notes-about-technical-writing.html#emphasis",
+    "title": "Notes about Technical Writing",
+    "section": "emphasis",
+    "text": "emphasis\nmake upright or make italic upright\n\nthis is \\emph{emphasis}: this is emphasis\n\\textit{this is \\emph{emphasis}} this is emphasis**\n\nunderline\n\\underline{Emphasized} text and \\underline{another}: Emphasized text and another\nuse package \\usepackage[normalem]{ulem}\n\\uline{Emphasized} text and \\uline{another}: Emphasized text and another"
+  },
+  {
+    "objectID": "posts/notes-about-technical-writing.html#font-size",
+    "href": "posts/notes-about-technical-writing.html#font-size",
+    "title": "Notes about Technical Writing",
+    "section": "font size",
+    "text": "font size"
+  },
+  {
     "objectID": "posts/calculus/calculus-02.html",
     "href": "posts/calculus/calculus-02.html",
     "title": "calculus review 02",
@@ -875,46 +826,74 @@
     "text": "differentiable\n\ndef\ndifferentiable means \\(f\\) can be well approximated at \\(x=a\\) by a linear transformation\nlet \\(f:\\mathcal{U}\\to\\mathbb{R}^m\\) where \\(\\mathcal{U}\\) is a open subset of \\(\\mathbb{R}^n\\)\n\\(D_if(a)\\) means the partial derivative on the i-th value. It is an m by 1 vertical vector\nwe can treat it like the mapped element from \\(e_i\\)\n\\(Df(a)\\) is an m by n matrix where we stack \\(D_i\\)’s in a row\nthe precise def of the derivative is as below:\n\\(Df(a)\\) is a linear transformation from \\(\\mathbb{R}^n\\) to \\(\\mathbb{R}^m\\), s.t.\n\\[\n\\lim_{h\\to 0}\\frac{1}{|h|}\\left( (f(a+h)-f(a)) - [Df(a)]h\\right )=0\n\\]\n\n\nJacobian matrix\nJacobian matrix now fits this definition and don’t need for any transpose.\nnote the existence of Jacobian matrix does not mean differentiable, except that we let \\(f\\) to be continuously differentiable. I won’t present any examples of why and how. We just need to focus on the \\(C^1\\) functions from now on :\n\n\nfor some cases where the domain is not the subspace of Euclidiean space, we may need to use the definition of derivative instead of the Jacobian matrix.\ne.g. 1\n\\(\\mathcal{S}:Mat(n,n)\\to Mat(n,n)\\) given by \\(S(A)=A^2\\)\n\\[[\\mathbf{D}S(A)]H=AH+HA\\]\ne.g. 2\n\\(f(A)=A^{-1}\\) defined on invertible n by n matrices\n\\[[\\mathbf{D}f(A)]H=-A^{-1}HA^{-1}\\]\n\n\n\nabout gradient\n\\[\ngrad\\ f(a)=\\vec{\\nabla} f(a)=[D_1f(a),\\dots, D_nf(a)]^\\intercal\n\\]\nwhere \\(f:\\mathbb{R}^n\\to \\mathbb{R}\\)\nFrom my POV, gradient is the solution of the fastest increasing direction at some point \\(a\\) and it happens to be the (transpose of) derivative. note the transpose has its meaning, it makes the grad lying in the domain.\nfurthermore, from how we get the solution, we should have an inner-product defined on the domain space, which is not the case in the def of derivative.\n\n\ndirectional derivative\ndirectional derivative of \\(f\\) at \\(a\\) in the derection \\(\\vec{v}\\)\n\\[\n[Df(a)]\\vec{v}\n\\]\nthis is how linear transformation works.\n\n\nrules\n\nconstant function: 0\nlinear function: itself\n\\(\\mathbf{f}=(f_1,\\dots,f_m)^\\intercal\\) then\n\\[[Df(a)]\\vec{v}=\\left[[Df_1(a)]\\vec{v},\\cdots,[Df_m(a)]\\vec{v}\\right]^\\intercal\\]\n\\([D(f+g)(a)]=[Df(a)]+[Dg(a)]\\)\n\\(f:U\\to \\mathbb{R}\\) and \\(\\mathbf{g}:U\\to \\mathbb{R}^m\\)\n\\[\n[D(f\\mathbf{g})]\\vec{v}=f(a) [D\\mathbf{g}(a)]\\vec{v}+([Df(a)]\\vec{v})\\mathbf{g}(a)\n\\]\n\\[\\left[D\\left(\\frac{\\mathbf{g}}{f}\\right)(a)\\right]\\vec{v}=\\frac{[D\\mathbf{g}(a)]\\vec{v}}{f(a)}-\\frac{([Df(a)]\\vec{v})g(a)}{f^2(a)}\\]\ndot product \\(\\mathbf{f}:U\\to \\mathbb{R}^m\\)\n\\[\n[D(\\mathbf{f}\\cdot\\mathbf{g})]\\vec{v}=\\mathbf{f}(a)\\cdot[D\\mathbf{g}(a)]\\vec{v}+([D\\mathbf{f}(a)]\\vec{v})\\cdot\\mathbf{g}(a)\n\\]\nchain rule\n\\[[D(f\\circ g)(a)]=[Df(g(a))][Dg(a)]\\]\n\n\nref\n\nVector Calculus, Linear Algebra, and Differential Forms: A Unified Approach"
   },
   {
-    "objectID": "posts/parallel-algorithm/pa-04.html",
-    "href": "posts/parallel-algorithm/pa-04.html",
-    "title": "parallel algorithm course 04",
+    "objectID": "posts/programming/pytorch-notes.html",
+    "href": "posts/programming/pytorch-notes.html",
+    "title": "PyTorch Notes",
     "section": "",
-    "text": "synchronization has costs\nsimple list traversal\ncompute all p in advance"
+    "text": "x.numel() number of elements in x\nbroadcast mechanism\nY = Y + X would allocate a new space for the result of Y + X. Y then is the reference to this new memory. Y += X or Y[:] = Y + X is better. (id(Y) will be unchanged.)\nfloat() or int() converts a scalar tensor to a standard number, similar to x.item()\nA * B element-wise product.\nA_sum = A.sum(axis=1, keepdims=True) will keep the number of axis. A / A_sum will enable broadcast mechanism.\nA.cumsum(axis=0) accumulated sum.\nlinear algebra (matrix, vector) multiplication\n\ndot product: torch.dot(x, y) only accept 1-D tensor.\nmatrix-vector multiplication: torch.mv(A, x) matrix and vector. x is 1-D vector. All in column vectors.\nmatrix-matrix multiplication: torch.mm(A, B).\n\ntorch.distributions\n\nmultinomial.Multinomial(n, probs).sample(N, )"
   },
   {
-    "objectID": "posts/parallel-algorithm/pa-04.html#task",
-    "href": "posts/parallel-algorithm/pa-04.html#task",
-    "title": "parallel algorithm course 04",
-    "section": "task",
-    "text": "task\n#pragma omp parallel {\n    // not often used\n    #pragma omp task\n    foo();\n\n    #pragma omp barrier\n\n    // more common case\n    #pragma omp single {\n        #pragma omp task\n        bar();\n    }\n}\nexample (with bug)\nint fib(int n) {\n    int x, y; // private\n    if (n < 2) return n;\n\n    #pragma omp task \n    // need `shared(x)`. by default, task copy the whole stack, \n    // x is in different address\n    x = fib(n-1);\n\n    #pragma omp task // need `shared(y)`, default is private in task\n    y = fib(n-2);\n\n    #pragma omp taskwait\n\n    return x+y; // wrong here!!!\n}\n\n#pragma omp parallel single\nfib(n);\ntwo important points\n\nbarrier\ndata env\n\nexample 2 (with bug)\nlist ml;\nElement *e;\n#pragma omp parallel\n#pragma omp single\n{\n    for (e=ml->first; e; e=e->next)\n    #pragma omp task // need firstprivate(e)\n        process(e); // has data racing\n}\nreturn to first example\n#pragma omp parallel\n{\n    #pragma omp single\n    {\n        node* p = head;\n        while(p) {\n            #pragma omp task firstprivate(p)\n                process(p);\n            p = p->next;\n        }\n    }\n}\n\n\n\nrunning schema"
+    "objectID": "posts/programming/pytorch-notes.html#gadget-functions-pandas",
+    "href": "posts/programming/pytorch-notes.html#gadget-functions-pandas",
+    "title": "PyTorch Notes",
+    "section": "gadget functions (pandas)",
+    "text": "gadget functions (pandas)\n\ndata.fillna(data.mean())\npd.get_dummies(data, dummy_na=True) Convert categorical variable into dummy/indicator variables. Works for str."
   },
   {
-    "objectID": "posts/parallel-algorithm/pa-04.html#merge-sort",
-    "href": "posts/parallel-algorithm/pa-04.html#merge-sort",
-    "title": "parallel algorithm course 04",
-    "section": "merge sort",
-    "text": "merge sort\ndirectly using parallel\n\\(T_1=2T_1(\\frac{n}{2})+O(n)=O(n\\cdot log(n)\\)\n\\(T_\\infty=T_\\infty(\\frac{n}{2})+O(n)=O(n)\\)\n\nuse a differernt merge method\nparallel merge\nsay here we have two sorted seqs (\\(\\le\\))\n\\(A=a_1,\\dots,a_n\\) and \\(B=b_1,\\dots,b_n\\)\nlet \\(t=a_{\\lceil \\frac{n}{2}\\rceil}\\), split A and B into sub arr \\(A_1,A_2,B_1,B_2\\) s.t. \\(A_1\\le t, B_1\\le t\\) and \\(A_2\\gt t, B_2\\gt t\\)\nso seq \\(A_1,B_1,A_2,B_2\\) is semi-merged by t, then go on with \\(merge(A_1,B_1)\\) and \\(merge(A_2,B_2)\\)"
+    "objectID": "posts/programming/pytorch-notes.html#gadget-functions-d2l",
+    "href": "posts/programming/pytorch-notes.html#gadget-functions-d2l",
+    "title": "PyTorch Notes",
+    "section": "gadget functions (d2l)",
+    "text": "gadget functions (d2l)\n\nd2l.plot example\n\nx = np.arange(0, 3, 0.1) d2l.plot(x, [x ** 2, 2 * x - 1], 'x', 'f(x)', legend=['f(x)', 'Tangent'])"
   },
   {
-    "objectID": "posts/parallel-algorithm/pa-04.html#random-number-generating-problem",
-    "href": "posts/parallel-algorithm/pa-04.html#random-number-generating-problem",
-    "title": "parallel algorithm course 04",
-    "section": "random number generating problem",
-    "text": "random number generating problem\n\nproblem\nexample: approximate \\(\\pi\\) using Monto Carlo\nseed(SEED);\n#pragma omp parallel for private(x,y) reduction (+:n_in_circle)\nfor(int i = 0; i < num_trials; i++) {\n    x = random();\n    y = random();\n\n    if (x*x + y*y <= r*r) n_in_circle ++;\n}\n\npi = 4.0 * (1.0 * n_in_circle / num_trials);\n\nLinear Congruential Generator(LCG) (has data racing problem)\nint random_last = 0;\n// need \n// #pragma omp threadprivate(random_last)\n\nint random() {\n    random_next = (MULTIPLIER * random_last + ADDEND) % PMOD;\n    random_last = random_next;\n\n    return random_next;\n}\nparameter: (one possible parameter suite) MULTIPLIER=1366, ADDEND=150889, PMOD=714025\nhas a period (less than PMOD)\n\nsingle thread and multi-thread has different accuracy (multi-thread has poor performance)\ndata racing on var random_last\n\n\nsolution 1\nadd #pragma omp threadprivate(random_last) under int random_last=0\nhas a local copy of random_last when creating a thread\nsimilar to firstprivate\nproblem: still poor than single thread version\ndifferent random range in threads maybe overlap\n\n\nsolution 2\nLeap Frog method\ngenerate different seeds for each thread\nsituation for ADDEND=0\n#pragma omp single\n{\n    nthreads = ...\n    iseed = PMOD / MULTIPLIER;\n    pseed[0] = iseed;\n    mult_n = MULTIPLIER;\n    for (int i = 0; i < nthreads; i++) {\n        iseed = (unsigned long long) ((MULTIPLIER * iseed) % PMOD);\n        pseed[i] = iseed;\n        mult_n = (mult_n * MULTIPLIER) % PMOD;\n    }\n    id = ...\n    random_last = (unsigned long long) pseed[id];\n}"
+    "objectID": "posts/programming/pytorch-notes.html#plot",
+    "href": "posts/programming/pytorch-notes.html#plot",
+    "title": "PyTorch Notes",
+    "section": "plot",
+    "text": "plot\n\nexample\n\nplt.plot(y, label=(\"label\"))\nplt.axhline(y=0, color='black', linestyle='dashed')\nplt.gca().set_xlabel('x label')\nplt.gca().set_ylabel('y label')\nplt.legend()"
   },
   {
-    "objectID": "posts/parallel-algorithm/PA-02.html",
-    "href": "posts/parallel-algorithm/PA-02.html",
-    "title": "parallel algorithm course 02",
+    "objectID": "posts/programming/vim_tech.html",
+    "href": "posts/programming/vim_tech.html",
+    "title": "vim techs",
     "section": "",
-    "text": "problem \\(T_1\\)\n-> reduce dependency ->\ntasks \\(T_\\infin\\)\nwork sharing\nblocks\nsynchronization (better to avoid)\nfalse sharing"
+    "text": "add key mapping yourself\nsave below as xxx.vim in /path/to/nerdtree/nerdtree_plugin/xxx.vim\nyy for abs path of current node, yr for rel path\n```{vimscript}\ncall NERDTreeAddKeyMap({\n        \\ 'key': 'yy',\n        \\ 'callback': 'NERDTreeYankFullPath',\n        \\ 'quickhelpText': 'put full path of current node into the default register' })\n\nfunction! NERDTreeYankFullPath()\n    let n = g:NERDTreeFileNode.GetSelected()\n    if n != {}\n        call setreg('\"', n.path.str())\n    endif\n    call nerdtree#echo(\"Node full path yanked!\")\nendfunction\n\ncall NERDTreeAddKeyMap({\n        \\ 'key': 'yr',\n        \\ 'callback': 'NERDTreeYankRelativePath',\n        \\ 'quickhelpText': 'put relative path of current node into the default register' })\n\n\nfunction! NERDTreeYankRelativePath()\n    let n = g:NERDTreeFileNode.GetSelected()\n    if n != {}\n        call setreg('\"', fnamemodify(n.path.str(), ':.'))\n    endif\n    call nerdtree#echo(\"Node relative path yanked!\")\nendfunction\n```"
   },
   {
-    "objectID": "posts/parallel-algorithm/PA-02.html#sync",
-    "href": "posts/parallel-algorithm/PA-02.html#sync",
-    "title": "parallel algorithm course 02",
-    "section": "sync",
-    "text": "sync\nSingle program multiple data\nseq\nfor(i=0;i<N;i++) a[i] = a[i] + b[i];\nomp par\n#pragma omp parallel\n{\n    id = omp_get_thread_num();\n    Nthrds\n    i_start = id * N / Nthrds\n    i_end = (id+1) * N / Nthrds\n    if (id==Nthrds - 1) iend=N\n    for (i=istart;i<iend;i++) ...    \n}\nshorter (but slower)\n#pragma omp parallel {\n    #pragma omp for\n        for () ...\n}\n\n// or equiv\n\n#pragma omp parallel for\n...\n\nloop worksharing constructs\nschedule clause\n\nstatic: least work for scheduling (done at compiling)\ndynamic (complex scheduling at run-time)\n\n\nreduction\nop should be associative\n+,*,-,min,max\n#pragma omp parallel for reduction (+: sum)\n    for (i=0; i < num_steps; i++)\n        x = ...\n        sum = sum + x\nslower than SPMD critical\n\nomp for loop has barrier by default\nhas implicit barrier\nuse nowait to cancel it\n\nmaster construct\n#pragma omp master\nonly master thread will execute\nno barrier for other threads\n\n#pragma omp single\nonly one thread will execute, has barrier\nuse nowait to cancel barrier\n\nsections\n#pragma omp sections\n{\n    #pragma omp section\n        thread A\n    #pragma omp section\n        thread B\n}\nA, B will execute in parallel\nhas barrier at the end of sections\n\nlock routines\nomp_init_lock();\nomp_set_lock(), omp_unset_lock()\nomp_destroy_lock()\ne.g. array\nif use critical on a[i], then the whole array a will be lock\n#bins \\(\\gg\\) #threads\nlow prob of false sharing, conficts are rare, use locks\n\nOMP refernce card\n\nomp_set_dynamic()\n\nenv vars\nOMP_NUM_THREADS\n\nheap: shared\nstack: private\nint tmp=0; // in heap\n#pragma omp parallel for private(tmp)\n    for (int i; i < N; i++) {\n        tmp += j; // not initialized, local copy ( in stack )\n    }\nprint(tmp); // 0 here\nint tmp=999; // in heap\n#pragma omp parallel for firstprivate(tmp)\n    for ()\n        tmp += j; // has initialized with 1, local copy ( in stack ), still private\n\nprintf(tmp) // 999\nnot use often: lastprivate\nint tmp=0; // in heap\n#pragma omp parallel for lastprivate(j)\n    for ()\n        tmp = j; // copy the last j to tmp\n    \nprint(tmp); // print the last j"
+    "objectID": "posts/programming/vim_tech.html#add-sth.-surround",
+    "href": "posts/programming/vim_tech.html#add-sth.-surround",
+    "title": "vim techs",
+    "section": "add sth. surround",
+    "text": "add sth. surround\nys takes a motion or text object, and then the char you want to put surround with\nlike ysiw\" surr current word with \""
+  },
+  {
+    "objectID": "posts/inequality.html",
+    "href": "posts/inequality.html",
+    "title": "Inequality",
+    "section": "",
+    "text": "I found a great book on concentration inequalities\nConcentration inequalities: A nonasysmtotic theory of independence by Boucheron\nhope I can read this book thoroughly one day :/"
+  },
+  {
+    "objectID": "posts/parallel-algorithm/PA-08.html",
+    "href": "posts/parallel-algorithm/PA-08.html",
+    "title": "parallel algorithm course 08",
+    "section": "",
+    "text": "openACC\nGPU not sharable\nopenacc.org\nopenacc best programming\nthree levels\ndata"
+  },
+  {
+    "objectID": "posts/parallel-algorithm/PA-08.html#optimize",
+    "href": "posts/parallel-algorithm/PA-08.html#optimize",
+    "title": "parallel algorithm course 08",
+    "section": "optimize",
+    "text": "optimize\nUnified virtual memory, auto, slow\nremove the “managed” suboption to the -ta compiler\ndata clauses\nallocate with copy\n\ncopyin {list}: cpu \\(\\to\\) gpu\ncopyout {list}: gpu \\(\\to\\) cpu\ncopy {list}\n\nallocate without copy\n\ncreate {list}\ndelete {list}\n\nonly copy\n\npresent {list}: only copy if present when copyin\n\npragma\n#pragam acc data copyin (a[0:nelem]) copyout(b[s/4:3*s/4])\nrun functions in each devices, and do copyin, copyout in the functions\nslow\nwe can copyin and copyout together\n\ndata\n\n#pragma acc data\n{\n    #pragma acc parallel loop\n    ...\n    #pragma acc parallel loop\n    ...\n}\ncopyin and copyout in each loops are done in one clause\n\nenter data: copyin, create\nexit data: copyout, delete, finalize(destroy a variable not regarding its reference)\nclass M{\n    M() {\n        v = new double[N];\n        #pragma acc enter data create(v)\n    }\n    ~M() {\n        #pragma acc exit data delete(v)\n        {\n            free(v);\n        }\n    }\n}\n\nrunning with explicit data management\ndata racing update between cpu and gpu\ndo_somthing_on_device();\n\n#pragma acc update host(a)\n\ndo_something_on_host();\n\n#pragma acc update device(a)\n\nreduce IO between cpu and GPU"
+  },
+  {
+    "objectID": "posts/parallel-algorithm/PA-08.html#optimize-loops",
+    "href": "posts/parallel-algorithm/PA-08.html#optimize-loops",
+    "title": "parallel algorithm course 08",
+    "section": "optimize loops",
+    "text": "optimize loops\noptimize matvec loops\ndefault iteration is 128 for GPU\nthree level\nGang, workers, vectors\none SMP \\(\\to\\) 64 cores, 16 warps(1 warp = 32 threads), at most 2048 threads\n\nset vector size as 32 k\n\nworker = warp \n#pragma acc parallel vector_length(32)\n#pragma acc loop gang worker\nfor (int i = 0; i < n; i++)\n    #pragma acc loop vector // vector loop\n    for (int j = 0; j < i; j++)\nvector loop: has to specify vector_length or num_workers\ncollapse clause\n#pragma acc parallel loop collapse(2)\nfor (i)\n    for (j)\nequiv\n#pragma acc parallel loop\nfor (ij)\n\nthe tile clause\noperate on smaller blocks of the operation to exploit data locality\n\nstride-1 memory access\ncontinus access\na[0][i][j]"
   },
   {
     "objectID": "posts/parallel-algorithm/pa-07.html",
@@ -952,11 +931,109 @@
     "text": "post-order reversal\nDFS, post-order\nhow to parallelize\nhint: list-ranking\n\ntree \\(\\to\\) list, Eular Tour, add points\ninitialization, upward point -1, downward point +1\nlist scan\nlist \\(\\to\\) tree\n\nadjacency list"
   },
   {
+    "objectID": "posts/parallel-algorithm/solution.html",
+    "href": "posts/parallel-algorithm/solution.html",
+    "title": "midterm exam",
+    "section": "",
+    "text": "work complexity 是当处理器个数为 1 时，完成算法所需的基础操作的个数。span complexity 是在数据依赖 DAG 图中的最长路径的时间复杂度，即当处理器个数为 \\(\\infty\\) 时，基础操作的个数。\n\n\n\nBrent’s Theorem:\n\\[\n\\max\\left\\{T_\\infty,\\frac{T_1}{p}\\right\\} \\le T_p \\le \\frac{T_1-T_\\infty}{p} + T_\\infty.\n\\]\nProof: 左侧不等式显然。\n对于右侧不等式，\n对 DAG 图进行分层，记第 \\(i\\) 层的操作数为 \\(m_i\\)，共 \\(n\\) 层，则有 \\[\nT_1=\\sum_{i=1}^n m_i\n\\]\n对第 \\(i\\) 层进行并行，由于这 \\(m_i\\) 个操作独立，所以\n\\[\nT_p^i=\\left \\lceil \\frac{m_i}{p} \\right \\rceil \\le \\frac{m_i-1}{p} + 1.\n\\]\n故\n\\[\nT_p=\\sum_{i=1}^{n}T_p^i\\le \\sum_{i=1}^{n}\\left ( \\frac{m_i-1}{p}+1\\right)=\\frac{T_1-T_\\infty}{p} + T_\\infty\\blacksquare\n\\]\n\n\n\n\n可结合性即，\\(\\forall a,b,c\\)，有 \\(\\text{oper}(\\text{oper}(a,b),c)=\\text{oper}(a, \\text{oper}(b,c))\\)。\n由于并行程序在 scheduling 时，每个 task 的开始时间和运行时间我们无法预知，对于一系列的操作无法保证运算的顺序，从而保证正确性。若操作满足可结合性，我们可以使用 merge 等算法保证操作数顺序的同时进行并行处理；若操作又满足可交换性，则可以简单的使用 par-for 等进行并行，且能保证正确性。\n\n\n\n\ndifference\n\nscan 操作的对象是一个数组，每一个位置的答案所对应的依赖元素是 predefined。list ranking 操作对象是 linked list 或 array pool，每个位置的答案所依赖的元素是未知的，必须经过某种串行的查找来得到对应的依赖关系。\nscan 计算的是 \\(a_i=\\bigoplus_{k=1}^i\\text{arr}_k\\)，list ranking 计算的是每个 element 的 ranking，其中 \\(\\bigoplus\\) 是可结合、可交换的二元运算。\nlist ranking 使用 jump 的思想来解决，而 scan 没有。\n\nin common\n\n两种算法解决的问题都是 \\(n\\to n\\)。\n\n\n\n\n\ndifference\n\nquicksort 只进行一次采样，选择一个 pivot element，将数组分成两段，而 samplesort 会进行 \\(k\\cdot (p-1)\\) 次采样，选出 p-1 个 pivot element，将数组分成 p 段。\n\nin common\n\n都是基于 divide and conquer 思想，解决 sorting 问题"
+  },
+  {
+    "objectID": "posts/parallel-algorithm/solution.html#openmp-1",
+    "href": "posts/parallel-algorithm/solution.html#openmp-1",
+    "title": "midterm exam",
+    "section": "OpenMP 1",
+    "text": "OpenMP 1\n\nQ6 False sharing and how to avoid\n\n由于 cache 的存在，在一个 cpu 上的 cache 中可能会有其他 cpu 所处理的与当前 cpu 无关的数据 (一般是数组元素)，当那一部分的数据发生更改时，当前处理器的 cache 需要进行同步，从而进行一系列的没有意义的 IO 操作，从而严重影响并行性能。\n避免 false sharing\n\n对于数组，我们可以通过增加 padding，强制将不同 cpu cache 里的元素隔离开。\n避免使用全局数组，对每个 task 使用 private 的数组，使用 synchronization pragma 来进行同步。\n\n\n\n\nQ7 Why do synchronizations slow down your program\n\n若有很多线程同时需要进行同步操作，进入排队等待状态，那么此时并行退化成了串行，会造成性能的下降。\n同步操作本身会有一定的开销，如排队调度、处理器之间的通信等。\n\n\n\nQ8 When should we use critical, atomic or lock pragma\n\ncritical: 当需要避免 data racing，只允许一个线程进入，而且关键区计算的开销不是非常大的时候使用。\natomic: 只能在一些简单的运算上使用(需要硬件支持)，如 a++ 等。\nlock: 当需要更复杂的同步或有复杂的锁的关系时使用。\n\n\n\nQ9 Give four reasons why the iterations are not in a static order for a parallel for loop\n\nparallel for 的 schedule 参数默认是 static，即在循环开始前为每个 thread 分配大致等量个 iterations1。因此，由于不同 thread 执行的 iterations chuncks 之间在运行时是独立的，它们执行的顺序是不确定的。\n程序的运行会因为 cpu 的调度等原因，导致运行的时间不固定。从而影响执行的顺序。\n计算机并不能保证提供固定数量的 cpu，因此 OpenMP 对并行 tasks 的调度和管理也不固定。\n由于 OpenMP 和操作系统的调度，threads 的执行顺序并不一定是他们的创建顺序，且不固定。\n\n1 Openmp.org. [Online]. Available: https://www.openmp.org/wp-content/uploads/OpenMP-API-Specification-5-1.pdf. [Accessed: 22-Apr-2022].\n\n\n\n\n\nsolution\n\n\n\n(Compile, Run) \\(\\times\\) (Hardware, Software)\n\n\n\n\nQ10 Safe way to generate random numbers in parallel\n使用并行版 LCG 算法生成随机数。\n\n// 原 LCG 算法\nint random() {\n    random_next = (MULTIPLIER * random_last + ADDEND) % PMOD;\n    random_last = random_next;\n\n    return random_next;\n}\n\n在原 LCG 算法基础上，使用 Leap Frog Method。记由 LCG 算法生成的随机数序列为 \\(a_0,a_1,\\dots\\)，有 k 个 thread。取 \\(a_0,a_1,\\dots,a_{k-1}\\) 作为每个 thread 随机数序列的种子，并修改 MULTIPLIER 和 ADDEND，使得 \\(\\text{next}(a_i)=a_{i+k}\\)，即每个 thread \\(t\\) 所使用的随机数序列为 \\(a_{t::k}\\)。"
+  },
+  {
+    "objectID": "posts/parallel-algorithm/solution.html#algorithm-2-comment-deletion",
+    "href": "posts/parallel-algorithm/solution.html#algorithm-2-comment-deletion",
+    "title": "midterm exam",
+    "section": "Algorithm 2: comment deletion",
+    "text": "Algorithm 2: comment deletion\nsolution: scan, fragsum"
+  },
+  {
+    "objectID": "posts/parallel-algorithm/solution.html#algorithm-3-missing-element",
+    "href": "posts/parallel-algorithm/solution.html#algorithm-3-missing-element",
+    "title": "midterm exam",
+    "section": "Algorithm 3: missing element",
+    "text": "Algorithm 3: missing element\nsolution: xor"
+  },
+  {
+    "objectID": "posts/parallel-algorithm/solution.html#algorithm-4-knn",
+    "href": "posts/parallel-algorithm/solution.html#algorithm-4-knn",
+    "title": "midterm exam",
+    "section": "Algorithm 4: KNN",
+    "text": "Algorithm 4: KNN\nsolution:\nfor i: 0 to N\n    for j: i+1 to N\n        d[i,j]=dis[A[i],A[j]] // heap[i].add, heap[j].add, lock\ndesigned schedule to balance work flow in each thread\nlock"
+  },
+  {
+    "objectID": "posts/parallel-algorithm/PA-02.html",
+    "href": "posts/parallel-algorithm/PA-02.html",
+    "title": "parallel algorithm course 02",
+    "section": "",
+    "text": "problem \\(T_1\\)\n-> reduce dependency ->\ntasks \\(T_\\infin\\)\nwork sharing\nblocks\nsynchronization (better to avoid)\nfalse sharing"
+  },
+  {
+    "objectID": "posts/parallel-algorithm/PA-02.html#sync",
+    "href": "posts/parallel-algorithm/PA-02.html#sync",
+    "title": "parallel algorithm course 02",
+    "section": "sync",
+    "text": "sync\nSingle program multiple data\nseq\nfor(i=0;i<N;i++) a[i] = a[i] + b[i];\nomp par\n#pragma omp parallel\n{\n    id = omp_get_thread_num();\n    Nthrds\n    i_start = id * N / Nthrds\n    i_end = (id+1) * N / Nthrds\n    if (id==Nthrds - 1) iend=N\n    for (i=istart;i<iend;i++) ...    \n}\nshorter (but slower)\n#pragma omp parallel {\n    #pragma omp for\n        for () ...\n}\n\n// or equiv\n\n#pragma omp parallel for\n...\n\nloop worksharing constructs\nschedule clause\n\nstatic: least work for scheduling (done at compiling)\ndynamic (complex scheduling at run-time)\n\n\nreduction\nop should be associative\n+,*,-,min,max\n#pragma omp parallel for reduction (+: sum)\n    for (i=0; i < num_steps; i++)\n        x = ...\n        sum = sum + x\nslower than SPMD critical\n\nomp for loop has barrier by default\nhas implicit barrier\nuse nowait to cancel it\n\nmaster construct\n#pragma omp master\nonly master thread will execute\nno barrier for other threads\n\n#pragma omp single\nonly one thread will execute, has barrier\nuse nowait to cancel barrier\n\nsections\n#pragma omp sections\n{\n    #pragma omp section\n        thread A\n    #pragma omp section\n        thread B\n}\nA, B will execute in parallel\nhas barrier at the end of sections\n\nlock routines\nomp_init_lock();\nomp_set_lock(), omp_unset_lock()\nomp_destroy_lock()\ne.g. array\nif use critical on a[i], then the whole array a will be lock\n#bins \\(\\gg\\) #threads\nlow prob of false sharing, conficts are rare, use locks\n\nOMP refernce card\n\nomp_set_dynamic()\n\nenv vars\nOMP_NUM_THREADS\n\nheap: shared\nstack: private\nint tmp=0; // in heap\n#pragma omp parallel for private(tmp)\n    for (int i; i < N; i++) {\n        tmp += j; // not initialized, local copy ( in stack )\n    }\nprint(tmp); // 0 here\nint tmp=999; // in heap\n#pragma omp parallel for firstprivate(tmp)\n    for ()\n        tmp += j; // has initialized with 1, local copy ( in stack ), still private\n\nprintf(tmp) // 999\nnot use often: lastprivate\nint tmp=0; // in heap\n#pragma omp parallel for lastprivate(j)\n    for ()\n        tmp = j; // copy the last j to tmp\n    \nprint(tmp); // print the last j"
+  },
+  {
     "objectID": "posts/parallel-algorithm/PA-01.html",
     "href": "posts/parallel-algorithm/PA-01.html",
     "title": "parallel algorithm course 01",
     "section": "",
     "text": "gcc -fopenmp\nomp_num_thread(int): request\nmulti-data\nomp_get_thread_num, get id\n\nSMP: equal-time access cost, in theory\nNUMA: different .., practically\n\nFalse Sharing\ncache line\ntwo processors may have access to the same region, repeat many useless write back\n\nSynchronization, to avoid data racing, false sharing (avoid global array) d barrier\n#pragma omp barrier\ncritical\nonly one thread can enter (often cost cheap), mutual exclusion, avoid data racing\n(software support)\n#pragma omp critical\natomic\nonly support (hardware support)\n\nx binopr= expr\nx++, ++x, x–, –x\n\n#pragma omp atomic"
+  },
+  {
+    "objectID": "posts/parallel-algorithm/pa-04.html",
+    "href": "posts/parallel-algorithm/pa-04.html",
+    "title": "parallel algorithm course 04",
+    "section": "",
+    "text": "synchronization has costs\nsimple list traversal\ncompute all p in advance"
+  },
+  {
+    "objectID": "posts/parallel-algorithm/pa-04.html#task",
+    "href": "posts/parallel-algorithm/pa-04.html#task",
+    "title": "parallel algorithm course 04",
+    "section": "task",
+    "text": "task\n#pragma omp parallel {\n    // not often used\n    #pragma omp task\n    foo();\n\n    #pragma omp barrier\n\n    // more common case\n    #pragma omp single {\n        #pragma omp task\n        bar();\n    }\n}\nexample (with bug)\nint fib(int n) {\n    int x, y; // private\n    if (n < 2) return n;\n\n    #pragma omp task \n    // need `shared(x)`. by default, task copy the whole stack, \n    // x is in different address\n    x = fib(n-1);\n\n    #pragma omp task // need `shared(y)`, default is private in task\n    y = fib(n-2);\n\n    #pragma omp taskwait\n\n    return x+y; // wrong here!!!\n}\n\n#pragma omp parallel single\nfib(n);\ntwo important points\n\nbarrier\ndata env\n\nexample 2 (with bug)\nlist ml;\nElement *e;\n#pragma omp parallel\n#pragma omp single\n{\n    for (e=ml->first; e; e=e->next)\n    #pragma omp task // need firstprivate(e)\n        process(e); // has data racing\n}\nreturn to first example\n#pragma omp parallel\n{\n    #pragma omp single\n    {\n        node* p = head;\n        while(p) {\n            #pragma omp task firstprivate(p)\n                process(p);\n            p = p->next;\n        }\n    }\n}\n\n\n\nrunning schema"
+  },
+  {
+    "objectID": "posts/parallel-algorithm/pa-04.html#merge-sort",
+    "href": "posts/parallel-algorithm/pa-04.html#merge-sort",
+    "title": "parallel algorithm course 04",
+    "section": "merge sort",
+    "text": "merge sort\ndirectly using parallel\n\\(T_1=2T_1(\\frac{n}{2})+O(n)=O(n\\cdot log(n)\\)\n\\(T_\\infty=T_\\infty(\\frac{n}{2})+O(n)=O(n)\\)\n\nuse a differernt merge method\nparallel merge\nsay here we have two sorted seqs (\\(\\le\\))\n\\(A=a_1,\\dots,a_n\\) and \\(B=b_1,\\dots,b_n\\)\nlet \\(t=a_{\\lceil \\frac{n}{2}\\rceil}\\), split A and B into sub arr \\(A_1,A_2,B_1,B_2\\) s.t. \\(A_1\\le t, B_1\\le t\\) and \\(A_2\\gt t, B_2\\gt t\\)\nso seq \\(A_1,B_1,A_2,B_2\\) is semi-merged by t, then go on with \\(merge(A_1,B_1)\\) and \\(merge(A_2,B_2)\\)"
+  },
+  {
+    "objectID": "posts/parallel-algorithm/pa-04.html#random-number-generating-problem",
+    "href": "posts/parallel-algorithm/pa-04.html#random-number-generating-problem",
+    "title": "parallel algorithm course 04",
+    "section": "random number generating problem",
+    "text": "random number generating problem\n\nproblem\nexample: approximate \\(\\pi\\) using Monto Carlo\nseed(SEED);\n#pragma omp parallel for private(x,y) reduction (+:n_in_circle)\nfor(int i = 0; i < num_trials; i++) {\n    x = random();\n    y = random();\n\n    if (x*x + y*y <= r*r) n_in_circle ++;\n}\n\npi = 4.0 * (1.0 * n_in_circle / num_trials);\n\nLinear Congruential Generator(LCG) (has data racing problem)\nint random_last = 0;\n// need \n// #pragma omp threadprivate(random_last)\n\nint random() {\n    random_next = (MULTIPLIER * random_last + ADDEND) % PMOD;\n    random_last = random_next;\n\n    return random_next;\n}\nparameter: (one possible parameter suite) MULTIPLIER=1366, ADDEND=150889, PMOD=714025\nhas a period (less than PMOD)\n\nsingle thread and multi-thread has different accuracy (multi-thread has poor performance)\ndata racing on var random_last\n\n\nsolution 1\nadd #pragma omp threadprivate(random_last) under int random_last=0\nhas a local copy of random_last when creating a thread\nsimilar to firstprivate\nproblem: still poor than single thread version\ndifferent random range in threads maybe overlap\n\n\nsolution 2\nLeap Frog method\ngenerate different seeds for each thread\nsituation for ADDEND=0\n#pragma omp single\n{\n    nthreads = ...\n    iseed = PMOD / MULTIPLIER;\n    pseed[0] = iseed;\n    mult_n = MULTIPLIER;\n    for (int i = 0; i < nthreads; i++) {\n        iseed = (unsigned long long) ((MULTIPLIER * iseed) % PMOD);\n        pseed[i] = iseed;\n        mult_n = (mult_n * MULTIPLIER) % PMOD;\n    }\n    id = ...\n    random_last = (unsigned long long) pseed[id];\n}"
+  },
+  {
+    "objectID": "posts/parallel-algorithm/pa-10.html",
+    "href": "posts/parallel-algorithm/pa-10.html",
+    "title": "parallel algorithm course 10",
+    "section": "",
+    "text": "final exam\nreview\n\nfundamental\n\n\nDAG\nwork-span analysis\n\nideal: \\(T_1(n)=T_s(n)\\), \\(T_\\infty(n)=\\Theta(\\log^k(n))\\)\n\nonly consider shared data memory model\n\nalgorithm：\n\nmap: n->n\n\nassociative\n\nreduce:n -> 1\nscan: n -> n\n\ncompact: n -> m\n\nlist ranking: n -> n, input becomes linked list, GRAPH, BFS, DFS, find independent\nsorting, sample sort\n\ngoal:\n\noptimal complexity\nindependent ++, sync –, don’t use sync too much, has cost, e.g. print message during parallel\ne.g. histgram, lock in each bucket\nsymetrics –, repeat occurance, break symetric, use randomize\n\nthinking:\n\ncase to general\nforward - backward, cover gap between input and output\nbit-wise, radix sort\nmatrix-wise, compute fibonacci sequence, matrix operation\n\npattern\n\ndivide & conquer\nindep set\nrandom\njump\nEulur tour\nBag of pennants (conform divide and conquer patterm)\n\n\nopenacc\nprofile driven programming\n\nanalyse\nparallel\noptimize\n\nincremental programming\nCPU -> GPU -> Unified memory -> data parallel -> loop -> blocking\nblocking:\n\nIO and compute parallel\nmulti-device\n\n\nAnalyse\n\nobserve profile\nbottle-neck, for loop\nimprove \\(\\frac{\\text{compute}}{\\text{mem}}\\) access ratio\n\nParallel\n\nalgorithm\n\nOptimize\n\ndata movement, manual management\nlarge matrix, sometimes we don’t need load all the elements\nloop mapping: tell compile how loop maps the level of parallel, e.g. vetor length\nvector 32*n -> n warps\nblocking, 流水线并行\n\ninput compute output\ncompute -> futher split -> multi device\n\ntile <- GPU 2-level cache usage\ncollapse\nmemory access pattern, keep continuous access\n\nGPU hardware\n\n\n\nSMP\n\n\n\n\n简答题 X 2\n算法题\n\n期中前 X 1\n期中后 X 1\n\n编程题 X 1"
+  },
+  {
+    "objectID": "posts/parallel-algorithm/pa-05.html",
+    "href": "posts/parallel-algorithm/pa-05.html",
+    "title": "parallel algorithm course 05",
+    "section": "",
+    "text": "omp task\narray pool\nuse array to simulate linked list\n\n\nfind prev using next\n\n\n\nfind index\nprev\njump\nrepeat:\npar-for i from 0 to n-1:\n    if NULL: continue\n    if prev[i] != empty:\n        rank[i] += rank[prev[i]] # initial all 1 except head is 0\n        prev[i] = prev[prev[i]] # use 2 copies to avoid data racing\n\\(T_1(n)=O(n\\cdot log(n))\\)\n\\(T_\\infty(n)=O(log(n))\\)\nWyllie’s Alg: jump\n\n\n\nsimilar: binary lifting"
+  },
+  {
+    "objectID": "posts/parallel-algorithm/pa-05.html#improve-wyllies-alg",
+    "href": "posts/parallel-algorithm/pa-05.html#improve-wyllies-alg",
+    "title": "parallel algorithm course 05",
+    "section": "improve Wyllie’s Alg",
+    "text": "improve Wyllie’s Alg\n\\(O(n\\cdot log(n))\\rightarrow O(n)\\)\n\nstep 1: shrink \\(n\\rightarrow m\\)\nstep 2: call Wyllie’s Alg \\(O(m\\cdot log(m))\\)\nstep 3: restore \\(m\\rightarrow n\\)\n\ntarget \\(m\\rightarrow \\frac{n}{log(n)}\\)\nindependent set \\(\\forall i \\in I,N(i) \\notin I\\)\nsymetry break\n\nrandom flip coin, keep or remove\nresolve confict\n\n# producing independent set\n\npar-for i=1..n\n    F[i] = RND(0 or 1)\npar-for i=1..n\n    if F[i]=F[N[i]]=1: # data racing. need 2 copies\n        F[i] = 0\n\\(T_1(n)=O(n)\\)\n\\(T_\\infty(n)=O(1)\\)\n\\(\\mathbb{E}|I|=\\frac{n}{4}\\)\n\\([n]/I\\rightarrow \\frac{3}{4}n\\) repeat \\(loglog(n)\\) times \\(\\frac{n}{log(n)}\\)\n\n\ninitialized with 1 except head\nrepeatedly remove an independent set \\(S\\) til #rest=\\(\\frac{n}{logn}\\) (change next[prev[i]] to next[i], add counter[i] to counter[next[i]] forall \\(i\\in S\\))\ncall Wyllie’s Alg\nreverse\n\n\nquick sort: choose 1 pivot, sample 1\nv.s.\nsample sort: randomly choose \\(p-1\\) pivots, sample \\(k\\cdot p+1\\)\ncompact operator"
   },
   {
     "objectID": "posts/parallel-algorithm/pa-06.html",
@@ -1001,34 +1078,6 @@
     "text": "OpenMP\n\npipeline: serial \\(\\to\\) independent \\(\\to\\) group \\(\\to\\) parallel\ndata racing, using syncronization\nPseudo random number generator"
   },
   {
-    "objectID": "posts/parallel-algorithm/PA-08.html",
-    "href": "posts/parallel-algorithm/PA-08.html",
-    "title": "parallel algorithm course 08",
-    "section": "",
-    "text": "openACC\nGPU not sharable\nopenacc.org\nopenacc best programming\nthree levels\ndata"
-  },
-  {
-    "objectID": "posts/parallel-algorithm/PA-08.html#optimize",
-    "href": "posts/parallel-algorithm/PA-08.html#optimize",
-    "title": "parallel algorithm course 08",
-    "section": "optimize",
-    "text": "optimize\nUnified virtual memory, auto, slow\nremove the “managed” suboption to the -ta compiler\ndata clauses\nallocate with copy\n\ncopyin {list}: cpu \\(\\to\\) gpu\ncopyout {list}: gpu \\(\\to\\) cpu\ncopy {list}\n\nallocate without copy\n\ncreate {list}\ndelete {list}\n\nonly copy\n\npresent {list}: only copy if present when copyin\n\npragma\n#pragam acc data copyin (a[0:nelem]) copyout(b[s/4:3*s/4])\nrun functions in each devices, and do copyin, copyout in the functions\nslow\nwe can copyin and copyout together\n\ndata\n\n#pragma acc data\n{\n    #pragma acc parallel loop\n    ...\n    #pragma acc parallel loop\n    ...\n}\ncopyin and copyout in each loops are done in one clause\n\nenter data: copyin, create\nexit data: copyout, delete, finalize(destroy a variable not regarding its reference)\nclass M{\n    M() {\n        v = new double[N];\n        #pragma acc enter data create(v)\n    }\n    ~M() {\n        #pragma acc exit data delete(v)\n        {\n            free(v);\n        }\n    }\n}\n\nrunning with explicit data management\ndata racing update between cpu and gpu\ndo_somthing_on_device();\n\n#pragma acc update host(a)\n\ndo_something_on_host();\n\n#pragma acc update device(a)\n\nreduce IO between cpu and GPU"
-  },
-  {
-    "objectID": "posts/parallel-algorithm/PA-08.html#optimize-loops",
-    "href": "posts/parallel-algorithm/PA-08.html#optimize-loops",
-    "title": "parallel algorithm course 08",
-    "section": "optimize loops",
-    "text": "optimize loops\noptimize matvec loops\ndefault iteration is 128 for GPU\nthree level\nGang, workers, vectors\none SMP \\(\\to\\) 64 cores, 16 warps(1 warp = 32 threads), at most 2048 threads\n\nset vector size as 32 k\n\nworker = warp \n#pragma acc parallel vector_length(32)\n#pragma acc loop gang worker\nfor (int i = 0; i < n; i++)\n    #pragma acc loop vector // vector loop\n    for (int j = 0; j < i; j++)\nvector loop: has to specify vector_length or num_workers\ncollapse clause\n#pragma acc parallel loop collapse(2)\nfor (i)\n    for (j)\nequiv\n#pragma acc parallel loop\nfor (ij)\n\nthe tile clause\noperate on smaller blocks of the operation to exploit data locality\n\nstride-1 memory access\ncontinus access\na[0][i][j]"
-  },
-  {
-    "objectID": "posts/parallel-algorithm/pa-10.html",
-    "href": "posts/parallel-algorithm/pa-10.html",
-    "title": "parallel algorithm course 10",
-    "section": "",
-    "text": "final exam\nreview\n\nfundamental\n\n\nDAG\nwork-span analysis\n\nideal: \\(T_1(n)=T_s(n)\\), \\(T_\\infty(n)=\\Theta(\\log^k(n))\\)\n\nonly consider shared data memory model\n\nalgorithm：\n\nmap: n->n\n\nassociative\n\nreduce:n -> 1\nscan: n -> n\n\ncompact: n -> m\n\nlist ranking: n -> n, input becomes linked list, GRAPH, BFS, DFS, find independent\nsorting, sample sort\n\ngoal:\n\noptimal complexity\nindependent ++, sync –, don’t use sync too much, has cost, e.g. print message during parallel\ne.g. histgram, lock in each bucket\nsymetrics –, repeat occurance, break symetric, use randomize\n\nthinking:\n\ncase to general\nforward - backward, cover gap between input and output\nbit-wise, radix sort\nmatrix-wise, compute fibonacci sequence, matrix operation\n\npattern\n\ndivide & conquer\nindep set\nrandom\njump\nEulur tour\nBag of pennants (conform divide and conquer patterm)\n\n\nopenacc\nprofile driven programming\n\nanalyse\nparallel\noptimize\n\nincremental programming\nCPU -> GPU -> Unified memory -> data parallel -> loop -> blocking\nblocking:\n\nIO and compute parallel\nmulti-device\n\n\nAnalyse\n\nobserve profile\nbottle-neck, for loop\nimprove \\(\\frac{\\text{compute}}{\\text{mem}}\\) access ratio\n\nParallel\n\nalgorithm\n\nOptimize\n\ndata movement, manual management\nlarge matrix, sometimes we don’t need load all the elements\nloop mapping: tell compile how loop maps the level of parallel, e.g. vetor length\nvector 32*n -> n warps\nblocking, 流水线并行\n\ninput compute output\ncompute -> futher split -> multi device\n\ntile <- GPU 2-level cache usage\ncollapse\nmemory access pattern, keep continuous access\n\nGPU hardware\n\n\n\nSMP\n\n\n\n\n简答题 X 2\n算法题\n\n期中前 X 1\n期中后 X 1\n\n编程题 X 1"
-  },
-  {
     "objectID": "posts/parallel-algorithm/PA-03.html",
     "href": "posts/parallel-algorithm/PA-03.html",
     "title": "parallel algorithm course 03",
@@ -1050,20 +1099,6 @@
     "text": "fragment sum\n\napplication\n\nF zero flag put in the front, one flag in the back\ntwo stage compact, \\(F^{-1}\\) first, then use \\(F\\)\n\nscatter\n\n\n\nwhat is scatter\n\n\nmake it into a large sparse matrix and then reduce sum\n\nbinary base sort\nRadix sort.\nfor from lowbit to highbit\n\nscan\n\\(T_1(n,b)=O(bn)\\)\n\\(T_\\infty(n,b)=(blogn)\\)\nif from highbit to lowbit, need fragment scan\nbit-wise thinking."
   },
   {
-    "objectID": "posts/parallel-algorithm/pa-05.html",
-    "href": "posts/parallel-algorithm/pa-05.html",
-    "title": "parallel algorithm course 05",
-    "section": "",
-    "text": "omp task\narray pool\nuse array to simulate linked list\n\n\nfind prev using next\n\n\n\nfind index\nprev\njump\nrepeat:\npar-for i from 0 to n-1:\n    if NULL: continue\n    if prev[i] != empty:\n        rank[i] += rank[prev[i]] # initial all 1 except head is 0\n        prev[i] = prev[prev[i]] # use 2 copies to avoid data racing\n\\(T_1(n)=O(n\\cdot log(n))\\)\n\\(T_\\infty(n)=O(log(n))\\)\nWyllie’s Alg: jump\n\n\n\nsimilar: binary lifting"
-  },
-  {
-    "objectID": "posts/parallel-algorithm/pa-05.html#improve-wyllies-alg",
-    "href": "posts/parallel-algorithm/pa-05.html#improve-wyllies-alg",
-    "title": "parallel algorithm course 05",
-    "section": "improve Wyllie’s Alg",
-    "text": "improve Wyllie’s Alg\n\\(O(n\\cdot log(n))\\rightarrow O(n)\\)\n\nstep 1: shrink \\(n\\rightarrow m\\)\nstep 2: call Wyllie’s Alg \\(O(m\\cdot log(m))\\)\nstep 3: restore \\(m\\rightarrow n\\)\n\ntarget \\(m\\rightarrow \\frac{n}{log(n)}\\)\nindependent set \\(\\forall i \\in I,N(i) \\notin I\\)\nsymetry break\n\nrandom flip coin, keep or remove\nresolve confict\n\n# producing independent set\n\npar-for i=1..n\n    F[i] = RND(0 or 1)\npar-for i=1..n\n    if F[i]=F[N[i]]=1: # data racing. need 2 copies\n        F[i] = 0\n\\(T_1(n)=O(n)\\)\n\\(T_\\infty(n)=O(1)\\)\n\\(\\mathbb{E}|I|=\\frac{n}{4}\\)\n\\([n]/I\\rightarrow \\frac{3}{4}n\\) repeat \\(loglog(n)\\) times \\(\\frac{n}{log(n)}\\)\n\n\ninitialized with 1 except head\nrepeatedly remove an independent set \\(S\\) til #rest=\\(\\frac{n}{logn}\\) (change next[prev[i]] to next[i], add counter[i] to counter[next[i]] forall \\(i\\in S\\))\ncall Wyllie’s Alg\nreverse\n\n\nquick sort: choose 1 pivot, sample 1\nv.s.\nsample sort: randomly choose \\(p-1\\) pivots, sample \\(k\\cdot p+1\\)\ncompact operator"
-  },
-  {
     "objectID": "posts/parallel-algorithm/pa-09.html",
     "href": "posts/parallel-algorithm/pa-09.html",
     "title": "parallel algorithm course 09",
@@ -1083,41 +1118,6 @@
     "title": "parallel algorithm course 09",
     "section": "extend",
     "text": "extend\nmatrix A, B, C\n\\(A\\times B=C\\)\ntile\nconsider \\(A^k\\)\nsave \\(A\\), \\(A^T\\)"
-  },
-  {
-    "objectID": "posts/parallel-algorithm/solution.html",
-    "href": "posts/parallel-algorithm/solution.html",
-    "title": "midterm exam",
-    "section": "",
-    "text": "work complexity 是当处理器个数为 1 时，完成算法所需的基础操作的个数。span complexity 是在数据依赖 DAG 图中的最长路径的时间复杂度，即当处理器个数为 \\(\\infty\\) 时，基础操作的个数。\n\n\n\nBrent’s Theorem:\n\\[\n\\max\\left\\{T_\\infty,\\frac{T_1}{p}\\right\\} \\le T_p \\le \\frac{T_1-T_\\infty}{p} + T_\\infty.\n\\]\nProof: 左侧不等式显然。\n对于右侧不等式，\n对 DAG 图进行分层，记第 \\(i\\) 层的操作数为 \\(m_i\\)，共 \\(n\\) 层，则有 \\[\nT_1=\\sum_{i=1}^n m_i\n\\]\n对第 \\(i\\) 层进行并行，由于这 \\(m_i\\) 个操作独立，所以\n\\[\nT_p^i=\\left \\lceil \\frac{m_i}{p} \\right \\rceil \\le \\frac{m_i-1}{p} + 1.\n\\]\n故\n\\[\nT_p=\\sum_{i=1}^{n}T_p^i\\le \\sum_{i=1}^{n}\\left ( \\frac{m_i-1}{p}+1\\right)=\\frac{T_1-T_\\infty}{p} + T_\\infty\\blacksquare\n\\]\n\n\n\n\n可结合性即，\\(\\forall a,b,c\\)，有 \\(\\text{oper}(\\text{oper}(a,b),c)=\\text{oper}(a, \\text{oper}(b,c))\\)。\n由于并行程序在 scheduling 时，每个 task 的开始时间和运行时间我们无法预知，对于一系列的操作无法保证运算的顺序，从而保证正确性。若操作满足可结合性，我们可以使用 merge 等算法保证操作数顺序的同时进行并行处理；若操作又满足可交换性，则可以简单的使用 par-for 等进行并行，且能保证正确性。\n\n\n\n\ndifference\n\nscan 操作的对象是一个数组，每一个位置的答案所对应的依赖元素是 predefined。list ranking 操作对象是 linked list 或 array pool，每个位置的答案所依赖的元素是未知的，必须经过某种串行的查找来得到对应的依赖关系。\nscan 计算的是 \\(a_i=\\bigoplus_{k=1}^i\\text{arr}_k\\)，list ranking 计算的是每个 element 的 ranking，其中 \\(\\bigoplus\\) 是可结合、可交换的二元运算。\nlist ranking 使用 jump 的思想来解决，而 scan 没有。\n\nin common\n\n两种算法解决的问题都是 \\(n\\to n\\)。\n\n\n\n\n\ndifference\n\nquicksort 只进行一次采样，选择一个 pivot element，将数组分成两段，而 samplesort 会进行 \\(k\\cdot (p-1)\\) 次采样，选出 p-1 个 pivot element，将数组分成 p 段。\n\nin common\n\n都是基于 divide and conquer 思想，解决 sorting 问题"
-  },
-  {
-    "objectID": "posts/parallel-algorithm/solution.html#openmp-1",
-    "href": "posts/parallel-algorithm/solution.html#openmp-1",
-    "title": "midterm exam",
-    "section": "OpenMP 1",
-    "text": "OpenMP 1\n\nQ6 False sharing and how to avoid\n\n由于 cache 的存在，在一个 cpu 上的 cache 中可能会有其他 cpu 所处理的与当前 cpu 无关的数据 (一般是数组元素)，当那一部分的数据发生更改时，当前处理器的 cache 需要进行同步，从而进行一系列的没有意义的 IO 操作，从而严重影响并行性能。\n避免 false sharing\n\n对于数组，我们可以通过增加 padding，强制将不同 cpu cache 里的元素隔离开。\n避免使用全局数组，对每个 task 使用 private 的数组，使用 synchronization pragma 来进行同步。\n\n\n\n\nQ7 Why do synchronizations slow down your program\n\n若有很多线程同时需要进行同步操作，进入排队等待状态，那么此时并行退化成了串行，会造成性能的下降。\n同步操作本身会有一定的开销，如排队调度、处理器之间的通信等。\n\n\n\nQ8 When should we use critical, atomic or lock pragma\n\ncritical: 当需要避免 data racing，只允许一个线程进入，而且关键区计算的开销不是非常大的时候使用。\natomic: 只能在一些简单的运算上使用(需要硬件支持)，如 a++ 等。\nlock: 当需要更复杂的同步或有复杂的锁的关系时使用。\n\n\n\nQ9 Give four reasons why the iterations are not in a static order for a parallel for loop\n\nparallel for 的 schedule 参数默认是 static，即在循环开始前为每个 thread 分配大致等量个 iterations1。因此，由于不同 thread 执行的 iterations chuncks 之间在运行时是独立的，它们执行的顺序是不确定的。\n程序的运行会因为 cpu 的调度等原因，导致运行的时间不固定。从而影响执行的顺序。\n计算机并不能保证提供固定数量的 cpu，因此 OpenMP 对并行 tasks 的调度和管理也不固定。\n由于 OpenMP 和操作系统的调度，threads 的执行顺序并不一定是他们的创建顺序，且不固定。\n\n1 Openmp.org. [Online]. Available: https://www.openmp.org/wp-content/uploads/OpenMP-API-Specification-5-1.pdf. [Accessed: 22-Apr-2022].\n\n\n\n\n\nsolution\n\n\n\n(Compile, Run) \\(\\times\\) (Hardware, Software)\n\n\n\n\nQ10 Safe way to generate random numbers in parallel\n使用并行版 LCG 算法生成随机数。\n\n// 原 LCG 算法\nint random() {\n    random_next = (MULTIPLIER * random_last + ADDEND) % PMOD;\n    random_last = random_next;\n\n    return random_next;\n}\n\n在原 LCG 算法基础上，使用 Leap Frog Method。记由 LCG 算法生成的随机数序列为 \\(a_0,a_1,\\dots\\)，有 k 个 thread。取 \\(a_0,a_1,\\dots,a_{k-1}\\) 作为每个 thread 随机数序列的种子，并修改 MULTIPLIER 和 ADDEND，使得 \\(\\text{next}(a_i)=a_{i+k}\\)，即每个 thread \\(t\\) 所使用的随机数序列为 \\(a_{t::k}\\)。"
-  },
-  {
-    "objectID": "posts/parallel-algorithm/solution.html#algorithm-2-comment-deletion",
-    "href": "posts/parallel-algorithm/solution.html#algorithm-2-comment-deletion",
-    "title": "midterm exam",
-    "section": "Algorithm 2: comment deletion",
-    "text": "Algorithm 2: comment deletion\nsolution: scan, fragsum"
-  },
-  {
-    "objectID": "posts/parallel-algorithm/solution.html#algorithm-3-missing-element",
-    "href": "posts/parallel-algorithm/solution.html#algorithm-3-missing-element",
-    "title": "midterm exam",
-    "section": "Algorithm 3: missing element",
-    "text": "Algorithm 3: missing element\nsolution: xor"
-  },
-  {
-    "objectID": "posts/parallel-algorithm/solution.html#algorithm-4-knn",
-    "href": "posts/parallel-algorithm/solution.html#algorithm-4-knn",
-    "title": "midterm exam",
-    "section": "Algorithm 4: KNN",
-    "text": "Algorithm 4: KNN\nsolution:\nfor i: 0 to N\n    for j: i+1 to N\n        d[i,j]=dis[A[i],A[j]] // heap[i].add, heap[j].add, lock\ndesigned schedule to balance work flow in each thread\nlock"
   },
   {
     "objectID": "posts/test/example.html",
@@ -1143,6 +1143,13 @@
   {
     "objectID": "about.html",
     "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Hi,\nI’m an undergraduate student majoring in computer science\ninterested in machine learning, rec sys, NLP and fancy stuff.\ncontact me at furyton AT outlook DOT com 🙃"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
     "title": "About",
     "section": "",
     "text": "Hi,\nI’m an undergraduate student majoring in computer science\ninterested in machine learning, rec sys, NLP and fancy stuff.\ncontact me at furyton AT outlook DOT com 🙃"

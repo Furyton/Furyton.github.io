@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>notes</title>
+<title>notes - About</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,12 +30,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -60,36 +57,6 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      page: 30,
-    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2J6LH2FX5K"></script>
 
 <script type="text/javascript">
@@ -100,12 +67,11 @@ gtag('js', new Date());
 gtag('config', 'G-2J6LH2FX5K', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -122,8 +88,8 @@ gtag('config', 'G-2J6LH2FX5K', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="./blog.html">
+ <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/Furyton"><i class="bi bi-github" role="img">
@@ -142,432 +108,44 @@ gtag('config', 'G-2J6LH2FX5K', { 'anonymize_ip': true});
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(33)</span></div><div class="category" data-category="ESL">ESL <span class="quarto-category-count">(2)</span></div><div class="category" data-category="English">English <span class="quarto-category-count">(1)</span></div><div class="category" data-category="PyTorch">PyTorch <span class="quarto-category-count">(1)</span></div><div class="category" data-category="calculus">calculus <span class="quarto-category-count">(3)</span></div><div class="category" data-category="clustering">clustering <span class="quarto-category-count">(1)</span></div><div class="category" data-category="exam">exam <span class="quarto-category-count">(1)</span></div><div class="category" data-category="inequality">inequality <span class="quarto-category-count">(1)</span></div><div class="category" data-category="note">note <span class="quarto-category-count">(24)</span></div><div class="category" data-category="paper reading">paper reading <span class="quarto-category-count">(2)</span></div><div class="category" data-category="parallel algorithm">parallel algorithm <span class="quarto-category-count">(11)</span></div><div class="category" data-category="probability">probability <span class="quarto-category-count">(1)</span></div><div class="category" data-category="programming">programming <span class="quarto-category-count">(2)</span></div><div class="category" data-category="research">research <span class="quarto-category-count">(1)</span></div><div class="category" data-category="review">review <span class="quarto-category-count">(3)</span></div><div class="category" data-category="test">test <span class="quarto-category-count">(1)</span></div><div class="category" data-category="tool">tool <span class="quarto-category-count">(1)</span></div><div class="category" data-category="total commander">total commander <span class="quarto-category-count">(1)</span></div><div class="category" data-category="understanding machine learning">understanding machine learning <span class="quarto-category-count">(6)</span></div><div class="category" data-category="vim">vim <span class="quarto-category-count">(1)</span></div><div class="category" data-category="vocab">vocab <span class="quarto-category-count">(1)</span></div><div class="category" data-category="webinar">webinar <span class="quarto-category-count">(1)</span></div><div class="category" data-category="writing">writing <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-about-solana column-body">
+  <div class="about-entity">
+    <div class="entity-contents">
+      <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">notes</h1>
+<h1 class="title">About</h1>
 </div>
-
-
-
 <div class="quarto-title-meta">
-
-    
-  
-    
   </div>
-  
+</header> <div class="about-links">
+  <a href="https://twitter.com/shiguang_wu" class="about-link">
+    <i class="bi bi-twitter"></i>
+     <span class="about-link-text">Twitter</span>
+  </a>
+  <a href="https://github.com/Furyton" class="about-link">
+    <i class="bi bi-github"></i>
+     <span class="about-link-text">Github</span>
+  </a>
+</div>
+      <div class="about-contents"><main class="content" id="quarto-document-content">
+<p>Hi,</p>
+<p>I’m an undergraduate student majoring in computer science</p>
+<p>interested in machine learning, rec sys, NLP and fancy stuff.</p>
+<p>contact me at <em>furyton AT outlook DOT com</em> 🙃</p>
 
-</header>
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-<div class="listing-actions-group">
-    <div class="input-group input-group-sm quarto-listing-filter">
-      <span class="input-group-text"><i class="bi bi-search"></i></span>
-      <input type="text" class="search form-control" placeholder="Filter">
+</main></div>
     </div>
+    <img src="captain-america-shield.jpg" class="about-image
+  round " style="height: 10em; width: 10em;">
+  </div>
 </div>
-
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Date
-</th>
-<th>
-Title
-</th>
-<th>
-Categories
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-categories="note,research,webinar" data-listing-date-sort="1675814400000" data-listing-file-modified-sort="1676026579299" data-listing-reading-time-sort="1.745" data-listing-title-sort="MSR AI Seminar: Why Does Deep Learning Perform Deep Learning?" data-listing-filename-sort="MSR-AI-Seminar-Feb-8.qmd">
-<td class="listing-date">
-Feb 8, 2023
-</td>
-<td class="listing-title">
-<a href="./posts/research/MSR-AI-Seminar-Feb-8.html" class="title">MSR AI Seminar: Why Does Deep Learning Perform Deep Learning?</a>
-</td>
-<td class="listing-categories">
-note,research,webinar
-</td>
-</tr>
-<tr data-index="1" data-categories="note,tool,total commander" data-listing-date-sort="1675641600000" data-listing-file-modified-sort="1676026579299" data-listing-reading-time-sort="2.065" data-listing-title-sort="Total Commander Tips" data-listing-filename-sort="tc.qmd">
-<td class="listing-date">
-Feb 6, 2023
-</td>
-<td class="listing-title">
-<a href="./posts/tools/tc.html" class="title">Total Commander Tips</a>
-</td>
-<td class="listing-categories">
-note,tool,total commander
-</td>
-</tr>
-<tr data-index="2" data-categories="calculus,review" data-listing-date-sort="1662854400000" data-listing-file-modified-sort="1676026579295" data-listing-reading-time-sort="2.34" data-listing-title-sort="calculus review 03" data-listing-filename-sort="calculus-03.md">
-<td class="listing-date">
-Sep 11, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/calculus/calculus-03.html" class="title">calculus review 03</a>
-</td>
-<td class="listing-categories">
-calculus,review
-</td>
-</tr>
-<tr data-index="3" data-categories="paper reading,clustering,note" data-listing-date-sort="1662595200000" data-listing-file-modified-sort="1676026579295" data-listing-reading-time-sort="0.725" data-listing-title-sort="some papers about multi-view-clustering" data-listing-filename-sort="multi-view-clustering.qmd">
-<td class="listing-date">
-Sep 8, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/paper-reading/multi-view-clustering.html" class="title">some papers about multi-view-clustering</a>
-</td>
-<td class="listing-categories">
-paper reading,clustering,note
-</td>
-</tr>
-<tr data-index="4" data-categories="ESL,note" data-listing-date-sort="1662595200000" data-listing-file-modified-sort="1676026579295" data-listing-reading-time-sort="0.985" data-listing-title-sort="unsupervised model related" data-listing-filename-sort="ESL-02.qmd">
-<td class="listing-date">
-Sep 8, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/esl/ESL-02.html" class="title">unsupervised model related</a>
-</td>
-<td class="listing-categories">
-ESL,note
-</td>
-</tr>
-<tr data-index="5" data-categories="English,vocab,note" data-listing-date-sort="1660780800000" data-listing-file-modified-sort="1676026579295" data-listing-reading-time-sort="9.7" data-listing-title-sort="vocabs with simple examples" data-listing-filename-sort="vocab-example.md">
-<td class="listing-date">
-Aug 18, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/english/vocab-example.html" class="title">vocabs with simple examples</a>
-</td>
-<td class="listing-categories">
-English,vocab,note
-</td>
-</tr>
-<tr data-index="6" data-categories="PyTorch,programming" data-listing-date-sort="1660262400000" data-listing-file-modified-sort="1676026579299" data-listing-reading-time-sort="0.97" data-listing-title-sort="PyTorch Notes" data-listing-filename-sort="pytorch-notes.md">
-<td class="listing-date">
-Aug 12, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/programming/pytorch-notes.html" class="title">PyTorch Notes</a>
-</td>
-<td class="listing-categories">
-PyTorch,programming
-</td>
-</tr>
-<tr data-index="7" data-categories="writing,note" data-listing-date-sort="1660003200000" data-listing-file-modified-sort="1676026579295" data-listing-reading-time-sort="3.795" data-listing-title-sort="Notes about Technical Writing" data-listing-filename-sort="notes-about-technical-writing.md">
-<td class="listing-date">
-Aug 9, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/notes-about-technical-writing.html" class="title">Notes about Technical Writing</a>
-</td>
-<td class="listing-categories">
-writing,note
-</td>
-</tr>
-<tr data-index="8" data-categories="probability" data-listing-date-sort="1656979200000" data-listing-file-modified-sort="1676026579299" data-listing-reading-time-sort="0.005" data-listing-title-sort="probability review 01" data-listing-filename-sort="probability-review-01.md">
-<td class="listing-date">
-Jul 5, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/probability/probability-review-01.html" class="title">probability review 01</a>
-</td>
-<td class="listing-categories">
-probability
-</td>
-</tr>
-<tr data-index="9" data-categories="calculus,review" data-listing-date-sort="1656288000000" data-listing-file-modified-sort="1676026579295" data-listing-reading-time-sort="2.35" data-listing-title-sort="calculus review 02" data-listing-filename-sort="calculus-02.md">
-<td class="listing-date">
-Jun 27, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/calculus/calculus-02.html" class="title">calculus review 02</a>
-</td>
-<td class="listing-categories">
-calculus,review
-</td>
-</tr>
-<tr data-index="10" data-categories="parallel algorithm,note" data-listing-date-sort="1654646400000" data-listing-file-modified-sort="1676026579299" data-listing-reading-time-sort="1.17" data-listing-title-sort="parallel algorithm course 10" data-listing-filename-sort="pa-10.md">
-<td class="listing-date">
-Jun 8, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/parallel-algorithm/pa-10.html" class="title">parallel algorithm course 10</a>
-</td>
-<td class="listing-categories">
-parallel algorithm,note
-</td>
-</tr>
-<tr data-index="11" data-categories="parallel algorithm,note" data-listing-date-sort="1654041600000" data-listing-file-modified-sort="1676026579299" data-listing-reading-time-sort="1.52" data-listing-title-sort="parallel algorithm course 09" data-listing-filename-sort="pa-09.md">
-<td class="listing-date">
-Jun 1, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/parallel-algorithm/pa-09.html" class="title">parallel algorithm course 09</a>
-</td>
-<td class="listing-categories">
-parallel algorithm,note
-</td>
-</tr>
-<tr data-index="12" data-categories="parallel algorithm,note" data-listing-date-sort="1652227200000" data-listing-file-modified-sort="1676026579299" data-listing-reading-time-sort="1.645" data-listing-title-sort="parallel algorithm course 08" data-listing-filename-sort="PA-08.md">
-<td class="listing-date">
-May 11, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/parallel-algorithm/PA-08.html" class="title">parallel algorithm course 08</a>
-</td>
-<td class="listing-categories">
-parallel algorithm,note
-</td>
-</tr>
-<tr data-index="13" data-categories="parallel algorithm,note" data-listing-date-sort="1651017600000" data-listing-file-modified-sort="1676026579299" data-listing-reading-time-sort="0.52" data-listing-title-sort="parallel algorithm course 07" data-listing-filename-sort="pa-07.md">
-<td class="listing-date">
-Apr 27, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/parallel-algorithm/pa-07.html" class="title">parallel algorithm course 07</a>
-</td>
-<td class="listing-categories">
-parallel algorithm,note
-</td>
-</tr>
-<tr data-index="14" data-categories="parallel algorithm,note,exam" data-listing-date-sort="1650672000000" data-listing-file-modified-sort="1676026579299" data-listing-reading-time-sort="1.94" data-listing-title-sort="midterm exam" data-listing-filename-sort="solution.md">
-<td class="listing-date">
-Apr 23, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/parallel-algorithm/solution.html" class="title">midterm exam</a>
-</td>
-<td class="listing-categories">
-parallel algorithm,note,exam
-</td>
-</tr>
-<tr data-index="15" data-categories="parallel algorithm,note" data-listing-date-sort="1650412800000" data-listing-file-modified-sort="1676026579299" data-listing-reading-time-sort="0.385" data-listing-title-sort="parallel algorithm course 06" data-listing-filename-sort="pa-06.md">
-<td class="listing-date">
-Apr 20, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/parallel-algorithm/pa-06.html" class="title">parallel algorithm course 06</a>
-</td>
-<td class="listing-categories">
-parallel algorithm,note
-</td>
-</tr>
-<tr data-index="16" data-categories="parallel algorithm,note" data-listing-date-sort="1649203200000" data-listing-file-modified-sort="1676026579299" data-listing-reading-time-sort="0.995" data-listing-title-sort="parallel algorithm course 05" data-listing-filename-sort="pa-05.md">
-<td class="listing-date">
-Apr 6, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/parallel-algorithm/pa-05.html" class="title">parallel algorithm course 05</a>
-</td>
-<td class="listing-categories">
-parallel algorithm,note
-</td>
-</tr>
-<tr data-index="17" data-categories="inequality" data-listing-date-sort="1648857600000" data-listing-file-modified-sort="1676026579295" data-listing-reading-time-sort="0.125" data-listing-title-sort="Inequality" data-listing-filename-sort="inequality.md">
-<td class="listing-date">
-Apr 2, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/inequality.html" class="title">Inequality</a>
-</td>
-<td class="listing-categories">
-inequality
-</td>
-</tr>
-<tr data-index="18" data-categories="understanding machine learning,note" data-listing-date-sort="1648598400000" data-listing-file-modified-sort="1676026579299" data-listing-reading-time-sort="3.755" data-listing-title-sort="Understanding Machine Learning 06" data-listing-filename-sort="uml-06.md">
-<td class="listing-date">
-Mar 30, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/understanding-machine-learning/uml-06.html" class="title">Understanding Machine Learning 06</a>
-</td>
-<td class="listing-categories">
-understanding machine learning,note
-</td>
-</tr>
-<tr data-index="19" data-categories="parallel algorithm,note" data-listing-date-sort="1648598400000" data-listing-file-modified-sort="1676026579299" data-listing-reading-time-sort="3.265" data-listing-title-sort="parallel algorithm course 04" data-listing-filename-sort="pa-04.md">
-<td class="listing-date">
-Mar 30, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/parallel-algorithm/pa-04.html" class="title">parallel algorithm course 04</a>
-</td>
-<td class="listing-categories">
-parallel algorithm,note
-</td>
-</tr>
-<tr data-index="20" data-categories="calculus,review" data-listing-date-sort="1648425600000" data-listing-file-modified-sort="1676026579295" data-listing-reading-time-sort="2.69" data-listing-title-sort="calculus review 01" data-listing-filename-sort="calculus-01.md">
-<td class="listing-date">
-Mar 28, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/calculus/calculus-01.html" class="title">calculus review 01</a>
-</td>
-<td class="listing-categories">
-calculus,review
-</td>
-</tr>
-<tr data-index="21" data-categories="parallel algorithm,note" data-listing-date-sort="1647993600000" data-listing-file-modified-sort="1676026579295" data-listing-reading-time-sort="0.47" data-listing-title-sort="parallel algorithm course 03" data-listing-filename-sort="PA-03.md">
-<td class="listing-date">
-Mar 23, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/parallel-algorithm/PA-03.html" class="title">parallel algorithm course 03</a>
-</td>
-<td class="listing-categories">
-parallel algorithm,note
-</td>
-</tr>
-<tr data-index="22" data-categories="understanding machine learning,note" data-listing-date-sort="1647820800000" data-listing-file-modified-sort="1676026579299" data-listing-reading-time-sort="4.65" data-listing-title-sort="Understanding Machine Learning 05" data-listing-filename-sort="UML-05.md">
-<td class="listing-date">
-Mar 21, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/understanding-machine-learning/UML-05.html" class="title">Understanding Machine Learning 05</a>
-</td>
-<td class="listing-categories">
-understanding machine learning,note
-</td>
-</tr>
-<tr data-index="23" data-categories="understanding machine learning,note" data-listing-date-sort="1647388800000" data-listing-file-modified-sort="1676026579299" data-listing-reading-time-sort="3.45" data-listing-title-sort="Understanding Machine Learning 04" data-listing-filename-sort="UML-04.md">
-<td class="listing-date">
-Mar 16, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/understanding-machine-learning/UML-04.html" class="title">Understanding Machine Learning 04</a>
-</td>
-<td class="listing-categories">
-understanding machine learning,note
-</td>
-</tr>
-<tr data-index="24" data-categories="parallel algorithm,note" data-listing-date-sort="1647388800000" data-listing-file-modified-sort="1676026579295" data-listing-reading-time-sort="1.95" data-listing-title-sort="parallel algorithm course 02" data-listing-filename-sort="PA-02.md">
-<td class="listing-date">
-Mar 16, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/parallel-algorithm/PA-02.html" class="title">parallel algorithm course 02</a>
-</td>
-<td class="listing-categories">
-parallel algorithm,note
-</td>
-</tr>
-<tr data-index="25" data-categories="understanding machine learning,note" data-listing-date-sort="1646956800000" data-listing-file-modified-sort="1676026579299" data-listing-reading-time-sort="1.345" data-listing-title-sort="Understanding Machine Learning 03" data-listing-filename-sort="UML-03.md">
-<td class="listing-date">
-Mar 11, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/understanding-machine-learning/UML-03.html" class="title">Understanding Machine Learning 03</a>
-</td>
-<td class="listing-categories">
-understanding machine learning,note
-</td>
-</tr>
-<tr data-index="26" data-categories="parallel algorithm,note" data-listing-date-sort="1646784000000" data-listing-file-modified-sort="1676026579295" data-listing-reading-time-sort="0.32" data-listing-title-sort="parallel algorithm course 01" data-listing-filename-sort="PA-01.md">
-<td class="listing-date">
-Mar 9, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/parallel-algorithm/PA-01.html" class="title">parallel algorithm course 01</a>
-</td>
-<td class="listing-categories">
-parallel algorithm,note
-</td>
-</tr>
-<tr data-index="27" data-categories="understanding machine learning,note" data-listing-date-sort="1646697600000" data-listing-file-modified-sort="1676026579299" data-listing-reading-time-sort="3.755" data-listing-title-sort="Understanding Machine Learning 02" data-listing-filename-sort="UML-02.md">
-<td class="listing-date">
-Mar 8, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/understanding-machine-learning/UML-02.html" class="title">Understanding Machine Learning 02</a>
-</td>
-<td class="listing-categories">
-understanding machine learning,note
-</td>
-</tr>
-<tr data-index="28" data-categories="vim,programming" data-listing-date-sort="1646697600000" data-listing-file-modified-sort="1676026579299" data-listing-reading-time-sort="1.005" data-listing-title-sort="vim techs" data-listing-filename-sort="vim_tech.md">
-<td class="listing-date">
-Mar 8, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/programming/vim_tech.html" class="title">vim techs</a>
-</td>
-<td class="listing-categories">
-vim,programming
-</td>
-</tr>
-<tr data-index="29" data-categories="ESL,note" data-listing-date-sort="1646611200000" data-listing-file-modified-sort="1676026579295" data-listing-reading-time-sort="1.595" data-listing-title-sort="The elements of statistical learning 01" data-listing-filename-sort="ESL-01.md">
-<td class="listing-date">
-Mar 7, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/esl/ESL-01.html" class="title">The elements of statistical learning 01</a>
-</td>
-<td class="listing-categories">
-ESL,note
-</td>
-</tr>
-<tr data-index="30" data-categories="understanding machine learning,note" data-listing-date-sort="1646265600000" data-listing-file-modified-sort="1676026579299" data-listing-reading-time-sort="2.385" data-listing-title-sort="Understanding Machine Learning 01" data-listing-filename-sort="UML-01.md">
-<td class="listing-date">
-Mar 3, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/understanding-machine-learning/UML-01.html" class="title">Understanding Machine Learning 01</a>
-</td>
-<td class="listing-categories">
-understanding machine learning,note
-</td>
-</tr>
-<tr data-index="31" data-categories="paper reading" data-listing-date-sort="1646265600000" data-listing-file-modified-sort="1676026579295" data-listing-reading-time-sort="0.67" data-listing-title-sort="MoCo" data-listing-filename-sort="moco.md">
-<td class="listing-date">
-Mar 3, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/paper-reading/moco.html" class="title">MoCo</a>
-</td>
-<td class="listing-categories">
-paper reading
-</td>
-</tr>
-<tr data-index="32" data-categories="test" data-listing-date-sort="1646092800000" data-listing-file-modified-sort="1676026579299" data-listing-reading-time-sort="0.735" data-listing-title-sort="my first post" data-listing-filename-sort="example.qmd">
-<td class="listing-date">
-Mar 1, 2022
-</td>
-<td class="listing-title">
-<a href="./posts/test/example.html" class="title">my first post</a>
-</td>
-<td class="listing-categories">
-test
-</td>
-</tr>
-</tbody>
-
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-<nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
-  <ul class="pagination"></ul>
-</nav>
-</div></main> <!-- /main -->
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -588,13 +166,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
   const clipboard = new window.ClipboardJS('.code-copy-button', {
     target: function(trigger) {
       return trigger.previousElementSibling;
