@@ -2,11 +2,12 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/paper-reading/24-02-29-zhang2024batchicl.html",
       "/posts/research/MSR-AI-Seminar-Feb-8.html",
       "/posts/tools/tc.html",
       "/posts/calculus/calculus-03.html",
-      "/posts/paper-reading/multi-view-clustering.html",
       "/posts/esl/ESL-02.html",
+      "/posts/paper-reading/multi-view-clustering.html",
       "/posts/english/vocab-example.html",
       "/posts/programming/pytorch-notes.html",
       "/posts/notes-about-technical-writing.html",
@@ -20,20 +21,20 @@
       "/posts/parallel-algorithm/pa-06.html",
       "/posts/parallel-algorithm/pa-05.html",
       "/posts/inequality.html",
-      "/posts/understanding-machine-learning/uml-06.html",
       "/posts/parallel-algorithm/pa-04.html",
+      "/posts/understanding-machine-learning/uml-06.html",
       "/posts/calculus/calculus-01.html",
       "/posts/parallel-algorithm/PA-03.html",
       "/posts/understanding-machine-learning/UML-05.html",
-      "/posts/understanding-machine-learning/UML-04.html",
       "/posts/parallel-algorithm/PA-02.html",
+      "/posts/understanding-machine-learning/UML-04.html",
       "/posts/understanding-machine-learning/UML-03.html",
       "/posts/parallel-algorithm/PA-01.html",
       "/posts/understanding-machine-learning/UML-02.html",
       "/posts/programming/vim_tech.html",
       "/posts/esl/ESL-01.html",
-      "/posts/understanding-machine-learning/UML-01.html",
       "/posts/paper-reading/moco.html",
+      "/posts/understanding-machine-learning/UML-01.html",
       "/posts/test/example.html"
     ]
   }

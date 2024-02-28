@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Furyton">
-<meta name="dcterms.date" content="2022-08-12">
+<meta name="author" content="Shiguang Wu">
+<meta name="dcterms.date" content="2024-02-29">
 
-<title>notes - PyTorch Notes</title>
+<title>notes - reading notes on paper Batch-ICL Effective, Efficient, and Order-Agnostic In-Context Learning by Zhang et al.</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -78,6 +78,35 @@ gtag('js', new Date());
 gtag('config', 'G-2J6LH2FX5K', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -129,10 +158,9 @@ gtag('config', 'G-2J6LH2FX5K', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#gadget-functions-torch" id="toc-gadget-functions-torch" class="nav-link active" data-scroll-target="#gadget-functions-torch">gadget functions (torch)</a></li>
-  <li><a href="#gadget-functions-pandas" id="toc-gadget-functions-pandas" class="nav-link" data-scroll-target="#gadget-functions-pandas">gadget functions (pandas)</a></li>
-  <li><a href="#gadget-functions-d2l" id="toc-gadget-functions-d2l" class="nav-link" data-scroll-target="#gadget-functions-d2l">gadget functions (d2l)</a></li>
-  <li><a href="#plot" id="toc-plot" class="nav-link" data-scroll-target="#plot">plot</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#my-thoughts" id="toc-my-thoughts" class="nav-link" data-scroll-target="#my-thoughts">My thoughts</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -141,10 +169,10 @@ gtag('config', 'G-2J6LH2FX5K', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">PyTorch Notes</h1>
+<h1 class="title">reading notes on paper <em>Batch-ICL Effective, Efficient, and Order-Agnostic In-Context Learning</em> by Zhang et al.</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">PyTorch</div>
-    <div class="quarto-category">programming</div>
+    <div class="quarto-category">paper reading</div>
+    <div class="quarto-category">in-context learning</div>
   </div>
   </div>
 
@@ -155,14 +183,14 @@ gtag('config', 'G-2J6LH2FX5K', { 'anonymize_ip': true});
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Furyton </p>
+             <p>Shiguang Wu </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 12, 2022</p>
+      <p class="date">February 29, 2024</p>
     </div>
   </div>
   
@@ -174,56 +202,33 @@ gtag('config', 'G-2J6LH2FX5K', { 'anonymize_ip': true});
 </header>
 
 
-<section id="gadget-functions-torch" class="level2">
-<h2 class="anchored" data-anchor-id="gadget-functions-torch">gadget functions (torch)</h2>
-<ul>
-<li><p><code>x.numel()</code> number of elements in <code>x</code></p></li>
-<li><p>broadcast mechanism</p></li>
-<li><p><code>Y = Y + X</code> would allocate a new space for the result of <code>Y + X</code>. <code>Y</code> then is the reference to this new memory. <code>Y += X</code> or <code>Y[:] = Y + X</code> is better. (<code>id(Y)</code> will be unchanged.)</p></li>
-<li><p><code>float()</code> or <code>int()</code> converts a scalar tensor to a <strong>standard number</strong>, similar to <code>x.item()</code></p></li>
-<li><p><code>A * B</code> element-wise product.</p></li>
-<li><p><code>A_sum = A.sum(axis=1, keepdims=True)</code> will keep the number of axis. <code>A / A_sum</code> will enable broadcast mechanism.</p></li>
-<li><p><code>A.cumsum(axis=0)</code> accumulated sum.</p></li>
-<li><p>linear algebra (matrix, vector) multiplication</p>
-<ul>
-<li><p>dot product: <code>torch.dot(x, y)</code> only accept 1-D tensor.</p></li>
-<li><p>matrix-vector multiplication: <code>torch.mv(A, x)</code> matrix and vector. x is 1-D vector. All in <strong>column</strong> vectors.</p></li>
-<li><p>matrix-matrix multiplication: <code>torch.mm(A, B)</code>.</p></li>
-</ul></li>
-<li><p><code>torch.distributions</code></p>
-<ul>
-<li><code>multinomial.Multinomial(n, probs).sample(N, )</code></li>
-</ul></li>
-</ul>
+<p><a href="https://arxiv.org/abs/2401.06469">link to arXiv</a></p>
+<p><strong>Abstract</strong></p>
+<blockquote class="blockquote">
+<p>In this paper, by treating in-context learning (ICL) as a meta-optimization process, we explain why LLMs are sensitive to the order of ICL examples. This understanding leads us to the development of Batch-ICL, an effective, efficient, and order-agnostic inference algorithm for ICL. Differing from the standard N-shot learning approach, Batch-ICL employs N separate 1-shot forward computations and aggregates the resulting meta-gradients. These aggregated meta-gradients are then applied to the forward computation of a zero-shot query to generate the final prediction. This batch processing approach renders the LLM agnostic to the order of ICL examples. Through extensive experiments and analysis, we demonstrate that Batch-ICL consistently outperforms most permutations of ICL examples. In some cases, it even exceeds the performance of the best order for standard ICL, all while reducing the computational resources required. Furthermore, we develop a novel variant of Batch-ICL featuring multiple “epochs” of meta-optimization. This variant implicitly explores permutations of ICL examples, further enhancing ICL performance.</p>
+</blockquote>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>This paper aims to resolve the order-instability problem in ICL. The basic idea is to treat each ICL example seperately and then aggregate the latent from each ICL in another Transformer layer. The main idea is from the prevelant view of ICL as a meta-optimization process.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/24-02-29-zhang2024batchicl-main-fig1.png" class="img-fluid figure-img"></p>
+<figcaption>main idea</figcaption>
+</figure>
+</div>
 </section>
-<section id="gadget-functions-pandas" class="level2">
-<h2 class="anchored" data-anchor-id="gadget-functions-pandas">gadget functions (pandas)</h2>
-<ul>
-<li><p><code>data.fillna(data.mean())</code></p></li>
-<li><p><code>pd.get_dummies(data, dummy_na=True)</code> Convert categorical variable into dummy/indicator variables. Works for <code>str</code>.</p></li>
-</ul>
+<section id="my-thoughts" class="level2">
+<h2 class="anchored" data-anchor-id="my-thoughts">My thoughts</h2>
+<p>This paper may be under review in ACL’24 or counterpart. Many papers from ACL or EMNLP seem to be not well-informed about the related work. It’s hard to scrasp the novelty of those papers when some (or even many) of the related work are not mentioned.</p>
+<p>The explanation of the order-instability problem from the perspective of order-dependent meta-optimization process (approximate to GD of some linear model) seems promising. If the proposed algorithm is illustrated in the attention mask matarix, it may be more clearer. I think it is not fundamentally different from just using block-diagonal causal attention mask matrix for each example.</p>
+<p>SGD is order dependent and the instability is from the variance of the gradient estimation from a single sample. Mini-batch will reduce the variance and improve the convergence rate of SGD. But they should behave similar at the end of the iteration under some mild conditions. More analysis on the convergence may be a more direct way of resolving the order-instability problem in ICL.</p>
+<p>An important reference (I think) missing in the related work is the paper by Ding et al.&nbsp;[1] which has been accepted in ICLR’24. They say that CausalLM may not convergent to the desired solution for ICL (the stationary point is not optimal) while PrefixLM can converge to the least square solution stationary point. Therefore some fundamental limitations of CausalLM on ICL have already been discussed.</p>
+<p>Moreover, the paper by Bhatia et al.&nbsp;[2] which is accepted by NeurIPS’23 seems to be a little similar to this paper except that they do the aggregation using a BERT with one single step instead of doing on <span class="math inline">\(K\)</span> layers.</p>
 </section>
-<section id="gadget-functions-d2l" class="level2">
-<h2 class="anchored" data-anchor-id="gadget-functions-d2l">gadget functions (d2l)</h2>
-<ul>
-<li><p><code>d2l.plot</code> example</p>
-<ul>
-<li><code>x = np.arange(0, 3, 0.1) d2l.plot(x, [x ** 2, 2 * x - 1], 'x', 'f(x)', legend=['f(x)', 'Tangent'])</code></li>
-</ul></li>
-</ul>
-</section>
-<section id="plot" class="level2">
-<h2 class="anchored" data-anchor-id="plot">plot</h2>
-<ul>
-<li><p>example</p>
-<ul>
-<li><p><code>plt.plot(y, label=("label"))</code></p></li>
-<li><p><code>plt.axhline(y=0, color='black', linestyle='dashed')</code></p></li>
-<li><p><code>plt.gca().set_xlabel('x label')</code></p></li>
-<li><p><code>plt.gca().set_ylabel('y label')</code></p></li>
-<li><p><code>plt.legend()</code></p></li>
-</ul></li>
-</ul>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>[1] N. Ding, T. Levinboim, J. Wu, S. Goodman, and R. Soricut, “CausalLM is not optimal for in-context learning.” arXiv, Sep.&nbsp;02, 2023. Accessed: Nov.&nbsp;22, 2023. [Online]. Available: http://arxiv.org/abs/2308.06912</p>
+<p>[2] K. Bhatia, A. Narayan, C. De Sa, and C. Ré, “TART: A plug-and-play Transformer module for task-agnostic reasoning,” arXiv.org. Accessed: Jun.&nbsp;20, 2023. [Online]. Available: https://arxiv.org/abs/2306.07536v1</p>
 
 
 </section>

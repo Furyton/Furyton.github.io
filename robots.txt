@@ -1,1 +1,1 @@
-Sitemap: https://github.com/Furyton/Furyton.github.io/sitemap.xml
+Sitemap: https://Furyton.github.io/sitemap.xml
