@@ -3,10 +3,11 @@ project:
   output-dir: docs
 
 website:
-  title: "notes"
+  title: "Shiguang WU"
   navbar:
     right:
       - blog.qmd
+      - diary.qmd
       - icon: github
         href: https://github.com/Furyton
       - icon: twitter
@@ -14,7 +15,9 @@ website:
   google-analytics: "G-2J6LH2FX5K"
 format:
   html:
-    theme: cosmo
+    theme:
+      light: cosmo
+      dark: darkly
     css: styles.css
 
 execute:

@@ -1,0 +1,23 @@
+---
+title: GeLore
+author: Shiguang Wu
+date: 2023-03-10
+categories: [paper-list]
+---
+
+> Zhao, J., Zhang, Z., Chen, B., Wang, Z., Anandkumar, A., Tian, Y., 2024. GaLore: Memory-Efficient LLM Training by Gradient Low-Rank Projection. https://doi.org/10.48550/arXiv.2403.03507
+
+A certain type of gradient update forms, i.e., 
+$$
+G_t=A-BW_{t-1}C, W_t=W_{t-1}-\eta G_{t-1},
+$$
+
+where $A$ is a constant matrix, and $B,C$ are projection, leads to low-rank with high probability $\mathrm{rank}(G_t)\rightarrow 1$.
+
+Many neural nets with certain loss fuctions have this type of gradient update, and this work is to directly construct a low-rank gradient update that first projects the gradient into low dim space and performs the (Adam) update, and then projects it back.
+
+---
+
+- Good paper and recommended.
+
+- Need to read more thoroughly.
