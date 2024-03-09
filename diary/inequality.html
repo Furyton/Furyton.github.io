@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Shiguang WU">
-<meta name="dcterms.date" content="2022-09-08">
+<meta name="author" content="furyton">
+<meta name="dcterms.date" content="2022-04-02">
 
-<title>Shiguang WU - unsupervised model related</title>
+<title>Shiguang WU - Inequality</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,24 +25,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -80,37 +80,8 @@ gtag('js', new Date());
 gtag('config', 'G-2J6LH2FX5K', { 'anonymize_ip': true});
 </script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -120,7 +91,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Shiguang WU</span>
     </a>
   </div>
@@ -131,11 +102,11 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html"> 
+    <a class="nav-link" href="../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../diary.html"> 
+    <a class="nav-link" href="../diary.html"> 
 <span class="menu-text">Diary</span></a>
   </li>  
   <li class="nav-item compact">
@@ -161,39 +132,16 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#knn" id="toc-knn" class="nav-link active" data-scroll-target="#knn">KNN:</a></li>
-  <li><a href="#k-means" id="toc-k-means" class="nav-link" data-scroll-target="#k-means">K-means:</a>
-  <ul class="collapse">
-  <li><a href="#k-means-for-classification" id="toc-k-means-for-classification" class="nav-link" data-scroll-target="#k-means-for-classification">K-means for classification</a></li>
-  </ul></li>
-  <li><a href="#learning-vector-quantization" id="toc-learning-vector-quantization" class="nav-link" data-scroll-target="#learning-vector-quantization">Learning Vector Quantization</a></li>
-  <li><a href="#gaussian-mixture" id="toc-gaussian-mixture" class="nav-link" data-scroll-target="#gaussian-mixture">Gaussian mixture</a></li>
-  <li><a href="#discriminant-adaptive-nearest-neighbor-dann" id="toc-discriminant-adaptive-nearest-neighbor-dann" class="nav-link" data-scroll-target="#discriminant-adaptive-nearest-neighbor-dann">discriminant adaptive nearest-neighbor (DANN)</a></li>
-  <li><a href="#market-basket-analysis" id="toc-market-basket-analysis" class="nav-link" data-scroll-target="#market-basket-analysis">Market Basket Analysis</a></li>
-  <li><a href="#unsupervised-as-supervised-learning" id="toc-unsupervised-as-supervised-learning" class="nav-link" data-scroll-target="#unsupervised-as-supervised-learning">Unsupervised as Supervised Learning</a></li>
-  <li><a href="#generalized-association-rules-not-understand" id="toc-generalized-association-rules-not-understand" class="nav-link" data-scroll-target="#generalized-association-rules-not-understand">Generalized Association Rules (NOT UNDERSTAND)</a></li>
-  <li><a href="#clustering-analysis" id="toc-clustering-analysis" class="nav-link" data-scroll-target="#clustering-analysis">Clustering Analysis</a>
-  <ul class="collapse">
-  <li><a href="#dissimilarity-based-on-attributes-dissimilarity-defined-individually-on-each-attributes" id="toc-dissimilarity-based-on-attributes-dissimilarity-defined-individually-on-each-attributes" class="nav-link" data-scroll-target="#dissimilarity-based-on-attributes-dissimilarity-defined-individually-on-each-attributes">Dissimilarity Based on Attributes (dissimilarity defined individually on each attributes)</a></li>
-  <li><a href="#correltation" id="toc-correltation" class="nav-link" data-scroll-target="#correltation">correltation</a></li>
-  <li><a href="#object-dissimilarity-combining-the-p-individual-attribute-dissimilarities" id="toc-object-dissimilarity-combining-the-p-individual-attribute-dissimilarities" class="nav-link" data-scroll-target="#object-dissimilarity-combining-the-p-individual-attribute-dissimilarities">Object Dissimilarity (combining the p-individual attribute dissimilarities)</a></li>
-  </ul></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">unsupervised model related</h1>
+<h1 class="title">Inequality</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">ESL</div>
-    <div class="quarto-category">note</div>
+    <div class="quarto-category">inequality</div>
   </div>
   </div>
 
@@ -204,14 +152,14 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Shiguang WU </p>
+             <p>furyton </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 8, 2022</p>
+      <p class="date">April 2, 2022</p>
     </div>
   </div>
   
@@ -223,97 +171,11 @@ window.Quarto = {
 </header>
 
 
-<p>quick notes while reading unsupervised model related part in ESL</p>
-<section id="knn" class="level2">
-<h2 class="anchored" data-anchor-id="knn">KNN:</h2>
-<ul>
-<li><p>tangent distance</p></li>
-<li><p>Invariant Metrics and Tangent Distance (Simard et al., 1993)</p></li>
-</ul>
-</section>
-<section id="k-means" class="level2">
-<h2 class="anchored" data-anchor-id="k-means">K-means:</h2>
-<ol type="1">
-<li><p>find clusters,</p></li>
-<li><p>recompute the cluster centers</p></li>
-</ol>
-<section id="k-means-for-classification" class="level3">
-<h3 class="anchored" data-anchor-id="k-means-for-classification">K-means for classification</h3>
-<ol type="1">
-<li><p>apply K-means for each class, using R prototypes per class (K in total)</p></li>
-<li><p>assign a label for each prototypes (K x R in total)</p></li>
-<li><p>classify new x to the nearest prototype</p></li>
-</ol>
-</section>
-</section>
-<section id="learning-vector-quantization" class="level2">
-<h2 class="anchored" data-anchor-id="learning-vector-quantization">Learning Vector Quantization</h2>
-<ul>
-<li><p>cons of vanilla K-means classification:</p>
-<ul>
-<li>other samples of different class won’t involve in the position of other class</li>
-</ul></li>
-<li><p>for a random training sample, move the closest prototype a bit (towards or away)</p></li>
-</ul>
-</section>
-<section id="gaussian-mixture" class="level2">
-<h2 class="anchored" data-anchor-id="gaussian-mixture">Gaussian mixture</h2>
-<ul>
-<li>assign weight for each cluster (gaussian density)</li>
-</ul>
-</section>
-<section id="discriminant-adaptive-nearest-neighbor-dann" class="level2">
-<h2 class="anchored" data-anchor-id="discriminant-adaptive-nearest-neighbor-dann">discriminant adaptive nearest-neighbor (DANN)</h2>
-<ul>
-<li><p><span class="math inline">\(\varSigma=W^{-1/2}[B^*+\epsilon I]W^{-1/2}\)</span></p></li>
-<li><p><span class="math inline">\(\varSigma^{1/2} (x-x_0)=\textrm{circle}\)</span></p></li>
-<li><p><span class="math inline">\(W\)</span> normalization, spheres the data</p></li>
-<li><p><span class="math inline">\(B\)</span> stretch, assign larger weights to the directions with larger covariance.</p></li>
-</ul>
-</section>
-<section id="market-basket-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="market-basket-analysis">Market Basket Analysis</h2>
-<ul>
-<li><p>The Apriori Algorithm</p></li>
-<li><p>discover association rules with high support values and confidence</p></li>
-</ul>
-</section>
-<section id="unsupervised-as-supervised-learning" class="level2">
-<h2 class="anchored" data-anchor-id="unsupervised-as-supervised-learning">Unsupervised as Supervised Learning</h2>
-<ul>
-<li>reference density function</li>
-</ul>
-</section>
-<section id="generalized-association-rules-not-understand" class="level2">
-<h2 class="anchored" data-anchor-id="generalized-association-rules-not-understand">Generalized Association Rules (NOT UNDERSTAND)</h2>
-</section>
-<section id="clustering-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="clustering-analysis">Clustering Analysis</h2>
-<section id="dissimilarity-based-on-attributes-dissimilarity-defined-individually-on-each-attributes" class="level3">
-<h3 class="anchored" data-anchor-id="dissimilarity-based-on-attributes-dissimilarity-defined-individually-on-each-attributes">Dissimilarity Based on Attributes (dissimilarity defined individually on each attributes)</h3>
-<ul>
-<li>Quantitative variables:
-<ul>
-<li><span class="math inline">\(\ell(\textrm{abs}(x_i-x_j))\)</span> <span class="math inline">\(\rightarrow\)</span> squared-error loss, identity (just <span class="math inline">\(\textrm{abs}\)</span>)</li>
-</ul></li>
-</ul>
-</section>
-<section id="correltation" class="level3">
-<h3 class="anchored" data-anchor-id="correltation">correltation</h3>
-<ul>
-<li><p>Ordinal variables</p></li>
-<li><p>Categorical variables</p></li>
-</ul>
-</section>
-<section id="object-dissimilarity-combining-the-p-individual-attribute-dissimilarities" class="level3">
-<h3 class="anchored" data-anchor-id="object-dissimilarity-combining-the-p-individual-attribute-dissimilarities">Object Dissimilarity (combining the p-individual attribute dissimilarities)</h3>
-<ul>
-<li>weighted average</li>
-</ul>
+<p>I found a great book on concentration inequalities</p>
+<p><em>Concentration inequalities: A nonasysmtotic theory of independence</em> by Boucheron</p>
+<p>hope I can read this book thoroughly one day :/</p>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
