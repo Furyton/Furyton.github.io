@@ -1,0 +1,23 @@
+---
+title: ModelGPT - a recent work actively reaching out for collaboration
+author: Shiguang Wu
+date: 2023-03-18
+categories: [paper-list]
+---
+
+> Tang, Z., Lv, Z., Zhang, S., Wu, F., Kuang, K., 2024. ModelGPT: Unleashing LLM’s Capabilities for Tailored Model Generation.
+
+Tang et al. (2024) propose ModelGPT, a method for generating tailored models from large language models (LLMs).
+
+However, the related work section fails to adequately distinguish their approach from prior methods, especially those that generate adapters for LLMs.
+The authors seem to overstate their contribution, as the proposed techniques are not fundamentally different from many previous works.
+
+The emphasis of "ONLY need ONE ModelGPT to solve all the tasks in one experiment" is pointless, as this is what hypernetworks are designed for and many works have already done it.
+
+The text makes excessive use of boldfacing and the assertion of being "the first work in this field" appears overconfident, given the substantial existing literature on model generation using instruction descriptions.
+
+While combining the ideas of hypernetworks from NLP and CV may represent a new direction, it is not especially exciting or a breakthrough, contrary to the authors' claims, as they do not actually combine the two but rather build different hypermodels for NLP and CV tasks.
+
+---
+
+I would not recommend reading it or collaborating on this topic, as the gap between the claims and reality appears quite wide.
