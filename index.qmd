@@ -1,5 +1,4 @@
 ---
-title: "Shiguang Wu"
 image: captain-america-shield.jpg
 about:
   template: solana
@@ -19,12 +18,107 @@ about:
     - icon: book
       text: Google Scholar
       href: https://scholar.google.com/citations?user=fqHOVo0AAAAJ
+    - text: CV
+      href: shiguang-cv.pdf
+bibliography: publications.bib
+format:
+  html: default
+  pdf:
+    author: Shiguang Wu
+    output-file: shiguang-cv.pdf
+    toc: false
+    number-sections: false
+    colorlinks: true
+    papersize: letter
+    pdf-engine: xelatex
+    fontsize: 10pt
+    geometry:
+      - margin=1in
+    include-in-header:
+      - preamble.tex
+nocite: |
+  @*
+csl: acm.csl
+format-links: false
+citeproc: false
+filters:
+  - section-bibliographies.lua
+  - bold-author.lua
+bold-auth-name:
+  - family: Wu
+    given: Shiguang
 ---
 
+::: {.content-visible when-format="pdf"}
+
+\begin{center}
+\LARGE{Shiguang Wu}
+
+N3 Building, Shandong University, 72 Binhai Highway, Qingdao, Shandong Province, China
+
+\large\Telefon\ +86 177-0544-8803. \large\Letter\ \href{mailto:shiguang.wu@mail.sdu.edu.cn}{shiguang.wu@mail.sdu.edu.cn}
+
+\href{https://scholar.google.com/citations?user=fqHOVo0AAAAJ}{[Google Scholar]}
+\href{https://github.com/Furyton}{[GitHub]}
+\href{https://twitter.com/shiguang\_wu}{[Twitter]}
+\href{https://furyton.github.io}{[Webpage]}
+
+\end{center}
+:::
+
+::: {.content-visible when-format="html"}
 I'm a M.Sc student at [IRLab](https://ir.sdu.edu.cn/index_en.htm) of [Shandong University](https://www.en.sdu.edu.cn/), supervised by Prof. [Pengjie Ren](https://pengjieren.github.io/) and Prof. [Zhaochun Ren](https://renzhaochun.github.io/).
-I also work with Prof. [Xin Xin](https://xinxin-me.github.io/) and Prof. [Mengqi Zhang](https://zm7.github.io/).
-I received my B.E. from [Shandong University](https://www.en.sdu.edu.cn/) in 2023.
+I also work with Prof. [Xin Xin](https://xinxin-me.github.io/), Prof. [Mengqi Zhang](https://zm7.github.io/), and Prof. [Maarten de Rijke](https://staff.fnwi.uva.nl/m.derijke/).
+I received my B.E. from [Taishan College](https://www.tsxt.sdu.edu.), [Shandong University](https://www.en.sdu.edu.cn/) in 2023.
+:::
 
-Currently I'm interested in information retrieval, especially in how retrieval models work theoretically.
+I'm interested in (theoretical, analytical) information retrieval, especially in generative retrieval, embedding models, and recommender systems.
 
+::: {.content-visible when-format="html"}
 Please feel free to contact me at _furyton AT outlook DOT com_.
+:::
+
+## EDUCATION
+
+**M.Sc., Shandong University** Information Retrieval Lab [*Sep 2023 --- Present*]{.cvdate}
+
+- Supervised by Prof. [Pengjie Ren](https://pengjieren.github.io/) and Prof. [Zhaochun Ren](https://renzhaochun.github.io/)
+
+- Working with Prof. [Xin Xin](https://xinxin-me.github.io/), Prof. [Mengqi Zhang](https://zm7.github.io/), and Prof. [Maarten de Rijke](https://staff.fnwi.uva.nl/m.derijke/).
+
+**B.Sc., Shandong University** Taishan College [*Sep 2019 --- Jun 2023*]{.cvdate}
+
+- GPA: 92.44/100 (ranking 2/17)
+
+## PUBLICATIONS
+
+::: {#refs}
+:::
+
+## RESEARCH EXPERIENCE
+
+**Undergraduate Research Assistant** Information Retrieval Lab [*2020 --- 2023*]{.cvdate}
+
+- Supervised by Prof. [Xin Xin](https://pengjieren.github.io/) and Prof. [Zhaochun Ren](https://renzhaochun.github.io/)
+
+## PROJECT EXPERIENCE
+
+- [Fuzi.Mingcha](https://github.com/irlab-sdu/fuzi.mingcha) -- A Chinese Judicial Large Language Model [230+ stars]. We develop a Chinese legal model that supports functions such as statute retrieval, case analysis, et al, and achieve supreme performance at the [LawBench](https://github.com/open-compass/LawBench). *Project Leader and Main Contributor*. 2023.
+
+## ACADEMIC SERVICES
+
+**Reviewer**: Information Processing & Management (IP&M)
+
+**Resources**: I have curated an [Awesome Transformers LM Analytics](https://github.com/Furyton/awesome-transformers-LM-analytics) paper list focusing on the theoretical analysis of language models, especially large language models (LLMs).
+
+## AWARDS AND ACHIEVEMENTS
+
+- Outstanding Undergraduate Thesis Award. *Shandong University*. 2023.
+
+- National Outstanding Student Scholarship. *Shandong University*. 2022.
+
+- Outstanding Student Scholarship. *Shandong University*. 2020-2022.
+
+- Mathematical Contest in Modeling. Second Prize. 2021.
+
+- The 18th Certified Sofware Professional Examination. Top 2.65\%. 2020.

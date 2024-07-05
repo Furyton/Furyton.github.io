@@ -26,3 +26,12 @@ h5 {
     border-left: solid 0.3em #f060602f;
     padding-left: 0.3em;
 }
+
+.print-only {
+    display: none;
+}
+
+.cvdate {
+  float: right;
+  font-style: italic
+}
