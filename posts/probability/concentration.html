@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Shiguang WU">
+<meta name="dcterms.date" content="2024-03-11">
 
-<title>Shiguang WU</title>
+<title>notes on some concentration inequalities – Shiguang WU</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,46 +22,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -97,18 +80,47 @@ gtag('js', new Date());
 gtag('config', 'G-2J6LH2FX5K', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Shiguang WU</span>
     </a>
   </div>
@@ -119,11 +131,11 @@ gtag('config', 'G-2J6LH2FX5K', { 'anonymize_ip': true});
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./diary.html"> 
+    <a class="nav-link" href="../../diary.html"> 
 <span class="menu-text">Diary</span></a>
   </li>  
   <li class="nav-item compact">
@@ -148,104 +160,112 @@ gtag('config', 'G-2J6LH2FX5K', { 'anonymize_ip': true});
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
-<!-- main -->
-<div class="quarto-about-solana column-body">
-  <div class="about-entity">
-    <div class="entity-contents">
-       <div class="about-links">
-  <a href="mailto:shiguang.wu@mail.sdu.edu.cn" class="about-link" rel="" target="">
-    <i class="bi bi-mailbox"></i>
-     <span class="about-link-text">E-mail</span>
-  </a>
-  <a href="https://twitter.com/shiguang_wu" class="about-link" rel="" target="">
-    <i class="bi bi-twitter"></i>
-     <span class="about-link-text">Twitter</span>
-  </a>
-  <a href="https://github.com/Furyton" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-  <a href="https://scholar.google.com/citations?user=fqHOVo0AAAAJ" class="about-link" rel="" target="">
-    <i class="bi bi-book"></i>
-     <span class="about-link-text">Google Scholar</span>
-  </a>
-  <a href="/shiguang-cv.pdf" class="about-link" rel="" target="">
-     <span class="about-link-text">CV</span>
-  </a>
-</div>
-      <div class="about-contents"><main class="content" id="quarto-document-content">
-<p>I’m a M.Sc student at <a href="https://ir.sdu.edu.cn/index_en.htm">IRLab</a> of <a href="https://www.en.sdu.edu.cn/">Shandong University</a>, supervised by Prof.&nbsp;<a href="https://pengjieren.github.io/">Pengjie Ren</a> and Prof.&nbsp;<a href="https://renzhaochun.github.io/">Zhaochun Ren</a>. I also work with Prof.&nbsp;<a href="https://xinxin-me.github.io/">Xin Xin</a>, Prof.&nbsp;<a href="https://zm7.github.io/">Mengqi Zhang</a>, and Prof.&nbsp;<a href="https://staff.fnwi.uva.nl/m.derijke/">Maarten de Rijke</a>. I received my B.E. from <a href="https://www.tsxt.sdu.edu.">Taishan College</a>, <a href="https://www.en.sdu.edu.cn/">Shandong University</a> in 2023.</p>
-<p>I’m interested in (theoretical, analytical) information retrieval, especially in generative retrieval, embedding models, and recommender systems.</p>
-<p>Please feel free to contact me at <em>furyton AT outlook DOT com</em>.</p>
-<section id="education" class="level2">
-<h2 data-anchor-id="education">EDUCATION</h2>
-<p><strong>M.Sc., Shandong University</strong> Information Retrieval Lab <span class="cvdate"><em>Sep 2023 — Present</em></span></p>
-<ul>
-<li><p>Supervised by Prof.&nbsp;<a href="https://pengjieren.github.io/">Pengjie Ren</a> and Prof.&nbsp;<a href="https://renzhaochun.github.io/">Zhaochun Ren</a></p></li>
-<li><p>Working with Prof.&nbsp;<a href="https://xinxin-me.github.io/">Xin Xin</a>, Prof.&nbsp;<a href="https://zm7.github.io/">Mengqi Zhang</a>, and Prof.&nbsp;<a href="https://staff.fnwi.uva.nl/m.derijke/">Maarten de Rijke</a>.</p></li>
-</ul>
-<p><strong>B.Sc., Shandong University</strong> Taishan College <span class="cvdate"><em>Sep 2019 — Jun 2023</em></span></p>
-<ul>
-<li>GPA: 92.44/100 (ranking 2/17)</li>
-</ul>
-</section>
-<section id="publications" class="level2">
-<h2 data-anchor-id="publications">PUBLICATIONS</h2>
-<div id="refs-2" class="references csl-bib-body" data-entry-spacing="0" role="list">
-<div id="ref-ren2024miniensemble" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[2024] </div><div class="csl-right-inline">Pengjie Ren, Chengshun Shi, <strong>Shiguang Wu</strong>, Mengqi Zhang, Zhaochun Ren, Maarten de Rijke, Zhumin Chen, and Jiahuan Pei, <a href="https://arxiv.org/abs/2402.17263">Mini-ensemble low-rank adapters for parameter-efficient fine-tuning</a>. <em>Proceedings of the 62nd annual meeting of the association for computational linguistics (volume 1: Long papers)</em>.</div>
-</div>
-<div id="ref-wu2024gr" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[2024] </div><div class="csl-right-inline"><strong>Shiguang Wu</strong>, Wenda Wei, Mengqi Zhang, Zhumin Chen, Jun Ma, Zhaochun Ren, Maarten de Rijke, and Pengjie Ren, <a href="https://arxiv.org/abs/2404.00684">Generative retrieval as multi-vector dense retrieval</a>. <em>Proceedings of the 47th international ACM SIGIR conference on research and development in information retrieval</em>.</div>
-</div>
-<div id="ref-zhang2024excluir" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[2024] </div><div class="csl-right-inline">Wenhao Zhang, Mengqi Zhang, <strong>Shiguang Wu</strong>, Jiahuan Pei, Zhaochun Ren, Maarten de Rijke, Zhumin Chen, and Pengjie Ren, <a href="https://arxiv.org/abs/2404.17288">ExcluIR: Exclusionary neural information retrieval</a>. arXiv. (2024).</div>
-</div>
-<div id="ref-wu2023learning" class="csl-entry" role="listitem">
-<div class="csl-left-margin">[2023] </div><div class="csl-right-inline"><strong>Shiguang Wu</strong>, Xin Xin, Pengjie Ren, Zhumin Chen, Jun Ma, Maarten de Rijke, and Zhaochun Ren, <a href="https://arxiv.org/abs/2311.02446">Learning robust sequential recommenders through confident soft labels</a>. arXiv. (2023).</div>
-</div>
-</div>
-</section>
-<section id="research-experience" class="level2">
-<h2 data-anchor-id="research-experience">RESEARCH EXPERIENCE</h2>
-<p><strong>Undergraduate Research Assistant</strong> Information Retrieval Lab <span class="cvdate"><em>2020 — 2023</em></span></p>
-<ul>
-<li>Supervised by Prof.&nbsp;<a href="https://pengjieren.github.io/">Xin Xin</a> and Prof.&nbsp;<a href="https://renzhaochun.github.io/">Zhaochun Ren</a></li>
-</ul>
-</section>
-<section id="project-experience" class="level2">
-<h2 data-anchor-id="project-experience">PROJECT EXPERIENCE</h2>
-<ul>
-<li><a href="https://github.com/irlab-sdu/fuzi.mingcha">Fuzi.Mingcha</a> – A Chinese Judicial Large Language Model [230+ stars]. We develop a Chinese legal model that supports functions such as statute retrieval, case analysis, et al, and achieve supreme performance at the <a href="https://github.com/open-compass/LawBench">LawBench</a>. <em>Project Leader and Main Contributor</em>. 2023.</li>
-</ul>
-</section>
-<section id="academic-services" class="level2">
-<h2 data-anchor-id="academic-services">ACADEMIC SERVICES</h2>
-<p><strong>Reviewer</strong>: Information Processing &amp; Management (IP&amp;M)</p>
-<p><strong>Resources</strong>: I have curated an <a href="https://github.com/Furyton/awesome-transformers-LM-analytics">Awesome Transformers LM Analytics</a> paper list focusing on the theoretical analysis of language models, especially large language models (LLMs).</p>
-</section>
-<section id="awards-and-achievements" class="level2">
-<h2 data-anchor-id="awards-and-achievements">AWARDS AND ACHIEVEMENTS</h2>
-<ul>
-<li><p>Outstanding Undergraduate Thesis Award. <em>Shandong University</em>. 2023.</p></li>
-<li><p>National Outstanding Student Scholarship. <em>Shandong University</em>. 2022.</p></li>
-<li><p>Outstanding Student Scholarship. <em>Shandong University</em>. 2020-2022.</p></li>
-<li><p>Mathematical Contest in Modeling. Second Prize. 2021.</p></li>
-<li><p>The 18th Certified Sofware Professional Examination. Top 2.65%. 2020.</p></li>
-</ul>
-
-
-<div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden">
-</div>
-</section>
-</main></div>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#cramer-chernoff-method" id="toc-cramer-chernoff-method" class="nav-link active" data-scroll-target="#cramer-chernoff-method">Cramer-Chernoff method</a></li>
+  </ul>
+</nav>
     </div>
-    <img src="captain-america-shield.jpg" class="about-image
-  round " style="height: 9em; width: 9em;">
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">notes on some concentration inequalities</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">note</div>
+    <div class="quarto-category">probability</div>
   </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Shiguang WU </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 11, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>the goal is to seek for an upperbound for the tail distribution, usually of the form</p>
+<p><span class="math display">\[
+P\{Z-\mathbb{E}Z\ge t\}
+\]</span></p>
+<p>where <span class="math inline">\(t\gt 0\)</span>.</p>
+<ul>
+<li>Markov’s inequality</li>
+</ul>
+<p><span class="math display">\[
+P\{Y\ge t\}\le P\{\Phi(Y)\ge \Phi(t)\} \le \frac{\mathbb{E}\Phi(Y)}{\Phi(t)}
+\]</span></p>
+<p>where <span class="math inline">\(\Phi(\cdot)\)</span> is a nondecreasing and nonnegative function.</p>
+<ul>
+<li>Chebyshev’s inequality</li>
+</ul>
+<p>replace <span class="math inline">\(Y\)</span> with <span class="math inline">\(|Z-\mathbb{E}Z|\)</span> and taking <span class="math inline">\(\Phi(t)=t^2\)</span>,</p>
+<p><span class="math display">\[
+P\{|Z-\mathbb{E}Z|\ge t\}\le \frac{Var{Z}}{t^2}
+\]</span></p>
+<p>more generally, use <span class="math inline">\(t^q\)</span>, and choose an optimal <span class="math inline">\(q\)</span></p>
+<ul>
+<li>Cramer-Chernoff method</li>
+</ul>
+<p><span class="math display">\[
+P\{Z\ge t\}\le e^{-\lambda t}\mathbb{E}e^{\lambda Z},
+\]</span></p>
+<p>where <span class="math inline">\(\lambda\ge0\)</span></p>
+<p>choose exponential family fn as <span class="math inline">\(\Phi(\cdot)\)</span></p>
+<p>Chebyshev’s is sharper (generalized version, with optimal <span class="math inline">\(q\)</span>), but Chernoff’s is more often used, mainly because the expectation of product decomposition property of sum of independent random vars.</p>
+<section id="cramer-chernoff-method" class="level3">
+<h3 class="anchored" data-anchor-id="cramer-chernoff-method">Cramer-Chernoff method</h3>
+<p>logarithm of the MGF <span class="math inline">\(\Psi_Z(\lambda)=\log \mathbb{E}e^{\lambda Z}\)</span></p>
+<p>we would like to minimize the right hand side of the inequality, which equivalently is to minimize the <em>Cramer tranformer</em> of Z,</p>
+<p><span class="math display">\[
+\Psi_Z^*(t)=\sup_{\lambda \le 0}(\lambda t-\Psi_Z(\lambda))
+\]</span></p>
+<p>if we allow <span class="math inline">\(\lambda\)</span> to be in <span class="math inline">\(\mathbb{R}\)</span>, then it conincides with Fenchel-Lengedre dual.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
- <!-- /main -->
+<div class="callout-title-container flex-fill">
+properties
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p>convexity of log-MGF (using Holder’s inequality)</p></li>
+<li><p><span class="math inline">\(\Psi_Z(\lambda)\ge \lambda \mathbb{E}Z\)</span> (using Jensen’s inequality)</p></li>
+<li><p>if <span class="math inline">\(\Psi_Z(\lambda)\)</span> is differentiable, then <span class="math inline">\(\lambda_t\)</span> (optimal <span class="math inline">\(\lambda\)</span>) is <span class="math inline">\((\Psi_Z')^{-1}(t)\)</span> (strict convexity -&gt; increasing derivative)</p></li>
+</ul>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -410,6 +430,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   } else {
     toggleColorMode(false);
   }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
@@ -802,6 +829,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
+</script>
+<script src="https://utteranc.es/client.js" repo="Furyton/Furyton.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 
