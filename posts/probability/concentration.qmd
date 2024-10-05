@@ -1,0 +1,68 @@
+---
+title: "notes on some concentration inequalities"
+author: "Shiguang WU"
+date: 2024-3-11
+categories: [note, probability]
+draft: false
+---
+
+the goal is to seek for an upperbound for the tail distribution, usually of the form
+
+$$
+P\{Z-\mathbb{E}Z\ge t\}
+$$
+
+where $t\gt 0$.
+
+- Markov's inequality
+
+$$
+P\{Y\ge t\}\le P\{\Phi(Y)\ge \Phi(t)\} \le \frac{\mathbb{E}\Phi(Y)}{\Phi(t)}
+$$
+
+where $\Phi(\cdot)$ is a nondecreasing and nonnegative function.
+
+- Chebyshev's inequality
+
+replace $Y$ with $|Z-\mathbb{E}Z|$ and taking $\Phi(t)=t^2$,
+
+$$
+P\{|Z-\mathbb{E}Z|\ge t\}\le \frac{Var{Z}}{t^2}
+$$
+
+more generally, use $t^q$, and choose an optimal $q$
+
+- Cramer-Chernoff method
+
+$$
+P\{Z\ge t\}\le e^{-\lambda t}\mathbb{E}e^{\lambda Z},
+$$
+
+where $\lambda\ge0$
+
+choose exponential family fn as $\Phi(\cdot)$
+
+Chebyshev's is sharper (generalized version, with optimal $q$), but Chernoff's is more often used,
+mainly because the expectation of product decomposition property of sum of independent random vars.
+
+### Cramer-Chernoff method
+
+logarithm of the MGF $\Psi_Z(\lambda)=\log \mathbb{E}e^{\lambda Z}$
+
+we would like to minimize the right hand side of the inequality, which equivalently is to minimize the *Cramer tranformer* of Z,
+
+$$
+\Psi_Z^*(t)=\sup_{\lambda \le 0}(\lambda t-\Psi_Z(\lambda))
+$$
+
+if we allow $\lambda$ to be in $\mathbb{R}$, then it conincides with Fenchel-Lengedre dual.
+
+::: {.callout-note}
+# properties
+
+- convexity of log-MGF (using Holder's inequality)
+
+- $\Psi_Z(\lambda)\ge \lambda \mathbb{E}Z$ (using Jensen's inequality)
+
+- if $\Psi_Z(\lambda)$ is differentiable, then $\lambda_t$ (optimal $\lambda$) is $(\Psi_Z')^{-1}(t)$ (strict convexity -> increasing derivative)
+:::

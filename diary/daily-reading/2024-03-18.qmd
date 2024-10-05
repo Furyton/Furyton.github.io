@@ -1,7 +1,7 @@
 ---
 title: ModelGPT - a recent work actively reaching out for collaboration
 author: Shiguang Wu
-date: 2023-03-18
+date: 2024-03-18
 categories: [paper-list]
 ---
 
