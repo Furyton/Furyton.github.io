@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -32,17 +32,21 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-listing/list.min.js"></script>
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-707d8167ce6003fca903bfe2be84ab7f.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-e7f4145358ce1d0cd37d8d374dbb44f9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -124,7 +128,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -143,13 +147,177 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Shiguang WU</span>
     </a>
@@ -192,9 +360,10 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(34)</span></div><div class="category" data-category="ESL">ESL <span class="quarto-category-count">(2)</span></div><div class="category" data-category="English">English <span class="quarto-category-count">(1)</span></div><div class="category" data-category="PyTorch">PyTorch <span class="quarto-category-count">(1)</span></div><div class="category" data-category="calculus">calculus <span class="quarto-category-count">(3)</span></div><div class="category" data-category="clustering">clustering <span class="quarto-category-count">(1)</span></div><div class="category" data-category="exam">exam <span class="quarto-category-count">(1)</span></div><div class="category" data-category="in-context learning">in-context learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="note">note <span class="quarto-category-count">(25)</span></div><div class="category" data-category="paper reading">paper reading <span class="quarto-category-count">(3)</span></div><div class="category" data-category="parallel algorithm">parallel algorithm <span class="quarto-category-count">(11)</span></div><div class="category" data-category="probability">probability <span class="quarto-category-count">(2)</span></div><div class="category" data-category="programming">programming <span class="quarto-category-count">(2)</span></div><div class="category" data-category="research">research <span class="quarto-category-count">(1)</span></div><div class="category" data-category="review">review <span class="quarto-category-count">(3)</span></div><div class="category" data-category="test">test <span class="quarto-category-count">(1)</span></div><div class="category" data-category="tool">tool <span class="quarto-category-count">(1)</span></div><div class="category" data-category="total commander">total commander <span class="quarto-category-count">(1)</span></div><div class="category" data-category="understanding machine learning">understanding machine learning <span class="quarto-category-count">(6)</span></div><div class="category" data-category="vim">vim <span class="quarto-category-count">(1)</span></div><div class="category" data-category="vocab">vocab <span class="quarto-category-count">(1)</span></div><div class="category" data-category="webinar">webinar <span class="quarto-category-count">(1)</span></div><div class="category" data-category="writing">writing <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(34)</span></div><div class="category" data-category="Y2FsY3VsdXM=">calculus <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Y2x1c3RlcmluZw==">clustering <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RW5nbGlzaA==">English <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RVNM">ESL <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ZXhhbQ==">exam <span class="quarto-category-count">(1)</span></div><div class="category" data-category="aW4tY29udGV4dCUyMGxlYXJuaW5n">in-context learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bm90ZQ==">note <span class="quarto-category-count">(25)</span></div><div class="category" data-category="cGFwZXIlMjByZWFkaW5n">paper reading <span class="quarto-category-count">(3)</span></div><div class="category" data-category="cGFyYWxsZWwlMjBhbGdvcml0aG0=">parallel algorithm <span class="quarto-category-count">(11)</span></div><div class="category" data-category="cHJvYmFiaWxpdHk=">probability <span class="quarto-category-count">(2)</span></div><div class="category" data-category="cHJvZ3JhbW1pbmc=">programming <span class="quarto-category-count">(2)</span></div><div class="category" data-category="UHlUb3JjaA==">PyTorch <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cmVzZWFyY2g=">research <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cmV2aWV3">review <span class="quarto-category-count">(3)</span></div><div class="category" data-category="dGVzdA==">test <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dG9vbA==">tool <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dG90YWwlMjBjb21tYW5kZXI=">total commander <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dW5kZXJzdGFuZGluZyUyMG1hY2hpbmUlMjBsZWFybmluZw==">understanding machine learning <span class="quarto-category-count">(6)</span></div><div class="category" data-category="dmlt">vim <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dm9jYWI=">vocab <span class="quarto-category-count">(1)</span></div><div class="category" data-category="d2ViaW5hcg==">webinar <span class="quarto-category-count">(1)</span></div><div class="category" data-category="d3JpdGluZw==">writing <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content">
+
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -229,19 +398,24 @@ window.Quarto = {
 <table class="quarto-listing-table table">
 <thead>
 <tr>
+
 <th>
 Date
 </th>
+
 <th>
 Title
 </th>
+
 <th>
 Categories
 </th>
+
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-categories="note,probability" data-listing-date-sort="1710115200000" data-listing-file-modified-sort="1728156832311" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="161" data-listing-title-sort="notes on some concentration inequalities" data-listing-filename-sort="concentration.qmd">
+
+<tr data-index="0" data-categories="bm90ZSUyQ3Byb2JhYmlsaXR5" data-listing-date-sort="1710115200000" data-listing-file-modified-sort="1760556348992" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="161" data-listing-title-sort="notes on some concentration inequalities" data-listing-filename-sort="concentration.qmd">
 <td>
 <span class="listing-date">Mar 11, 2024</span>
 </td>
@@ -251,8 +425,10 @@ Categories
 <td>
 <span class="listing-categories">note, probability</span>
 </td>
+
 </tr>
-<tr data-index="1" data-categories="paper reading,in-context learning" data-listing-date-sort="1709164800000" data-listing-file-modified-sort="1728156832310" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="521" data-listing-title-sort="reading notes on paper *Batch-ICL Effective, Efficient, and Order-Agnostic In-Context Learning* by Zhang et al." data-listing-filename-sort="24-02-29-zhang2024batchicl.md">
+
+<tr data-index="1" data-categories="cGFwZXIlMjByZWFkaW5nJTJDaW4tY29udGV4dCUyMGxlYXJuaW5n" data-listing-date-sort="1709164800000" data-listing-file-modified-sort="1760556348991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="521" data-listing-title-sort="reading notes on paper *Batch-ICL Effective, Efficient, and Order-Agnostic In-Context Learning* by Zhang et al." data-listing-filename-sort="24-02-29-zhang2024batchicl.md">
 <td>
 <span class="listing-date">Feb 29, 2024</span>
 </td>
@@ -262,8 +438,10 @@ Categories
 <td>
 <span class="listing-categories">paper reading, in-context learning</span>
 </td>
+
 </tr>
-<tr data-index="2" data-categories="note,research,webinar" data-listing-date-sort="1675814400000" data-listing-file-modified-sort="1728156832311" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="349" data-listing-title-sort="MSR AI Seminar: Why Does Deep Learning Perform Deep Learning?" data-listing-filename-sort="MSR-AI-Seminar-Feb-8.qmd">
+
+<tr data-index="2" data-categories="bm90ZSUyQ3Jlc2VhcmNoJTJDd2ViaW5hcg==" data-listing-date-sort="1675814400000" data-listing-file-modified-sort="1760556348992" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="349" data-listing-title-sort="MSR AI Seminar: Why Does Deep Learning Perform Deep Learning?" data-listing-filename-sort="MSR-AI-Seminar-Feb-8.qmd">
 <td>
 <span class="listing-date">Feb 8, 2023</span>
 </td>
@@ -273,8 +451,10 @@ Categories
 <td>
 <span class="listing-categories">note, research, webinar</span>
 </td>
+
 </tr>
-<tr data-index="3" data-categories="note,tool,total commander" data-listing-date-sort="1675641600000" data-listing-file-modified-sort="1728156832311" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="413" data-listing-title-sort="Total Commander Tips" data-listing-filename-sort="tc.qmd">
+
+<tr data-index="3" data-categories="bm90ZSUyQ3Rvb2wlMkN0b3RhbCUyMGNvbW1hbmRlcg==" data-listing-date-sort="1675641600000" data-listing-file-modified-sort="1760556348993" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="413" data-listing-title-sort="Total Commander Tips" data-listing-filename-sort="tc.qmd">
 <td>
 <span class="listing-date">Feb 6, 2023</span>
 </td>
@@ -284,8 +464,10 @@ Categories
 <td>
 <span class="listing-categories">note, tool, total commander</span>
 </td>
+
 </tr>
-<tr data-index="4" data-categories="calculus,review" data-listing-date-sort="1662854400000" data-listing-file-modified-sort="1728156832310" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="468" data-listing-title-sort="calculus review 03" data-listing-filename-sort="calculus-03.md">
+
+<tr data-index="4" data-categories="Y2FsY3VsdXMlMkNyZXZpZXc=" data-listing-date-sort="1662854400000" data-listing-file-modified-sort="1760556348990" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="468" data-listing-title-sort="calculus review 03" data-listing-filename-sort="calculus-03.md">
 <td>
 <span class="listing-date">Sep 11, 2022</span>
 </td>
@@ -295,19 +477,10 @@ Categories
 <td>
 <span class="listing-categories">calculus, review</span>
 </td>
+
 </tr>
-<tr data-index="5" data-categories="paper reading,clustering,note" data-listing-date-sort="1662595200000" data-listing-file-modified-sort="1728156832310" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="145" data-listing-title-sort="some papers about multi-view-clustering" data-listing-filename-sort="multi-view-clustering.qmd">
-<td>
-<span class="listing-date">Sep 8, 2022</span>
-</td>
-<td>
-<a href="./posts/paper-reading/multi-view-clustering.html" class="title listing-title">some papers about multi-view-clustering</a>
-</td>
-<td>
-<span class="listing-categories">paper reading, clustering, note</span>
-</td>
-</tr>
-<tr data-index="6" data-categories="ESL,note" data-listing-date-sort="1662595200000" data-listing-file-modified-sort="1728156832310" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="197" data-listing-title-sort="unsupervised model related" data-listing-filename-sort="ESL-02.qmd">
+
+<tr data-index="5" data-categories="RVNMJTJDbm90ZQ==" data-listing-date-sort="1662595200000" data-listing-file-modified-sort="1760556348991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="197" data-listing-title-sort="unsupervised model related" data-listing-filename-sort="ESL-02.qmd">
 <td>
 <span class="listing-date">Sep 8, 2022</span>
 </td>
@@ -317,8 +490,23 @@ Categories
 <td>
 <span class="listing-categories">ESL, note</span>
 </td>
+
 </tr>
-<tr data-index="7" data-categories="English,vocab,note" data-listing-date-sort="1660780800000" data-listing-file-modified-sort="1728156832310" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1940" data-listing-title-sort="vocabs with simple examples" data-listing-filename-sort="vocab-example.md">
+
+<tr data-index="6" data-categories="cGFwZXIlMjByZWFkaW5nJTJDY2x1c3RlcmluZyUyQ25vdGU=" data-listing-date-sort="1662595200000" data-listing-file-modified-sort="1760556348991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="145" data-listing-title-sort="some papers about multi-view-clustering" data-listing-filename-sort="multi-view-clustering.qmd">
+<td>
+<span class="listing-date">Sep 8, 2022</span>
+</td>
+<td>
+<a href="./posts/paper-reading/multi-view-clustering.html" class="title listing-title">some papers about multi-view-clustering</a>
+</td>
+<td>
+<span class="listing-categories">paper reading, clustering, note</span>
+</td>
+
+</tr>
+
+<tr data-index="7" data-categories="RW5nbGlzaCUyQ3ZvY2FiJTJDbm90ZQ==" data-listing-date-sort="1660780800000" data-listing-file-modified-sort="1760556348990" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1940" data-listing-title-sort="vocabs with simple examples" data-listing-filename-sort="vocab-example.md">
 <td>
 <span class="listing-date">Aug 18, 2022</span>
 </td>
@@ -328,8 +516,10 @@ Categories
 <td>
 <span class="listing-categories">English, vocab, note</span>
 </td>
+
 </tr>
-<tr data-index="8" data-categories="PyTorch,programming" data-listing-date-sort="1660262400000" data-listing-file-modified-sort="1728156832311" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="194" data-listing-title-sort="PyTorch Notes" data-listing-filename-sort="pytorch-notes.md">
+
+<tr data-index="8" data-categories="UHlUb3JjaCUyQ3Byb2dyYW1taW5n" data-listing-date-sort="1660262400000" data-listing-file-modified-sort="1760556348992" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="194" data-listing-title-sort="PyTorch Notes" data-listing-filename-sort="pytorch-notes.md">
 <td>
 <span class="listing-date">Aug 12, 2022</span>
 </td>
@@ -339,8 +529,10 @@ Categories
 <td>
 <span class="listing-categories">PyTorch, programming</span>
 </td>
+
 </tr>
-<tr data-index="9" data-categories="writing,note" data-listing-date-sort="1660003200000" data-listing-file-modified-sort="1728156832310" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="759" data-listing-title-sort="Notes about Technical Writing" data-listing-filename-sort="notes-about-technical-writing.md">
+
+<tr data-index="9" data-categories="d3JpdGluZyUyQ25vdGU=" data-listing-date-sort="1660003200000" data-listing-file-modified-sort="1760556348991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="759" data-listing-title-sort="Notes about Technical Writing" data-listing-filename-sort="notes-about-technical-writing.md">
 <td>
 <span class="listing-date">Aug 9, 2022</span>
 </td>
@@ -350,8 +542,10 @@ Categories
 <td>
 <span class="listing-categories">writing, note</span>
 </td>
+
 </tr>
-<tr data-index="10" data-categories="probability" data-listing-date-sort="1656979200000" data-listing-file-modified-sort="1728156832311" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="probability review 01" data-listing-filename-sort="probability-review-01.md">
+
+<tr data-index="10" data-categories="cHJvYmFiaWxpdHk=" data-listing-date-sort="1656979200000" data-listing-file-modified-sort="1760556348992" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="1" data-listing-title-sort="probability review 01" data-listing-filename-sort="probability-review-01.md">
 <td>
 <span class="listing-date">Jul 5, 2022</span>
 </td>
@@ -361,8 +555,10 @@ Categories
 <td>
 <span class="listing-categories">probability</span>
 </td>
+
 </tr>
-<tr data-index="11" data-categories="calculus,review" data-listing-date-sort="1656288000000" data-listing-file-modified-sort="1728156832309" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="470" data-listing-title-sort="calculus review 02" data-listing-filename-sort="calculus-02.md">
+
+<tr data-index="11" data-categories="Y2FsY3VsdXMlMkNyZXZpZXc=" data-listing-date-sort="1656288000000" data-listing-file-modified-sort="1760556348990" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="470" data-listing-title-sort="calculus review 02" data-listing-filename-sort="calculus-02.md">
 <td>
 <span class="listing-date">Jun 27, 2022</span>
 </td>
@@ -372,8 +568,10 @@ Categories
 <td>
 <span class="listing-categories">calculus, review</span>
 </td>
+
 </tr>
-<tr data-index="12" data-categories="parallel algorithm,note" data-listing-date-sort="1654646400000" data-listing-file-modified-sort="1728156832310" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="234" data-listing-title-sort="parallel algorithm course 10" data-listing-filename-sort="pa-10.md">
+
+<tr data-index="12" data-categories="cGFyYWxsZWwlMjBhbGdvcml0aG0lMkNub3Rl" data-listing-date-sort="1654646400000" data-listing-file-modified-sort="1760556348992" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="234" data-listing-title-sort="parallel algorithm course 10" data-listing-filename-sort="pa-10.md">
 <td>
 <span class="listing-date">Jun 8, 2022</span>
 </td>
@@ -383,8 +581,10 @@ Categories
 <td>
 <span class="listing-categories">parallel algorithm, note</span>
 </td>
+
 </tr>
-<tr data-index="13" data-categories="parallel algorithm,note" data-listing-date-sort="1654041600000" data-listing-file-modified-sort="1728156832310" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="304" data-listing-title-sort="parallel algorithm course 09" data-listing-filename-sort="pa-09.md">
+
+<tr data-index="13" data-categories="cGFyYWxsZWwlMjBhbGdvcml0aG0lMkNub3Rl" data-listing-date-sort="1654041600000" data-listing-file-modified-sort="1760556348992" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="304" data-listing-title-sort="parallel algorithm course 09" data-listing-filename-sort="pa-09.md">
 <td>
 <span class="listing-date">Jun 1, 2022</span>
 </td>
@@ -394,8 +594,10 @@ Categories
 <td>
 <span class="listing-categories">parallel algorithm, note</span>
 </td>
+
 </tr>
-<tr data-index="14" data-categories="parallel algorithm,note" data-listing-date-sort="1652227200000" data-listing-file-modified-sort="1728156832310" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="329" data-listing-title-sort="parallel algorithm course 08" data-listing-filename-sort="PA-08.md">
+
+<tr data-index="14" data-categories="cGFyYWxsZWwlMjBhbGdvcml0aG0lMkNub3Rl" data-listing-date-sort="1652227200000" data-listing-file-modified-sort="1760556348991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="329" data-listing-title-sort="parallel algorithm course 08" data-listing-filename-sort="PA-08.md">
 <td>
 <span class="listing-date">May 11, 2022</span>
 </td>
@@ -405,8 +607,10 @@ Categories
 <td>
 <span class="listing-categories">parallel algorithm, note</span>
 </td>
+
 </tr>
-<tr data-index="15" data-categories="parallel algorithm,note" data-listing-date-sort="1651017600000" data-listing-file-modified-sort="1728156832310" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="104" data-listing-title-sort="parallel algorithm course 07" data-listing-filename-sort="pa-07.md">
+
+<tr data-index="15" data-categories="cGFyYWxsZWwlMjBhbGdvcml0aG0lMkNub3Rl" data-listing-date-sort="1651017600000" data-listing-file-modified-sort="1760556348992" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="104" data-listing-title-sort="parallel algorithm course 07" data-listing-filename-sort="pa-07.md">
 <td>
 <span class="listing-date">Apr 27, 2022</span>
 </td>
@@ -416,8 +620,10 @@ Categories
 <td>
 <span class="listing-categories">parallel algorithm, note</span>
 </td>
+
 </tr>
-<tr data-index="16" data-categories="parallel algorithm,note,exam" data-listing-date-sort="1650672000000" data-listing-file-modified-sort="1728156832311" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="388" data-listing-title-sort="midterm exam" data-listing-filename-sort="solution.md">
+
+<tr data-index="16" data-categories="cGFyYWxsZWwlMjBhbGdvcml0aG0lMkNub3RlJTJDZXhhbQ==" data-listing-date-sort="1650672000000" data-listing-file-modified-sort="1760556348992" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="388" data-listing-title-sort="midterm exam" data-listing-filename-sort="solution.md">
 <td>
 <span class="listing-date">Apr 23, 2022</span>
 </td>
@@ -427,8 +633,10 @@ Categories
 <td>
 <span class="listing-categories">parallel algorithm, note, exam</span>
 </td>
+
 </tr>
-<tr data-index="17" data-categories="parallel algorithm,note" data-listing-date-sort="1650412800000" data-listing-file-modified-sort="1728156832310" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="77" data-listing-title-sort="parallel algorithm course 06" data-listing-filename-sort="pa-06.md">
+
+<tr data-index="17" data-categories="cGFyYWxsZWwlMjBhbGdvcml0aG0lMkNub3Rl" data-listing-date-sort="1650412800000" data-listing-file-modified-sort="1760556348992" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="77" data-listing-title-sort="parallel algorithm course 06" data-listing-filename-sort="pa-06.md">
 <td>
 <span class="listing-date">Apr 20, 2022</span>
 </td>
@@ -438,8 +646,10 @@ Categories
 <td>
 <span class="listing-categories">parallel algorithm, note</span>
 </td>
+
 </tr>
-<tr data-index="18" data-categories="parallel algorithm,note" data-listing-date-sort="1649203200000" data-listing-file-modified-sort="1728156832310" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="199" data-listing-title-sort="parallel algorithm course 05" data-listing-filename-sort="pa-05.md">
+
+<tr data-index="18" data-categories="cGFyYWxsZWwlMjBhbGdvcml0aG0lMkNub3Rl" data-listing-date-sort="1649203200000" data-listing-file-modified-sort="1760556348991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="199" data-listing-title-sort="parallel algorithm course 05" data-listing-filename-sort="pa-05.md">
 <td>
 <span class="listing-date">Apr 6, 2022</span>
 </td>
@@ -449,19 +659,10 @@ Categories
 <td>
 <span class="listing-categories">parallel algorithm, note</span>
 </td>
+
 </tr>
-<tr data-index="19" data-categories="understanding machine learning,note" data-listing-date-sort="1648598400000" data-listing-file-modified-sort="1728156832311" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="751" data-listing-title-sort="Understanding Machine Learning 06" data-listing-filename-sort="uml-06.md">
-<td>
-<span class="listing-date">Mar 30, 2022</span>
-</td>
-<td>
-<a href="./posts/understanding-machine-learning/uml-06.html" class="title listing-title">Understanding Machine Learning 06</a>
-</td>
-<td>
-<span class="listing-categories">understanding machine learning, note</span>
-</td>
-</tr>
-<tr data-index="20" data-categories="parallel algorithm,note" data-listing-date-sort="1648598400000" data-listing-file-modified-sort="1728156832310" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="657" data-listing-title-sort="parallel algorithm course 04" data-listing-filename-sort="pa-04.md">
+
+<tr data-index="19" data-categories="cGFyYWxsZWwlMjBhbGdvcml0aG0lMkNub3Rl" data-listing-date-sort="1648598400000" data-listing-file-modified-sort="1760556348991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="657" data-listing-title-sort="parallel algorithm course 04" data-listing-filename-sort="pa-04.md">
 <td>
 <span class="listing-date">Mar 30, 2022</span>
 </td>
@@ -471,8 +672,23 @@ Categories
 <td>
 <span class="listing-categories">parallel algorithm, note</span>
 </td>
+
 </tr>
-<tr data-index="21" data-categories="calculus,review" data-listing-date-sort="1648425600000" data-listing-file-modified-sort="1728156832309" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="538" data-listing-title-sort="calculus review 01" data-listing-filename-sort="calculus-01.md">
+
+<tr data-index="20" data-categories="dW5kZXJzdGFuZGluZyUyMG1hY2hpbmUlMjBsZWFybmluZyUyQ25vdGU=" data-listing-date-sort="1648598400000" data-listing-file-modified-sort="1760556348993" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="751" data-listing-title-sort="Understanding Machine Learning 06" data-listing-filename-sort="uml-06.md">
+<td>
+<span class="listing-date">Mar 30, 2022</span>
+</td>
+<td>
+<a href="./posts/understanding-machine-learning/uml-06.html" class="title listing-title">Understanding Machine Learning 06</a>
+</td>
+<td>
+<span class="listing-categories">understanding machine learning, note</span>
+</td>
+
+</tr>
+
+<tr data-index="21" data-categories="Y2FsY3VsdXMlMkNyZXZpZXc=" data-listing-date-sort="1648425600000" data-listing-file-modified-sort="1760556348990" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="538" data-listing-title-sort="calculus review 01" data-listing-filename-sort="calculus-01.md">
 <td>
 <span class="listing-date">Mar 28, 2022</span>
 </td>
@@ -482,8 +698,10 @@ Categories
 <td>
 <span class="listing-categories">calculus, review</span>
 </td>
+
 </tr>
-<tr data-index="22" data-categories="parallel algorithm,note" data-listing-date-sort="1647993600000" data-listing-file-modified-sort="1728156832310" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="94" data-listing-title-sort="parallel algorithm course 03" data-listing-filename-sort="PA-03.md">
+
+<tr data-index="22" data-categories="cGFyYWxsZWwlMjBhbGdvcml0aG0lMkNub3Rl" data-listing-date-sort="1647993600000" data-listing-file-modified-sort="1760556348991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="94" data-listing-title-sort="parallel algorithm course 03" data-listing-filename-sort="PA-03.md">
 <td>
 <span class="listing-date">Mar 23, 2022</span>
 </td>
@@ -493,8 +711,10 @@ Categories
 <td>
 <span class="listing-categories">parallel algorithm, note</span>
 </td>
+
 </tr>
-<tr data-index="23" data-categories="understanding machine learning,note" data-listing-date-sort="1647820800000" data-listing-file-modified-sort="1728156832311" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="930" data-listing-title-sort="Understanding Machine Learning 05" data-listing-filename-sort="UML-05.md">
+
+<tr data-index="23" data-categories="dW5kZXJzdGFuZGluZyUyMG1hY2hpbmUlMjBsZWFybmluZyUyQ25vdGU=" data-listing-date-sort="1647820800000" data-listing-file-modified-sort="1760556348993" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="930" data-listing-title-sort="Understanding Machine Learning 05" data-listing-filename-sort="UML-05.md">
 <td>
 <span class="listing-date">Mar 21, 2022</span>
 </td>
@@ -504,19 +724,10 @@ Categories
 <td>
 <span class="listing-categories">understanding machine learning, note</span>
 </td>
+
 </tr>
-<tr data-index="24" data-categories="understanding machine learning,note" data-listing-date-sort="1647388800000" data-listing-file-modified-sort="1728156832311" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="690" data-listing-title-sort="Understanding Machine Learning 04" data-listing-filename-sort="UML-04.md">
-<td>
-<span class="listing-date">Mar 16, 2022</span>
-</td>
-<td>
-<a href="./posts/understanding-machine-learning/UML-04.html" class="title listing-title">Understanding Machine Learning 04</a>
-</td>
-<td>
-<span class="listing-categories">understanding machine learning, note</span>
-</td>
-</tr>
-<tr data-index="25" data-categories="parallel algorithm,note" data-listing-date-sort="1647388800000" data-listing-file-modified-sort="1728156832310" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="390" data-listing-title-sort="parallel algorithm course 02" data-listing-filename-sort="PA-02.md">
+
+<tr data-index="24" data-categories="cGFyYWxsZWwlMjBhbGdvcml0aG0lMkNub3Rl" data-listing-date-sort="1647388800000" data-listing-file-modified-sort="1760556348991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="390" data-listing-title-sort="parallel algorithm course 02" data-listing-filename-sort="PA-02.md">
 <td>
 <span class="listing-date">Mar 16, 2022</span>
 </td>
@@ -526,8 +737,23 @@ Categories
 <td>
 <span class="listing-categories">parallel algorithm, note</span>
 </td>
+
 </tr>
-<tr data-index="26" data-categories="understanding machine learning,note" data-listing-date-sort="1646956800000" data-listing-file-modified-sort="1728156832311" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="269" data-listing-title-sort="Understanding Machine Learning 03" data-listing-filename-sort="UML-03.md">
+
+<tr data-index="25" data-categories="dW5kZXJzdGFuZGluZyUyMG1hY2hpbmUlMjBsZWFybmluZyUyQ25vdGU=" data-listing-date-sort="1647388800000" data-listing-file-modified-sort="1760556348993" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="690" data-listing-title-sort="Understanding Machine Learning 04" data-listing-filename-sort="UML-04.md">
+<td>
+<span class="listing-date">Mar 16, 2022</span>
+</td>
+<td>
+<a href="./posts/understanding-machine-learning/UML-04.html" class="title listing-title">Understanding Machine Learning 04</a>
+</td>
+<td>
+<span class="listing-categories">understanding machine learning, note</span>
+</td>
+
+</tr>
+
+<tr data-index="26" data-categories="dW5kZXJzdGFuZGluZyUyMG1hY2hpbmUlMjBsZWFybmluZyUyQ25vdGU=" data-listing-date-sort="1646956800000" data-listing-file-modified-sort="1760556348993" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="269" data-listing-title-sort="Understanding Machine Learning 03" data-listing-filename-sort="UML-03.md">
 <td>
 <span class="listing-date">Mar 11, 2022</span>
 </td>
@@ -537,8 +763,10 @@ Categories
 <td>
 <span class="listing-categories">understanding machine learning, note</span>
 </td>
+
 </tr>
-<tr data-index="27" data-categories="parallel algorithm,note" data-listing-date-sort="1646784000000" data-listing-file-modified-sort="1728156832310" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="66" data-listing-title-sort="parallel algorithm course 01" data-listing-filename-sort="PA-01.md">
+
+<tr data-index="27" data-categories="cGFyYWxsZWwlMjBhbGdvcml0aG0lMkNub3Rl" data-listing-date-sort="1646784000000" data-listing-file-modified-sort="1760556348991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="66" data-listing-title-sort="parallel algorithm course 01" data-listing-filename-sort="PA-01.md">
 <td>
 <span class="listing-date">Mar 9, 2022</span>
 </td>
@@ -548,8 +776,10 @@ Categories
 <td>
 <span class="listing-categories">parallel algorithm, note</span>
 </td>
+
 </tr>
-<tr data-index="28" data-categories="vim,programming" data-listing-date-sort="1646697600000" data-listing-file-modified-sort="1728156832311" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="201" data-listing-title-sort="vim techs" data-listing-filename-sort="vim_tech.md">
+
+<tr data-index="28" data-categories="dmltJTJDcHJvZ3JhbW1pbmc=" data-listing-date-sort="1646697600000" data-listing-file-modified-sort="1760556348992" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="201" data-listing-title-sort="vim techs" data-listing-filename-sort="vim_tech.md">
 <td>
 <span class="listing-date">Mar 8, 2022</span>
 </td>
@@ -559,8 +789,10 @@ Categories
 <td>
 <span class="listing-categories">vim, programming</span>
 </td>
+
 </tr>
-<tr data-index="29" data-categories="understanding machine learning,note" data-listing-date-sort="1646697600000" data-listing-file-modified-sort="1728156832311" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="751" data-listing-title-sort="Understanding Machine Learning 02" data-listing-filename-sort="UML-02.md">
+
+<tr data-index="29" data-categories="dW5kZXJzdGFuZGluZyUyMG1hY2hpbmUlMjBsZWFybmluZyUyQ25vdGU=" data-listing-date-sort="1646697600000" data-listing-file-modified-sort="1760556348993" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="751" data-listing-title-sort="Understanding Machine Learning 02" data-listing-filename-sort="UML-02.md">
 <td>
 <span class="listing-date">Mar 8, 2022</span>
 </td>
@@ -570,8 +802,10 @@ Categories
 <td>
 <span class="listing-categories">understanding machine learning, note</span>
 </td>
+
 </tr>
-<tr data-index="30" data-categories="ESL,note" data-listing-date-sort="1646611200000" data-listing-file-modified-sort="1728156832310" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="319" data-listing-title-sort="The elements of statistical learning 01" data-listing-filename-sort="ESL-01.md">
+
+<tr data-index="30" data-categories="RVNMJTJDbm90ZQ==" data-listing-date-sort="1646611200000" data-listing-file-modified-sort="1760556348991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="319" data-listing-title-sort="The elements of statistical learning 01" data-listing-filename-sort="ESL-01.md">
 <td>
 <span class="listing-date">Mar 7, 2022</span>
 </td>
@@ -581,8 +815,10 @@ Categories
 <td>
 <span class="listing-categories">ESL, note</span>
 </td>
+
 </tr>
-<tr data-index="31" data-categories="paper reading" data-listing-date-sort="1646265600000" data-listing-file-modified-sort="1728156832310" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="134" data-listing-title-sort="MoCo" data-listing-filename-sort="moco.md">
+
+<tr data-index="31" data-categories="cGFwZXIlMjByZWFkaW5n" data-listing-date-sort="1646265600000" data-listing-file-modified-sort="1760556348991" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="134" data-listing-title-sort="MoCo" data-listing-filename-sort="moco.md">
 <td>
 <span class="listing-date">Mar 3, 2022</span>
 </td>
@@ -592,8 +828,10 @@ Categories
 <td>
 <span class="listing-categories">paper reading</span>
 </td>
+
 </tr>
-<tr data-index="32" data-categories="understanding machine learning,note" data-listing-date-sort="1646265600000" data-listing-file-modified-sort="1728156832311" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="477" data-listing-title-sort="Understanding Machine Learning 01" data-listing-filename-sort="UML-01.md">
+
+<tr data-index="32" data-categories="dW5kZXJzdGFuZGluZyUyMG1hY2hpbmUlMjBsZWFybmluZyUyQ25vdGU=" data-listing-date-sort="1646265600000" data-listing-file-modified-sort="1760556348993" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="477" data-listing-title-sort="Understanding Machine Learning 01" data-listing-filename-sort="UML-01.md">
 <td>
 <span class="listing-date">Mar 3, 2022</span>
 </td>
@@ -603,8 +841,10 @@ Categories
 <td>
 <span class="listing-categories">understanding machine learning, note</span>
 </td>
+
 </tr>
-<tr data-index="33" data-categories="test" data-listing-date-sort="1646092800000" data-listing-file-modified-sort="1728156832311" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="147" data-listing-title-sort="my first post" data-listing-filename-sort="example.qmd">
+
+<tr data-index="33" data-categories="dGVzdA==" data-listing-date-sort="1646092800000" data-listing-file-modified-sort="1760556348992" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="147" data-listing-title-sort="my first post" data-listing-filename-sort="example.qmd">
 <td>
 <span class="listing-date">Mar 1, 2022</span>
 </td>
@@ -614,394 +854,267 @@ Categories
 <td>
 <span class="listing-categories">test</span>
 </td>
+
 </tr>
+
 </tbody>
 </table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
+<div class="listing-no-matching d-none">No matching items</div>
 <nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
   <ul class="pagination"></ul>
 </nav>
 </div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
     }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
-      }
-    }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-      }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
-        }
-      });
-    }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
       return false;
     }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
       }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
     }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/Furyton\.github\.io\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/Furyton\.github\.io\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1009,185 +1122,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
 
 
