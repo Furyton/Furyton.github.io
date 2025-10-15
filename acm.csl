@@ -14,13 +14,13 @@
             <label form="short" prefix=", " />
         </names>
     </macro>
-    <macro name="access">
+    <!-- <macro name="access">
         <choose>
             <if type="article-journal" match="any">
                 <text variable="DOI" prefix=" DOI:https://doi.org/" />
             </if>
         </choose>
-    </macro>
+    </macro> -->
     <citation collapse="citation-number">
         <sort>
             <key variable="citation-number" />
@@ -90,7 +90,8 @@
                     </group>
                 </else>
             </choose>
-            <text macro="access" />
+            <!-- <text macro="access" /> -->
+            <text variable="note" font-style="italic" font-weight="bold" prefix=" " suffix=" " />
         </layout>
     </bibliography>
 </style>
