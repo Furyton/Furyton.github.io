@@ -781,7 +781,7 @@
     "href": "index.html#education",
     "title": "Shiguang WU",
     "section": "EDUCATION",
-    "text": "EDUCATION\nM.Sc., Shandong University Information Retrieval Lab Sep 2023 — Present\n\nSupervised by Prof. Pengjie Ren and Prof. Zhaochun Ren\n\n\nB.Sc., Shandong University Taishan College Sep 2019 — Jun 2023\n\nGPA: 92.44/100 (ranking 2/17)"
+    "text": "EDUCATION\nM.Sc., Shandong University Information Retrieval Lab Sep 2023 — June 2026 (Expected)\n\nSupervised by Prof. Pengjie Ren and Prof. Zhaochun Ren\n\n\nB.Sc., Shandong University Taishan College Sep 2019 — Jun 2023\n\nGPA: 92.44/100 (ranking 2/17)"
   },
   {
     "objectID": "index.html#publications",
@@ -803,6 +803,13 @@
     "title": "Shiguang WU",
     "section": "PROJECT EXPERIENCE",
     "text": "PROJECT EXPERIENCE\n\nFuzi.Mingcha – A Chinese Judicial Large Language Model [230+ stars]. We develop a Chinese legal model that supports functions such as statute retrieval, case analysis, et al, and achieve supreme performance at the LawBench. Project Leader and Main Contributor. 2023."
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Shiguang WU",
+    "section": "EXPERIENCE",
+    "text": "EXPERIENCE\nInternship Tencent WeChat Feb 2025 — Present\n\nSupervised by Dr. Hongyu Lu."
   },
   {
     "objectID": "index.html#academic-services",
