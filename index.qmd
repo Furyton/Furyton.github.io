@@ -76,7 +76,7 @@ Please feel free to contact me at _furyton AT outlook DOT com_.
 
 ## EDUCATION
 
-**M.Sc., Shandong University** Information Retrieval Lab [*Sep 2023 --- Present*]{.cvdate}
+**M.Sc., Shandong University** Information Retrieval Lab [*Sep 2023 --- June 2026 (Expected)*]{.cvdate}
 
 - Supervised by Prof. [Pengjie Ren](https://pengjieren.github.io/) and Prof. [Zhaochun Ren](https://renzhaochun.github.io/)
 
@@ -102,6 +102,12 @@ Please feel free to contact me at _furyton AT outlook DOT com_.
 
 - [Fuzi.Mingcha](https://github.com/irlab-sdu/fuzi.mingcha) -- A Chinese Judicial Large Language Model [230+ stars]. We develop a Chinese legal model that supports functions such as statute retrieval, case analysis, et al, and achieve supreme performance at the [LawBench](https://github.com/open-compass/LawBench). *Project Leader and Main Contributor*. 2023.
 :::
+
+## EXPERIENCE
+
+**Internship** Tencent WeChat [*Feb 2025 --- Present*]{.cvdate}
+
+- Supervised by Dr. [Hongyu Lu](https://luhongyu.github.io/).
 
 ## ACADEMIC SERVICES
 
