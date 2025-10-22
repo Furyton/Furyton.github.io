@@ -16,6 +16,8 @@ jobs:
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.7.34
 
       - name: Install TinyTex Using Quarto
         run: quarto install tinytex
