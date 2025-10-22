@@ -96,15 +96,6 @@ Please feel free to contact me at _furyton AT outlook DOT com_.
 - Supervised by Prof. [Xin Xin](https://pengjieren.github.io/) and Prof. [Zhaochun Ren](https://renzhaochun.github.io/)
 
 
-::: {.content-visible when-format="html"}
-## PROJECT EXPERIENCE
-
-- [Fuzi.Mingcha](https://github.com/irlab-sdu/fuzi.mingcha) --- A Chinese Judicial Large Language Model [230+ stars].  
-We develop a Chinese legal model that supports functions such as statute retrieval, case analysis, et al, and achieve supreme performance at the [LawBench](https://github.com/open-compass/LawBench).  
-*Project Leader and Main Contributor*. [*Apr 2023 --- Sep 2023*]{.cvdate}
-:::
-
-
 ## PUBLICATIONS
 
 ::: {#refs}
