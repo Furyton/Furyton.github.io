@@ -66,7 +66,7 @@ bold-auth-name:
 :::
 
 ::: {.content-visible when-format="html"}
-I'm a M.Sc student at [IRLab](https://ir.sdu.edu.cn/index_en.htm) of [Shandong University](https://www.en.sdu.edu.cn/), supervised by Prof. [Pengjie Ren](https://pengjieren.github.io/) and Prof. [Zhaochun Ren](https://renzhaochun.github.io/).
+I'm a M.Sc student at [IRLab](https://ir.sdu.edu.cn/index_en.htm) of [Shandong University](https://www.en.sdu.edu.cn/), supervised by Prof. dr. [Pengjie Ren](https://pengjieren.github.io/) and Prof. dr. [Zhaochun Ren](https://renzhaochun.github.io/).
 I received my B.E. from [Taishan College](https://www.tsxt.sdu.edu.), [Shandong University](https://www.en.sdu.edu.cn/) in 2023.
 
 I'm interested in (theoretical, analytical) information retrieval, especially in generative retrieval, embedding models, and recommender systems.
@@ -79,7 +79,7 @@ Please feel free to contact me at _furyton AT outlook DOT com_.
 
 **M.Sc., Shandong University** Information Retrieval Lab [*Sep 2023 --- Jun 2026 (expected)*]{.cvdate}
 
-- Supervised by Prof. [Pengjie Ren](https://pengjieren.github.io/) and Prof. [Zhaochun Ren](https://renzhaochun.github.io/)
+- Supervised by Prof. dr. [Pengjie Ren](https://pengjieren.github.io/) and Prof. dr. [Zhaochun Ren](https://renzhaochun.github.io/)
 
 **B.Sc., Shandong University** Taishan College [*Sep 2019 --- Jun 2023*]{.cvdate}
 
@@ -93,7 +93,7 @@ Please feel free to contact me at _furyton AT outlook DOT com_.
 
 **Undergraduate Research Assistant** Information Retrieval Lab [*Sep 2021 --- Jun 2023*]{.cvdate}
 
-- Supervised by Prof. [Xin Xin](https://pengjieren.github.io/) and Prof. [Zhaochun Ren](https://renzhaochun.github.io/)
+- Supervised by Prof. dr. [Xin Xin](https://pengjieren.github.io/) and Prof. dr. [Zhaochun Ren](https://renzhaochun.github.io/)
 
 
 ## PUBLICATIONS
