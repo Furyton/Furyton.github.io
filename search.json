@@ -774,14 +774,21 @@
     "href": "index.html",
     "title": "Shiguang WU",
     "section": "",
-    "text": "I’m a M.Sc student at IRLab of Shandong University, supervised by Prof. Pengjie Ren and Prof. Zhaochun Ren.  I received my B.E. from Taishan College, Shandong University in 2023.\nI’m interested in (theoretical, analytical) information retrieval, especially in generative retrieval, embedding models, and recommender systems.\nPlease feel free to contact me at furyton AT outlook DOT com."
+    "text": "I’m a M.Sc student at IRLab of Shandong University, supervised by Prof. Pengjie Ren and Prof. Zhaochun Ren. I received my B.E. from Taishan College, Shandong University in 2023.\nI’m interested in (theoretical, analytical) information retrieval, especially in generative retrieval, embedding models, and recommender systems.\nPlease feel free to contact me at furyton AT outlook DOT com."
   },
   {
     "objectID": "index.html#education",
     "href": "index.html#education",
     "title": "Shiguang WU",
     "section": "EDUCATION",
-    "text": "EDUCATION\nM.Sc., Shandong University Information Retrieval Lab Sep 2023 — June 2026 (Expected)\n\nSupervised by Prof. Pengjie Ren and Prof. Zhaochun Ren\n\n\nB.Sc., Shandong University Taishan College Sep 2019 — Jun 2023\n\nGPA: 92.44/100 (ranking 2/17)"
+    "text": "EDUCATION\nM.Sc., Shandong University Information Retrieval Lab Sep 2023 — Jun 2026 (expected)\n\nSupervised by Prof. Pengjie Ren and Prof. Zhaochun Ren\n\nB.Sc., Shandong University Taishan College Sep 2019 — Jun 2023\n\nGPA: 92.44/100 (ranking 2/17)"
+  },
+  {
+    "objectID": "index.html#research-experience",
+    "href": "index.html#research-experience",
+    "title": "Shiguang WU",
+    "section": "RESEARCH EXPERIENCE",
+    "text": "RESEARCH EXPERIENCE\nInternship Tencent WeChat Feb 2025 — Present\n\nSupervised by Dr. Hongyu Lu.\n\nUndergraduate Research Assistant Information Retrieval Lab Sep 2021 — Jun 2023\n\nSupervised by Prof. Xin Xin and Prof. Zhaochun Ren"
   },
   {
     "objectID": "index.html#publications",
@@ -791,39 +798,18 @@
     "text": "PUBLICATIONS\n\n\n[2025] Shiguang Wu, Zhaochun Ren, Xin Xin, Jiyuan Yang, Mengqi Zhang, Zhumin Chen, Maarten de Rijke, and Pengjie Ren, Constrained auto-regressive decoding constrains generative retrieval. Proceedings of the 48th international ACM SIGIR conference on research and development in information retrieval 2429–2440.\n\n\n[2025] Wenhao Zhang, Mengqi Zhang, Shiguang Wu, Jiahuan Pei, Zhaochun Ren, Maarten de Rijke, Zhumin Chen, and Pengjie Ren, ExcluIR: Exclusionary neural information retrieval. Proceedings of the AAAI Conference on Artificial Intelligence. 39, 13295–13303.\n\n\n[2024] Shiguang Wu, Xin Xin, Pengjie Ren, Zhumin Chen, Jun Ma, Maarten de Rijke, and Zhaochun Ren, Learning robust sequential recommenders through confident soft labels. ACM Trans. Inf. Syst. 43.\n\n\n[2024] Pengjie Ren, Chengshun Shi, Shiguang Wu, Mengqi Zhang, Zhaochun Ren, Maarten de Rijke, Zhumin Chen, and Jiahuan Pei, Mini-ensemble low-rank adapters for parameter-efficient fine-tuning. Proceedings of the 62nd annual meeting of the association for computational linguistics (volume 1: Long papers).\n\n\n[2024] Shiguang Wu, Wenda Wei, Mengqi Zhang, Zhumin Chen, Jun Ma, Zhaochun Ren, Maarten de Rijke, and Pengjie Ren, Generative retrieval as multi-vector dense retrieval. Proceedings of the 47th international ACM SIGIR conference on research and development in information retrieval. Best Paper Honorable Mention Award."
   },
   {
-    "objectID": "index.html#research-experience",
-    "href": "index.html#research-experience",
-    "title": "Shiguang WU",
-    "section": "RESEARCH EXPERIENCE",
-    "text": "RESEARCH EXPERIENCE\nUndergraduate Research Assistant Information Retrieval Lab 2020 — 2023\n\nSupervised by Prof. Xin Xin and Prof. Zhaochun Ren"
-  },
-  {
-    "objectID": "index.html#project-experience",
-    "href": "index.html#project-experience",
-    "title": "Shiguang WU",
-    "section": "PROJECT EXPERIENCE",
-    "text": "PROJECT EXPERIENCE\n\nFuzi.Mingcha – A Chinese Judicial Large Language Model [230+ stars]. We develop a Chinese legal model that supports functions such as statute retrieval, case analysis, et al, and achieve supreme performance at the LawBench. Project Leader and Main Contributor. 2023."
-  },
-  {
-    "objectID": "index.html#experience",
-    "href": "index.html#experience",
-    "title": "Shiguang WU",
-    "section": "EXPERIENCE",
-    "text": "EXPERIENCE\nInternship Tencent WeChat Feb 2025 — Present\n\nSupervised by Dr. Hongyu Lu."
-  },
-  {
     "objectID": "index.html#academic-services",
     "href": "index.html#academic-services",
     "title": "Shiguang WU",
     "section": "ACADEMIC SERVICES",
-    "text": "ACADEMIC SERVICES\nReviewer: Information Processing & Management (IP&M)\nPC Member: AAAI’26, SIGIR’24, SIGIR-AP’25, WSDM’26, WWW’26\nResources: Awesome Transformers LM Analytics focusing on the theoretical analysis of language models."
+    "text": "ACADEMIC SERVICES\nReviewer: Information Processing & Management (IP&M)\nPC Member: AAAI’26, SIGIR’24, SIGIR-AP’25, WSDM’26, WWW’26"
   },
   {
     "objectID": "index.html#awards-and-achievements",
     "href": "index.html#awards-and-achievements",
     "title": "Shiguang WU",
     "section": "AWARDS AND ACHIEVEMENTS",
-    "text": "AWARDS AND ACHIEVEMENTS\n\nNational Outstanding Student Scholarship. China. 2022,2024,2025.\nBest Paper Honorable Mention. SIGIR. 2024.\nOutstanding Undergraduate Thesis Award. Shandong University. 2023.\nOutstanding Student Scholarship. Shandong University. 2020-2022.\nMathematical Contest in Modeling. Second Prize. 2021.\nThe 18th Certified Sofware Professional Examination. Top 2.65%. 2020."
+    "text": "AWARDS AND ACHIEVEMENTS\n\nNational Outstanding Student Scholarship. China. 2022, 2024, 2025.\nBest Paper Honorable Mention. SIGIR. 2024.\nOutstanding Undergraduate Thesis Award. Shandong University. 2023.\nOutstanding Student Scholarship. Shandong University. 2020 — 2022.\n\n\n\nThe 18th Certified Sofware Professional Examination. Top 2.65%. 2020."
   },
   {
     "objectID": "posts/esl/ESL-01.html",
