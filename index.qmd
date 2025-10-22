@@ -33,7 +33,7 @@ format:
     pdf-engine: xelatex
     fontsize: 10pt
     geometry:
-      - margin=1in
+      - margin=0.8in
     include-in-header:
       - preamble.tex
 nocite: |
@@ -52,14 +52,15 @@ bold-auth-name:
 ::: {.content-visible when-format="pdf"}
 
 \begin{center}
-\LARGE{Shiguang Wu}
+\LARGE\textbf{Shiguang Wu}
 
-\large\Telefon\ +86 177-0544-8803. \large\Letter\ \href{mailto:shiguang.wu@mail.sdu.edu.cn}{shiguang.wu@mail.sdu.edu.cn}
+\normalsize N3 Building, Shandong University, 72 Binhai Highway, Qingdao, Shandong Province, China
 
-\href{https://scholar.google.com/citations?user=fqHOVo0AAAAJ}{[Google Scholar]}
-\href{https://github.com/Furyton}{[GitHub]}
-\href{https://twitter.com/shiguang\_wu}{[Twitter]}
-\href{https://furyton.github.io}{[Webpage]}
+\normalsize \textbf +86 177-0544-8803 |
+\href{mailto:shiguang.wu@mail.sdu.edu.cn}{shiguang.wu@mail.sdu.edu.cn} |
+\href{https://scholar.google.com/citations?user=fqHOVo0AAAAJ}{Google Scholar} | 
+\href{https://github.com/Furyton}{GitHub} | 
+\href{https://furyton.github.io}{Webpage}
 
 \end{center}
 :::
@@ -72,6 +73,7 @@ I received my B.E. from [Taishan College](https://www.tsxt.sdu.edu.), [Shandong 
 I'm interested in (theoretical, analytical) information retrieval, especially in generative retrieval, embedding models, and recommender systems.
 
 Please feel free to contact me at _furyton AT outlook DOT com_.
+
 :::
 
 ## EDUCATION
@@ -91,23 +93,24 @@ Please feel free to contact me at _furyton AT outlook DOT com_.
 ::: {#refs}
 :::
 
-::: {.content-visible when-format="html"}
+
 ## RESEARCH EXPERIENCE
+
+**Internship** Tencent WeChat [*Feb 2025 --- Present*]{.cvdate}
+
+- Supervised by Dr. [Hongyu Lu](https://luhongyu.github.io/).
 
 **Undergraduate Research Assistant** Information Retrieval Lab [*2020 --- 2023*]{.cvdate}
 
 - Supervised by Prof. [Xin Xin](https://pengjieren.github.io/) and Prof. [Zhaochun Ren](https://renzhaochun.github.io/)
 
+
+::: {.content-visible when-format="html"}
 ## PROJECT EXPERIENCE
 
 - [Fuzi.Mingcha](https://github.com/irlab-sdu/fuzi.mingcha) -- A Chinese Judicial Large Language Model [230+ stars]. We develop a Chinese legal model that supports functions such as statute retrieval, case analysis, et al, and achieve supreme performance at the [LawBench](https://github.com/open-compass/LawBench). *Project Leader and Main Contributor*. 2023.
+
 :::
-
-## EXPERIENCE
-
-**Internship** Tencent WeChat [*Feb 2025 --- Present*]{.cvdate}
-
-- Supervised by Dr. [Hongyu Lu](https://luhongyu.github.io/).
 
 ## ACADEMIC SERVICES
 
@@ -115,7 +118,7 @@ Please feel free to contact me at _furyton AT outlook DOT com_.
 
 **PC Member**: AAAI'26, SIGIR'24, SIGIR-AP'25, WSDM'26, WWW'26
 
-**Resources**: [Awesome Transformers LM Analytics](https://github.com/Furyton/awesome-transformers-LM-analytics) focusing on the theoretical analysis of language models.
+<!-- **Resources**: [Awesome Transformers LM Analytics](https://github.com/Furyton/awesome-transformers-LM-analytics) focusing on the theoretical analysis of language models. -->
 
 ## AWARDS AND ACHIEVEMENTS
 
